@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "start": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
@@ -19,8 +20,5 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.6"
-  },
-  "devDependencies": {
-    "@astrojs/cloudflare": "^12.2.1"
   }
 }
