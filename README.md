@@ -1,48 +1,47 @@
-# Astro Starter Kit: Basics
+# 🚀 Álvaro Villena - Agile Consultant & Tech Entrepreneur
 
-```sh
-npm create astro@latest -- --template basics
-```
+## 📌 Sobre Mí
+Soy **Álvaro Villena**, consultor en liderazgo y agilidad para el desarrollo de productos digitales. Mi enfoque está en transformar equipos y potenciar negocios mediante metodologías ágiles, estrategias de producto y tecnologías emergentes.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+🔹 **+10 años de experiencia** en productos digitales y gestión ágil.  
+🔹 **Mentor y formador** de equipos de alto rendimiento.  
+🔹 **Emprendedor** con proyectos propios en fidelización de clientes y e-learning.  
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 💼 Proyectos Destacados
 
-## 🚀 Project Structure
+### **📌 Fidelidapp - Founder**
+🚀 **Primera plataforma de fidelización con herramientas avanzadas para negocios.**  
+**Rol:** Liderazgo tecnológico y de servicio, desarrollo de estrategias de fidelización y optimización del customer journey.
 
-Inside of your Astro project, you'll see the following folders and files:
+### **📌 Ewaffle - Co-Founder**
+📚 **Soluciones e-learning para universidades y educación superior.**  
+**Rol:** Desarrollo de plataformas de formación digital y gestión de contenido educativo.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### **📌 Toptal - Agile Project Manager**
+🌎 **Freelance en la red de talentos más grande del mundo.**  
+**Rol:** Implementación de metodologías ágiles en proyectos internacionales de alto impacto.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### **📌 LATAM Airlines - Scrum Master (Proyecto ASTRAL)**
+✈️ **IA aplicada al pricing y revenue management en la industria aérea.**  
+**Rol:** Facilitación ágil y alineación de equipos de Data Science, Negocio y Tecnología para optimizar estrategias de revenue.
 
-## 🧞 Commands
+### **📌 We Techs - Consultor Ágil (Formación del Área de Producto)**
+🏗️ **Transformación ágil en el sector tecnológico de minería.**  
+**Rol:** Implementación de mejores prácticas en gestión ágil y construcción de equipos de producto desde cero.
 
-All commands are run from the root of the project, from a terminal:
+### **📌 PepsiCo - Agile Project Manager (AI/ML Guided Selling Program)**
+🥤 **Optimización de ventas mediante IA y Machine Learning.**  
+**Rol:** Facilitación en el desarrollo de productos de IA que mejoraron la efectividad de los canales de venta en la casa matriz en Dallas.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 📫 Contacto
+📩 **Email:** alvaro.villena@example.com  
+💼 **LinkedIn:** [linkedin.com/in/alvarovillena](https://linkedin.com/in/alvarovillena)  
+🌐 **Website:** [www.alvarovillena.com](https://www.alvarovillena.com)  
+📱 **Twitter:** [@alvaro_villena](https://twitter.com/alvaro_villena)  
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+🚀 ¡Conectemos para construir el futuro de la innovación y la agilidad! 🎯
+
