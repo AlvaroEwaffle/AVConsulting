@@ -2,7 +2,7 @@ import { Instagram, Linkedin } from "lucide-react"; // Import icons
 
 const Hero = () => {
     return (
-        <section className="relative w-full h-screen flex items-center justify-start text-left bg-[url('/Hero.png')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
+        <section className="relative w-full h-screen flex items-center justify-start text-left bg-[url('https://storage.cloud.google.com/alvarovillena/Hero.png')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
             <div className="max-w-3xl">
                 {/* Título principal */}
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in">

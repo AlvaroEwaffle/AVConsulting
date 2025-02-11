@@ -21,13 +21,13 @@ const Contact = () => {
 
         const payload = {
             ...formData,
-            //accountId: "678e4df080622b7c255a9220", // ID fijo PROD
-            accountId: "673b62dab73ab3da95975794", // ID fijo DEV
+            accountId: "678e4df080622b7c255a9220", // ID fijo PROD
+            //accountId: "673b62dab73ab3da95975794", // ID fijo DEV
         };
 
         try {
-            //const response = await fetch("https://api.fidelidapp.cl/api/landing/register", {
-            const response = await fetch("http://localhost:8080/api/landing/register", {
+            const response = await fetch("https://api.fidelidapp.cl/api/landing/register", {
+            //const response = await fetch("http://localhost:8080/api/landing/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
