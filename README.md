@@ -38,10 +38,9 @@ Soy **Álvaro Villena**, consultor en liderazgo y agilidad para el desarrollo de
 ---
 
 ## 📫 Contacto
-📩 **Email:** alvaro.villena@example.com  
+📩 **Email:** alvaro.villena@gmail.com  
 💼 **LinkedIn:** [linkedin.com/in/alvarovillena](https://linkedin.com/in/alvarovillena)  
-🌐 **Website:** [www.alvarovillena.com](https://www.alvarovillena.com)  
-📱 **Twitter:** [@alvaro_villena](https://twitter.com/alvaro_villena)  
+🌐 **Website:** [alvarovillena.cl](https://alvarovillena.cl)  
 
 🚀 ¡Conectemos para construir el futuro de la innovación y la agilidad! 🎯
 
