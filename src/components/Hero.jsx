@@ -22,7 +22,7 @@ const Hero = () => {
                         href="#contacto"
                         className="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                     >
-                        Agendar Sesión 🚀
+                        Agendar Primera Sesión 🚀
                     </a>
 
                     {/* Botón CTA Servicios */}
@@ -30,7 +30,7 @@ const Hero = () => {
                         href="#servicios"
                         className="w-full text-center bg-[#e6e6e6] font-bold py-3 px-6 rounded-lg border text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                     >
-                        Conocer Servicios 🔥
+                        Conocer Mis Servicios 🔥
                     </a>
                 </div>
 
