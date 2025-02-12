@@ -52,7 +52,7 @@ const About = () => {
                 {/* Right Column (1/3) */}
                 <div className="flex items-center justify-center">
                     <img
-                        src="https://storage.cloud.google.com/alvarovillena/about.jpeg"
+                        src="/about.jpeg"
                         alt="Álvaro Villena"
                         className="w-64 h-64 md:w-90 md:h-120 object-cover rounded-full shadow-lg"
                     />

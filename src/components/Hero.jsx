@@ -2,7 +2,7 @@ import { Instagram, Linkedin } from "lucide-react"; // Import icons
 
 const Hero = () => {
     return (
-        <section className="relative w-full h-screen flex items-center justify-start text-left bg-[url('https://storage.cloud.google.com/alvarovillena/Hero.png')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
+        <section className="relative w-full h-screen flex items-center justify-start text-left bg-[url('/Hero.png')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
             <div className="max-w-3xl">
                 {/* Título principal */}
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in">
@@ -19,7 +19,7 @@ const Hero = () => {
                 <div className="mt-18 flex flex-col gap-3 max-w-[300px]">
                     {/* Botón CTA Agendar Sesión */}
                     <a
-                        href="#contacto"
+                        href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7"
                         className="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                     >
                         Agendar Sesión 🚀

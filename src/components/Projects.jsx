@@ -4,7 +4,7 @@ import { Dialog } from "@headlessui/react";
 const projects = [
     {
         title: "Fidelidapp: Founder - Primera plataforma de marketing de fidelización.",
-        image: "https://storage.cloud.google.com/alvarovillena/fidelidapp.jpg",
+        image: "/fidelidapp.jpg",
         alt: "Fidelidapp.cl Marketing de Fidelización.",
         description: "Como fundador y líder técnico de Fidelidapp, dirijo el desarrollo y evolución de la plataforma, asegurando su escalabilidad y usabilidad para distintos negocios. Me encargo de la estrategia tecnológica, la integración de nuevas funcionalidades y el soporte a clientes, ayudándolos a mejorar la retención y fidelización de sus clientes a través de herramientas digitales innovadoras.",
     },
@@ -16,7 +16,7 @@ const projects = [
     },    
     {
         title: "Toptal: Freelance Agile Project Manager & Consultant.",
-        image: "https://storage.cloud.google.com/alvarovillena/toptal.jpg",
+        image: "/toptal.jpg",
         alt: "Toptal: la red de freelancers más grande del mundo.",
         description: "Desde hace 8 años, trabajo como Agile Project Manager en Toptal, liderando equipos de desarrollo en proyectos tecnológicos de alto impacto. Mi rol incluye la implementación de metodologías ágiles, la optimización de procesos de trabajo y la coordinación entre equipos técnicos y de negocio para garantizar entregas exitosas y alineadas con los objetivos estratégicos de cada cliente.",
     },
@@ -28,7 +28,7 @@ const projects = [
     },
     {
         title: "Ewaffle: Cofundador - Servicios e-learning en el mundo educativo universitario.",
-        image: "https://storage.googleapis.com/alvarovillena/ewaffle.jpg",
+        image: "/ewaffle.jpg",
         alt: "Ewaffle.cl: Servicios e-learning para universidades.",
         description: "Como cofundador de Ewaffle, lideré la implementación de soluciones tecnológicas para universidades, optimizando plataformas de aprendizaje en línea y gestionando la operación de proyectos educativos. Me enfoqué en mejorar la experiencia de enseñanza a través de herramientas digitales y en asegurar la calidad del contenido y la metodología aplicada en cada curso.",
     },
