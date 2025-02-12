@@ -52,7 +52,7 @@ const About = () => {
                 {/* Right Column (1/3) */}
                 <div className="flex items-center justify-center">
                     <img
-                        src="/about.jpeg"
+                        src="https://res.cloudinary.com/djcxabubg/image/upload/f_auto,q_auto/pupbwxlduzs1cs6cvofd"
                         alt="Álvaro Villena"
                         className="w-64 h-64 md:w-90 md:h-120 object-cover rounded-full shadow-lg"
                     />
