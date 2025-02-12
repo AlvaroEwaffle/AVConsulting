@@ -2,7 +2,7 @@ import { Instagram, Linkedin } from "lucide-react"; // Import icons
 
 const Hero = () => {
     return (
-        <section className="relative w-full h-screen flex items-center justify-start text-left bg-[url('/Hero.png')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
+        <section className="relative w-full h-screen flex items-center justify-start text-left bg-[url('https://res.cloudinary.com/di92lsbym/image/upload/f_auto,q_auto/v1739367725/hero-alvaro-villena-web_rzhoec.webp')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
             <div className="max-w-3xl">
                 {/* Título principal */}
                 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in">
