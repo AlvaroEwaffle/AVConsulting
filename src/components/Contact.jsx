@@ -37,6 +37,9 @@ const Contact = () => {
             if (response.ok) {
                 setMessage("¡Mensaje enviado con éxito! 🎉");
                 setFormData({ name: "", email: "", phone: "" });
+                //Redirect to thankyou page
+                window.location.href = "/thankyou";
+
             } else {
                 setMessage("Hubo un error, intenta nuevamente.");
             }

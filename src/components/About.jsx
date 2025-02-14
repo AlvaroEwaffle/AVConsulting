@@ -1,9 +1,35 @@
-const About = () => {
-    return (
-        <section id="sobremi" className="w-full pt-20 mb-20 px-8 md:px-16 flex items-center justify-center">
-            {/* Grid layout */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
+import { useEffect, useState } from "react";
 
+const About = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.3 } // Se activa cuando el 30% del componente es visible
+        );
+
+        const section = document.getElementById("sobremi");
+        if (section) observer.observe(section);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <section
+            id="sobremi"
+            className="w-full pt-20 mb-20 px-8 md:px-16 flex items-center justify-center"
+        >
+            {/* Grid layout */}
+            <div
+                className={`grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto transition-all duration-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"
+                    }`}
+            >
                 {/* Left Column (2/3) */}
                 <div className="md:col-span-2 flex flex-col justify-center">
                     {/* Título */}
@@ -15,7 +41,7 @@ const About = () => {
                     <p className="mt-4 text-lg md:text-xl text-[#2175a1] opacity-90">
                         Soy <span className="font-bold">Álvaro Villena</span>, consultor en liderazgo y agilidad para el desarrollo de productos digitales.
                         <br /> <br />
-                        Ayudo a <span className="font-bold">gerentes de producto </span> a convertirse en líderes estratégicos, tomar decisiones con confianza y desbloquear el máximo potencial de sus equipos.
+                        Ayudo a <span className="font-bold">gerentes de producto</span> a convertirse en líderes estratégicos, tomar decisiones con confianza y desbloquear el máximo potencial de sus equipos.
                     </p>
 
                     {/* Bullet Points */}
@@ -54,10 +80,11 @@ const About = () => {
                     <img
                         src="https://res.cloudinary.com/djcxabubg/image/upload/f_auto,q_auto/pupbwxlduzs1cs6cvofd"
                         alt="Álvaro Villena"
-                        className="w-64 h-64 md:w-90 md:h-120 object-cover rounded-full shadow-lg"
+                        loading="lazy"
+                        className={`w-64 h-64 md:w-90 md:h-120 object-cover rounded-full shadow-lg transition-opacity duration-1000 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                            }`}
                     />
                 </div>
-
             </div>
         </section>
     );

@@ -1,3 +1,5 @@
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/Hero.png'; // ✅ Cambio de nombre
 import { Instagram, Linkedin } from "lucide-react"; // Import icons
 
 const Hero = () => {

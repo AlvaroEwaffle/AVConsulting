@@ -1,0 +1,45 @@
+<head>
+  <title>¡Gracias por tu mensaje! 🎉</title>
+  <meta http-equiv="refresh" content="5;url=/" />
+</head>
+
+<section class="thankyou-container">
+  <div class="thankyou-card">
+    <h1>Gracias por contactarnos </h1>
+    <p>Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
+    <p>Te redigiremos al sitio principal en unos segundos...</p>
+  </div>
+</section>
+
+<script>
+  setTimeout(() => {
+    window.location.href = "/";
+  }, 4000);
+</script>
+
+<style>
+  .thankyou-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .thankyou-card {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    color: #2175a1;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+</style>
