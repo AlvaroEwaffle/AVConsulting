@@ -1,10 +1,13 @@
 ---
 import { Instagram, Linkedin } from "lucide-react";
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/Hero.webp';
 const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líderes Digitales"];
 ---
 
 <!-- Hero Section -->
-<section class="relative w-full h-screen flex items-center justify-start text-left bg-[url('https://res.cloudinary.com/djcxabubg/image/upload/f_auto,q_auto/eqhdg8aobrn95kguc7hc')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
+<section class="relative w-full h-screen flex items-center justify-start text-left text-[#2175a1] px-8 md:px-16">
+    <Image src={HeroImage} alt="Hero Background" class="absolute inset-0 w-full h-full object-cover object-center lg:object-[center_top] -z-10" preload />
     <div class="max-w-3xl">
         <!-- Título principal -->
         <h1 class="text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in">
@@ -40,14 +43,15 @@ const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líd
 </section>
 
 <!-- Script para el efecto de escritura -->
-<script>
+<script defer>
     const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líderes Digitales"];
     let index = 0, charIndex = 0, isDeleting = false;
     const speed = 100, eraseSpeed = 100, delay = 1500;
-    const textElement = document.getElementById("changing-text");
 
     function typeEffect() {
+        const textElement = document.getElementById("changing-text");
         const currentWord = words[index];
+
         if (!isDeleting) {
             textElement.textContent = currentWord.slice(0, charIndex++);
             if (charIndex > currentWord.length) {
@@ -65,7 +69,8 @@ const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líd
         setTimeout(typeEffect, isDeleting ? eraseSpeed : speed);
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
+    window.onload = () => {
         setTimeout(typeEffect, 1000);
-    });
+    };
 </script>
+
