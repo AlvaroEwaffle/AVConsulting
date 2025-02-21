@@ -1,0 +1,71 @@
+---
+import { Instagram, Linkedin } from "lucide-react";
+const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líderes Digitales"];
+---
+
+<!-- Hero Section -->
+<section class="relative w-full h-screen flex items-center justify-start text-left bg-[url('https://res.cloudinary.com/djcxabubg/image/upload/f_auto,q_auto/eqhdg8aobrn95kguc7hc')] bg-cover bg-left bg-no-repeat text-[#2175a1] px-8 md:px-16">
+    <div class="max-w-3xl">
+        <!-- Título principal -->
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight animate-fade-in">
+            Liderazgo Ágil para <br />
+            .. <span id="changing-text" class="text-[#3ca6dd]"></span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="mt-4 text-lg md:text-xl opacity-90">
+            Te ayudo a <span class="font-bold">navegar el caos</span> del desarrollo digital con <br/>estrategia, herramientas y claridad.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-8 flex flex-col gap-3 max-w-[300px]">
+            <a href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7" class="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105">
+                Agendar Sesión 🚀
+            </a>
+            <a href="#sobremi" class="w-full text-center bg-[#e6e6e6] font-bold py-3 px-6 rounded-lg border text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105">
+                Conoce más sobre mí 🔥
+            </a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="mt-8 flex gap-6 items-center">
+            <a href="https://instagram.com/chokovillena" target="_blank" rel="noopener noreferrer">
+                <Instagram size={32} strokeWidth={1.5} class="text-[#2175a1] hover:text-[#3ca6dd] transition" />
+            </a>
+            <a href="https://linkedin.com/in/alvarovillena" target="_blank" rel="noopener noreferrer">
+                <Linkedin size={32} strokeWidth={1.5} class="text-[#2175a1] hover:text-[#3ca6dd] transition" />
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Script para el efecto de escritura -->
+<script>
+    const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líderes Digitales"];
+    let index = 0, charIndex = 0, isDeleting = false;
+    const speed = 100, eraseSpeed = 100, delay = 1500;
+    const textElement = document.getElementById("changing-text");
+
+    function typeEffect() {
+        const currentWord = words[index];
+        if (!isDeleting) {
+            textElement.textContent = currentWord.slice(0, charIndex++);
+            if (charIndex > currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, delay);
+                return;
+            }
+        } else {
+            textElement.textContent = currentWord.slice(0, charIndex--);
+            if (charIndex === 0) {
+                isDeleting = false;
+                index = (index + 1) % words.length;
+            }
+        }
+        setTimeout(typeEffect, isDeleting ? eraseSpeed : speed);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(typeEffect, 1000);
+    });
+</script>
