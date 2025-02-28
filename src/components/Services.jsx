@@ -1,26 +1,26 @@
 const services = [
     {
-      title: "Agilidad para Productos",
+      title: "Crea y Lanza tu Producto Digital",
       description:
-        "Optimiza tu flujo de trabajo con frameworks y prácticas ágiles, asegurando entregas eficientes y equipos alineados.",
+        "Convierte tu idea en una solución viable con estrategias de validación y modelo de negocio.",
       icon: "🚀",
     },
     {
-      title: "Liderazgo con Propósito",
+      title: "Acelera tu Emprendimiento",
       description:
-        "Potencia tu rol como Product Manager con estrategias clave para tomar decisiones con confianza.",
+        "Optimiza tus procesos y haz crecer tu negocio digital con frameworks estratégicos.",
       icon: "🎯",
     },
     {
-      title: "Innovación Estratégica",
+      title: "Marketing y Adquisición de Clientes",
       description:
-        "Transforma ideas en productos rentables con tácticas de validación y experimentación rápida.",
+        "Aprende a generar tráfico, atraer leads y convertir clientes con estrategias digitales automatizadas y efectivas.",
       icon: "💡",
     },
     {
-      title: "Mentoría 1:1",
+      title: "Mentoría 1:1 para Innovadores Digitales",
       description:
-        "Sesiones personalizadas para ayudarte a desbloquear tu máximo potencial en el mundo digital.",
+        "Sesiones personalizadas para guiarte en cada paso, desde la idea hasta el crecimiento en el mundo digital.",
       icon: "📚",
     },
   ];

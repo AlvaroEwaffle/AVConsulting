@@ -39,30 +39,32 @@ const About = () => {
 
                     {/* Descripción */}
                     <p className="mt-4 text-lg md:text-xl text-[#2175a1] opacity-90">
-                        Soy <span className="font-bold">Álvaro Villena</span>, consultor en liderazgo y agilidad para el desarrollo de productos digitales.
+                        Soy <span className="font-bold">Álvaro Villena</span>, emprendedor, consultor en estrategia e innovación y creador de Fidelidapp.
                         <br /> <br />
-                        Ayudo a <span className="font-bold">gerentes de producto</span> a convertirse en líderes estratégicos, tomar decisiones con confianza y desbloquear el máximo potencial de sus equipos.
+                        Ayudo a emprendedores, freelancers y creadores de productos digitales a estructurar sus ideas, desarrollar modelos de negocio y lanzar servicios o apps con estrategia y validación.
                     </p>
 
                     {/* Bullet Points */}
                     <ul className="mt-6 space-y-4 text-[#2175a1]">
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl">Más de 10 años de trabajando en el mundo digital</span>
+                            <span className="text-lg md:text-xl"> +10 años creando y escalando negocios digitales
+                            </span>
                         </li>
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl">Experiencia en startups y empresas consolidadas</span>
+                            <span className="text-lg md:text-xl">Experiencia en corporaciones, startups, innovación y agilidad</span>
                         </li>
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl">Mentorías personalizadas y hands-on</span>
+                            <span className="text-lg md:text-xl">Mentorías prácticas, personalizadas y basadas en ejecución</span>
                         </li>
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
                             <span className="text-lg md:text-xl">Ingeniero Civil Industrial, Master en Innovación y Emprendimiento</span>
                         </li>
                     </ul>
+                    
 
                     {/* CTA */}
                     <div className="mt-8">
@@ -70,7 +72,7 @@ const About = () => {
                             href="#servicios"
                             className="inline-block bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                         >
-                            Descubre mis servicios 🔥
+                            Aprende a construir un negocio digital sólido desde cero 🚀
                         </a>
                     </div>
                 </div>

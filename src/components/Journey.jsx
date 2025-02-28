@@ -2,9 +2,9 @@ import { User, MessageCircle, Users, Briefcase, Settings, BarChart } from "lucid
 
 const Journey = () => {
     const steps = [
-        { icon: User, title: "Conectemos", description: "Conoce mi enfoque y descubre cómo podemos trabajar juntos para impulsar tu liderazgo." },
+        { icon: User, title: "Conectemos", description: "Conoce mi enfoque y descubre cómo podemos trabajar juntos para impulsar tu proyecto." },
         { icon: MessageCircle, title: "Primera Sesión (Gratis)", description: "Una conversación estratégica para entender tus desafíos y definir un plan de acción claro." },
-        { icon: Users, title: "Acompañamiento Personalizado", description: "Sesiones individuales diseñadas para fortalecer tu liderazgo y mejorar tu toma de decisiones." },
+        { icon: Users, title: "Acompañamiento Personalizado", description: "Sesiones individuales diseñadas para fortalecer tu propuesta y mejorar tu toma de decisiones." },
         { icon: Briefcase, title: "Trabajo con tu Equipo (Opcional)", description: "Si lo necesitas, expandimos el impacto y trabajamos directamente con tu equipo." },
         { icon: Settings, title: "Plan a Medida", description: "Diseñamos una estrategia concreta y alineada con tus objetivos de negocio." },
         { icon: BarChart, title: "Implementación y Crecimiento", description: "Pasamos a la acción, medimos resultados y ajustamos para seguir avanzando." },
