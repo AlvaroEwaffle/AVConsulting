@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 import Contact from "../components/Contact.jsx";
 import BannerCTA from "../components/BannerCTA.jsx";
 
@@ -8,49 +8,78 @@ const siteUrl = "https://alvarovillena.cl"; // Asegúrate de modificar esto con 
 ---
 
 <html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/icono.png" type="image/png">
-    
-    <!-- SEO Meta Tags -->
-    <title>{title} - Artículo de Blog</title>
-    <meta name="description" content={description} />
-    <meta name="author" content="Álvaro Villena" />
-    <meta name="keywords" content="emprendimiento, negocios digitales, liderazgo ágil, {title}" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/icono.png" type="image/png" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image ? `${siteUrl}${image}` : `${siteUrl}/default-blog.jpg`} />
-    <meta property="og:url" content={`${siteUrl}/blog/${slug}`} />
+        <!-- SEO Meta Tags -->
+        <title>{title} - Artículo de Blog</title>
+        <meta name="description" content={description} />
+        <meta name="author" content="Álvaro Villena" />
+        <meta
+            name="keywords"
+            content="emprendimiento, negocios digitales, liderazgo ágil, {title}"
+        />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href={`${siteUrl}/blog/${slug}`} />
-</head>
-<body class="bg-gray-100">
-    
-    <!-- Header del blog con imagen -->
-    <header class="relative w-full  bg-[#2175a1] text-white flex items-center justify-center">
-        {image && <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover opacity-50" />}
-        <h1 class="relative text-4xl m-5 font-bold text-center">{title}</h1>
-    </header>
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta
+            property="og:image"
+            content={image
+                ? `${siteUrl}${image}`
+                : `${siteUrl}/default-blog.jpg`}
+        />
+        <meta property="og:url" content={`${siteUrl}/blog/${slug}`} />
 
-    <!-- Contenedor principal del blog -->
-    <main class="container mx-auto px-4 sm:px-8 md:px-12 my-10">
-        <article class="bg-white p-8 shadow-lg rounded-lg">
-            <time class="block text-gray-500 text-sm">{new Date(date).toLocaleDateString()}</time>
-            <p class="mt-4 text-gray-700">{description}</p>
+        <!-- Canonical URL -->
+        <link rel="canonical" href={`${siteUrl}/blog/${slug}`} />
+    </head>
+    <body class="bg-gray-100">
+        <!-- Header del blog con imagen -->
+        <header
+            class="relative w-full bg-[#2175a1] text-white flex items-center justify-center"
+        >
+            {
+                image && (
+                    <img
+                        src={image}
+                        alt={title}
+                        class="absolute inset-0 w-full h-full object-cover opacity-50"
+                    />
+                )
+            }
+            <h1 class="relative text-4xl m-5 font-bold text-center">{title}</h1>
+        </header>
 
-            <!-- Contenido del post -->
-            <div class="prose max-w-none mt-6">
-                <slot />
-            </div>
-        </article>
-    </main>
+        <!-- Contenedor principal del blog -->
+        <main class="container mx-auto px-4 sm:px-8 md:px-12 my-10">
+            <article class="bg-white p-8 shadow-lg rounded-lg">
+                <time class="block text-gray-500 text-sm"
+                    >{new Date(date).toLocaleDateString()}</time
+                >
+                <p class="mt-4 text-gray-700">{description}</p>
 
-    <BannerCTA />
-    <Contact client:load />
-</body>
+                <!-- Contenido del post -->
+                <div class="prose max-w-none mt-6">
+                    <slot />
+                </div>
+            </article>
+        </main>
+
+        <div
+            class="relative w-full bg-[#2175a1] text-white flex items-center justify-center"
+        >
+            <h1 class="relative text-3xl m-5 text-center">
+                ¿Te gustaría tener acompañamiento personalizado para llevar a la práctica este y otras herramientas del emprendimiento digital? 
+                    <br><br>
+                👇🏽👇🏽👇🏽👇🏽👇🏽👇🏽👇🏽
+            </h1>
+        </div>
+
+        <BannerCTA />
+        <Contact client:load />
+    </body>
 </html>
