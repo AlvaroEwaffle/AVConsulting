@@ -27,11 +27,11 @@ const services = [
   
   const Services = () => {
     return (
-        <section id="servicios" className="w-full bg-[#e6e6e6]   px-8 md:px-16 flex flex-col items-center text-center">
+        <section id="servicios" className="w-full bg-[#e6e6e6] mb-15 px-8 md:px-16 flex flex-col items-center text-center">
         {/* Título */}
         <div className="text-center ">
           <h2 className="text-4xl mt-15 md:text-5xl font-extrabold text-[#2175a1] leading-tight">
-            Mis <span className="text-[#3ca6dd]">Servicios</span>
+            ¿Cómo te voy a <span className="text-[#3ca6dd]">asesorar</span>?
           </h2>
           <p className="mt-4 text-lg md:text-xl text-[#2175a1] opacity-90">
             Estrategias y mentorías para impulsar tu crecimiento 🚀
@@ -39,7 +39,7 @@ const services = [
         </div>
   
         {/* Grid de servicios */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 mb-15">
           {services.map((service, index) => (
             <div
               key={index}

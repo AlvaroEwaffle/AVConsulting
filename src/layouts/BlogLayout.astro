@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import Contact from "../components/Contact.jsx";
+import BannerCTA from "../components/BannerCTA.jsx";
+
+const { title, description, date } = Astro.props;
+---
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>{title} - Blog</title>
+</head>
+<body class="bg-[#2175a1]">
+    <!-- Blog Post -->
+    <main class="container mx-auto px-4 sm:px-8 md:px-12 my-10">
+          
+        <article class="bg-white p-6 shadow-lg rounded-lg">
+            <h1 class="text-3xl font-bold text-gray-900">{title}</h1>
+            
+            <time class="text-gray-500">{new Date(date).toLocaleDateString()}</time>
+            <p class="mt-4 text-gray-700">{description}</p>
+            
+            <!-- Content injected dynamically -->
+            <div class="prose max-w-none mt-6">
+                <slot />
+            </div>
+        </article>
+    </main>
+    <BannerCTA />
+    <Contact client:load />
+</body>
+</html>

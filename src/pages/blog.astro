@@ -1,19 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
+import BlogWelcome from '../components/blog/BlogWelcome.astro';
+import Layout from '../layouts/Layout.astro';
 
-const posts = await getCollection('blog');
 ---
 
-<h1>Blog</h1>
-
-<ul>
-  {posts.map(post => (
-    <li>
-      <a href={`/blog/${post.slug}`}>
-        <h2>{post.data.title}</h2>
-        <p>{post.data.description}</p>
-        <small>{new Date(post.data.date).toLocaleDateString()}</small>
-      </a>
-    </li>
-  ))}
-</ul>
+<Layout>
+	<BlogWelcome />
+</Layout>
