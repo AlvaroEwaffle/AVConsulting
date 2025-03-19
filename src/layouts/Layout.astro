@@ -1,3 +1,7 @@
+---
+const { title, description } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,11 +9,24 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/icono.png" type="image/png">
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Liderazgo Ágil para Gerentes de Producto. Te ayudo a navegar el caos del desarrollo digital con estrategia, herramientas y claridad.">
-		<title>Alvaro Villena / Consultorías en Agilidad </title>
-		<meta property="og:title" content="Liderazgo Ágil para Gerentes de Producto">
-		<meta property="og:description" content="Te ayudo a navegar el caos del desarrollo digital con estrategia, herramientas y claridad.">
+		<title>Alvaro Villena / Asesoría Estratégica para Emprendedores Digitales. Te ayudo a navegar el caos del desarrollo digital con estrategia, herramientas y claridad. </title>
+		<meta name="description" content={description || "Convierte tu idea en un negocio digital rentable con estrategia, validación y acompañamiento experto."}>
+		
+		<!-- Open Graph Meta (para compartir en redes sociales) -->
+		<meta name="author" content="Álvaro Villena">
+		<meta name="keywords" content="agilidad, liderazgo, innovación, emprendimiento, estrategia">
+		<meta property="og:title" content={title || "Álvaro Villena | Asesoría Estratégica para Emprendedores Digitales. Te ayudo a navegar el caos del desarrollo digital con estrategia, herramientas y claridad."}>
+		<meta property="og:description" content={description || "Convierte tu idea en un negocio digital rentable con estrategia, validación y acompañamiento experto."}>
 		<meta property="og:url" content="https://alvarovillena.cl">
+		<meta property="og:type" content="website">
+
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{title || "Álvaro Villena | Consultoría en Agilidad"}</title>
+
+    
+
+	
 		<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

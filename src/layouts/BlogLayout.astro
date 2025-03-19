@@ -3,30 +3,52 @@ import '../styles/global.css';
 import Contact from "../components/Contact.jsx";
 import BannerCTA from "../components/BannerCTA.jsx";
 
-const { title, description, date } = Astro.props;
+const { title, description, date, image, slug } = Astro.props;
+const siteUrl = "https://alvarovillena.cl"; // Asegúrate de modificar esto con tu dominio real.
 ---
 
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
     <title>{title} - Blog</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Álvaro Villena" />
+    <meta name="keywords" content="emprendimiento, negocios digitales, liderazgo ágil, {title}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image ? `${siteUrl}${image}` : `${siteUrl}/default-blog.jpg`} />
+    <meta property="og:url" content={`${siteUrl}/blog/${slug}`} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={`${siteUrl}/blog/${slug}`} />
 </head>
-<body class="bg-[#2175a1]">
-    <!-- Blog Post -->
+<body class="bg-gray-100">
+    
+    <!-- Header del blog con imagen -->
+    <header class="relative w-full h-64 bg-[#2175a1] text-white flex items-center justify-center">
+        {image && <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover opacity-50" />}
+        <h1 class="relative text-4xl font-bold text-center">{title}</h1>
+    </header>
+
+    <!-- Contenedor principal del blog -->
     <main class="container mx-auto px-4 sm:px-8 md:px-12 my-10">
-          
-        <article class="bg-white p-6 shadow-lg rounded-lg">
-            <h1 class="text-3xl font-bold text-gray-900">{title}</h1>
-            
-            <time class="text-gray-500">{new Date(date).toLocaleDateString()}</time>
+        <article class="bg-white p-8 shadow-lg rounded-lg">
+            <time class="block text-gray-500 text-sm">{new Date(date).toLocaleDateString()}</time>
             <p class="mt-4 text-gray-700">{description}</p>
-            
-            <!-- Content injected dynamically -->
+
+            <!-- Contenido del post -->
             <div class="prose max-w-none mt-6">
                 <slot />
             </div>
         </article>
     </main>
+
     <BannerCTA />
     <Contact client:load />
 </body>
