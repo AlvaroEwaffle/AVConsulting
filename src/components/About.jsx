@@ -60,7 +60,7 @@ const About = () => {
                             href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7" class="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                             className="inline-block bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                         >
-                            Aprende a construir un negocio digital sólido desde cero 🚀
+                            Crea un negocio digital  🚀
                         </a>
                     </div>
                 </div>
