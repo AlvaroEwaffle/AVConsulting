@@ -7,6 +7,9 @@ import Projects from "../components/Projects.jsx";
 import Contact from "../components/Contact.jsx";
 import BannerCTA from "../components/BannerCTA.jsx";
 import BlogPosts from "../components/BlogPosts.astro";
+import Footer from "../components/Footer.jsx";
+import NextCohort from "../components/NextCohort.jsx";
+import Testimonials from "../components/Testimonials.jsx";
 import '../styles/global.css';
 ---
 
@@ -14,12 +17,15 @@ import '../styles/global.css';
   
   <body>
     <Hero />
+    <NextCohort />
     <About client:load/>
+    <Services />
     <Journey />
     <BannerCTA />
-    <Projects client:load />
-    <Services />
-    <BlogPosts />
+    <Testimonials />
     <Contact client:load />
+    <Projects client:load />
+    <BlogPosts />
+    <Footer client:load />
   </body>
 </html>

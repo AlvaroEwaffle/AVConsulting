@@ -3,43 +3,123 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/icono.png" type="image/png">
 		<meta name="generator" content={Astro.generator} />
-		<title> Alvaro Villena / Asesoría Estratégica para Emprendedores Digitales. Te ayudo a navegar el caos del desarrollo digital con estrategia, herramientas y claridad. </title>
-		<meta name="description" content={description || "Convierte tu idea en un negocio digital rentable con estrategia, validación y acompañamiento experto."}>
+		<title>Digital Founders | Curso de Emprendimiento Digital - Lanza tu Negocio desde Cero</title>
+		<meta name="description" content={description || "Aprende a lanzar tu negocio digital desde cero. 7 módulos prácticos con estrategias probadas para validar, lanzar y hacer crecer tu startup en 8 semanas."}>
 		
 		<!-- Open Graph Meta (para compartir en redes sociales) -->
 		<meta name="author" content="Álvaro Villena">
-		<meta name="keywords" content="agilidad, liderazgo, innovación, emprendimiento, estrategia">
-		<meta property="og:title" content={title || "Álvaro Villena | Asesoría Estratégica para Emprendedores Digitales. Te ayudo a navegar el caos del desarrollo digital con estrategia, herramientas y claridad."}>
-		<meta property="og:description" content={description || "Convierte tu idea en un negocio digital rentable con estrategia, validación y acompañamiento experto."}>
+		<meta name="keywords" content="emprendimiento digital, startup, negocio digital, validación de ideas, modelo de negocio, marketing digital, finanzas para emprendedores">
+		<meta property="og:title" content={title || "Digital Founders | Curso de Emprendimiento Digital - Lanza tu Negocio desde Cero"}>
+		<meta property="og:description" content={description || "Aprende a lanzar tu negocio digital desde cero. 7 módulos prácticos con estrategias probadas para validar, lanzar y hacer crecer tu startup en 8 semanas."}>
 		<meta property="og:url" content="https://alvarovillena.cl">
 		<meta property="og:type" content="website">
+		<meta property="og:image" content="https://alvarovillena.cl/og-image.jpg">
 
-		<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{title || "Álvaro Villena | Consultoría en Agilidad"}</title>
+		<!-- Twitter Card Meta -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content={title || "Digital Founders | Curso de Emprendimiento Digital"}>
+		<meta name="twitter:description" content={description || "Aprende a lanzar tu negocio digital desde cero. 7 módulos prácticos con estrategias probadas para validar, lanzar y hacer crecer tu startup en 8 semanas."}>
+		<meta name="twitter:image" content="https://alvarovillena.cl/og-image.jpg">
 
-    
+		<!-- Schema.org Markup -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Course",
+			"name": "Digital Founders - Curso de Emprendimiento Digital",
+			"description": "Aprende a lanzar tu negocio digital desde cero. 7 módulos prácticos con estrategias probadas para validar, lanzar y hacer crecer tu startup en 8 semanas.",
+			"provider": {
+				"@type": "Person",
+				"name": "Álvaro Villena",
+				"jobTitle": "Emprendedor Digital y Fundador de Fidelidapp"
+			},
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "CLP",
+				"availability": "https://schema.org/InStock"
+			},
+			"numberOfCredits": "7 módulos",
+			"timeRequired": "8 semanas",
+			"courseCode": "DF001",
+			"educationalLevel": "Principiante",
+			"teaches": [
+				"Validación de ideas de negocio",
+				"Modelo de negocio digital",
+				"Marketing digital",
+				"Finanzas para emprendedores",
+				"Operación de negocios digitales"
+			],
+			"learningResourceType": "Curso en línea",
+			"isAccessibleForFree": true,
+			"inLanguage": "es-CL",
+			"coursePrerequisites": "No se requieren conocimientos previos",
+			"hasCourseInstance": {
+				"@type": "CourseInstance",
+				"courseMode": "online",
+				"duration": "P8W",
+				"startDate": "2024-04-01",
+				"endDate": "2024-05-26"
+			}
+		}
+		</script>
 
-	
+		<!-- FAQ Schema for Featured Snippets -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [{
+				"@type": "Question",
+				"name": "¿Qué es Digital Founders?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Digital Founders es un programa de acompañamiento diseñado para ayudarte a lanzar tu negocio digital desde cero, sin experiencia previa. Te guiaré en todo el proceso: desde encontrar una idea con potencial, validarla con clientes reales, diseñar un modelo de negocio rentable, hasta implementar tu solución de forma práctica."
+				}
+			}, {
+				"@type": "Question",
+				"name": "¿Cuánto dura el curso Digital Founders?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "El programa Digital Founders tiene una duración de 8 semanas, durante las cuales cubrirás 7 módulos prácticos diseñados para lanzar tu negocio digital desde cero."
+				}
+			}, {
+				"@type": "Question",
+				"name": "¿Qué aprenderé en Digital Founders?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "En Digital Founders aprenderás a validar ideas, crear modelos de negocio, implementar estrategias de marketing digital, gestionar finanzas y operar tu negocio digital. El programa incluye 7 módulos prácticos con ejercicios reales y acompañamiento personalizado."
+				}
+			}, {
+				"@type": "Question",
+				"name": "¿Necesito experiencia previa para tomar Digital Founders?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "No, Digital Founders está diseñado para emprendedores que quieren empezar desde cero. No se requieren conocimientos previos, solo ganas de aprender y emprender."
+				}
+			}]
+		}
+		</script>
+
 		<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PBTHC5VK');</script>
-<!-- End Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PBTHC5VK');</script>
+		<!-- End Google Tag Manager -->
 	</head>
 	<body>
-	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<slot />
 	</body>
 </html>
@@ -48,7 +128,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 html, body {
     margin: 0;
     width: 100%;
-    height: 100%;
-    overflow-x: hidden; 
-	}
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 </style>

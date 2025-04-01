@@ -5,27 +5,29 @@ import HeroImage from '../assets/Hero.webp';
 ---
 
 <!-- Hero Section -->
-<section class="relative w-full h-screen flex items-center justify-start text-left text-[#2175a1] px-8 md:px-16">
-    <Image src={HeroImage} alt="Hero Background" class="absolute inset-0 w-full h-full object-cover object-center lg:object-[center_top] -z-10" preload />
+<section id="inicio" class="relative w-full h-screen flex items-center justify-start text-left text-[#2175a1] px-8 md:px-16">
+    <Image src={HeroImage} alt="Hero Background" class="absolute inset-0 w-full h-full object-cover object-center lg:object-[center_top] -z-10" />
     <div class="max-w-3xl">
         <!-- Título principal -->
-        <h1 class="text-4xl md:text-4xl font-extrabold leading-tight animate-fade-in">
-            Asesoría Estratégica para <br/> 
-            <span class="text-[#3ca6dd]"> Emprendedores y Creadores <br/> Digitales</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight animate-fade-in">
+            Digital Founders <br/> 
+            <span class="text-[#3ca6dd]">La guía práctica para lanzar tu negocio digital desde cero</span>
         </h1>
 
         <!-- Subtítulo -->
         <p class="mt-4 text-lg md:text-xl opacity-90">
-            Convierte tu idea en un negocio digital rentable con <br/> <span class="font-bold">estrategia, herramientas y claridad. </span>
+            Convierte tu idea en una startup real, sin perder tiempo ni dinero en el intento.
+            <br/>
+            Aprende paso a paso cómo validar, lanzar y hacer crecer tu negocio digital en 8 semanas.
         </p>
 
         <!-- CTA Buttons -->
         <div class="mt-8 flex flex-col gap-3 max-w-[300px]">
-            <a href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7" class="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105">
-                Agenda una sesión inicial 📌 
+            <a href="https://pay.hotmart.com/L98924437P" class="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105">
+                Unirme al programa 🚀
             </a>
-            <a href="#sobremi" class="w-full text-center bg-[#e6e6e6] font-bold py-3 px-6 rounded-lg border text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105">
-                Conoce más sobre mí 🔥
+            <a href="#journey" class="w-full text-center bg-[#e6e6e6] font-bold py-3 px-6 rounded-lg border text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105">
+                Conoce el programa 🔥
             </a>
         </div>
 
@@ -40,36 +42,4 @@ import HeroImage from '../assets/Hero.webp';
         </div>
     </div>
 </section>
-
-<!-- Script para el efecto de escritura -->
-<script defer>
-    const words = ["Gerentes de Producto", "Scrum Masters", "Equipos Ágiles", "Líderes Digitales"];
-    let index = 0, charIndex = 0, isDeleting = false;
-    const speed = 100, eraseSpeed = 100, delay = 1500;
-
-    function typeEffect() {
-        const textElement = document.getElementById("changing-text");
-        const currentWord = words[index];
-
-        if (!isDeleting) {
-            textElement.textContent = currentWord.slice(0, charIndex++);
-            if (charIndex > currentWord.length) {
-                isDeleting = true;
-                setTimeout(typeEffect, delay);
-                return;
-            }
-        } else {
-            textElement.textContent = currentWord.slice(0, charIndex--);
-            if (charIndex === 0) {
-                isDeleting = false;
-                index = (index + 1) % words.length;
-            }
-        }
-        setTimeout(typeEffect, isDeleting ? eraseSpeed : speed);
-    }
-
-    window.onload = () => {
-        setTimeout(typeEffect, 1000);
-    };
-</script>
 

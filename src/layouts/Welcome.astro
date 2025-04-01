@@ -1,0 +1,22 @@
+---
+import Layout from './Layout.astro';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import Journey from '../components/Journey';
+import Testimonials from '../components/Testimonials';
+import NextCohort from '../components/NextCohort';
+import BannerCTA from '../components/BannerCTA';
+import Footer from '../components/Footer';
+---
+
+<Layout>
+	<main>
+		<Hero />
+		<Services />
+		<Journey />
+		<Testimonials />
+		<NextCohort />
+		<BannerCTA />
+		<Footer client:load />
+	</main>
+</Layout> 

@@ -26,41 +26,37 @@ const About = () => {
             className="w-full pt-20 mb-20 px-8 md:px-16 flex items-center justify-center"
         >
             <div
-                className={`grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto transition-all duration-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
+                className={`grid grid-cols-1 md:grid-cols-3 gap-16 w-full max-w-7xl mx-auto transition-all duration-500 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-20"}`}
             >
                 <div className="md:col-span-2 flex flex-col justify-center">
                     <h2 className="text-4xl md:text-5xl font-extrabold text-[#2175a1] leading-tight">
-                        Sobre <span className="text-[#3ca6dd]">Mí</span>
+                        ¿Qué es <span className="text-[#3ca6dd]">Digital Founders</span>?
                     </h2>
                     <p className="mt-4 text-lg md:text-xl text-[#2175a1] opacity-90">
-                        Soy <span className="font-bold">Álvaro Villena</span>, emprendedor, consultor en estrategia e innovación y creador de Fidelidapp.
+                        Digital Founders es un programa de acompañamiento diseñado para ayudarte a lanzar tu negocio digital desde cero, sin experiencia previa. Te guiaré en todo el proceso: desde encontrar una idea con potencial, validarla con clientes reales, diseñar un modelo de negocio rentable, hasta implementar tu solución de forma práctica.
                         <br /> <br />
-                        Ayudo a emprendedores, freelancers y creadores de productos digitales a estructurar sus ideas, desarrollar modelos de negocio y lanzar servicios o apps con estrategia y validación.
+                        Este no es otro curso teórico: aquí trabajamos con herramientas reales, ejercicios aplicables y estrategias claras.
                     </p>
                     <ul className="mt-6 space-y-4 text-[#2175a1]">
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl"> +10 años creando y escalando negocios digitales</span>
+                            <span className="text-lg md:text-xl">Ideal para emprendedores que quieren empezar desde cero</span>
                         </li>
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl">Experiencia en corporaciones, startups, innovación y agilidad</span>
+                            <span className="text-lg md:text-xl">Freelancers y profesionales buscando crear su solución digital</span>
                         </li>
                         <li className="flex space-x-3">
                             <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl">Mentorías prácticas, personalizadas y basadas en ejecución</span>
-                        </li>
-                        <li className="flex space-x-3">
-                            <span className="text-[#fae713] text-2xl">✔️</span>
-                            <span className="text-lg md:text-xl">Ingeniero Civil Industrial, Master en Innovación y Emprendimiento</span>
+                            <span className="text-lg md:text-xl">Emprendedores que necesitan estructura y guía</span>
                         </li>
                     </ul>
                     <div className="mt-8">
                         <a
-                            href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7" class="w-full text-center bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
+                            href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7"
                             className="inline-block bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                         >
-                            Crea un negocio digital  🚀
+                            Inscríbete al programa  🚀
                         </a>
                     </div>
                 </div>
@@ -68,7 +64,7 @@ const About = () => {
                     <iframe
                         width="300"
                         height="530"
-                        src="https://www.youtube.com/embed/zJvc68qLQ9Y"
+                        src="https://youtube.com/embed/6NkaZ4ladjM?si=yR1UBYehk1P2DeR_"
                         title="YouTube video player"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
