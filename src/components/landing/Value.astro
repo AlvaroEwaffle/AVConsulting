@@ -1,0 +1,95 @@
+---
+interface ValuePoint {
+    icon: string;
+    title: string;
+    description: string;
+    value: number;
+}
+
+const valuePoints: ValuePoint[] = [
+    {
+        icon: "🎓",
+        title: "Programa Completo",
+        description: "7 módulos estructurados que cubren todo el proceso de emprendimiento digital, desde la idea hasta el lanzamiento. Un programa que normalmente cuesta miles de dólares en cursos y mentoría.",
+        value: 997
+    },
+    {
+        icon: "⚡",
+        title: "Ahorra Tiempo y Dinero",
+        description: "Evita años de prueba y error y miles de dólares en herramientas innecesarias. Aprende exactamente qué funciona y qué no en el emprendimiento digital.",
+        value: 500
+    },
+    {
+        icon: "🎯",
+        title: "Plan de Acción Personalizado",
+        description: "Desarrolla un plan de acción claro y específico para tu negocio. Recibe retroalimentación personalizada en cada paso del camino.",
+        value: 300
+    },
+    {
+        icon: "🤝",
+        title: "Mentoría Personalizada",
+        description: "Acceso directo a mentoría individual y sesiones de consultoría. Una sesión de consultoría individual tiene un valor de $150 USD.",
+        value: 400
+    },
+    {
+        icon: "💡",
+        title: "Herramientas y Recursos",
+        description: "Acceso a plantillas, guías y recursos premium que normalmente cuestan cientos de dólares. Todo incluido en el programa.",
+        value: 200
+    },
+    {
+        icon: "👥",
+        title: "Comunidad Exclusiva",
+        description: "Únete a una comunidad de emprendedores digitales y accede a networking valioso. La comunidad tiene un valor de $297 USD al mes.",
+        value: 100
+    }
+];
+
+const totalValue = valuePoints.reduce((sum, point) => sum + point.value, 0);
+const investmentValue = 60; // Valor del programa
+const savings = totalValue - investmentValue;
+---
+
+<section class="py-16 px-4 bg-gradient-to-br from-[#2175a1] to-[#3ca6dd] text-white rounded-xl mt-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            💎 El Valor Real del Programa
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            {valuePoints.map(point => (
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                    <h3 class="text-xl font-bold mb-4 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <span class="text-2xl mr-2">{point.icon}</span>
+                            {point.title}
+                        </div>
+                        <span class="text-lg font-semibold">${point.value} USD</span>
+                    </h3>
+                    <p class="text-white/90">
+                        {point.description}
+                    </p>
+                </div>
+            ))}
+        </div>
+
+        <div class="text-center bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+            <p class="text-2xl font-bold mb-4">
+                Valor Total: ${totalValue} USD
+            </p>
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t-2 border-white/20"></div>
+                </div>
+                <div class="relative flex justify-center text-xl">
+                    <span class="bg-gradient-to-br from-[#2175a1] to-[#3ca6dd] px-4 font-bold">
+                        Tu Inversión: ${investmentValue} USD
+                    </span>
+                </div>
+            </div>
+            <p class="mt-6 text-lg text-white/90">
+                Ahorras ${savings} USD en conocimiento y recursos valiosos
+            </p>
+        </div>
+    </div>
+</section> 
