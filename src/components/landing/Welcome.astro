@@ -1,0 +1,31 @@
+---
+import Hero from "./Hero.astro";
+import About from "./About.jsx";
+import Services from "./Services.jsx";
+import Journey from "./Journey.jsx";
+import Projects from "./Projects.jsx";
+import Contact from "./Contact.jsx";
+import BannerCTA from "./BannerCTA.jsx";
+import BlogPosts from "./BlogPosts.astro";
+import Footer from "./Footer.jsx";
+import NextCohort from "./NextCohort.jsx";
+import Testimonials from "./Testimonials.jsx";
+import '../../styles/global.css';
+---
+
+<html>
+  
+  <body>
+    <Hero />
+    <NextCohort />
+    <About client:load/>
+    <Services />
+    <Journey />
+    <BannerCTA />
+    <Testimonials />
+    <Contact client:load />
+    <Projects client:load />
+    <BlogPosts />
+    <Footer client:load />
+  </body>
+</html>

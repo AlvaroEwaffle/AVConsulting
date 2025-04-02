@@ -1,0 +1,36 @@
+---
+import { CheckCircle2 } from "lucide-react";
+
+interface Props {
+    class?: string;
+}
+
+const learningPoints = [
+    "Cómo encontrar una idea de negocio digital con potencial",
+    "Los errores más comunes al emprender online (y cómo evitarlos)",
+    "Casos reales de personas que partieron desde cero",
+    "Cómo validar tu idea sin gastar dinero",
+    "Herramientas simples para lanzar hoy"
+] as const;
+
+type LearningPoint = typeof learningPoints[number];
+
+---
+
+<section class="py-16 px-4 bg-gray-50 rounded-xl mt-8">
+    <div>
+        <h2 class="text-3xl font-bold text-[#2175a1] mb-8 text-center">
+            🧠 ¿Qué vas a aprender en esta clase gratuita?
+        </h2>
+        <div class="grid gap-3">
+            {
+                learningPoints.map((item) => (
+                    <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                        <span class="text-[#3ca6dd] mt-1 mr-3 flex-shrink-0">✓</span>
+                        <p class="text-gray-700">{item}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section> 

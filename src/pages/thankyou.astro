@@ -1,64 +1,83 @@
-<head>
-  <title>¡Gracias por tu mensaje! 🎉</title>
-  <meta http-equiv="refresh" content="5;url=/" />
-  <!-- Google tag (gtag.js) -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-N65SYS2FHY"></script>
-			<script>
-  			window.dataLayer = window.dataLayer || [];
-  			function gtag(){dataLayer.push(arguments);}
-  			gtag('js', new Date());
-  			gtag('config', 'G-N65SYS2FHY');
-		</script>
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 
-     <!-- Seguimiento de conversión de Google Ads -->
-    <script>
-    gtag('event', 'Form Submit', {
-      'send_to': 'AW-CONVERSION_ID', // Reemplaza con tu ID de conversión
-      'event_category': 'Formulario',
-      'event_label': 'Lead Contacto'
-    });
-  </script>
+const pageTitle = "¡Gracias por tu registro! 🎉";
+const pageDescription = "Tu registro ha sido confirmado. Te redirigiremos al sitio principal en unos segundos.";
+---
 
-
-</head>
-
-<section class="thankyou-container">
-  <div class="thankyou-card">
-    <h1>Gracias por contactarnos </h1>
-    <p>Hemos recibido tu mensaje y te responderemos lo antes posible.</p>
-    <p>Te redigiremos al sitio principal en unos segundos...</p>
-  </div>
-</section>
+<Layout title={pageTitle} description={pageDescription}>
+    <main class="w-full min-h-screen bg-[#f5f5f5] overflow-x-hidden">
+        <section class="thankyou-container">
+            <div class="thankyou-card">
+                <h1>¡Registro Exitoso! 🎉</h1>
+                <p class="mb-4">Hemos guardado tu cupo para la clase gratuita.</p>
+                <p class="mb-4">Revisa tu correo electrónico para más detalles sobre la clase.</p>
+                <p class="text-sm text-gray-600">Te redirigiremos al sitio principal en unos segundos...</p>
+            </div>
+        </section>
+    </main>
+</Layout>
 
 <script>
-  setTimeout(() => {
-    window.location.href = "/";
-  }, 4000);
+    // Google Analytics Event
+    declare global {
+        interface Window {
+            gtag: (...args: any[]) => void;
+            dataLayer: any[];
+        }
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+        window.dataLayer.push(args);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-N65SYS2FHY');
+
+    // Form Conversion Event
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11453117574/8nPbCPHB0ZMZEP2Oj7Yq',
+        'event_category': 'Formulario',
+        'event_label': 'Registro Clase Gratuita'
+    });
+
+    // Redirect after 5 seconds
+    setTimeout(() => {
+        window.location.href = "/";
+    }, 5000);
 </script>
 
 <style>
-  .thankyou-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-  }
+    .thankyou-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 1rem;
+    }
 
-  .thankyou-card {
-    text-align: center;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
+    .thankyou-card {
+        text-align: center;
+        background: white;
+        padding: 3rem;
+        border-radius: 1rem;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        max-width: 32rem;
+        width: 100%;
+    }
 
-  h1 {
-    color: #2175a1;
-  }
+    h1 {
+        color: #2175a1;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
 
-  p {
-    font-size: 1.2rem;
-    color: #333;
-  }
+    p {
+        font-size: 1.125rem;
+        color: #4a5568;
+        line-height: 1.6;
+    }
 </style>

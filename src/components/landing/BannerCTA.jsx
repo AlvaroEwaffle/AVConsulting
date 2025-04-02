@@ -12,7 +12,7 @@ export default function BannerCTA() {
                         Agenda una entrevista inicial gratuita de 30 minutos para evaluar si Digital Founders es el programa que necesitas para lanzar tu negocio digital.
                     </p>
                     <a
-                        href="https://calendly.com/alvarovillena/30min"
+                        href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#2175a1] rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"

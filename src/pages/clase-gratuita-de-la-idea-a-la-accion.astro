@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+import Hero from '../components/clase-gratuita/Hero.astro';
+import Narrative from '../components/clase-gratuita/Narrative.astro';
+import WhatYouLearn from '../components/clase-gratuita/WhatYouLearn.astro';
+import ForYou from '../components/clase-gratuita/ForYou.astro';
+import Value from '../components/clase-gratuita/Value.astro';
+import RegistrationForm from '../components/clase-gratuita/RegistrationForm.astro';
+import Banner from '../components/clase-gratuita/Banner.astro';
+import Footer from '../components/landing/Footer.jsx';
+
+const title = "De la Idea a la Acción: La clase gratuita para lanzar tu negocio digital";
+const description = "Aprende a validar tu idea de negocio digital y dar el primer paso con confianza.";
+
+---
+
+<Layout title={title} description={description}>
+    <section class="w-full min-h-screen bg-[#f5f5f5] overflow-x-hidden pt-16">
+        <main class="max-w-4xl mx-auto">
+            <Hero />
+            <Narrative />
+            <Value />
+            <WhatYouLearn />
+            <ForYou />
+            <RegistrationForm />
+        </main>
+    </section>
+    <Banner />
+    <Footer />
+</Layout> 

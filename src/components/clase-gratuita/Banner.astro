@@ -1,0 +1,111 @@
+---
+interface Props {
+    class?: string;
+}
+---
+
+<section class="fixed top-0 left-0 right-0 bg-[#2175a1] py-3 px-4 shadow-lg z-50">
+    <div class="max-w-6xl mx-auto">
+        <form id="bannerForm" class="flex flex-col md:flex-row items-center gap-2">
+            <p class="text-white font-bold text-base md:text-lg whitespace-nowrap">
+                ¡Reserva tu cupo ahora! 🎯
+            </p>
+            <div class="flex flex-col md:flex-row gap-2 flex-1 md:ml-4">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Tu Nombre"
+                    required
+                    class="flex-1 p-2 rounded-lg text-gray-700 bg-white placeholder-gray-500 text-sm border-0"
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Tu Email"
+                    required
+                    class="flex-1 p-2 rounded-lg text-gray-700 bg-white placeholder-gray-500 text-sm border-0"
+                />
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="WhatsApp"
+                    required
+                    class="flex-1 p-2 rounded-lg text-gray-700 bg-white placeholder-gray-500 text-sm border-0"
+                />
+                <button
+                    type="submit"
+                    class="px-6 py-2 bg-white text-[#2175a1] font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300 text-sm whitespace-nowrap flex items-center justify-center"
+                >
+                    Reservar →
+                </button>
+            </div>
+            <div id="mensajeBanner" class="text-center text-sm text-white absolute bottom-0 left-0 right-0 transform translate-y-full bg-red-500 py-1"></div>
+        </form>
+    </div>
+</section>
+
+<script>
+    const form = document.getElementById('bannerForm') as HTMLFormElement;
+    const mensajeDiv = document.getElementById('mensajeBanner');
+    const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const payload = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            accountId: "678e4df080622b7c255a9220",
+            tags: "Clase Gratuita"
+        };
+
+        try {
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Enviando...';
+            }
+
+            const response = await fetch("https://api.fidelidapp.cl/api/landing/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+                mode: 'cors'
+            });
+
+            if (response.ok) {
+                window.location.href = "/thankyou";
+            } else {
+                if (mensajeDiv) {
+                    mensajeDiv.textContent = "Error. Intenta nuevamente.";
+                    mensajeDiv.style.color = "#ff4444";
+                }
+            }
+        } catch (error) {
+            if (mensajeDiv) {
+                mensajeDiv.textContent = "Error de conexión.";
+                mensajeDiv.style.color = "#ff4444";
+            }
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Reservar →';
+            }
+        }
+    });
+
+
+
+
+</script>
+
+<style>
+    section {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    input:focus {
+        outline: 2px solid #3ca6dd;
+        outline-offset: -2px;
+    }
+</style> 
