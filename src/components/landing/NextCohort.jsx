@@ -23,7 +23,7 @@ export default function NextCohort() {
                         </div>
                     </div>
                     <a
-                        href="https://pay.hotmart.com/L98924437P"
+                        href="/clase-gratuita-de-la-idea-a-la-accion"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#2175a1] rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"

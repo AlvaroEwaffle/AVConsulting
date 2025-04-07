@@ -11,6 +11,7 @@ import Footer from "./Footer.jsx";
 import NextCohort from "./NextCohort.jsx";
 import Testimonials from "./Testimonials.jsx";
 import Value from "./Value.astro";
+import FreeClassCTA from "./FreeClassCTA.astro";
 import '../../styles/global.css';
 ---
 
@@ -18,11 +19,12 @@ import '../../styles/global.css';
   
   <body>
     <Hero />
-    <NextCohort />
+    
+    <FreeClassCTA />
     <About client:load/>
+    <NextCohort />
     <Value />
-    <Services />
-    <Journey />
+    <Journey client:load/>
     <BannerCTA />
     <Testimonials />
     <Contact client:load />

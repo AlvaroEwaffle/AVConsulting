@@ -1,15 +1,15 @@
 ---
-import { Instagram, Linkedin } from "lucide-react";
 import { Image } from 'astro:assets';
 import HeroImage from '../../assets/BlogCover.png';
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 
 ---
 <!-- Hero Section -->
-<section class="relative w-full h-auto flex flex-col items-start text-left text-[#2175a1] px-8 md:px-16 space-y-6">
-    <Image src={HeroImage} alt="Hero Background" class="absolute inset-0 w-full object-cover object-center lg:object-[center_top] -z-10" preload />
+<section class="relative w-full h-auto flex flex-col items-start text-left text-[#2175a1] px-8 md:px-16 space-y-6 ">
+    <Image src={HeroImage} alt="Hero Background" class="absolute inset-0 w-full object-cover object-center lg:object-[center_top] -z-10" />
 
     {/* Título principal */}
     <div class="bg-white p-6 rounded-lg shadow-lg mt-5 z-10">
@@ -17,18 +17,17 @@ const posts = await getCollection('blog');
     </div>
 
     {/* Blog destacado */}
-    <div class="bg-white p-6 rounded-lg shadow-lg mb-15 z-10">
-        <h2 class="text-3xl font-bold text-[#2175a1]">{posts[0].data.title}</h2>
-        <p class="mt-2 text-lg text-gray-700">{posts[0].data.description}</p>
-        <p class="text-sm text-gray-500">{new Date(posts[0].data.date).toLocaleDateString()}</p>
-        <a href={`/blog/${posts[0].slug}`} class="mt-4 inline-block bg-[#2175a1] text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-[#3ca6dd] transition">Leer más →</a>
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-10 z-10">
+        <h2 class="text-3xl font-bold text-[#2175a1]">{sortedPosts[0].data.title}</h2>
+        <p class="mt-2 text-lg text-gray-700">{sortedPosts[0].data.description}</p>
+        <p class="text-sm text-gray-500">{new Date(sortedPosts[0].data.date).toLocaleDateString()}</p>
+        <a href={`/blog/${sortedPosts[0].slug}`} class="mt-4 inline-block bg-[#2175a1] text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-[#3ca6dd] transition">Leer más →</a>
     </div>
 </section>
 
-
 <!-- Other Blog Posts -->
-<section class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-8 md:px-16 py-10 bg-[#2175a1] ">
-    {posts.slice(1, 4).map(post => (
+<section class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-8 md:px-16 py-10 bg-[#2175a1]">
+    {sortedPosts.slice(1).map(post => (
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-bold text-[#2175a1]">{post.data.title}</h3>
             <p class="mt-2 text-gray-700">{post.data.description}</p>
@@ -36,5 +35,4 @@ const posts = await getCollection('blog');
             <a href={`/blog/${post.slug}`} class="mt-4 inline-block text-[#2175a1] font-bold hover:underline">Leer más →</a>
         </div>
     ))}
-    
 </section>

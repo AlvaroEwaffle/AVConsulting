@@ -1,5 +1,5 @@
 ---
-import { Instagram, Linkedin } from "lucide-react";
+
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
@@ -20,7 +20,7 @@ const posts = await getCollection("blog");
     class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-8 md:px-16 py-10"
 >
     {
-        posts.slice(0, 3).map((post) => (
+        posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date)).slice(0, 3).map((post) => (
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-bold text-[#2175a1]">
                     {post.data.title}

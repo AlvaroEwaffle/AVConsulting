@@ -1,0 +1,52 @@
+---
+import { ArrowRight } from "lucide-react";
+---
+
+<section class="py-16 px-4 bg-gradient-to-br from-[#2175a1] to-[#3ca6dd] text-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Contenido */}
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Clase Gratuita: De la Idea a la Acción 🚀
+                </h2>
+                <p class="text-lg mb-6 opacity-90">
+                    Aprende los primeros pasos para transformar tu idea en un negocio digital exitoso. 
+                    Clase en vivo con Alvaro Villena.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4">
+                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
+                        <span class="text-2xl">📅</span>
+                        <div>
+                            <p class="font-bold">Miércoles 20 de Marzo</p>
+                            <p class="text-sm opacity-90">7:00 PM (CL/AR)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg">
+                        <span class="text-2xl">⏰</span>
+                        <div>
+                            <p class="font-bold">90 minutos</p>
+                            <p class="text-sm opacity-90">Clase en vivo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* CTA */}
+            <div class="flex-1 flex flex-col items-center md:items-end">
+                <a 
+                    href="/clase-gratuita-de-la-idea-a-la-accion"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="group bg-white text-[#2175a1] hover:bg-[#2175a1] hover:text-white transition-all duration-300 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl flex items-center gap-2"
+                >
+                    ¡Reserva tu Cupo Gratis!
+                    <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <p class="mt-4 text-white/80 text-sm">
+                    Cupos limitados • Inscripción gratuita
+                </p>
+            </div>
+        </div>
+    </div>
+</section> 

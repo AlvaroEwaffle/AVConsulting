@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
-import Hero from '../components/clase-gratuita/Hero.astro';
+import Hero from '../components/clase-gratuita/ClaseHero.astro';
 import Narrative from '../components/clase-gratuita/Narrative.astro';
 import WhatYouLearn from '../components/clase-gratuita/WhatYouLearn.astro';
 import ForYou from '../components/clase-gratuita/ForYou.astro';
@@ -19,7 +19,7 @@ const description = "Aprende a validar tu idea de negocio digital y dar el prime
     <section class="w-full min-h-screen bg-[#f5f5f5] overflow-x-hidden pt-16">
         <main class="max-w-4xl mx-auto">
             <Hero />
-            <Narrative client:load/>
+            <Narrative />
             <Value />
             <WhatYouLearn />
             <ForYou />

@@ -8,39 +8,51 @@ interface ValuePoint {
 
 const valuePoints: ValuePoint[] = [
     {
-        icon: "🎓",
-        title: "Programa Completo",
-        description: "7 módulos estructurados que cubren todo el proceso de emprendimiento digital, desde la idea hasta el lanzamiento. Un programa que normalmente cuesta miles de dólares en cursos y mentoría.",
-        value: 997
+        icon: "📊",
+        title: "Modelo de Negocio Digital",
+        description: "Desarrollo paso a paso de tu modelo de negocio digital, incluyendo validación de mercado, estructura de ingresos y estrategia de crecimiento. Incluye plantillas y herramientas exclusivas.",
+        value: 300
     },
     {
-        icon: "⚡",
-        title: "Ahorra Tiempo y Dinero",
-        description: "Evita años de prueba y error y miles de dólares en herramientas innecesarias. Aprende exactamente qué funciona y qué no en el emprendimiento digital.",
-        value: 500
+        icon: "⚙️",
+        title: "Estructuración de Operaciones",
+        description: "Guía completa para estructurar tus operaciones digitales: procesos, herramientas, automatización y métricas clave. Todo lo necesario para escalar tu negocio de manera eficiente.",
+        value: 250
     },
     {
         icon: "🎯",
         title: "Plan de Acción Personalizado",
-        description: "Desarrolla un plan de acción claro y específico para tu negocio. Recibe retroalimentación personalizada en cada paso del camino.",
+        description: "Desarrollo de un plan de acción detallado y específico para tu negocio, con hitos claros y estrategias personalizadas. Incluye revisiones y ajustes semanales.",
         value: 300
     },
     {
         icon: "🤝",
         title: "Mentoría Personalizada",
-        description: "Acceso directo a mentoría individual y sesiones de consultoría. Una sesión de consultoría individual tiene un valor de $150 USD.",
+        description: "Sesiones individuales de mentoría para resolver tus desafíos específicos. Acceso directo para consultas y feedback personalizado en cada etapa de tu proyecto.",
         value: 400
     },
     {
-        icon: "💡",
-        title: "Herramientas y Recursos",
-        description: "Acceso a plantillas, guías y recursos premium que normalmente cuestan cientos de dólares. Todo incluido en el programa.",
+        icon: "📱",
+        title: "Kit de Herramientas Digitales",
+        description: "Acceso a herramientas premium para gestión de proyectos, marketing, análisis de datos y automatización. Incluye guías de implementación y casos de uso.",
         value: 200
     },
     {
+        icon: "📈",
+        title: "Estrategia de Marketing Digital",
+        description: "Desarrollo de tu estrategia de marketing digital completa: desde branding hasta canales de adquisición y retención de clientes. Incluye plantillas y frameworks probados.",
+        value: 350
+    },
+    {
+        icon: "💰",
+        title: "Estructura Financiera",
+        description: "Guía para estructurar las finanzas de tu negocio digital: presupuesto, flujo de caja, métricas financieras y estrategias de monetización. Incluye plantillas y calculadoras.",
+        value: 250
+    },
+    {
         icon: "👥",
-        title: "Comunidad Exclusiva",
-        description: "Únete a una comunidad de emprendedores digitales y accede a networking valioso. La comunidad tiene un valor de $297 USD al mes.",
+        title: "Comunidad y Networking",
+        description: "Acceso a una comunidad exclusiva de emprendedores digitales, eventos de networking y masterminds grupales. Oportunidades de colaboración y aprendizaje continuo.",
         value: 100
     }
 ];
@@ -50,7 +62,7 @@ const investmentValue = 60; // Valor del programa
 const savings = totalValue - investmentValue;
 ---
 
-<section class="py-16 px-4 bg-gradient-to-br from-[#2175a1] to-[#3ca6dd] text-white rounded-xl mt-8">
+<section class="pt-0 pb-16 px-4 bg-gradient-to-r from-[#2175a1] to-[#3ca6dd] text-white">
     <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
             💎 El Valor Real del Programa
@@ -81,15 +93,19 @@ const savings = totalValue - investmentValue;
                 <div class="absolute inset-0 flex items-center">
                     <div class="w-full border-t-2 border-white/20"></div>
                 </div>
-                <div class="relative flex justify-center text-xl">
-                    <span class="bg-gradient-to-br from-[#2175a1] to-[#3ca6dd] px-4 font-bold">
-                        Tu Inversión: ${investmentValue} USD
-                    </span>
-                </div>
+                
             </div>
-            <p class="mt-6 text-lg text-white/90">
+            <p class="mt-6 text-3xl text-white/90">
                 Ahorras ${savings} USD en conocimiento y recursos valiosos
             </p>
+            <a 
+                href="https://pay.hotmart.com/L98924437P?bid=1744035789118" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-8 inline-block bg-white text-[#2175a1] hover:bg-[#2175a1] hover:text-white transition-all duration-300 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl"
+            >
+                ¡Inscríbete Ahora por ${investmentValue} USD!
+            </a>
         </div>
     </div>
 </section> 

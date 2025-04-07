@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+
 
 export default function BannerCTA() {
     return (
@@ -18,7 +18,7 @@ export default function BannerCTA() {
                         className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#2175a1] rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
                     >
                         Agendar llamada gratuita
-                        <ArrowRight className="ml-2 w-5 h-5" />
+                        {/* <ArrowRight className="ml-2 w-5 h-5" /> */}
                     </a>
                 </div>
             </div>
