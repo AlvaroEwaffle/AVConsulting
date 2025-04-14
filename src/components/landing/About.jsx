@@ -53,7 +53,7 @@ const About = () => {
                     </ul>
                     <div className="mt-8">
                         <a
-                            href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7"
+                            href="https://pay.hotmart.com/L98924437P"
                             className="inline-block bg-[#2175a1] text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-[#3ca6dd] transition-transform transform hover:scale-105"
                         >
                             Inscríbete al programa  🚀

@@ -9,9 +9,7 @@ export default function NextCohort() {
                         <Calendar className="w-5 h-5 mr-2 text-white" />
                         <span className="font-medium text-white">Próxima Cohorte</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Martes 29 de Abril, 2024
-                    </h2>
+                    
                     <div className="flex items-center justify-center space-x-4 mb-8">
                         <div className="flex items-center text-white/90">
                             <Users className="w-5 h-5 mr-2" />
@@ -23,7 +21,7 @@ export default function NextCohort() {
                         </div>
                     </div>
                     <a
-                        href="/clase-gratuita-de-la-idea-a-la-accion"
+                        href="https://pay.hotmart.com/L98924437P"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#2175a1] rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"

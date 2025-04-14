@@ -8,69 +8,69 @@ interface ValuePoint {
 
 const valuePoints: ValuePoint[] = [
     {
-        icon: "📊",
-        title: "Modelo de Negocio Digital",
-        description: "Desarrollo paso a paso de tu modelo de negocio digital, incluyendo validación de mercado, estructura de ingresos y estrategia de crecimiento. Incluye plantillas y herramientas exclusivas.",
-        value: 300
-    },
-    {
-        icon: "⚙️",
-        title: "Estructuración de Operaciones",
-        description: "Guía completa para estructurar tus operaciones digitales: procesos, herramientas, automatización y métricas clave. Todo lo necesario para escalar tu negocio de manera eficiente.",
-        value: 250
-    },
-    {
         icon: "🎯",
-        title: "Plan de Acción Personalizado",
-        description: "Desarrollo de un plan de acción detallado y específico para tu negocio, con hitos claros y estrategias personalizadas. Incluye revisiones y ajustes semanales.",
+        title: "Diagnóstico Personalizado",
+        description: "Un análisis profundo de tu negocio o idea, identificando oportunidades únicas y creando un plan de acción específico para tu éxito. Incluye sesión de estrategia 1:1.",
         value: 300
     },
     {
-        icon: "🤝",
-        title: "Mentoría Personalizada",
-        description: "Sesiones individuales de mentoría para resolver tus desafíos específicos. Acceso directo para consultas y feedback personalizado en cada etapa de tu proyecto.",
+        icon: "💡",
+        title: "Estrategia de Transformación",
+        description: "Desarrollo de tu hoja de ruta personalizada hacia el éxito digital. Te guiaré en cada paso, desde la conceptualización hasta la implementación de tu estrategia.",
         value: 400
     },
     {
-        icon: "📱",
-        title: "Kit de Herramientas Digitales",
-        description: "Acceso a herramientas premium para gestión de proyectos, marketing, análisis de datos y automatización. Incluye guías de implementación y casos de uso.",
-        value: 200
+        icon: "🚀",
+        title: "Mentoría Exclusiva",
+        description: "Sesiones individuales semanales para resolver tus desafíos específicos. Acceso directo para consultas y feedback personalizado en cada etapa de tu transformación.",
+        value: 500
     },
     {
-        icon: "📈",
-        title: "Estrategia de Marketing Digital",
-        description: "Desarrollo de tu estrategia de marketing digital completa: desde branding hasta canales de adquisición y retención de clientes. Incluye plantillas y frameworks probados.",
-        value: 350
-    },
-    {
-        icon: "💰",
-        title: "Estructura Financiera",
-        description: "Guía para estructurar las finanzas de tu negocio digital: presupuesto, flujo de caja, métricas financieras y estrategias de monetización. Incluye plantillas y calculadoras.",
+        icon: "⚡",
+        title: "Herramientas y Recursos",
+        description: "Acceso a herramientas premium y recursos exclusivos para acelerar tu crecimiento. Te enseñaré a dominar cada herramienta y maximizar su impacto en tu negocio.",
         value: 250
     },
     {
-        icon: "👥",
-        title: "Comunidad y Networking",
-        description: "Acceso a una comunidad exclusiva de emprendedores digitales, eventos de networking y masterminds grupales. Oportunidades de colaboración y aprendizaje continuo.",
-        value: 100
+        icon: "📈",
+        title: "Optimización de Procesos",
+        description: "Análisis y mejora de tus procesos actuales para maximizar la eficiencia y reducir costos. Implementación de automatizaciones y mejoras específicas para tu negocio.",
+        value: 350
+    },
+    {
+        icon: "🎓",
+        title: "Capacitación Personalizada",
+        description: "Entrenamiento específico para ti y tu equipo en las habilidades clave del emprendimiento digital. Aprenderás a pensar y actuar como un emprendedor digital exitoso.",
+        value: 300
+    },
+    {
+        icon: "💎",
+        title: "Seguimiento y Ajustes",
+        description: "Monitoreo continuo de tu progreso y ajustes estratégicos basados en resultados. Te aseguraré que cada paso te acerque más a tus objetivos.",
+        value: 400
+    },
+    {
+        icon: "🤝",
+        title: "Red de Contactos",
+        description: "Acceso a mi red personal de emprendedores y expertos digitales. Oportunidades de colaboración y conexiones estratégicas para tu negocio.",
+        value: 200
     }
 ];
 
 const totalValue = valuePoints.reduce((sum, point) => sum + point.value, 0);
-const investmentValue = 60; // Valor del programa
+const investmentValue = 60; // Valor de la consulta inicial
 const savings = totalValue - investmentValue;
 ---
 
 <section class="pt-0 pb-16 px-4 bg-gradient-to-r from-[#2175a1] to-[#3ca6dd] text-white">
     <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-            💎 El Valor Real del Programa
+            💎 El Valor de Trabajar Juntos
         </h2>
         
         <div class="grid md:grid-cols-2 gap-8 mb-12">
             {valuePoints.map(point => (
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold mb-4 flex items-center justify-between">
                         <div class="flex items-center">
                             <span class="text-2xl mr-2">{point.icon}</span>
@@ -93,18 +93,15 @@ const savings = totalValue - investmentValue;
                 <div class="absolute inset-0 flex items-center">
                     <div class="w-full border-t-2 border-white/20"></div>
                 </div>
-                
             </div>
             <p class="mt-6 text-3xl text-white/90">
-                Ahorras ${savings} USD en conocimiento y recursos valiosos
+                Comienza con una consulta gratuita de ${investmentValue} USD
             </p>
             <a 
-                href="https://pay.hotmart.com/L98924437P?bid=1744035789118" 
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://www.fidelidapp.cl/agendas/67abf2bbe7a1676842463da7" 
                 class="mt-8 inline-block bg-white text-[#2175a1] hover:bg-[#2175a1] hover:text-white transition-all duration-300 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl"
             >
-                ¡Inscríbete Ahora por ${investmentValue} USD!
+                ¡Agenda tu Consulta Gratuita!
             </a>
         </div>
     </div>
