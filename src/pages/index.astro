@@ -1,9 +1,19 @@
 ---
-import Welcome from '../components/landing/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Hero from '../components/Hero.astro';
+import TargetAudience from '../components/TargetAudience.astro';
+import Services from '../components/Services.astro';
+import LeadMagnet from '../components/LeadMagnet.astro';
+import AboutAuthor from '../components/AboutAuthor.astro';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Potencia tu rol con IA: el futuro del Product Management es ahora">
+	<main class="min-h-screen">
+		<Hero />
+		<TargetAudience />
+		<Services />
+		<LeadMagnet />
+		<AboutAuthor />
+	</main>
 </Layout>

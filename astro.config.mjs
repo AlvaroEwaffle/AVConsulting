@@ -9,5 +9,18 @@ export default defineConfig({
   site: 'https://alvarovillena.cl', // Replace with your actual site URL
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      fs: {
+        strict: false
+      }
+    }
   },
+  build: {
+    charset: 'utf8'
+  },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
+  }
 });

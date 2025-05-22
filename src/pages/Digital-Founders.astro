@@ -1,0 +1,33 @@
+---
+import Hero from "../components/digital-founders/Hero.astro";
+import About from "../components/digital-founders/About.jsx";
+import Services from "../components/digital-founders/Services.jsx";
+import Journey from "../components/digital-founders/Journey.jsx";
+import Projects from "../components/digital-founders/Projects.jsx";
+import Contact from "../components/digital-founders/Contact.jsx";
+import BannerCTA from "../components/digital-founders/BannerCTA.jsx";
+import BlogPosts from "../components/digital-founders/BlogPosts.astro";
+import Footer from "../components/digital-founders/Footer.jsx";
+import NextCohort from "../components/digital-founders/NextCohort.jsx";
+import Testimonials from "../components/digital-founders/Testimonials.jsx";
+import Value from "../components/digital-founders/Value.astro";
+import FreeClassCTA from "../components/digital-founders/FreeClassCTA.astro";
+import '../styles/global.css';
+---
+
+<html>
+  
+  <body>
+    <Hero />
+    <FreeClassCTA  />
+    <About client:load/>
+    <NextCohort />
+    <Services />
+    <Value />
+    <Testimonials />
+    <Projects client:load />
+    <BlogPosts />
+    <Contact client:load />
+    <Footer client:load />
+  </body>
+</html>
