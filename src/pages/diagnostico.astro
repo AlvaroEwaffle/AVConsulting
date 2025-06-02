@@ -1,0 +1,407 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Diagnóstico de Innovación - Álvaro Villena">
+  <!-- Hero Section -->
+  <section class="bg-white py-20">
+    <div class="container max-w-4xl mx-auto text-center">
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-6 mt-16"
+      >
+        Descubre en 3 minutos el nivel de innovación de tu empresa
+      </h1>
+      <p class="text-xl text-gray-600 mb-4">
+        Responde estas preguntas y recibe recomendaciones personalizadas para
+        impulsar la innovación en tu empresa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Diagnostic Form Section -->
+  <section class="bg-gray-50 py-16 md:py-6">
+    <div class="container max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center text-brand-blue">
+        Diagnóstico de Innovación
+      </h2>
+      <form id="diagnostic-form" class="space-y-8">
+        <!-- Pregunta 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            ¿Con qué frecuencia lanzan nuevos productos o mejoras?
+          </h3>
+          <div class="space-y-4">
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="frequency"
+                value="1"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+                required
+              />
+              <span class="text-gray-600">Menos de una vez al año</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="frequency"
+                value="2"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">1-2 veces al año</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="frequency"
+                value="3"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">3-4 veces al año</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="frequency"
+                value="4"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">5+ veces al año</span>
+            </label>
+          </div>
+        </div>
+        <!-- Pregunta 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            ¿El equipo comparte una visión clara de innovación?
+          </h3>
+          <div class="space-y-4">
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="vision"
+                value="1"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+                required
+              />
+              <span class="text-gray-600">No hay una visión definida</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="vision"
+                value="2"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600"
+                >La visión existe pero no es compartida</span
+              >
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="vision"
+                value="3"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600"
+                >La visión es clara pero no se implementa</span
+              >
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="vision"
+                value="4"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600"
+                >La visión es clara y se implementa activamente</span
+              >
+            </label>
+          </div>
+        </div>
+        <!-- Pregunta 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            ¿Qué tan fácil es implementar una nueva idea en tu empresa?
+          </h3>
+          <div class="space-y-4">
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="implementation"
+                value="1"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+                required
+              />
+              <span class="text-gray-600"
+                >Muy difícil, hay mucha resistencia</span
+              >
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="implementation"
+                value="2"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600"
+                >Difícil, requiere muchos trámites</span
+              >
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="implementation"
+                value="3"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">Moderado, hay algunos procesos</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="implementation"
+                value="4"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">Fácil, hay procesos ágiles</span>
+            </label>
+          </div>
+        </div>
+        <!-- Pregunta 4 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            ¿Cuántos procesos críticos están digitalizados?
+          </h3>
+          <div class="space-y-4">
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="digitalization"
+                value="1"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+                required
+              />
+              <span class="text-gray-600">Menos del 25%</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="digitalization"
+                value="2"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">25-50%</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="digitalization"
+                value="3"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">50-75%</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="digitalization"
+                value="4"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">Más del 75%</span>
+            </label>
+          </div>
+        </div>
+        <!-- Pregunta 5 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            ¿Cómo miden el éxito de la innovación?
+          </h3>
+          <div class="space-y-4">
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="metrics"
+                value="1"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+                required
+              />
+              <span class="text-gray-600">No hay métricas definidas</span>
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="metrics"
+                value="2"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600"
+                >Métricas básicas (ventas, costos)</span
+              >
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="metrics"
+                value="3"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600">Métricas de proceso y resultados</span
+              >
+            </label>
+            <label class="flex items-center space-x-3">
+              <input
+                type="radio"
+                name="metrics"
+                value="4"
+                class="h-4 w-4 text-brand-blue focus:ring-brand-blue"
+              />
+              <span class="text-gray-600"
+                >Sistema completo de KPIs de innovación</span
+              >
+            </label>
+          </div>
+        </div>
+        <!-- Pregunta 6 -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            Cuentanos sobre el estado actual de la innovación en tu equipo o
+            empresa
+          </h3>
+          <textarea
+            name="innovation-status"
+            placeholder="Escribe aquí"
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+            required></textarea>
+        </div>
+        <!-- Email Capture -->
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4 text-brand-blue">
+            Recibe tu diagnóstico detallado
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Déjanos tu correo y te enviaremos un reporte completo con
+            recomendaciones personalizadas.
+          </p>
+          <div class="space-y-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu correo electrónico"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"
+              required
+            />
+            <button
+              type="submit"
+              class="btn btn-primary text-lg py-4 px-8 w-full"
+            >
+              Obtener diagnóstico
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Results Section (Hidden by default) -->
+      <div id="results" class="hidden mt-12">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h2 class="text-2xl font-bold mb-6 text-brand-blue text-center">
+            Tu diagnóstico
+          </h2>
+          <div id="level" class="mb-8 text-center">
+            <h3 class="text-xl font-bold mb-2 text-brand-blue">
+              Nivel de innovación:
+            </h3>
+            <p class="text-3xl font-bold text-brand-blue" id="level-text"></p>
+          </div>
+          <div id="recommendations" class="space-y-6">
+            <h3 class="text-xl font-bold mb-4 text-brand-blue">
+              Recomendaciones:
+            </h3>
+            <ul id="recommendations-list" class="space-y-4">
+              <!-- Recommendations will be inserted here -->
+            </ul>
+          </div>
+          <div class="mt-8 text-center">
+            <a href="/contacto" class="btn btn-primary text-lg py-4 px-8">
+              Agenda una consulta gratuita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  (function() {
+    const win = window as any;
+    if (win['emailjs']) {
+      win['emailjs'].init("K-nZvIRLeVaUXubMu");
+    }
+  })();
+
+  const form = document.getElementById('diagnostic-form') as HTMLFormElement | null;
+  // Add id to the submit button for loading state
+  let submitButton = form?.querySelector('button[type="submit"]');
+  if (submitButton) submitButton.id = 'diagnostic-submit';
+  submitButton = document.getElementById('diagnostic-submit');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form || !submitButton) return;
+    const btn = submitButton as HTMLButtonElement;
+    const buttonText = btn.querySelector('span') || btn;
+    const buttonIcon = btn.querySelector('i');
+    const originalText = buttonText.textContent;
+    btn.disabled = true;
+    buttonText.textContent = 'Enviando...';
+    if (buttonIcon) buttonIcon.className = 'ri-loader-4-line ml-2 animate-spin';
+
+    try {
+      const formData = new FormData(form);
+      const answers = [
+        `Frecuencia: ${formData.get('frequency')}`,
+        `Visión: ${formData.get('vision')}`,
+        `Implementación: ${formData.get('implementation')}`,
+        `Digitalización: ${formData.get('digitalization')}`,
+        `Métricas: ${formData.get('metrics')}`,
+        `Estado innovación: ${formData.get('innovation-status')}`,
+        `Email: ${formData.get('email')}`
+      ].join('\n');
+      const templateParams = {
+        firstName: '',
+        lastName: '',
+        email: formData.get('email') || '',
+        phone: '',
+        company: '',
+        role: '',
+        services: '',
+        message: answers
+      };
+      const win = window as any;
+      if (win['emailjs']) {
+        await win['emailjs'].send(
+          'service_6fux8im',
+          'template_b6dnfrh',
+          templateParams
+        );
+      }
+      alert('¡Gracias por tu diagnóstico! Te contactaremos pronto.');
+      form.reset();
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el diagnóstico. Por favor, intenta nuevamente.');
+    } finally {
+      btn.disabled = false;
+      buttonText.textContent = originalText;
+      if (buttonIcon) buttonIcon.className = 'ri-send-plane-line ml-2';
+    }
+  });
+</script>
+

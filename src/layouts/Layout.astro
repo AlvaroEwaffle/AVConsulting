@@ -1,12 +1,15 @@
 ---
-import Icono from '../assets/icono.png';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import icono from '../assets/icono.png';
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "Descubre cómo integrar Inteligencia Artificial en tu día a día como Product Manager, emprendedor o líder de innovación." } = Astro.props;
+const { title, description = "Álvaro Villena - Consultoría en Innovación y Transformación Digital" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,8 +18,8 @@ const { title, description = "Descubre cómo integrar Inteligencia Artificial en
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={description} />
-		<link rel="icon" type="image/png" href="/icono.png" />
-		<title>{title}</title>
+		<link rel="icon" type="image/png" href={icono.src} />
+		<title>{title} | Álvaro Villena</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,13 +34,13 @@ const { title, description = "Descubre cómo integrar Inteligencia Artificial en
 		<meta property="og:description" content={description}>
 		<meta property="og:url" content="https://alvarovillena.cl">
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://alvarovillena.cl/icono.png">
+		<meta property="og:image" content={icono.src}>
 
 		<!-- Twitter Card Meta -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content={title}>
 		<meta name="twitter:description" content={description}>
-		<meta name="twitter:image" content="https://alvarovillena.cl/icono.png">
+		<meta name="twitter:image" content={icono.src}>
 
 		<!-- Schema.org Markup -->
 		<script type="application/ld+json">
@@ -127,12 +130,16 @@ const { title, description = "Descubre cómo integrar Inteligencia Artificial en
 		})(window,document,'script','dataLayer','GTM-PBTHC5VK');</script>
 		<!-- End Google Tag Manager -->
 	</head>
-	<body class="font-sans antialiased">
+	<body class="min-h-screen bg-white">
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
-		<slot />
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 

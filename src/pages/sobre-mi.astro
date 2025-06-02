@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/about.jpeg';
+---
+
+<Layout title="Sobre mí - Álvaro Villena">
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-blue-50">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="mb-6">
+          Sobre mí
+        </h1>
+        <p class="text-xl text-gray-600">
+          Consultor en innovación y transformación digital, especializado en ayudar a empresas a implementar metodologías ágiles y de innovación.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 md:py-24">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">
+            Mi historia
+          </h2>
+          <div class="prose prose-lg">
+            <p>
+              Con más de 10 años de experiencia en el mundo de la innovación y la transformación digital, he ayudado a numerosas empresas a implementar metodologías ágiles y de innovación, logrando resultados tangibles y sostenibles.
+            </p>
+            <p>
+              Mi enfoque se centra en entender las necesidades específicas de cada empresa y desarrollar soluciones personalizadas que impulsen la innovación y el crecimiento.
+            </p>
+            <p>
+              A lo largo de mi carrera, he trabajado con empresas de diversos tamaños y sectores, desde startups hasta grandes corporaciones, ayudándoles a adaptarse a los cambios del mercado y a desarrollar una cultura de innovación.
+            </p>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden">
+            <Image
+              src={aboutImage}
+              alt="Álvaro Villena"
+              class="object-cover w-full h-full"
+              width={600}
+              height={450}
+            />
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+            +10 años
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Áreas de expertise
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Innovación Estratégica</h3>
+          <p class="text-gray-600">
+            Desarrollo e implementación de estrategias de innovación personalizadas para empresas de todos los tamaños.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Transformación Digital</h3>
+          <p class="text-gray-600">
+            Guía en procesos de transformación digital, implementación de metodologías ágiles y mejora de procesos.
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Liderazgo y Coaching</h3>
+          <p class="text-gray-600">
+            Desarrollo de habilidades de liderazgo y coaching para equipos y ejecutivos en procesos de cambio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="py-16 md:py-24">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Certificaciones y formación
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Certificaciones</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Certified Scrum Master (CSM)</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Design Thinking Practitioner</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Lean Six Sigma Green Belt</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="text-xl font-bold mb-4">Formación académica</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>MBA en Innovación y Emprendimiento</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Ingeniería en Informática</span>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Certificación en Coaching Ejecutivo</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Lo que dicen mis clientes
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+              JD
+            </div>
+            <div class="ml-4">
+              <h3 class="font-bold">Juan Díaz</h3>
+              <p class="text-gray-600">CEO, TechCorp</p>
+            </div>
+          </div>
+          <p class="text-gray-600">
+            "Álvaro nos ayudó a implementar metodologías ágiles en nuestra empresa, lo que resultó en un aumento significativo de la productividad y la satisfacción del equipo."
+          </p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+              MP
+            </div>
+            <div class="ml-4">
+              <h3 class="font-bold">María Pérez</h3>
+              <p class="text-gray-600">Directora de Innovación, InnovateCo</p>
+            </div>
+          </div>
+          <p class="text-gray-600">
+            "Su enfoque personalizado y su profundo conocimiento en innovación nos permitieron transformar nuestra cultura empresarial y mejorar nuestros resultados."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 bg-blue-600 text-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center space-y-8">
+        <h2 class="text-3xl md:text-4xl font-bold">
+          ¿Listo para transformar tu empresa?
+        </h2>
+        <p class="text-xl text-blue-100">
+          Agenda una consulta gratuita y descubre cómo podemos ayudarte a implementar la innovación en tu empresa.
+        </p>
+        <a href="/contacto" class="btn bg-white text-blue-600 hover:bg-blue-50">
+          Agenda tu consulta
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout> 

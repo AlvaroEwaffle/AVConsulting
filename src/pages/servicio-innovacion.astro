@@ -1,0 +1,235 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WhyWorkWithMe from "../components/innovation/WhyWorkWithMe.astro";
+import ShapeUp from "../components/innovation/ShapeUp.astro";
+import Accompaniment from "../components/innovation/Accompaniment.astro";
+import WhoIsThisFor from "../components/innovation/WhoIsThisFor.astro";
+import Testimonial from "../components/innovation/Testimonial.astro";
+import FinalCTA from "../components/innovation/FinalCTA.astro";
+import "../styles/global.css";
+---
+
+<Layout
+    title="Servicio de Innovación - Álvaro Villena"
+    description="🚀 Transforma tu Empresa en 8 Semanas con nuestra Consultoría en Innovación"
+>
+    <!-- Hero Section -->
+    <section class="bg-white py-20">
+        <div class="container max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-6">
+                Lleva la Innovación en tu Equipo al Siguiente Nivel
+            </h1>
+            <p class="text-xl text-gray-600 mb-8">
+                Transforma ideas en resultados reales con un enfoque estratégico, ágil y probado basado en Shape Up.
+            </p>
+            <a 
+                href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220" 
+                class="btn btn-primary text-lg py-4 px-8 mx-auto"
+            >
+                Agenda una sesión de descubrimiento gratuita
+            </a>
+            <a 
+                href="/contacto" 
+                class="btn btn-secondary text-lg py-4 px-8 mx-auto mt-4"
+            >
+                Dejar mi información de contacto
+            </a>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-brand-blue mb-12">
+                ¿Para quién es este programa?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-brand-blue">Líderes de Innovación</h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Equipos con buenas ideas pero pocas en producción</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Falta de alineación entre áreas y equipos</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Cambios de rumbo y falta de foco</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-brand-blue">Líderes de Producto</h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Proyectos demorados por burocracia</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Resistencia al cambio en la organización</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Demasiado tiempo en reuniones</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-brand-blue">Líderes de Tecnología</h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Lanzar proyectos reales en tiempo y forma</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Claridad y estructura en la gestión</li>
+                        <li class="flex items-start gap-2"><span class="text-brand-blue">✓</span> Mantener motivación y alineación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Structure Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-brand-blue mb-12">
+                Estructura del Programa
+            </h2>
+            <div class="space-y-8">
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue">Sprint 0: Levantamiento del Backlog</h3>
+                        <p class="text-gray-600 mb-2">2 semanas de diagnóstico y documentación del backlog inicial.</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Backlog de Innovación</li>
+                            <li>Plan de Innovación</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue">Betting Table</h3>
+                        <p class="text-gray-600 mb-2">Sesión estratégica de priorización donde stakeholders y equipos de producto se alinean en las ideas más importantes.</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Proyectos priorizados</li>
+                            <li>Roadmap de Trabajo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue">Ciclo 1 - Shaping y Building</h3>
+                        <p class="text-gray-600 mb-2">8 semanas de desarrollo y refinamiento de ideas seleccionadas.</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Exploración y refinamiento de nuevas ideas</li>
+                            <li>Nuevos productos/features en producción</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="flex-shrink-0 w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-xl">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue">Golden Time</h3>
+                        <p class="text-gray-600 mb-2">2 semanas de presentación, retrospectiva y planificación del siguiente ciclo.</p>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Demo Day de Resultados</li>
+                            <li>Retrospectiva del ciclo</li>
+                            <li>Evaluación de continuidad</li>
+                            <li>Planificación del siguiente ciclo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shape Up Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brand-blue mb-6">¿Qué es Shape Up?</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Shape Up es un marco de trabajo diseñado para equipos que quieren innovar sin perderse en reuniones, cambios constantes o sprints agotadores. Combina estructura y flexibilidad para crear soluciones viables y alineadas estratégicamente.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-full text-center">
+                        <h3 class="font-bold text-brand-blue text-xl mb-2">Exploración guiada</h3>
+                        <p class="text-gray-600">Del problema a la solución con intención.</p>
+                    </div>
+                </div>
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-full text-center">
+                        <h3 class="font-bold text-brand-blue text-xl mb-2">Ciclos claros</h3>
+                        <p class="text-gray-600">Sin backlog eterno, con tiempos y entregables definidos.</p>
+                    </div>
+                </div>
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-full text-center">
+                        <h3 class="font-bold text-brand-blue text-xl mb-2">Autonomía real</h3>
+                        <p class="text-gray-600">Equipos que se hacen cargo del producto.</p>
+                    </div>
+                </div>
+                <div class="flex items-center bg-white p-6 rounded-lg shadow-sm">
+                    <div class="w-full text-center">
+                        <h3 class="font-bold text-brand-blue text-xl mb-2">Validación temprana</h3>
+                        <p class="text-gray-600">Se testea antes de construir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Me Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brand-blue mb-6">¿Por qué trabajar conmigo?</h2>
+            <p class="text-lg text-gray-600 mb-8">Con más de 10 años liderando procesos de transformación digital, agilidad y desarrollo de productos, te acompaño a estructurar la innovación en tu organización sin caer en la trampa del backlog infinito. Mi enfoque se basa en Shape Up, un marco que promueve foco, validación temprana y autonomía real del equipo.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start gap-3">
+                    <span class="text-brand-blue text-xl">✓</span>
+                    <p class="text-gray-600">Validación de soluciones antes de invertir en desarrollo</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-brand-blue text-xl">✓</span>
+                    <p class="text-gray-600">Eliminación de la parálisis por análisis</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-brand-blue text-xl">✓</span>
+                    <p class="text-gray-600">Equipos que toman decisiones con claridad y autonomía</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-brand-blue text-xl">✓</span>
+                    <p class="text-gray-600">Resultados medibles desde el primer ciclo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="container max-w-2xl mx-auto">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <blockquote class="text-lg text-gray-600 italic">
+                    "Gracias al acompañamiento de Álvaro y la implementación de Shape Up, nuestro equipo pasó de tener muchas ideas a ejecutar con claridad y foco."
+                    <footer class="mt-4 font-bold text-brand-blue">— Gerente de Innovación, We Techs</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 text-brand-blue">Inversión</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-lg inline-block">
+                <h3 class="text-2xl font-bold mb-4 text-brand-blue">Ciclo de Consultoría en Innovación</h3>
+                <p class="text-4xl font-bold text-brand-blue mb-6">5,820 USD</p>
+                <p class="text-gray-600 mb-8">12 semanas por ciclo (2 semanas golden time + 8 semanas ciclo)</p>
+                <ul class="space-y-4 mb-8 text-left">
+                    <li class="flex items-start gap-3"><span class="text-brand-blue">✓</span> 1 sesión presencial de 3 horas</li>
+                    <li class="flex items-start gap-3"><span class="text-brand-blue">✓</span> 1 sesión online por sprint de 2 horas tipo taller</li>
+                    <li class="flex items-start gap-3"><span class="text-brand-blue">✓</span> 1 sesión online por semana de 30min de seguimiento</li>
+                    <li class="flex items-start gap-3"><span class="text-brand-blue">✓</span> Acompañamiento vía chat/email continuo</li>
+                </ul>
+                <a 
+                    href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220" 
+                    class="btn btn-primary text-lg py-4 px-8 mx-auto"
+                >
+                    Quiero una sesión gratuita de diagnóstico
+                </a>
+                <a 
+                href="/contacto" 
+                class="btn btn-secondary text-lg py-4 px-8 mx-auto mt-4"
+            >
+                Dejar mi información de contacto
+            </a>
+            </div>
+        </div>
+    </section>
+</Layout>

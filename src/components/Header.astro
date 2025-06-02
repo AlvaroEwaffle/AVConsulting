@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import icono from '../assets/icono.png';
+
+const navItems = [
+  { href: '/', text: 'Inicio' },
+  { href: '/servicio-innovacion', text: 'Programa Innovación Empresarial' },
+  { href: '/programa-golden-time', text: 'Proceso Coaching Individual' },
+  { href: '/contacto', text: 'Contacto' },
+];
+---
+
+<header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <Image src={icono} alt="Álvaro Villena" class="h-8 w-auto" />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-gray-600 hover:text-[#2175a1] transition-colors"
+          >
+            {item.text}
+          </a>
+        ))}
+        <a
+          href="/diagnostico"
+          class="px-6 py-2 rounded-full transition-colors text-white"
+          style="background-color: #2175a1;"
+        >
+          Realiza un diagnóstico online gratis
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden p-2"
+        id="mobile-menu-button"
+        aria-label="Toggle menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div
+      class="hidden md:hidden"
+      id="mobile-menu"
+    >
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="block px-3 py-2 text-gray-600 hover:text-[#2175a1] transition-colors"
+          >
+            {item.text}
+          </a>
+        ))}
+        <a
+          href="/diagnostico"
+          class="block px-3 py-2 rounded-lg transition-colors text-white text-center"
+          style="background-color: #2175a1;"
+        >
+          Solicita tu diagnóstico
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script> 

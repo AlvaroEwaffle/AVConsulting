@@ -1,9 +1,19 @@
 ---
+import { Image } from 'astro:assets';
+import HeroImage from '../../assets/Covers/CoverHeroCoaching.png';
 // No imports needed for Hero component as we're using emoji instead of Lucide icons
 ---
 
 <section class="relative pt-20 pb-16 px-4">
-    <div class="text-center">
+    <div class="absolute inset-0">
+        <Image 
+            src={HeroImage} 
+            alt="Hero Background" 
+            class="w-full h-full object-cover object-top opacity-20"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#f5f5f5] via-[#f5f5f5]/90 to-[#f5f5f5]"></div>
+    </div>
+    <div class="text-center relative z-10">
         <span
             class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6"
         >

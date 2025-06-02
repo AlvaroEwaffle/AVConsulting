@@ -1,19 +1,640 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import TargetAudience from '../components/TargetAudience.astro';
-import Services from '../components/Services.astro';
-import LeadMagnet from '../components/LeadMagnet.astro';
-import AboutAuthor from '../components/AboutAuthor.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Hero from "../components/Hero.astro";
+import TargetAudience from "../components/TargetAudience.astro";
+import Services from "../components/Services.astro";
+import LeadMagnet from "../components/LeadMagnet.astro";
+import AboutAuthor from "../components/AboutAuthor.astro";
+import "../styles/global.css";
+import LandingHeroCover from "../assets/Covers/LandingHeroCover.png";
+import HeroImage from "../assets/Hero01Jun.jpg";
 ---
 
-<Layout title="Potencia tu rol con IA: el futuro del Product Management es ahora">
-	<main class="min-h-screen">
-		<Hero />
-		<TargetAudience />
-		<Services />
-		<LeadMagnet />
-		<AboutAuthor />
-	</main>
+<Layout
+	title="Álvaro Villena - Consultoría en Innovación y Transformación Digital"
+>
+	<!-- Hero Section -->
+	<section class="pt-32 pb-4 md:pt-40 md:pb-24">
+		<div class="container">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+				<div class="space-y-4">
+					<h1 class="animate-fade-in text-brand-blue">
+						¿Frustrado porque tus ideas nunca llegan a producción?
+					</h1>
+					<p class="text-xl text-gray-600">
+						Te acompaño a salir del estancamiento y transformar tu
+						equipo con Shape Up, la metodología de agilidad de
+						última generación.
+						<br /><br />
+						Trabajemos juntos para alinear a todos, acelerar resultados
+						y lanzar proyectos reales en  8 semanas.
+					</p>
+					<div class="flex flex-col gap-4">
+						<a href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220" class="btn btn-primary text-lg py-4">
+							Agendar Sesión Inicial Gratis
+						</a>
+						<!--
+						<div class="flex flex-col sm:flex-row gap-4">
+							<a href="/servicio-innovacion" class="btn btn-outline flex-1">
+								Servicio de Innovación
+							</a>
+							<a href="/programa-golden-time" class="btn btn-outline flex-1">
+								Programa Golden Time
+							</a>
+						</div>
+						-->
+					</div>
+				</div>
+				<div class="relative">
+					<Image
+						src={LandingHeroCover}
+						alt="Álvaro Villena - Consultoría en Innovación"
+						class="rounded-2xl shadow-xl"
+						width={600}
+						height={400}
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- MinimalServices Grid -->
+	<section class="py-16 md:py-12">
+		<div class="container">
+
+		  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+			<!-- Servicio de Innovación -->
+			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+			  
+			  <h2 class="text-2xl font-bold mb-4">Innovación Empresarial</h2>
+			  <p class="text-gray-600 mb-6">
+				¿Tu empresa o equipo necesitan alinearse, acelerar resultados y lanzar proyectos reales? <br>
+				He diseñado un programa de innovación empresarial que te ayudará a acelerar resultados y lanzar proyectos reales en 8 semanas.
+			  </p>
+			  
+			  <a href="/servicio-innovacion" class="btn btn-primary">
+				Me interesa
+			  </a>
+			</div>
+	
+			<!-- Programa Golden Time -->
+			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+			  
+			  <h2 class="text-2xl font-bold mb-4">Coaching Individual</h2>
+			  <p class="text-gray-600 mb-6">
+				¿Quieres definir tu norte, eliminar el ruido y ejecutar con propósito? <br>
+				En este proceso de coaching te acompaño a explorar qué y cómo alcanzar tus metas.
+			  </p>
+			  
+			  <a href="/programa-golden-time" class="btn btn-primary">
+				Quiero saber más
+			  </a>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	<!-- Pain Points -->
+	<section class="py-16 md:py-12">
+		<div class="container">
+			<h2 class="text-center mb-6 text-brand-blue">
+				¿Te identificas con alguno de estos desafíos?
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div
+					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+				>
+					<div
+						class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
+						style="background-color: #2175a1;"
+					>
+						<svg
+							class="w-6 h-6 text-blue-600"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							style="color: #ffffff;"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-4">
+						¿Te frena la burocracia interna?
+					</h3>
+					<p class="text-gray-600">
+						Los procesos lentos y la resistencia al cambio están
+						impidiendo que tu equipo innove y crezca.
+					</p>
+				</div>
+				<div
+					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+				>
+					<div
+						class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
+						style="background-color: #2175a1;"
+					>
+						<svg
+							class="w-6 h-6 text-blue-600"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							style="color: #fff;"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-4">
+						¿Falta alineación entre áreas?
+					</h3>
+					<p class="text-gray-600">
+						Los silos departamentales están impidiendo la
+						colaboración y la innovación transversal.
+					</p>
+				</div>
+				<div
+					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+				>
+					<div
+						class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
+						style="background-color: #2175a1;"
+					>
+						<svg
+							class="w-6 h-6 text-blue-600"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							style="color: #fff;"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-4">
+						¿Te cuesta lanzar productos innovadores?
+					</h3>
+					<p class="text-gray-600">
+						Las ideas se quedan en el papel y no logras materializar
+						la innovación en productos exitosos.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Value Proposition Mejorada -->
+	<section class="py-16 md:py-12" style="background-color: #2175a1;">
+		<div class="container">
+			<h2 class="text-center mb-4 text-3xl font-bold text-white">¿Cómo te ayudo a superar estos desafíos?</h2>
+			<p class="text-center text-xl text-white mb-12 max-w-2xl mx-auto">
+				No solo identifico los obstáculos de tu empresa, sino que te acompaño con un método probado para resolverlos y lograr resultados reales en semanas.
+			</p>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="text-center">
+					<div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: #fff;">
+						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #2175a1;">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-2 text-white">Acelera tu innovación</h3>
+					<p class="text-white">
+						Implementamos metodologías ágiles que eliminan la burocracia y aceleran el lanzamiento de tus ideas.
+					</p>
+				</div>
+				<div class="text-center">
+					<div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: #fff;">
+						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #2175a1;">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-2 text-white">Alinea a tu equipo</h3>
+					<p class="text-white">
+						Rompemos los silos y creamos una cultura de colaboración y foco en objetivos comunes.
+					</p>
+				</div>
+				<div class="text-center">
+					<div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: #fff;">
+						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #2175a1;">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-2 text-white">Mide resultados en semanas</h3>
+					<p class="text-white">
+						Definimos KPIs claros y te ayudo a ver resultados tangibles rápidamente, no solo promesas.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Grid -->
+	<section class="py-16 md:py-12">
+		<div class="container">
+			<h2 class="text-center mb-6 text-brand-blue">
+				Conoce nuestros servicios
+			</h2>
+		  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+			<!-- Servicio de Innovación -->
+			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+			  <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
+				style="background-color: #2175a1;">
+				<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+				</svg>
+			  </div>
+			  <h2 class="text-2xl font-bold mb-4">Programa de Innovación Empresarial</h2>
+			  <p class="text-gray-600 mb-6">
+				Transforma tu empresa en 8 semanas con un programa completo de innovación que incluye:
+			  </p>
+			  <ul class="space-y-3 mb-8">
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Diagnóstico profundo de tu situación actual</span>
+				</li>
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Talleres de diseño estratégico</span>
+				</li>
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Implementación guiada de metodologías</span>
+				</li>
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Coaching y reflexión continua</span>
+				</li>
+			  </ul>
+			  <a href="/servicio-innovacion" class="btn btn-primary">
+				Conoce más
+			  </a>
+			</div>
+	
+			<!-- Programa Golden Time -->
+			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+			  <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
+				style="background-color: #2175a1;">
+				<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+				</svg>
+			  </div>
+			  <h2 class="text-2xl font-bold mb-4">Programa Coaching Individual</h2>
+			  <p class="text-gray-600 mb-6">
+				Un programa de 8 semanas para que Product Leaders definan su norte, eliminen el ruido y ejecuten con propósito:
+			  </p>
+			  <ul class="space-y-3 mb-8">
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Definición clara de objetivos y prioridades</span>
+				</li>
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Eliminación de distracciones y ruido</span>
+				</li>
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Desarrollo de hábitos productivos</span>
+				</li>
+				<li class="flex items-start space-x-3">
+				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  <span>Ejecución enfocada y resultados medibles</span>
+				</li>
+			  </ul>
+			  <a href="/programa-golden-time" class="btn btn-primary">
+				Conoce más
+			  </a>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	<!-- Guarantee Banner -->
+	<section class="bg-blue-50 py-16">
+		<div class="container">
+			<div class="max-w-3xl mx-auto text-center space-y-6">
+				<h2 class="text-3xl font-bold">
+					¿Te cuesta poner foco en la innovación?
+				</h2>
+				<p class="text-xl text-gray-600">
+					Te regalo el proceso de pre-shaping: en un Sprint 0 de 2
+					semanas, generamos juntos tu backlog de ideas priorizadas,
+					listas para transformar tu empresa.
+				</p>
+				<p class="text-lg font-semibold text-blue-600">
+					Inversión: $970 USD
+				</p>
+				<p class="text-gray-600">
+					Si no obtienes claridad y foco en tu roadmap, te devuelvo el
+					dinero. Así de seguro estoy en mi método.
+				</p>
+				<a href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220" class="btn btn-primary">
+					Agendar Sesión Exploratoria Gratis
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="py-16 md:py-24">
+		<div class="container">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+				<div class="relative">
+					<Image
+						src={HeroImage}
+						alt="Álvaro Villena"
+						class="rounded-2xl shadow-xl w-full h-full  max-h-[500px] object-cover"
+					/>
+				</div>
+				<div class="space-y-6">
+					<h2 class="text-center mb-6 text-brand-blue">Sobre mí</h2>
+					<p class="text-lg text-gray-600">
+						Conozco de cerca los desafíos que enfrentas liderando producto o tecnología en una empresa mediana: 
+						prioridades cambiantes, presión por resultados y equipos que a veces tiran para distintos lados.
+					</p>
+					<p class="text-lg text-gray-600">
+						Soy consultor en innovación y transformación digital con
+						más de 10 años de experiencia en terreno, ayudando a
+						líderes como tú a implementar metodologías ágiles y de
+						innovación que no solo suenan bien en teoría, sino que
+						funcionan en la realidad latinoamericana.
+					</p>
+					<p class="text-lg text-gray-600">
+						He acompañado a más de 50 empresas y equipos a salir del
+						estancamiento, ordenar su roadmap y llevar ideas a
+						producción, alineando a todos en ciclos claros y
+						alcanzables.
+					</p>
+					<p class="text-lg text-gray-600">
+						Mi compromiso es ser tu aliado: aporto método,
+						experiencia y una mirada externa honesta para que logres
+						resultados tangibles, sin perder el foco humano ni la
+						esencia de tu equipo.
+					</p>
+					<a href="https://www.linkedin.com/in/alvarovillena/" class="btn btn-outline">
+						Conoce más sobre mí
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	
+
+	<!-- Testimonials 
+	<section class="py-16 md:py-24">
+		<div class="container">
+			<h2 class="text-center mb-12">Lo que dicen mis clientes</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="bg-white p-8 rounded-2xl shadow-lg">
+					<div class="flex items-center mb-6">
+						<img
+							src="/testimonial-1.jpg"
+							alt="Cliente 1"
+							class="w-12 h-12 rounded-full mr-4"
+						/>
+						<div>
+							<h4 class="font-bold">María González</h4>
+							<p class="text-gray-600">CEO, Empresa Tech</p>
+						</div>
+					</div>
+					<p class="text-gray-600">
+						"Álvaro nos ayudó a transformar nuestra cultura de
+						innovación. En 3 meses logramos lanzar 2 nuevos
+						productos que generaron un 30% más de ingresos."
+					</p>
+				</div>
+				<div class="bg-white p-8 rounded-2xl shadow-lg">
+					<div class="flex items-center mb-6">
+						<img
+							src="/testimonial-2.jpg"
+							alt="Cliente 2"
+							class="w-12 h-12 rounded-full mr-4"
+						/>
+						<div>
+							<h4 class="font-bold">Juan Pérez</h4>
+							<p class="text-gray-600">CTO, Startup Fintech</p>
+						</div>
+					</div>
+					<p class="text-gray-600">
+						"La metodología de Álvaro nos permitió reducir nuestro
+						time-to-market en un 40%. Ahora somos más ágiles y
+						eficientes."
+					</p>
+				</div>
+				<div class="bg-white p-8 rounded-2xl shadow-lg">
+					<div class="flex items-center mb-6">
+						<img
+							src="/testimonial-3.jpg"
+							alt="Cliente 3"
+							class="w-12 h-12 rounded-full mr-4"
+						/>
+						<div>
+							<h4 class="font-bold">Ana Martínez</h4>
+							<p class="text-gray-600">
+								Product Manager, E-commerce
+							</p>
+						</div>
+					</div>
+					<p class="text-gray-600">
+						"Gracias a Álvaro, logramos alinear a todo el equipo en
+						torno a la innovación. La colaboración entre áreas
+						mejoró significativamente."
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>-->
+
+	<!-- CTA Section -->
+	<section class="py-16 md:py-24 bg-blue-600 text-white" style="background-color: #2175a1;">
+		<div class="container">
+			<div class="max-w-3xl mx-auto text-center space-y-8">
+				<h2 class="text-3xl md:text-4xl font-bold">
+					¿No sabes por dónde empezar?
+				</h2>
+				<p class="text-xl text-blue-100">
+					Haz tu diagnóstico gratuito y descubre cómo podemos ayudarte
+					a transformar tu empresa.
+				</p>
+				<a
+					href="/diagnostico"
+					class="btn bg-white text-brand-blue hover:bg-blue-700"
+				>
+					Haz tu diagnóstico aquí
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section class="py-16 md:py-24 bg-gray-50">
+		<div class="container">
+		  <h2 class="text-center mb-12 text-brand-blue">
+			Preguntas Frecuentes
+		  </h2>
+		  <div class="max-w-3xl mx-auto space-y-6">
+			<div class="bg-white p-6 rounded-lg shadow">
+			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Cuál es la diferencia entre ambos programas?</h3>
+			  <p class="text-gray-600">
+				El Servicio de Innovación está diseñado para equipos y empresas que buscan transformar su cultura de innovación, mientras que el Programa Golden Time está enfocado en líderes de producto que quieren optimizar su tiempo y resultados.
+			  </p>
+			</div>
+			<div class="bg-white p-6 rounded-lg shadow">
+			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Qué tamaño de empresa es ideal para estos servicios?</h3>
+			  <p class="text-gray-600">
+				El Servicio de Innovación es ideal para empresas medianas (5-100 empleados), mientras que el Programa Golden Time es perfecto para líderes de producto en empresas de cualquier tamaño.
+			  </p>
+			</div>
+			<div class="bg-white p-6 rounded-lg shadow">
+			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Ofrecen garantía de resultados?</h3>
+			  <p class="text-gray-600">
+				Sí, ambos programas incluyen garantía de satisfacción. Si no ves resultados significativos en el plazo acordado, te devolvemos tu inversión.
+			  </p>
+			</div>
+			<div class="bg-white p-6 rounded-lg shadow">
+			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Cómo se mide el éxito del programa?</h3>
+			  <p class="text-gray-600">
+				Establecemos objetivos claros desde el inicio, adaptados a cada programa. Para el Servicio de Innovación medimos métricas de innovación y resultados de negocio, mientras que para Golden Time nos enfocamos en productividad y logro de objetivos.
+			  </p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	
+	<!-- Free Resources 
+	<section class="py-16 md:py-24 bg-gray-50">
+		<div class="container">
+			<h2 class="text-center mb-12">
+				Recursos gratuitos para tu empresa
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div
+					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+				>
+					<div
+						class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+					>
+						<svg
+							class="w-6 h-6 text-primary"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-4">Guía de Innovación</h3>
+					<p class="text-gray-600 mb-6">
+						Descarga nuestra guía gratuita sobre cómo implementar la
+						innovación en medianas empresas.
+					</p>
+					<a
+						href="/recursos#guias"
+						class="text-primary font-semibold hover:text-primary/700"
+					>
+						Descargar guía →
+					</a>
+				</div>
+				<div
+					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+				>
+					<div
+						class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+					>
+						<svg
+							class="w-6 h-6 text-primary"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-4">Webinars</h3>
+					<p class="text-gray-600 mb-6">
+						Accede a nuestros webinars sobre innovación, agilidad y
+						transformación digital.
+					</p>
+					<a
+						href="/recursos#webinars"
+						class="text-primary font-semibold hover:text-primary/700"
+					>
+						Ver webinars →
+					</a>
+				</div>
+				<div
+					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+				>
+					<div
+						class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
+					>
+						<svg
+							class="w-6 h-6 text-primary"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+							></path>
+						</svg>
+					</div>
+					<h3 class="text-xl font-bold mb-4">Checklist</h3>
+					<p class="text-gray-600 mb-6">
+						Evalúa el nivel de innovación de tu empresa con nuestro
+						checklist gratuito.
+					</p>
+					<a
+						href="/recursos#checklist"
+						class="text-primary font-semibold hover:text-primary/700"
+					>
+						Descargar checklist →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>-->
 </Layout>
