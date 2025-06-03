@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import WhyWorkWithMe from "../components/innovation/WhyWorkWithMe.astro";
+// import WhyWorkWithMe from "../components/innovation/WhyWorkWithMe.astro";
 import ShapeUp from "../components/innovation/ShapeUp.astro";
 import Accompaniment from "../components/innovation/Accompaniment.astro";
 import WhoIsThisFor from "../components/innovation/WhoIsThisFor.astro";
-import Testimonial from "../components/innovation/Testimonial.astro";
-import FinalCTA from "../components/innovation/FinalCTA.astro";
+// import Testimonial from "../components/innovation/Testimonial.astro";
+// import FinalCTA from "../components/innovation/FinalCTA.astro";
 import "../styles/global.css";
 ---
 
@@ -15,28 +15,45 @@ import "../styles/global.css";
 >
     <!-- Hero Section -->
     <section class="bg-white py-20">
-        <div class="container max-w-4xl mx-auto text-center">
-            <h1
-                class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-6"
-            >
-                Lleva la Innovación en tu Equipo al Siguiente Nivel
-            </h1>
-            <p class="text-xl text-gray-600 mb-8">
-                Transforma ideas en resultados reales con un enfoque
-                estratégico, ágil y probado basado en Shape Up.
-            </p>
-            <a
-                href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220"
-                class="btn btn-primary text-lg py-4 px-8 mx-auto"
-            >
-                Agenda una sesión de descubrimiento gratuita
-            </a>
-            <a
-                href="/contacto"
-                class="btn btn-secondary text-lg py-4 px-8 mx-auto mt-4"
-            >
-                Dejar mi información de contacto
-            </a>
+        <div class="container max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:items-stretch justify-between gap-10 min-h-[32rem]">
+                <!-- Left: Text and Buttons -->
+                <div class="flex-1 flex flex-col justify-center text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-6">
+                        Lleva la Innovación en tu Equipo al Siguiente Nivel
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Transforma ideas en resultados reales con un enfoque estratégico, ágil y probado basado en Shape Up.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 md:gap-6 md:justify-start justify-center">
+                        <a
+                            href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220"
+                            class="btn btn-primary text-lg py-4 px-8"
+                        >
+                            Agenda una sesión de descubrimiento gratuita
+                        </a>
+                        <a
+                            href="/contacto"
+                            class="btn btn-secondary text-lg py-4 px-8"
+                        >
+                            Dejar mi información de contacto
+                        </a>
+                    </div>
+                </div>
+                <!-- Right: Video -->
+                <div class="flex-1 flex justify-center md:justify-end mt-10 md:mt-0">
+                    <div class="w-full max-w-xs md:max-w-sm aspect-[9/16] rounded-xl overflow-hidden shadow-lg">
+                        <iframe
+                            src="https://www.youtube.com/embed/NsuggKZWmk8?autoplay=1&mute=1&playsinline=1"
+                            title="Video Sales Letter"
+                            frameborder="0"
+                            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
