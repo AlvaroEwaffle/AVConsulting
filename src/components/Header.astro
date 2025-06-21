@@ -4,13 +4,16 @@ import icono from '../assets/icono.png';
 
 const navItems = [
   { href: '/', text: 'Inicio' },
-  { href: '/servicio-innovacion', text: 'Programa Innovación Empresarial' },
-  { href: '/programa-golden-time', text: 'Proceso Coaching Individual' },
-  { href: '/contacto', text: 'Contacto' },
+  { href: '#que-hago', text: '¿Qué hago?' },
+  { href: '#mi-historia', text: 'Mi historia' },
+  { href: '#servicios', text: 'Servicios' },
+  { href: '#mi-metodo', text: 'Mi método' },
+  { href: '#quien-soy', text: '¿Quién soy?' },
+  { href: '#mis-negocios', text: 'Mis negocios' },
 ];
 ---
 
-<header class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+<header class="fixed w-full bg-blue-600 text-white z-50 border-b border-gray-100 shadow-lg" style="background-color: #2175a1;">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
@@ -23,23 +26,22 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="text-gray-600 hover:text-[#2175a1] transition-colors"
+            class="text-white hover:text-blue-200 transition-colors"
           >
             {item.text}
           </a>
         ))}
         <a
-          href="/diagnostico"
-          class="px-6 py-2 rounded-full transition-colors text-white"
-          style="background-color: #2175a1;"
+          href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220"
+          class="px-4 py-2 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-colors font-medium"
         >
-          Realiza un diagnóstico online gratis
+          Agendar llamada
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
       <button
-        class="md:hidden p-2"
+        class="md:hidden p-2 text-white"
         id="mobile-menu-button"
         aria-label="Toggle menu"
       >
@@ -68,17 +70,16 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="block px-3 py-2 text-gray-600 hover:text-[#2175a1] transition-colors"
+            class="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
           >
             {item.text}
           </a>
         ))}
         <a
-          href="/diagnostico"
-          class="block px-3 py-2 rounded-lg transition-colors text-white text-center"
-          style="background-color: #2175a1;"
+          href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220"
+          class="block px-3 py-2 bg-white text-blue-600 rounded-lg text-center font-medium hover:bg-blue-50 transition-colors"
         >
-          Solicita tu diagnóstico
+          Agendar llamada
         </a>
       </div>
     </div>
@@ -91,5 +92,30 @@ const navItems = [
 
   mobileMenuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e: Event) => {
+      e.preventDefault();
+      const href = (anchor as HTMLAnchorElement).getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href) as HTMLElement;
+        if (target) {
+          // Close mobile menu if open
+          mobileMenu?.classList.add('hidden');
+          
+          // Calculate offset for fixed header
+          const header = document.querySelector('header') as HTMLElement;
+          const headerHeight = header?.offsetHeight || 0;
+          const targetPosition = target.offsetTop - headerHeight - 20; // 20px extra padding
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
   });
 </script> 
