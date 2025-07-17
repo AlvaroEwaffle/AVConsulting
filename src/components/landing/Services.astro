@@ -1,0 +1,60 @@
+---
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+}
+
+const services: Service[] = [
+  {
+    title: "🧭 Shape Up",
+    description: "Estrategia + método. Ciclos de 6 semanas con objetivos claros. Eliminamos la improvisación y enfocamos tu energía en avanzar con claridad.",
+    icon: "📋",
+    color: "bg-primary"
+  },
+  {
+    title: "👤 Coaching Ontológico",
+    description: "Tu lado humano también importa. Trabajo contigo para enfrentar la incertidumbre, el síndrome del impostor y las dudas que sabotean tu proyecto.",
+    icon: "🧠",
+    color: "bg-secondary"
+  },
+  {
+    title: "🛠 Desarrollo Tecnológico",
+    description: "Lo convierto en realidad. Diseñamos y lanzamos un MVP que realmente puedas poner en manos de tus usuarios, con tecnología simple, funcional y validable.",
+    icon: "⚡",
+    color: "bg-primary"
+  }
+];
+---
+
+<section id="servicios" class="py-16 md:py-24 bg-gray-50">
+  <div class="container">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary">
+        ¿Qué hago?
+      </h2>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        Acompaño a founders y equipos con ideas digitales que no avanzan, atrapados entre "quiero hacerlo" y "no sé por dónde partir".
+      </p>
+      <p class="text-lg text-gray-700 font-medium">
+        Trabajo con una mezcla poco común pero poderosa:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        {
+          services.map((service, index) => (
+            <div class="fade-in card-hover bg-white p-8 rounded-2xl shadow-lg text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class={`w-16 h-16 ${service.color} rounded-lg flex items-center justify-center mx-auto mb-6`}>
+                <span class="text-2xl text-white">{service.icon}</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-gray-800">{service.title}</h3>
+              <p class="text-gray-600">
+                {service.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section> 

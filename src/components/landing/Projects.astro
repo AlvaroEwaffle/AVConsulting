@@ -1,0 +1,77 @@
+---
+interface Project {
+  title: string;
+  description: string;
+  icon: string;
+  tags: string[];
+  link: string;
+  linkText: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "🧩 Ewaffle",
+    description: "Crea y vende productos digitales (ebooks, cursos) con herramientas de IA que te ayudan a estructurar, escribir y lanzar.",
+    icon: "💡",
+    tags: ["IA", "Cursos Online", "Ebooks"],
+    link: "https://creatucurso.ewaffle.cl/",
+    linkText: "Crear mi curso →"
+  },
+  {
+    title: "🎯 Fidelidapp",
+    description: "Programa de fidelización digital para locales comerciales. Más retención, más datos, más recompra.",
+    icon: "🎁",
+    tags: ["Fidelización", "Retención de Clientes", "Marketing"],
+    link: "https://fidelidapp.cl",
+    linkText: "Fidelizar clientes →"
+  },
+  {
+    title: "🤖 Suria",
+    description: "Asistente de IA que traduce tu servicio en una propuesta de valor clara. Ideal para coaches, consultores y freelancers.",
+    icon: "✨",
+    tags: ["Inteligencia Artificial", "Propuesta de Valor", "Automatización"],
+    link: "https://suria.app/",
+    linkText: "Transformar mi servicio →"
+  }
+];
+---
+
+<section id="mis-negocios" class="py-16 md:py-24">
+  <div class="container">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+          📦 Proyectos Reales, No Solo Ideas
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Muestro que yo también estoy en la cancha. Estas son soluciones que lancé, validé y mejoré iterativamente:
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          projects.map((project, index) => (
+            <div class="fade-in card-hover bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center mx-auto mb-6">
+                <span class="text-2xl text-white">{project.icon}</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-4 text-gray-800">{project.title}</h3>
+              <p class="text-gray-600 mb-6">
+                {project.description}
+              </p>
+              <div class="flex flex-wrap gap-2 justify-center mb-6">
+                {
+                  project.tags.map(tag => (
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">{tag}</span>
+                  ))
+                }
+              </div>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                {project.linkText}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section> 

@@ -1,0 +1,68 @@
+---
+interface Benefit {
+  title: string;
+  description: string;
+  icon: string;
+  type: 'before' | 'after';
+}
+
+const benefits: Benefit[] = [
+  {
+    title: "Sin guía profesional…",
+    description: "Tienes una idea pero no sabes por dónde empezar. Te quedas atrapado en la planificación infinita y nunca lanzas nada.",
+    icon: "❌",
+    type: 'before'
+  },
+  {
+    title: "Con Shape Up…",
+    description: "Defines objetivos claros, trabajas en ciclos de 6 semanas y lanzas un MVP real que puedes validar con usuarios.",
+    icon: "✅",
+    type: 'after'
+  }
+];
+---
+
+<section class="py-8 bg-primary relative overflow-hidden overflow-x-hidden w-full max-w-full">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+        ¿Por qué Shape Up transforma tu emprendimiento?
+      </h2>
+      <div class="w-24 h-1 bg-white mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {
+        benefits.map((benefit) => (
+          <div class={`fade-in card-hover p-8 rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-xl ${
+            benefit.type === 'before' 
+              ? 'bg-white text-gray-800 border-gray-300 hover:border-gray-400' 
+              : 'bg-white text-gray-800 border-primary hover:border-primary/80'
+          }`}>
+            <div class="text-6xl mb-6 text-center max-w">{benefit.icon}</div>
+            <h3 class={`text-2xl font-bold mb-4 text-center ${
+              benefit.type === 'before' ? 'bg-gray-100 text-gray-800' : 'bg-primary text-white'
+            }`}>
+              {benefit.title}
+            </h3>
+            <p class={`text-lg leading-relaxed text-center ${
+              benefit.type === 'before' ? 'text-gray-700' : 'text-gray-700'
+            }`}>
+              {benefit.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <a 
+        href="#servicios" 
+        class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+      >
+        Descubre mi método ↓
+      </a>
+    </div>
+  </div>
+</section> 

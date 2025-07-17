@@ -1,0 +1,268 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Álvaro Villena - Coach de Innovación",
+  description = "Acompaño a personas y equipos que tienen una idea potente pero están atrapados entre el 'quiero hacerla realidad' y el 'no sé por dónde partir'.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, "https://alvarovillena.cl");
+
+const socialImageURL = new URL("/assets/icono.png", canonicalURL);
+
+const keywords = [
+  "coaching",
+  "innovación",
+  "emprendimiento",
+  "shape up",
+  "transformación digital",
+  "startup",
+  "producto digital",
+  "validación",
+  "MVP",
+  "coaching ontológico",
+  "desarrollo tecnológico",
+  "fidelidapp",
+  "ewaffle",
+  "suria",
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f = d.getElementsByTagName(s)[0];
+        var j = d.createElement(s);
+        var dl = l!='dataLayer'?'&l='+l:'';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        if (f && f.parentNode) {
+          f.parentNode.insertBefore(j,f);
+        }
+      })(window,document,'script','dataLayer','GTM-PBTHC5VK');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/assets/icono.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <meta name="author" content="Álvaro Villena" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Álvaro Villena" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#2175a1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Álvaro Villena" />
+    
+    <!-- Language and Region -->
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="CL" />
+    <meta name="geo.placename" content="Santiago" />
+    
+    <!-- Additional SEO -->
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="coverage" content="worldwide" />
+    <meta name="target" content="all" />
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Álvaro Villena",
+            "url": "https://alvarovillena.cl",
+            "image": "https://alvarovillena.cl/assets/icono.png",
+            "description": "Coach de innovación y emprendimiento digital. Fundador de Fidelidapp, Ewaffle y Suria.",
+            "jobTitle": "Coach de Innovación y Emprendimiento Digital",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Villelabs"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/alvarovillena/",
+              "https://twitter.com/alvarovillena"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Santiago",
+              "addressRegion": "RM",
+              "addressCountry": "CL"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "hola@alvarovillena.cl"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Shape Up para Founders",
+            "description": "Programa de 12 semanas para lanzar tu negocio digital con método, foco y humanidad.",
+            "provider": {
+              "@type": "Person",
+              "name": "Álvaro Villena"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "Consultar",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            "serviceType": "Coaching de Emprendimiento",
+            "areaServed": "Chile",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servicios de Coaching",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Shape Up",
+                    "description": "Estrategia + método. Ciclos de 6 semanas con objetivos claros."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Coaching Ontológico",
+                    "description": "Trabajo contigo para enfrentar la incertidumbre y el síndrome del impostor."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Desarrollo Tecnológico",
+                    "description": "Diseñamos y lanzamos un MVP que realmente puedas poner en manos de tus usuarios."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- Social Media Links -->
+    <link rel="me" href="https://www.linkedin.com/in/alvarovillena/" />
+    <link rel="me" href="https://twitter.com/alvarovillena" />
+
+    <!-- AOS Animate On Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <slot />
+
+    <!-- Sticky CTA Button (for scroll, desktop only) -->
+    <div class="fixed top-4 right-4 z-50 hidden sm:block">
+      <a 
+        href="#contacto" 
+        class="inline-flex items-center justify-center px-6 py-3 bg-white text-primary rounded-full font-semibold text-base hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+      >
+        Agendar llamada
+      </a>
+    </div>
+
+    <!-- AOS Animate On Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script is:inline>
+      window.addEventListener('DOMContentLoaded', function () {
+        if (window.AOS) {
+          window.AOS.init({
+            duration: 800,
+            once: true
+          });
+        }
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+          observer.observe(el);
+        });
+        
+        // Enhanced smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html> 

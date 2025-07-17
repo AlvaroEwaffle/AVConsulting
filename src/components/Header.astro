@@ -4,16 +4,16 @@ import icono from '../assets/icono.png';
 
 const navItems = [
   { href: '/', text: 'Inicio' },
-  { href: '#que-hago', text: '¿Qué hago?' },
+  { href: '#servicios', text: '¿Qué hago?' },
   { href: '#mi-historia', text: 'Mi historia' },
-  { href: '#servicios', text: 'Servicios' },
-  { href: '#mi-metodo', text: 'Mi método' },
-  { href: '#quien-soy', text: '¿Quién soy?' },
   { href: '#mis-negocios', text: 'Mis negocios' },
+  { href: '#shape-up-program', text: 'Mi método' },
+  { href: '#quien-soy', text: '¿Quién soy?' },
+  { href: '#contacto', text: 'Contacto' },
 ];
 ---
 
-<header class="fixed w-full bg-blue-600 text-white z-50 border-b border-gray-100 shadow-lg" style="background-color: #2175a1;">
+<header class="fixed w-full bg-primary text-white z-50 border-b border-gray-100 shadow-lg">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
@@ -26,14 +26,14 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="text-white hover:text-blue-200 transition-colors"
+            class="text-white hover:text-secondary transition-colors"
           >
             {item.text}
           </a>
         ))}
         <a
           href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220"
-          class="px-4 py-2 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-colors font-medium"
+          class="px-4 py-2 bg-secondary text-white rounded-full hover:bg-secondary/90 transition-colors font-medium"
         >
           Agendar llamada
         </a>
@@ -70,14 +70,14 @@ const navItems = [
         {navItems.map((item) => (
           <a
             href={item.href}
-            class="block px-3 py-2 text-white hover:text-blue-200 transition-colors"
+            class="block px-3 py-2 text-white hover:text-secondary transition-colors"
           >
             {item.text}
           </a>
         ))}
         <a
           href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220"
-          class="block px-3 py-2 bg-white text-blue-600 rounded-lg text-center font-medium hover:bg-blue-50 transition-colors"
+          class="block px-3 py-2 bg-secondary text-white rounded-lg text-center font-medium hover:bg-secondary/90 transition-colors"
         >
           Agendar llamada
         </a>
