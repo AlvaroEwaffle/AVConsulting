@@ -1,0 +1,281 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import HeroSection from '../../components/common/HeroSection.astro';
+import ProcessSteps from '../../components/services/ProcessSteps.astro';
+import TestimonialCard from '../../components/common/TestimonialCard.astro';
+
+const title = "Landing Pages de Alto Impacto - Listas para Convertir en 7 Días | Álvaro Villena";
+const description = "Landing page optimizada para ventas, con garantía de conversión en la primera semana o devolvemos tu dinero. Diseño profesional y conversión garantizada.";
+
+const processSteps = [
+  {
+    number: 1,
+    title: "Brief y Estrategia",
+    description: "Analizamos tu negocio, audiencia objetivo y objetivos de conversión para crear la estrategia perfecta.",
+    icon: "🎯"
+  },
+  {
+    number: 2,
+    title: "Diseño y Desarrollo",
+    description: "Creamos una landing page profesional, optimizada para conversión y compatible con todos los dispositivos.",
+    icon: "🎨"
+  },
+  {
+    number: 3,
+    title: "Lanzamiento y Optimización",
+    description: "Implementamos, lanzamos y optimizamos continuamente para maximizar tus conversiones.",
+    icon: "🚀"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Roberto Torres",
+    company: "CEO de InnovateLab",
+    text: "La landing page que Álvaro creó para nosotros triplicó nuestras conversiones en la primera semana. ROI increíble.",
+    service: "Landing Pages"
+  },
+  {
+    name: "Patricia López",
+    company: "Fundadora de EcoTech",
+    text: "Profesionalismo total. La página captura perfectamente nuestra propuesta de valor y convierte visitantes en clientes.",
+    service: "Landing Pages"
+  },
+  {
+    name: "Miguel Ángel Ruiz",
+    company: "Director de Marketing",
+    text: "En 7 días teníamos una landing page que no solo se veía increíble, sino que realmente vendía nuestro producto.",
+    service: "Landing Pages"
+  }
+];
+---
+
+<ServiceLayout 
+  title={title} 
+  description={description}
+  serviceName="Landing Pages de Alto Impacto"
+  servicePrice="$199 USD"
+>
+  <!-- Hero Section -->
+  <HeroSection
+    title="Landing Pages que Venden"
+    subtitle="Listas para convertir en 7 días con garantía de resultados"
+    description="No más páginas web que solo se ven bonitas. Creamos landing pages diseñadas específicamente para convertir visitantes en clientes. Con nuestra metodología probada, tendrás una página que vende desde el primer día."
+    imageSrc="/assets/Hero17July.png"
+    imageAlt="Landing page de alto impacto para conversiones"
+    ctaText="Quiero mi Landing Page"
+    ctaHref="#contacto"
+  />
+
+  <!-- Why Landing Pages -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          ¿Por qué una Landing Page Profesional?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          La diferencia entre una página web genérica y una landing page optimizada para conversión
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">Conversiones Reales</h3>
+                <p class="text-gray-600">Diseñada específicamente para convertir visitantes en clientes, no solo para mostrar información.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">Garantía de Resultados</h3>
+                <p class="text-gray-600">Si no ves conversiones en la primera semana, te devolvemos tu dinero. Sin preguntas.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">Optimizada para Móvil</h3>
+                <p class="text-gray-600">Más del 60% del tráfico viene de dispositivos móviles. Tu landing page se verá perfecta en todos lados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Lo que Incluye</h3>
+          <ul class="space-y-4">
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Diseño profesional y personalizado</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Optimización para conversión</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Responsive design completo</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Integración con herramientas de marketing</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Hosting y dominio por 1 año</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Soporte técnico por 3 meses</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <ProcessSteps steps={processSteps} />
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Casos de Éxito Reales
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Empresas que transformaron sus conversiones con nuestras landing pages
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <TestimonialCard {...testimonial} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing and CTA -->
+  <section id="contacto" class="py-20 bg-gradient-to-br from-green-600 to-green-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        Invierte en Conversiones Reales
+      </h2>
+      
+      <div class="bg-white/10 rounded-3xl p-8 mb-8 backdrop-blur-sm">
+        <div class="text-6xl font-bold mb-4">$199 USD</div>
+        <p class="text-xl mb-6">Pago único • Entrega en 7 días</p>
+        
+        <div class="bg-yellow-400 text-black px-6 py-3 rounded-full inline-block font-semibold mb-6">
+          🎯 Garantía de Conversión o Devolución
+        </div>
+        
+        <ul class="text-left max-w-md mx-auto space-y-3 mb-8">
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Landing page personalizada y optimizada</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Diseño responsive para todos los dispositivos</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Integración con herramientas de marketing</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Hosting y dominio incluidos por 1 año</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="space-y-4">
+        <a 
+          href="https://calendly.com/alvarovillena/llamada-exploracion"
+          class="block w-full max-w-md mx-auto bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+        >
+          🚀 Quiero mi Landing Page
+        </a>
+        
+        <p class="text-sm text-green-100">
+          Agenda una llamada gratuita • Sin compromisos • Garantía de resultados
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Preguntas Frecuentes
+        </h2>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿En cuánto tiempo tendré mi landing page?</h3>
+          <p class="text-gray-600">En exactamente 7 días tendrás tu landing page funcionando y optimizada para conversiones.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Qué pasa si no veo conversiones?</h3>
+          <p class="text-gray-600">Si en la primera semana no ves conversiones, te devolvemos tu dinero completo. Sin preguntas.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Puedo hacer cambios después del lanzamiento?</h3>
+          <p class="text-gray-600">Sí, incluye 3 meses de soporte técnico para ajustes y optimizaciones.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Qué herramientas de marketing se integran?</h3>
+          <p class="text-gray-600">Google Analytics, Facebook Pixel, Mailchimp, Zapier y más. Personalizamos según tus necesidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout> 

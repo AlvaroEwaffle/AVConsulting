@@ -1,0 +1,94 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center space-x-2">
+          <img src="/assets/AlvaroAvatar.png" alt="Álvaro Villena" class="h-8 w-8 rounded-full" />
+          <span class="text-xl font-bold text-gray-900">Álvaro Villena</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/" class={`text-sm font-medium transition-colors duration-200 ${currentPath === '/' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'}`}>
+          Inicio
+        </a>
+        <a href="/servicios" class={`text-sm font-medium transition-colors duration-200 ${currentPath.startsWith('/servicios') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'}`}>
+          Servicios
+        </a>
+        <a href="/testimonios" class={`text-sm font-medium transition-colors duration-200 ${currentPath === '/testimonios' ? 'text-blue-600' : 'text-blue-600'}`}>
+          Testimonios
+        </a>
+        <a href="/contacto" class={`text-sm font-medium transition-colors duration-200 ${currentPath === '/contacto' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'}`}>
+          Contacto
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://calendly.com/alvarovillena/llamada-exploracion" 
+           class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+          Agenda tu Exploración
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 p-2">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="/" class={`block px-3 py-2 rounded-md text-base font-medium ${currentPath === '/' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}>
+        Inicio
+      </a>
+      <a href="/servicios" class={`block px-3 py-2 rounded-md text-base font-medium ${currentPath.startsWith('/servicios') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}>
+        Servicios
+      </a>
+      <a href="/testimonios" class={`block px-3 py-2 rounded-md text-base font-medium ${currentPath === '/testimonios' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}>
+        Testimonios
+      </a>
+      <a href="/contacto" class={`block px-3 py-2 rounded-md text-base font-medium ${currentPath === '/contacto' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}>
+        Contacto
+      </a>
+      <div class="pt-4 pb-3 border-t border-gray-200">
+        <a href="https://calendly.com/alvarovillena/llamada-exploracion" 
+           class="block w-full text-center bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+          Agenda tu Exploración
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (!mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  }
+</script> 

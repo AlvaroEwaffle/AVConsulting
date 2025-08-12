@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  description?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  reverse?: boolean;
+}
+
+const { 
+  title, 
+  subtitle, 
+  description, 
+  imageSrc, 
+  imageAlt, 
+  ctaText, 
+  ctaHref, 
+  reverse = false 
+} = Astro.props;
+---
+
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class={`grid lg:grid-cols-2 gap-12 items-center ${reverse ? 'lg:grid-flow-col-dense' : ''}`}>
+      <!-- Content -->
+      <div class={`${reverse ? 'lg:col-start-2' : ''}`}>
+        <div class="max-w-2xl">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            {title}
+          </h1>
+          
+          <p class="text-xl text-gray-600 mb-6 leading-relaxed">
+            {subtitle}
+          </p>
+          
+          {description && (
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+              {description}
+            </p>
+          )}
+          
+          {ctaText && ctaHref && (
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href={ctaHref}
+                class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+              >
+                {ctaText}
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+      
+      <!-- Image -->
+      {imageSrc && (
+        <div class={`${reverse ? 'lg:col-start-1' : ''}`}>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl transform rotate-3 scale-105 opacity-20"></div>
+            <img 
+              src={imageSrc} 
+              alt={imageAlt || title}
+              class="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
+            />
+            
+            <!-- Floating Elements -->
+            <div class="absolute -top-4 -right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold shadow-lg">
+              ✨ Premium
+            </div>
+            
+            <div class="absolute -bottom-4 -left-4 bg-white text-gray-900 px-4 py-2 rounded-full font-semibold shadow-lg border border-gray-200">
+              🚀 Listo para usar
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</section> 

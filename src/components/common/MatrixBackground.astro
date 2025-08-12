@@ -1,0 +1,144 @@
+---
+// MatrixBackground component for animated background effects
+---
+
+<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+  <canvas id="matrixCanvas" class="w-full h-full opacity-30"></canvas>
+</div>
+
+<script>
+  class MatrixBackground {
+    private canvas: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+    private width: number;
+    private height: number;
+    private particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      opacity: number;
+      color: string;
+    }>;
+    private lightWave: {
+      x: number;
+      y: number;
+      radius: number;
+      opacity: number;
+      speed: number;
+    };
+    private time: number;
+
+    constructor() {
+      this.canvas = document.getElementById('matrixCanvas') as HTMLCanvasElement;
+      this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D;
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+      this.particles = [];
+      this.lightWave = {
+        x: 0,
+        y: 0,
+        radius: 0,
+        opacity: 0.3,
+        speed: 0.5
+      };
+      this.time = 0;
+
+      this.init();
+      this.animate();
+      this.handleResize();
+    }
+
+    private init(): void {
+      // Create particles
+      for (let i = 0; i < 50; i++) {
+        this.particles.push({
+          x: Math.random() * this.width,
+          y: Math.random() * this.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
+          opacity: Math.random() * 0.5 + 0.1,
+          color: `hsl(${200 + Math.random() * 60}, 70%, 60%)`
+        });
+      }
+    }
+
+    private animate(): void {
+      this.ctx.clearRect(0, 0, this.width, this.height);
+      
+      // Update light wave
+      this.lightWave.x = (Math.sin(this.time * 0.001) * 0.5 + 0.5) * this.width;
+      this.lightWave.y = (Math.cos(this.time * 0.0008) * 0.5 + 0.5) * this.height;
+      this.lightWave.radius = Math.sin(this.time * 0.002) * 100 + 150;
+      
+      // Draw light wave
+      const gradient = this.ctx.createRadialGradient(
+        this.lightWave.x, this.lightWave.y, 0,
+        this.lightWave.x, this.lightWave.y, this.lightWave.radius
+      );
+      gradient.addColorStop(0, 'rgba(59, 130, 246, 0.1)');
+      gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+      
+      this.ctx.fillStyle = gradient;
+      this.ctx.fillRect(0, 0, this.width, this.height);
+      
+      // Update and draw particles
+      this.particles.forEach(particle => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        
+        // Wrap around edges
+        if (particle.x < 0) particle.x = this.width;
+        if (particle.x > this.width) particle.x = 0;
+        if (particle.y < 0) particle.y = this.height;
+        if (particle.y > this.height) particle.y = 0;
+        
+        // Draw particle
+        this.ctx.beginPath();
+        this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        this.ctx.fillStyle = particle.color;
+        this.ctx.globalAlpha = particle.opacity;
+        this.ctx.fill();
+        
+        // Draw connection lines to nearby particles
+        this.particles.forEach(otherParticle => {
+          const distance = Math.sqrt(
+            Math.pow(particle.x - otherParticle.x, 2) + 
+            Math.pow(particle.y - otherParticle.y, 2)
+          );
+          
+          if (distance < 100 && distance > 0) {
+            this.ctx.beginPath();
+            this.ctx.moveTo(particle.x, particle.y);
+            this.ctx.lineTo(otherParticle.x, otherParticle.y);
+            this.ctx.strokeStyle = 'rgba(59, 130, 246, 0.1)';
+            this.ctx.lineWidth = 0.5;
+            this.ctx.stroke();
+          }
+        });
+      });
+      
+      this.ctx.globalAlpha = 1;
+      this.time += 16; // 60fps
+      
+      requestAnimationFrame(() => this.animate());
+    }
+
+    private handleResize(): void {
+      window.addEventListener('resize', () => {
+        this.width = window.innerWidth;
+        this.height = window.innerHeight;
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+      });
+    }
+  }
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new MatrixBackground();
+  });
+</script> 

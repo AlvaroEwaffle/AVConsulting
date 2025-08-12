@@ -1,0 +1,329 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import HeroSection from '../../components/common/HeroSection.astro';
+import ProcessSteps from '../../components/services/ProcessSteps.astro';
+import TestimonialCard from '../../components/common/TestimonialCard.astro';
+
+const title = "Asesoría Shape Up - Organiza tu Producto como los Mejores Equipos | Álvaro Villena";
+const description = "Te acompaño 1:1 a implementar Shape Up en tu proyecto digital, logrando foco, claridad y avances reales en ciclos de 6 semanas.";
+
+const processSteps = [
+  {
+    number: 1,
+    title: "Diagnóstico y Planificación",
+    description: "Analizamos tu proyecto actual, identificamos obstáculos y creamos un plan personalizado de implementación.",
+    icon: "🔍"
+  },
+  {
+    number: 2,
+    title: "Implementación Guiada",
+    description: "Te acompaño semana a semana en la implementación, resolviendo dudas y ajustando la estrategia según tus necesidades.",
+    icon: "🎯"
+  },
+  {
+    number: 3,
+    title: "Optimización y Escalado",
+    description: "Refinamos el proceso, establecemos métricas de éxito y preparamos tu equipo para el crecimiento futuro.",
+    icon: "📈"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Fernanda Castro",
+    company: "CTO de StartupChile",
+    text: "Álvaro transformó completamente nuestra forma de trabajar. En 6 semanas pasamos del caos total a tener un proceso claro y medible.",
+    service: "Asesoría Shape Up"
+  },
+  {
+    name: "Diego Morales",
+    company: "Product Manager",
+    text: "La asesoría personalizada fue clave. Álvaro entendió nuestras necesidades específicas y adaptó Shape Up perfectamente a nuestro contexto.",
+    service: "Asesoría Shape Up"
+  },
+  {
+    name: "Carolina Vega",
+    company: "Fundadora de TechVentures",
+    text: "ROI increíble. La inversión en asesoría nos ahorró meses de experimentación y nos dio resultados inmediatos.",
+    service: "Asesoría Shape Up"
+  }
+];
+---
+
+<ServiceLayout 
+  title={title} 
+  description={description}
+  serviceName="Asesoría Shape Up"
+  servicePrice="$499 USD"
+>
+  <!-- Hero Section -->
+  <HeroSection
+    title="Asesoría Shape Up Personalizada"
+    subtitle="Organiza tu producto como los mejores equipos del mundo"
+    description="¿Tienes una idea brillante pero no sabes por dónde empezar? ¿Tu equipo está abrumado con tareas y deadlines imposibles? Shape Up es la metodología que usan empresas como Basecamp, Shopify y GitHub para entregar productos digitales de calidad en tiempo récord."
+    imageSrc="/assets/Covers/LandingHeroCover.png"
+    imageAlt="Asesoría Shape Up personalizada para equipos"
+    ctaText="Agendar Asesoría"
+    ctaHref="#contacto"
+  />
+
+  <!-- What is Shape Up -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            ¿Qué es Shape Up?
+          </h2>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            Shape Up es una metodología de desarrollo de productos que elimina la ansiedad de los deadlines imposibles y el caos de las tareas infinitas.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Ciclos de trabajo de 6 semanas con objetivos claros</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Scope definido desde el inicio, sin cambios durante el ciclo</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Equipos autónomos que toman decisiones sin burocracia</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Resultados medibles y entregables reales</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Beneficios Clave</h3>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Foco y Claridad</h4>
+                <p class="text-sm text-gray-600">Elimina la multitarea y el contexto switching que mata la productividad.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Deadlines Realistas</h4>
+                <p class="text-sm text-gray-600">6 semanas es tiempo suficiente para entregar valor real sin agotar al equipo.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Equipos Autónomos</h4>
+                <p class="text-sm text-gray-600">Los desarrolladores toman decisiones técnicas sin esperar aprobaciones.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-3">
+              <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Resultados Medibles</h4>
+                <p class="text-sm text-gray-600">Cada ciclo termina con algo tangible que puedes mostrar a stakeholders.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <ProcessSteps steps={processSteps} />
+
+  <!-- What You Get -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          ¿Qué Incluye tu Asesoría?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Una experiencia completa de transformación para tu equipo y proyecto
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200">
+          <div class="text-4xl mb-4">📋</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Auditoría Completa</h3>
+          <p class="text-gray-700">Análisis profundo de tu proceso actual, identificación de cuellos de botella y oportunidades de mejora.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Plan Personalizado</h3>
+          <p class="text-gray-700">Roadmap específico para implementar Shape Up en tu contexto, adaptado a tu equipo y objetivos.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border border-purple-200">
+          <div class="text-4xl mb-4">👥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Capacitación del Equipo</h3>
+          <p class="text-gray-700">Sesiones de entrenamiento para que tu equipo entienda y aplique Shape Up correctamente.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 border border-yellow-200">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Implementación Guiada</h3>
+          <p class="text-gray-700">Acompañamiento semanal durante 6 semanas para asegurar que la implementación sea exitosa.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-2xl p-8 border border-red-200">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Métricas y KPIs</h3>
+          <p class="text-gray-700">Definición de indicadores clave para medir el progreso y éxito de la implementación.</p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8 border border-indigo-200">
+          <div class="text-4xl mb-4">🔄</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Optimización Continua</h3>
+          <p class="text-gray-700">Refinamiento del proceso basado en resultados reales y feedback del equipo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Transformaciones Reales
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Equipos que cambiaron completamente su forma de trabajar con Shape Up
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <TestimonialCard {...testimonial} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing and CTA -->
+  <section id="contacto" class="py-20 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        Invierte en la Transformación de tu Equipo
+      </h2>
+      
+      <div class="bg-white/10 rounded-3xl p-8 mb-8 backdrop-blur-sm">
+        <div class="text-6xl font-bold mb-4">$499 USD</div>
+        <p class="text-xl mb-6">Asesoría completa de 6 semanas</p>
+        
+        <div class="bg-yellow-400 text-black px-6 py-3 rounded-full inline-block font-semibold mb-6">
+          🎯 Resultados Garantizados
+        </div>
+        
+        <ul class="text-left max-w-md mx-auto space-y-3 mb-8">
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Auditoría completa de tu proceso actual</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Plan personalizado de implementación</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Capacitación completa del equipo</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Acompañamiento semanal por 6 semanas</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Métricas y KPIs personalizados</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="space-y-4">
+        <a 
+          href="https://calendly.com/alvarovillena/llamada-exploracion"
+          class="block w-full max-w-md mx-auto bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+        >
+          🚀 Agendar Asesoría
+        </a>
+        
+        <p class="text-sm text-purple-100">
+          Llamada gratuita de 20 minutos • Sin compromisos • Resultados garantizados
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Preguntas Frecuentes
+        </h2>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Cuánto tiempo dura la asesoría?</h3>
+          <p class="text-gray-600">La asesoría completa dura 6 semanas, con sesiones semanales de seguimiento y acompañamiento continuo.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Necesito un equipo grande para implementar Shape Up?</h3>
+          <p class="text-gray-600">No, Shape Up funciona perfectamente con equipos pequeños de 2-3 personas. Se adapta a cualquier tamaño.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Qué pasa si mi equipo no está convencido?</h3>
+          <p class="text-gray-600">Parte de la asesoría incluye capacitación y cambio de mentalidad. Te ayudo a generar buy-in en todo el equipo.</p>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Puedo aplicar Shape Up a proyectos existentes?</h3>
+          <p class="text-gray-600">Absolutamente. Shape Up es perfecto para refactorizar y reorganizar proyectos en curso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout> 

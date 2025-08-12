@@ -57,7 +57,9 @@ const currentYear = new Date().getFullYear();
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/assets/icono.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icono.png" />
+    <link rel="shortcut icon" type="image/png" href="/assets/icono.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icono.png" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
@@ -201,7 +203,18 @@ const currentYear = new Date().getFullYear();
     <!-- AOS Animate On Scroll CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   </head>
-  <body class="overflow-x-hidden">
+  <body class="overflow-x-hidden relative">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 -z-10" style="background: linear-gradient(135deg, #2175a1 0%, #3ca6dd 50%, #2175a1 100%);">
+      <div class="absolute inset-0 opacity-20">
+        <img 
+          src="/assets/AnimatedBackgroundPattern.gif" 
+          alt="Animated Background Pattern" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
