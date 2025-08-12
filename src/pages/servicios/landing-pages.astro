@@ -54,14 +54,14 @@ const testimonials = [
   title={title} 
   description={description}
   serviceName="Landing Pages de Alto Impacto"
-  servicePrice="$199 USD"
+  servicePrice="$320 USD"
 >
   <!-- Hero Section -->
   <HeroSection
     title="Landing Pages que Venden"
     subtitle="Listas para convertir en 7 días con garantía de resultados"
     description="No más páginas web que solo se ven bonitas. Creamos landing pages diseñadas específicamente para convertir visitantes en clientes. Con nuestra metodología probada, tendrás una página que vende desde el primer día."
-    imageSrc="/assets/Hero17July.png"
+    imageSrc="/assets/LandingPhoto.png"
     imageAlt="Landing page de alto impacto para conversiones"
     ctaText="Quiero mi Landing Page"
     ctaHref="#contacto"
@@ -151,13 +151,19 @@ const testimonials = [
               <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              <span>Hosting y dominio por 1 año</span>
+              <span>Hosting gratis por 1 año</span>
             </li>
             <li class="flex items-center space-x-3">
               <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              <span>Soporte técnico por 3 meses</span>
+              <span>Soporte por 3 meses</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Hasta 3 rondas de ajustes</span>
             </li>
           </ul>
         </div>
@@ -168,25 +174,7 @@ const testimonials = [
   <!-- Process Steps -->
   <ProcessSteps steps={processSteps} />
 
-  <!-- Testimonials -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-          Casos de Éxito Reales
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Empresas que transformaron sus conversiones con nuestras landing pages
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        {testimonials.map((testimonial) => (
-          <TestimonialCard {...testimonial} />
-        ))}
-      </div>
-    </div>
-  </section>
+
 
   <!-- Pricing and CTA -->
   <section id="contacto" class="py-20 bg-gradient-to-br from-green-600 to-green-800 text-white">
@@ -196,7 +184,7 @@ const testimonials = [
       </h2>
       
       <div class="bg-white/10 rounded-3xl p-8 mb-8 backdrop-blur-sm">
-        <div class="text-6xl font-bold mb-4">$199 USD</div>
+        <div class="text-6xl font-bold mb-4">$320 USD</div>
         <p class="text-xl mb-6">Pago único • Entrega en 7 días</p>
         
         <div class="bg-yellow-400 text-black px-6 py-3 rounded-full inline-block font-semibold mb-6">
@@ -233,10 +221,10 @@ const testimonials = [
       
       <div class="space-y-4">
         <a 
-          href="https://calendly.com/alvarovillena/llamada-exploracion"
+          href="https://mpago.la/2knSnv4"
           class="block w-full max-w-md mx-auto bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
         >
-          🚀 Quiero mi Landing Page
+          💳 Comprar Ahora - $320 USD
         </a>
         
         <p class="text-sm text-green-100">
@@ -245,6 +233,26 @@ const testimonials = [
       </div>
     </div>
   </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Casos de Éxito Reales
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Empresas que transformaron sus conversiones con nuestras landing pages
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard {...testimonial} />
+          ))}
+        </div>
+      </div>
+    </section>
 
   <!-- FAQ -->
   <section class="py-20 bg-gray-50">
@@ -273,7 +281,7 @@ const testimonials = [
         
         <div class="bg-white rounded-2xl p-6 shadow-lg">
           <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Qué herramientas de marketing se integran?</h3>
-          <p class="text-gray-600">Google Analytics, Facebook Pixel, Mailchimp, Zapier y más. Personalizamos según tus necesidades.</p>
+                      <p class="text-gray-600">Google Analytics, Mailchimp, Zapier y más. Personalizamos según tus necesidades.</p>
         </div>
       </div>
     </div>

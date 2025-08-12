@@ -4,27 +4,27 @@ import HeroSection from '../../components/common/HeroSection.astro';
 import ProcessSteps from '../../components/services/ProcessSteps.astro';
 import TestimonialCard from '../../components/common/TestimonialCard.astro';
 
-const title = "Asesoría Shape Up - Organiza tu Producto como los Mejores Equipos | Álvaro Villena";
+const title = "Asesoría Shape Up - Organiza tu Negocio como los Mejores Equipos | Álvaro Villena";
 const description = "Te acompaño 1:1 a implementar Shape Up en tu proyecto digital, logrando foco, claridad y avances reales en ciclos de 6 semanas.";
 
 const processSteps = [
   {
     number: 1,
-    title: "Diagnóstico y Planificación",
-    description: "Analizamos tu proyecto actual, identificamos obstáculos y creamos un plan personalizado de implementación.",
+    title: "Semanas 1-2: Diagnóstico",
+    description: "Diagnóstico de tu negocio actual: procesos, ventas y fidelización. Mapeamos a tu cliente ideal y armamos un backlog priorizado de ideas y oportunidades reales.",
     icon: "🔍"
   },
   {
     number: 2,
-    title: "Implementación Guiada",
-    description: "Te acompaño semana a semana en la implementación, resolviendo dudas y ajustando la estrategia según tus necesidades.",
-    icon: "🎯"
+    title: "Semanas 3-4: Construcción",
+    description: "Construimos tu primera Landing Page, creamos un Plan de acción, definimos el 'servicio estrella' a potenciar y diseñamos una estrategia de marketing lista para testear.",
+    icon: "🛠️"
   },
   {
     number: 3,
-    title: "Optimización y Escalado",
-    description: "Refinamos el proceso, establecemos métricas de éxito y preparamos tu equipo para el crecimiento futuro.",
-    icon: "📈"
+    title: "Decisión Avance",
+    description: "Al finalizar tendrás una landing page lista para captar clientes, un servicio definido y estructurado, un plan de marketing con campañas activas y un roadmap de ideas validadas.",
+    icon: "🎯"
   }
 ];
 
@@ -54,14 +54,14 @@ const testimonials = [
   title={title} 
   description={description}
   serviceName="Asesoría Shape Up"
-  servicePrice="$499 USD"
+  servicePrice="$497 USD"
 >
   <!-- Hero Section -->
   <HeroSection
     title="Asesoría Shape Up Personalizada"
-    subtitle="Organiza tu producto como los mejores equipos del mundo"
-    description="¿Tienes una idea brillante pero no sabes por dónde empezar? ¿Tu equipo está abrumado con tareas y deadlines imposibles? Shape Up es la metodología que usan empresas como Basecamp, Shopify y GitHub para entregar productos digitales de calidad en tiempo récord."
-    imageSrc="/assets/Covers/LandingHeroCover.png"
+    subtitle="Organiza tu negocio como los mejores equipos del mundo"
+    description="¿Tienes una idea de lanar tu negocio pero no sabes por dónde empezar? ¿Tu equipo está abrumado con tareas y deadlines imposibles? Shape Up es la metodología que usan empresas como Basecamp, Shopify y GitHub para entregar productos digitales de calidad en tiempo récord."
+    imageSrc="/assets/ShapeUpPhoto.png"
     imageAlt="Asesoría Shape Up personalizada para equipos"
     ctaText="Agendar Asesoría"
     ctaHref="#contacto"
@@ -210,36 +210,18 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-          Transformaciones Reales
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Equipos que cambiaron completamente su forma de trabajar con Shape Up
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-3 gap-8">
-        {testimonials.map((testimonial) => (
-          <TestimonialCard {...testimonial} />
-        ))}
-      </div>
-    </div>
-  </section>
+
 
   <!-- Pricing and CTA -->
   <section id="contacto" class="py-20 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-3xl lg:text-4xl font-bold mb-6">
-        Invierte en la Transformación de tu Equipo
+        ¿Qué vas a tener al terminar?
       </h2>
       
       <div class="bg-white/10 rounded-3xl p-8 mb-8 backdrop-blur-sm">
-        <div class="text-6xl font-bold mb-4">$499 USD</div>
-        <p class="text-xl mb-6">Asesoría completa de 6 semanas</p>
+        <div class="text-6xl font-bold mb-4">$497 USD</div>
+        <p class="text-xl mb-6">Programa completo de 4 semanas</p>
         
         <div class="bg-yellow-400 text-black px-6 py-3 rounded-full inline-block font-semibold mb-6">
           🎯 Resultados Garantizados
@@ -250,49 +232,60 @@ const testimonials = [
             <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>Auditoría completa de tu proceso actual</span>
+            <span>Tener una landing page lista para captar clientes</span>
           </li>
           <li class="flex items-center space-x-3">
             <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>Plan personalizado de implementación</span>
+            <span>Un servicio definido y estructurado para vender con claridad</span>
           </li>
           <li class="flex items-center space-x-3">
             <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>Capacitación completa del equipo</span>
+            <span>Un plan de marketing con campañas activas</span>
           </li>
           <li class="flex items-center space-x-3">
             <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
             </svg>
-            <span>Acompañamiento semanal por 6 semanas</span>
-          </li>
-          <li class="flex items-center space-x-3">
-            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-            <span>Métricas y KPIs personalizados</span>
+            <span>Un roadmap de ideas validadas para seguir creciendo</span>
           </li>
         </ul>
       </div>
       
       <div class="space-y-4">
         <a 
-          href="https://calendly.com/alvarovillena/llamada-exploracion"
+          href="https://mpago.la/1ZpiebL"
           class="block w-full max-w-md mx-auto bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
         >
-          🚀 Agendar Asesoría
+          💳 Comprar Ahora - $497 USD
         </a>
         
-        <p class="text-sm text-purple-100">
-          Llamada gratuita de 20 minutos • Sin compromisos • Resultados garantizados
-        </p>
       </div>
     </div>
   </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Transformaciones Reales
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Equipos que cambiaron completamente su forma de trabajar con Shape Up
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial) => (
+            <TestimonialCard {...testimonial} />
+          ))}
+        </div>
+      </div>
+    </section>
 
   <!-- FAQ -->
   <section class="py-20 bg-gray-50">

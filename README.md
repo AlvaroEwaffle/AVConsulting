@@ -14,7 +14,7 @@ Sitio web profesional para Álvaro Villena, coach de innovación y constructor d
 - **E-book Interactivo** - $19 USD
 - **Landing Pages de Alto Impacto** - $199 USD  
 - **Asesoría Shape Up** - $499 USD
-- **Gerencia Fraccional de Innovación** - Desde $1,200 USD/mes
+- **Gerencia Fraccional de Innovación** - Desde $1,700 USD/mes
 
 ### 📱 **Diseño Responsive y Moderno**
 - Interfaz optimizada para móvil y desktop
