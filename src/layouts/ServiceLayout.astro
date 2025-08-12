@@ -22,24 +22,5 @@ const { title, description, serviceName, servicePrice } = Astro.props;
     <slot />
   </main>
   
-  <!-- Sticky CTA -->
-  <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40">
-    <div class="bg-white rounded-full shadow-2xl border border-gray-200 p-2">
-      <div class="flex items-center space-x-4 px-6 py-3">
-        <div class="text-center">
-          <div class="text-sm text-gray-600">{serviceName}</div>
-          <div class="text-lg font-bold text-blue-600">{servicePrice}</div>
-        </div>
-        <div class="h-8 w-px bg-gray-300"></div>
-        <a 
-          href="https://calendly.com/alvarovillena/llamada-exploracion"
-          class="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-full font-semibold transition-all duration-200 transform hover:scale-105"
-        >
-          Agendar Llamada
-        </a>
-      </div>
-    </div>
-  </div>
-  
   <Footer />
 </BaseLayout> 
