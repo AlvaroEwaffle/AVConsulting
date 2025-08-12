@@ -23,14 +23,14 @@ import CTAButton from '../components/common/CTAButton.astro';
   image="/assets/AlvaroAvatar.png"
   type="website"
 >
-  <div class="min-h-screen relative z-10">
+  <div class="min-h-screen relative z-10 w-full overflow-x-hidden">
     <!-- Main Content Container -->
-    <div class="max-w-4xl mx-auto px-4 py-6 sm:py-8">
+    <div class="w-full max-w-4xl mx-auto px-4 py-6 sm:py-8 overflow-hidden">
       <!-- Profile Header Card -->
-      <div class="bg-white rounded-xl border border-gray-200 p-4 sm:p-6 mb-6 shadow-lg">
-        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-4 sm:space-y-0">
+      <div class="bg-white rounded-xl border border-gray-200 p-4 sm:p-6 mb-6 shadow-lg w-full">
+        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between space-y-4 sm:space-y-0 w-full">
           <!-- Avatar and Info -->
-          <div class="flex items-start space-x-4">
+          <div class="flex items-start space-x-4 w-full">
             <!-- Avatar -->
             <div class="w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 border-2 border-yellow-400 rounded-lg flex items-center justify-center overflow-hidden relative flex-shrink-0">
               <img 
@@ -60,7 +60,7 @@ import CTAButton from '../components/common/CTAButton.astro';
             </div>
             
             <!-- Name and Title -->
-            <div class="flex-1 min-w-0">
+            <div class="flex-1 min-w-0 max-w-full">
               <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-1 leading-tight">Álvaro Villena</h1>
               <p class="text-base sm:text-lg text-gray-700 mb-2 sm:mb-3 leading-tight">Innovation Coach & Digital Product Builder</p>
               <p class="text-sm text-gray-600 leading-relaxed max-w-md">
@@ -70,7 +70,7 @@ import CTAButton from '../components/common/CTAButton.astro';
           </div>
           
           <!-- CTA and Contact Icons -->
-          <div class="flex flex-col items-start sm:items-end space-y-3">
+          <div class="flex flex-col items-start sm:items-end space-y-3 w-full sm:w-auto">
             <!-- Main CTA Button -->
             <a href="https://calendly.com/alvarovillena/llamada-exploracion" 
                class="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-4 sm:px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl text-center">
@@ -95,10 +95,10 @@ import CTAButton from '../components/common/CTAButton.astro';
       </div>
 
       <!-- Services Section -->
-      <div class="space-y-4">
+      <div class="space-y-4 w-full">
         <!-- Service Card 1: E-book Interactivo 
-        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg">
-          <div class="flex-1">
+        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
+          <div class="flex-1 min-w-0">
             <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">E-book Interactivo</h3>
             <p class="text-gray-600 text-sm sm:text-base mb-2">Aprende Shape Up y lanza tu negocio digital</p>
             <p class="text-gray-500 text-sm leading-relaxed">
@@ -117,15 +117,15 @@ import CTAButton from '../components/common/CTAButton.astro';
         </div>-->
 
         <!-- Service Card 2: Landing Pages -->
-        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg">
-          <div class="flex-1">
+        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
+          <div class="flex-1 min-w-0">
             <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">Landing Pages que venden</h3>
             <p class="text-gray-600 text-sm sm:text-base mb-2">Listas para convertir en 7 días</p>
             <p class="text-gray-500 text-sm leading-relaxed">
               Landing page optimizada para ventas, con garantía de conversión en la primera semana o devolvemos tu dinero.
             </p>
           </div>
-          <div class="flex items-center justify-between sm:justify-end space-x-3">
+          <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
             <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
               <span class="text-white text-xs font-bold">i</span>
             </div>
@@ -137,15 +137,15 @@ import CTAButton from '../components/common/CTAButton.astro';
         </div>
 
         <!-- Service Card 3: Asesoría Shape Up (Highlighted) -->
-        <div class="bg-blue-500 rounded-xl border border-blue-600 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-xl">
-          <div class="flex-1">
+        <div class="bg-blue-500 rounded-xl border border-blue-600 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-xl w-full">
+          <div class="flex-1 min-w-0">
             <h3 class="font-bold text-white text-lg sm:text-xl mb-1">Asesoría Shape Up</h3>
             <p class="text-blue-100 text-sm sm:text-base mb-2">Organiza tu producto como los mejores equipos</p>
             <p class="text-blue-200 text-sm leading-relaxed">
               Te acompaño 1:1 a implementar Shape Up en tu proyecto digital, logrando foco, claridad y avances reales en ciclos de 6 semanas.
             </p>
           </div>
-          <div class="flex items-center justify-between sm:justify-end space-x-3">
+          <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
             <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
               <span class="text-blue-500 text-xs font-bold">i</span>
             </div>
@@ -157,15 +157,15 @@ import CTAButton from '../components/common/CTAButton.astro';
         </div>
 
         <!-- Service Card 4: Gerencia Fraccional -->
-        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg">
-          <div class="flex-1">
+        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
+          <div class="flex-1 min-w-0">
             <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">Gerencia Fraccional</h3>
             <p class="text-gray-600 text-sm sm:text-base mb-2">Dirección de innovación a tu medida</p>
             <p class="text-gray-500 text-sm leading-relaxed">
               Lidero tus proyectos de innovación sin necesidad de contratar un gerente full-time. Flexible, ágil y orientado a resultados.
             </p>
           </div>
-          <div class="flex items-center justify-between sm:justify-end space-x-3">
+          <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
             <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
               <span class="text-white text-xs font-bold">i</span>
             </div>
@@ -178,8 +178,8 @@ import CTAButton from '../components/common/CTAButton.astro';
       </div>
 
       <!-- Metrics Section -->
-      <div class="mt-8 bg-yellow-400 rounded-xl p-4 sm:p-6 shadow-xl">
-        <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
+      <div class="mt-8 bg-yellow-400 rounded-xl p-4 sm:p-6 shadow-xl w-full overflow-hidden">
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center w-full">
           <div class="flex flex-col items-center">
             <span class="text-xl sm:text-2xl mb-1">🚀</span>
             <span class="text-2xl sm:text-3xl font-bold text-gray-800">100+</span>
@@ -204,7 +204,7 @@ import CTAButton from '../components/common/CTAButton.astro';
       </div>
 
       <!-- Bottom CTA Section -->
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center w-full">
         <a href="/testimonios" class="bg-white border-2 border-blue-500 text-blue-500 hover:bg-blue-50 font-semibold px-6 py-3 rounded-xl transition-colors duration-200 text-center shadow-lg">
           Testimonials
         </a>
