@@ -81,7 +81,7 @@ import CTAButton from '../components/common/CTAButton.astro';
               <h1 class="text-xl sm:text-2xl font-bold text-gray-800 mb-1 leading-tight">Álvaro Villena</h1>
               <p class="text-base sm:text-lg text-gray-700 mb-2 sm:mb-3 leading-tight">Innovation Coach & Digital Product Builder</p>
               <p class="text-sm text-gray-600 leading-relaxed max-w-md">
-                Transformo ideas digitales en productos listos para vender. Desde la estrategia hasta la ejecución, solo cuando lo necesitas.
+                "Convierte tu idea en un producto que vende. Yo me encargo de la estrategia y la ejecución, a la medida de tus necesidades." 
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ import CTAButton from '../components/common/CTAButton.astro';
             <!-- Main CTA Button -->
             <a href="https://calendly.com/alvarovillena/llamada-exploracion" 
                class="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-4 sm:px-6 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl text-center">
-              Agenda tu llamada de Exploración
+              Quiero mi llamada de exploración
             </a>
           </div>
         </div>
@@ -99,7 +99,27 @@ import CTAButton from '../components/common/CTAButton.astro';
 
       <!-- Services Section -->
       <div class="space-y-4 w-full">
-        <!-- Service Card 1: E-book Interactivo 
+        <!-- Service Card 1: Catálogo de Servicios -->
+        <div class="bg-blue-500 rounded-xl border border-blue-600 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-xl w-full">
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-white text-lg sm:text-xl mb-1">Catálogo de Productos y Servicios</h3>
+            <p class="text-blue-100 text-sm sm:text-base mb-2">¿Quieres un catálogo como este? </p>
+            <p class="text-blue-200 text-sm leading-relaxed">
+              Imagina tener tu propio escaparate online que trabaja por ti 24/7. En 48 horas tendrás tu vendedor digital listo para transformar visitantes en clientes.
+            </p>
+          </div>
+          <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
+            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
+              <span class="text-blue-500 text-xs font-bold">i</span>
+            </div>
+            <span class="text-white font-semibold text-sm sm:text-base">$49 USD</span>
+            <a href="/servicios/catalogo" class="bg-white hover:bg-gray-100 text-blue-500 text-xs px-3 py-2 rounded-lg transition-colors duration-200 font-medium font-semibold">
+              Quiero mi catálogo ahora
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Card 2: E-book Interactivo (Oculto por ahora)
         <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
           <div class="flex-1 min-w-0">
             <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">E-book Interactivo</h3>
@@ -108,7 +128,7 @@ import CTAButton from '../components/common/CTAButton.astro';
               Guía paso a paso para dar forma a tu idea y llevarla al mercado en menos de 6 semanas.
             </p>
           </div>
-          <div class="flex items-center justify-between sm:justify-end space-x-3">
+          <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
             <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
               <span class="text-white text-xs font-bold">i</span>
             </div>
@@ -119,13 +139,13 @@ import CTAButton from '../components/common/CTAButton.astro';
           </div>
         </div>-->
 
-        <!-- Service Card 2: Landing Pages -->
+        <!-- Service Card 3: Landing Pages -->
         <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
           <div class="flex-1 min-w-0">
             <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">Landing Pages que venden</h3>
             <p class="text-gray-600 text-sm sm:text-base mb-2">Listas para convertir en 7 días</p>
             <p class="text-gray-500 text-sm leading-relaxed">
-              Landing page optimizada para ventas, con garantía de conversión en la primera semana o devolvemos tu dinero.
+              "No es solo una página bonita: es una máquina de convertir visitas en ventas." Optimizada para tu negocio y con garantía: si en la primera semana no recibes contactos, te devolvemos el dinero.
             </p>
           </div>
           <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
@@ -134,38 +154,38 @@ import CTAButton from '../components/common/CTAButton.astro';
             </div>
             <span class="text-gray-800 font-semibold text-sm sm:text-base">$320 USD</span>
             <a href="/servicios/landing-pages" class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-lg transition-colors duration-200 font-medium">
-              Quiero mi landing
+              Quiero mi landing ganadora
             </a>
           </div>
         </div>
 
-        <!-- Service Card 3: Asesoría Shape Up (Highlighted) -->
-        <div class="bg-blue-500 rounded-xl border border-blue-600 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-xl w-full">
+        <!-- Service Card 4: Asesoría Shape Up -->
+        <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
           <div class="flex-1 min-w-0">
-            <h3 class="font-bold text-white text-lg sm:text-xl mb-1">Asesoría Shape Up</h3>
-            <p class="text-blue-100 text-sm sm:text-base mb-2">Organiza tu producto como los mejores equipos</p>
-            <p class="text-blue-200 text-sm leading-relaxed">
-              Te acompaño 1:1 a implementar Shape Up en tu proyecto digital, logrando foco, claridad y avances reales en ciclos de 6 semanas.
+            <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">Asesoría Shape Up</h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-2">Organiza tu producto como los mejores equipos</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              "Foco, claridad y avance real: así es trabajar con Shape Up." Te acompaño 1:1 a implementar esta metodología en tu proyecto para que dejes de improvisar y empieces a cumplir objetivos cada 6 semanas.
             </p>
           </div>
           <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
-            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-              <span class="text-blue-500 text-xs font-bold">i</span>
+            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+              <span class="text-white text-xs font-bold">i</span>
             </div>
-            <span class="text-white font-semibold text-sm sm:text-base">$499 USD</span>
-            <a href="/servicios/asesoria" class="bg-white hover:bg-gray-100 text-blue-500 text-xs px-3 py-2 rounded-lg transition-colors duration-200 font-medium font-semibold">
-              Agendar asesoría
+            <span class="text-gray-800 font-semibold text-sm sm:text-base">$499 USD</span>
+            <a href="/servicios/asesoria" class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-lg transition-colors duration-200 font-medium">
+              Agendar mi asesoría
             </a>
           </div>
         </div>
 
-        <!-- Service Card 4: Gerencia Fraccional -->
+        <!-- Service Card 5: Gerencia Fraccional -->
         <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 shadow-lg w-full">
           <div class="flex-1 min-w-0">
             <h3 class="font-bold text-gray-800 text-lg sm:text-xl mb-1">Gerencia Fraccional</h3>
             <p class="text-gray-600 text-sm sm:text-base mb-2">Dirección de innovación a tu medida</p>
             <p class="text-gray-500 text-sm leading-relaxed">
-              Lidero tus proyectos de innovación sin necesidad de contratar un gerente full-time. Flexible, ágil y orientado a resultados.
+              "Un gerente de innovación… solo cuando lo necesitas." Lidero tus proyectos clave sin que tengas que contratar un full-time, con flexibilidad, agilidad y enfoque en resultados.
             </p>
           </div>
           <div class="flex items-center justify-between sm:justify-end space-x-3 flex-shrink-0">
@@ -174,7 +194,7 @@ import CTAButton from '../components/common/CTAButton.astro';
             </div>
             <span class="text-gray-800 font-semibold text-sm sm:text-base">Desde $1,700 USD/mes</span>
             <a href="/servicios/gerencia" class="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-2 rounded-lg transition-colors duration-200 font-medium">
-              Explorar opciones
+              Explorar cómo podemos trabajar
             </a>
           </div>
         </div>
@@ -182,6 +202,9 @@ import CTAButton from '../components/common/CTAButton.astro';
 
       <!-- Metrics Section -->
       <div class="mt-8 bg-yellow-400 rounded-xl p-4 sm:p-6 shadow-xl w-full overflow-hidden">
+        <div class="text-center mb-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Lo que hemos logrado juntos</h3>
+        </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-center w-full max-w-4xl mx-auto">
           <div class="flex flex-col items-center">
             <span class="text-xl sm:text-2xl mb-1">🚀</span>
@@ -191,12 +214,12 @@ import CTAButton from '../components/common/CTAButton.astro';
           <div class="flex flex-col items-center">
             <span class="text-xl sm:text-2xl mb-1">💻</span>
             <span class="text-2xl sm:text-3xl font-bold text-gray-800">50+</span>
-            <span class="text-xs sm:text-sm text-gray-700">Landing pages entregadas</span>
+            <span class="text-xs sm:text-sm text-gray-700">Landing pages que venden</span>
           </div>
           <div class="flex flex-col items-center">
             <span class="text-xl sm:text-2xl mb-1">👥</span>
             <span class="text-2xl sm:text-3xl font-bold text-gray-800">30+</span>
-            <span class="text-xs sm:text-sm text-gray-700">Clientes asesorados</span>
+            <span class="text-xs sm:text-sm text-gray-700">Clientes felices</span>
           </div>
           <div class="flex flex-col items-center">
             <span class="text-xl sm:text-2xl mb-1">📚</span>
@@ -212,9 +235,10 @@ import CTAButton from '../components/common/CTAButton.astro';
           Testimonials
         </a> -->
         <a href="https://calendly.com/alvarovillena/llamada-exploracion" class="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-6 py-3 rounded-xl transition-colors duration-200 text-center shadow-lg">
-          Agenda tu llamada de Exploración
+          Quiero mi llamada de exploración
         </a>
       </div>
     </div>
   </div>
 </BaseLayout> 
+

@@ -12,8 +12,9 @@ Sitio web profesional para Álvaro Villena, coach de innovación y constructor d
 
 ### 🎯 **Hub de Servicios Completo**
 - **E-book Interactivo** - $19 USD
-- **Landing Pages de Alto Impacto** - $199 USD  
-- **Asesoría Shape Up** - $499 USD
+- **Landing Pages de Alto Impacto** - $320 USD  
+- **Asesoría Shape Up** - $497 USD
+- **Catálogo de Servicios** - $50 USD
 - **Gerencia Fraccional de Innovación** - Desde $1,700 USD/mes
 
 ### 📱 **Diseño Responsive y Moderno**

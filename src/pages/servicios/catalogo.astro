@@ -1,0 +1,253 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import HeroSection from '../../components/common/HeroSection.astro';
+import ProcessSteps from '../../components/services/ProcessSteps.astro';
+import TestimonialCard from '../../components/common/TestimonialCard.astro';
+
+const title = "Catálogo de Servicios - Landing Page Personalizada";
+const description = "Crea tu catálogo de servicios profesional con una landing page personalizada. Diseño atractivo, optimizado para conversiones y listo para vender en 48 horas.";
+
+const heroData = {
+  title: "¿Quieres un catálogo como este?",
+  subtitle: "Tu embajador digital que vende 24/7",
+  description: "Imagina despertar mañana y encontrar que tu catálogo de servicios ya está vendiendo por ti mientras duermes. En 48 horas tendrás tu landing page personalizada lista para convertir visitantes en clientes sin que tengas que estar presente.",
+  ctaText: "💳 Quiero mi catálogo - $49 USD",
+  ctaHref: "https://mpago.la/2g7Zy1e",
+  imageSrc: "/assets/LandingPhoto.png",
+  reverse: false
+};
+
+const processSteps = [
+  {
+    number: 1,
+    title: "Brief y Diseño",
+    description: "Analizamos tu negocio, servicios y público objetivo. Diseñamos una estructura clara y atractiva que refleje tu marca y convierta visitantes.",
+    icon: "🎨"
+  },
+  {
+    number: 2,
+    title: "Desarrollo y Contenido",
+    description: "Construimos tu landing page con contenido optimizado, imágenes profesionales y un diseño que genera confianza y conversiones.",
+    icon: "🛠️"
+  },
+  {
+    number: 3,
+    title: "Entrega y Optimización",
+    description: "Entregamos tu catálogo listo para usar, con instrucciones de personalización y recomendaciones para maximizar conversiones.",
+    icon: "🚀"
+  }
+];
+
+const testimonials = [
+  {
+    name: "María González",
+    company: "Consultora de Marketing",
+    text: "Álvaro creó mi catálogo de servicios en tiempo récord. La landing page es profesional y ya he recibido 3 consultas en la primera semana.",
+    avatar: "/assets/AlvaroAvatar.png"
+  },
+  {
+    name: "Carlos Mendoza",
+    company: "Coach de Negocios",
+    text: "Mi catálogo personalizado se ve increíble. El diseño es limpio, profesional y perfecto para mi marca. Excelente inversión.",
+    avatar: "/assets/AlvaroAvatar.png"
+  }
+];
+
+const servicePrice = "$50 USD";
+---
+
+<ServiceLayout title={title} description={description} serviceName="Catálogo de Servicios" servicePrice={servicePrice}>
+  <HeroSection {...heroData} />
+  
+  <!-- Why a Services Catalog Section -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          ¿Por qué tu negocio necesita esto AHORA?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-12">
+          Mientras lees esto, tus competidores ya están vendiendo en línea. Tu catálogo de servicios no es solo una página web, es tu vendedor digital que nunca duerme, nunca se cansa y nunca pide vacaciones.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Reason 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🎯</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Tu Primer Vendedor Digital</h3>
+          <p class="text-gray-600">
+            Cada visitante ve tu catálogo y piensa "¡Esto es lo que necesito!" Tu landing page será tu mejor vendedor, trabajando 24/7 para generar confianza y cerrar ventas.
+          </p>
+        </div>
+        
+        <!-- Reason 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">💼</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Deja de Perder Clientes</h3>
+          <p class="text-gray-600">
+            ¿Cuántos clientes has perdido por no mostrar claramente tus servicios? Con tu catálogo digital, nunca más dirás "déjame te explico" - todo estará ahí, claro y atractivo.
+          </p>
+        </div>
+        
+        <!-- Reason 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🚀</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Vende Mientras Duermes</h3>
+          <p class="text-gray-600">
+            ¿Te gustaría despertar mañana y encontrar que vendiste 3 servicios mientras dormías? Tu catálogo digital trabaja 24/7, convirtiendo visitantes en clientes automáticamente.
+          </p>
+        </div>
+        
+        <!-- Reason 4 -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📱</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">No Más "Te Llamo Después"</h3>
+          <p class="text-gray-600">
+            Los clientes quieren información AHORA, no cuando tú tengas tiempo. Tu catálogo digital está disponible 24/7, desde cualquier dispositivo, listo para cerrar ventas.
+          </p>
+        </div>
+        
+        <!-- Reason 5 -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📊</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Conoce a tu Cliente Ideal</h3>
+          <p class="text-gray-600">
+            ¿Sabes qué servicios interesan más? ¿Dónde pasan más tiempo tus visitantes? Tu catálogo digital te dará insights valiosos para optimizar y vender más.
+          </p>
+        </div>
+        
+        <!-- Reason 6 -->
+        <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🌍</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Rompe las Barreras del Tiempo y Lugar</h3>
+          <p class="text-gray-600">
+            ¿Por qué limitar tu negocio a tu horario y ubicación? Tu catálogo digital puede ser visto por clientes de cualquier parte del mundo, en cualquier momento.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- What You Get Section -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        ¿Qué vas a tener al terminar?
+      </h2>
+      <p class="text-xl text-gray-600 mb-8">
+        En solo 48 horas, tendrás en tus manos la herramienta que transformará cómo vendes tus servicios
+      </p>
+      
+      <div class="bg-white/10 rounded-3xl p-8 mb-8 backdrop-blur-sm">
+        <div class="text-6xl font-bold mb-4">$49 USD</div>
+        <p class="text-xl mb-6">Tu vendedor digital listo en 48 horas</p>
+        
+        <div class="bg-yellow-400 text-black px-6 py-3 rounded-full inline-block font-semibold mb-6">
+          🎯 Resultados Garantizados
+        </div>
+        
+        <ul class="text-left max-w-md mx-auto space-y-3 mb-8">
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Tu landing page personalizada que vende por ti 24/7</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Diseño que convierte visitantes en clientes automáticamente</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Contenido que genera confianza y engagement inmediato</span>
+          </li>
+          <li class="flex items-center space-x-3">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Entrega rápida con soporte para maximizar tus ventas</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="space-y-4">
+        <a 
+          href="https://mpago.la/2g7Zy1e"
+          class="block w-full max-w-md mx-auto bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+        >
+          💳 Comprar Ahora - $49 USD
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <ProcessSteps steps={processSteps} />
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">
+        Lo que dicen nuestros clientes
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        {testimonials.map((testimonial) => (
+          <TestimonialCard {...testimonial} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose This Service -->
+  <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-12 text-white">
+        ¿Por qué elegir este servicio?
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Entrega Rápida</h3>
+          <p class="text-blue-100">Tu catálogo listo en menos de 48 horas, sin esperas ni demoras.</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🎯</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Optimizado para Ventas</h3>
+          <p class="text-blue-100">Diseño pensado para convertir visitantes en clientes desde el primer momento.</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">💎</span>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">Precio Accesible</h3>
+          <p class="text-blue-100">Solo $49 USD por una landing page profesional que genera resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout> 
