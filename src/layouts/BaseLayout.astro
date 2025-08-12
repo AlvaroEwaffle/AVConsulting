@@ -4,34 +4,46 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string[];
+  image?: string;
+  type?: string;
 }
 
 const {
-  title = "Álvaro Villena - Coach de Innovación",
-  description = "Acompaño a personas y equipos que tienen una idea potente pero están atrapados entre el 'quiero hacerla realidad' y el 'no sé por dónde partir'.",
+  title = "Álvaro Villena - Innovation Coach & Digital Product Builder",
+  description = "Transformo ideas digitales en productos listos para vender. Especialista en Shape Up, landing pages de alto impacto y gerencia fraccional de innovación. Desde $19 USD.",
+  keywords = [],
+  image = "/assets/AlvaroAvatar.png",
+  type = "website"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, "https://alvarovillena.cl");
+const socialImageURL = new URL(image, canonicalURL);
 
-const socialImageURL = new URL("/assets/icono.png", canonicalURL);
-
-const keywords = [
-  "coaching",
-  "innovación",
-  "emprendimiento",
-  "shape up",
-  "transformación digital",
-  "startup",
+const defaultKeywords = [
+  "álvaro villena",
+  "innovation coach",
+  "digital product builder",
+  "shape up methodology",
+  "emprendimiento digital",
+  "startup coaching",
+  "landing pages",
+  "gerencia fraccional",
+  "innovación empresarial",
   "producto digital",
-  "validación",
-  "MVP",
-  "coaching ontológico",
-  "desarrollo tecnológico",
-  "fidelidapp",
-  "ewaffle",
-  "suria",
+  "MVP development",
+  "coaching emprendedor",
+  "transformación digital",
+  "estrategia de negocio",
+  "chile",
+  "santiago",
+  "coaching innovación",
+  "asesoría empresarial",
+  "desarrollo de productos",
+  "validación de ideas"
 ];
 
+const allKeywords = [...new Set([...defaultKeywords, ...keywords])];
 const currentYear = new Date().getFullYear();
 ---
 
@@ -56,10 +68,19 @@ const currentYear = new Date().getFullYear();
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Favicon and Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/icono.png" />
     <link rel="shortcut icon" type="image/png" href="/assets/icono.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icono.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/icono.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/icono.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Canonical and Generator -->
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
@@ -67,38 +88,49 @@ const currentYear = new Date().getFullYear();
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords.join(", ")} />
+    <meta name="keywords" content={allKeywords.join(", ")} />
     <meta name="author" content="Álvaro Villena" />
+    <meta name="copyright" content={`© ${currentYear} Álvaro Villena. Todos los derechos reservados.`} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Álvaro Villena - Innovation Coach & Digital Product Builder" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Álvaro Villena" />
+    <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="@alvarovillena" />
+    <meta property="twitter:creator" content="@alvarovillena" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
+    <meta property="twitter:image:alt" content="Álvaro Villena - Innovation Coach & Digital Product Builder" />
 
     <!-- Additional Meta Tags -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <meta name="theme-color" content="#2175a1" />
+    <meta name="msapplication-TileColor" content="#2175a1" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Álvaro Villena" />
     
     <!-- Language and Region -->
     <meta name="language" content="Spanish" />
     <meta name="geo.region" content="CL" />
     <meta name="geo.placename" content="Santiago" />
+    <meta name="geo.position" content="-33.4489;-70.6693" />
+    <meta name="ICBM" content="-33.4489, -70.6693" />
     
     <!-- Additional SEO -->
     <meta name="revisit-after" content="7 days" />
@@ -106,6 +138,25 @@ const currentYear = new Date().getFullYear();
     <meta name="rating" content="general" />
     <meta name="coverage" content="worldwide" />
     <meta name="target" content="all" />
+    <meta name="classification" content="Business" />
+    <meta name="category" content="Coaching & Consulting" />
+    
+    <!-- Performance and Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://calendly.com" />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//calendly.com" />
+    <link rel="dns-prefetch" href="//wa.me" />
+    <link rel="dns-prefetch" href="//www.linkedin.com" />
 
     <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json">
@@ -114,14 +165,22 @@ const currentYear = new Date().getFullYear();
         "@graph": [
           {
             "@type": "Person",
+            "@id": "https://alvarovillena.cl/#person",
             "name": "Álvaro Villena",
+            "alternateName": "Alvaro Villena",
             "url": "https://alvarovillena.cl",
-            "image": "https://alvarovillena.cl/assets/icono.png",
-            "description": "Coach de innovación y emprendimiento digital. Fundador de Fidelidapp, Ewaffle y Suria.",
-            "jobTitle": "Coach de Innovación y Emprendimiento Digital",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://alvarovillena.cl/assets/AlvaroAvatar.png",
+              "width": 400,
+              "height": 400
+            },
+            "description": "Innovation Coach & Digital Product Builder. Especialista en Shape Up, landing pages de alto impacto y gerencia fraccional de innovación.",
+            "jobTitle": "Innovation Coach & Digital Product Builder",
             "worksFor": {
               "@type": "Organization",
-              "name": "Villelabs"
+              "name": "Villelabs",
+              "url": "https://alvarovillena.cl"
             },
             "sameAs": [
               "https://www.linkedin.com/in/alvarovillena/",
@@ -136,54 +195,102 @@ const currentYear = new Date().getFullYear();
             "contactPoint": {
               "@type": "ContactPoint",
               "contactType": "customer service",
-              "email": "hola@alvarovillena.cl"
-            }
-          },
-          {
-            "@type": "Service",
-            "name": "Shape Up para Founders",
-            "description": "Programa de 12 semanas para lanzar tu negocio digital con método, foco y humanidad.",
-            "provider": {
-              "@type": "Person",
-              "name": "Álvaro Villena"
+              "email": "hola@alvarovillena.cl",
+              "telephone": "+56920115198",
+              "availableLanguage": ["Spanish", "English"]
             },
-            "offers": {
-              "@type": "Offer",
-              "price": "Consultar",
-              "priceCurrency": "CLP",
-              "availability": "https://schema.org/InStock"
-            },
-            "serviceType": "Coaching de Emprendimiento",
-            "areaServed": "Chile",
+            "knowsAbout": [
+              "Shape Up Methodology",
+              "Digital Product Development",
+              "Startup Coaching",
+              "Innovation Management",
+              "Landing Page Optimization",
+              "Business Strategy"
+            ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Servicios de Coaching",
+              "name": "Servicios de Coaching e Innovación",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Shape Up",
-                    "description": "Estrategia + método. Ciclos de 6 semanas con objetivos claros."
+                    "name": "E-book Interactivo Shape Up",
+                    "description": "Guía paso a paso para dar forma a tu idea y llevarla al mercado en menos de 6 semanas.",
+                    "price": "19",
+                    "priceCurrency": "USD"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Coaching Ontológico",
-                    "description": "Trabajo contigo para enfrentar la incertidumbre y el síndrome del impostor."
+                    "name": "Landing Pages de Alto Impacto",
+                    "description": "Landing page optimizada para ventas, con garantía de conversión en la primera semana.",
+                    "price": "199",
+                    "priceCurrency": "USD"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Desarrollo Tecnológico",
-                    "description": "Diseñamos y lanzamos un MVP que realmente puedas poner en manos de tus usuarios."
+                    "name": "Asesoría Shape Up",
+                    "description": "Te acompaño 1:1 a implementar Shape Up en tu proyecto digital.",
+                    "price": "499",
+                    "priceCurrency": "USD"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Gerencia Fraccional de Innovación",
+                    "description": "Lidero tus proyectos de innovación sin necesidad de contratar un gerente full-time.",
+                    "price": "1200",
+                    "priceCurrency": "USD"
                   }
                 }
               ]
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://alvarovillena.cl/#organization",
+            "name": "Villelabs",
+            "url": "https://alvarovillena.cl",
+            "logo": "https://alvarovillena.cl/assets/icono.png",
+            "description": "Empresa de coaching e innovación digital fundada por Álvaro Villena",
+            "foundingDate": "2020",
+            "founder": {
+              "@type": "Person",
+              "name": "Álvaro Villena"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Santiago",
+              "addressRegion": "RM",
+              "addressCountry": "CL"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "hola@alvarovillena.cl"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alvarovillena.cl/#website",
+            "url": "https://alvarovillena.cl",
+            "name": "Álvaro Villena - Innovation Coach",
+            "description": "Sitio web oficial de Álvaro Villena, Innovation Coach & Digital Product Builder",
+            "publisher": {
+              "@id": "https://alvarovillena.cl/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://alvarovillena.cl/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
             }
           }
         ]
