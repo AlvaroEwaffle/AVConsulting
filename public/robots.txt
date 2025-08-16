@@ -7,31 +7,27 @@ Sitemap: https://alvarovillena.cl/sitemap.xml
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all major search engines
+# Disallow admin or private areas (if any exist in the future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow important directories
+Allow: /assets/
+Allow: /servicios/
+Allow: /contacto/
+Allow: /testimonios/
+Allow: /mi-metodo/
+
+# Specific rules for search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Block unnecessary files
-Disallow: /src/
-Disallow: /node_modules/
-Disallow: /.git/
-Disallow: /package.json
-Disallow: /package-lock.json
-Disallow: /tsconfig.json
-Disallow: /astro.config.mjs
-Disallow: /tailwind.config.cjs
-
-# Allow important assets
-Allow: /assets/
-Allow: /images/
-Allow: /css/
-Allow: /js/
+Crawl-delay: 1

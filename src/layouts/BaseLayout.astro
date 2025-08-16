@@ -51,7 +51,6 @@ const currentYear = new Date().getFullYear();
 <html lang="es">
   <head>
     <!-- Google Tag Manager -->
-    <!-- TEMPORARILY DISABLED - Facebook Pixel detected
     <script>
       (function(w,d,s,l,i){
         w[l]=w[l]||[];
@@ -66,7 +65,6 @@ const currentYear = new Date().getFullYear();
         }
       })(window,document,'script','dataLayer','GTM-PBTHC5VK');
     </script>
-    -->
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
@@ -147,19 +145,14 @@ const currentYear = new Date().getFullYear();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     
-    <!-- Preconnect to external domains -->
+    <!-- DNS Prefetch for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://calendly.com" />
-    
-    <!-- DNS Prefetch -->
+    <link rel="preconnect" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="//www.google-analytics.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="//calendly.com" />
-    <link rel="dns-prefetch" href="//wa.me" />
-    <link rel="dns-prefetch" href="//www.linkedin.com" />
-
+    
     <!-- Structured Data / JSON-LD -->
     <script type="application/ld+json">
       {
@@ -170,6 +163,7 @@ const currentYear = new Date().getFullYear();
             "@id": "https://alvarovillena.cl/#person",
             "name": "Álvaro Villena",
             "alternateName": "Alvaro Villena",
+            "description": "Innovation Coach & Digital Product Builder",
             "url": "https://alvarovillena.cl",
             "image": {
               "@type": "ImageObject",
@@ -177,108 +171,61 @@ const currentYear = new Date().getFullYear();
               "width": 400,
               "height": 400
             },
-            "description": "Innovation Coach & Digital Product Builder. Especialista en Shape Up, landing pages de alto impacto y gerencia fraccional de innovación.",
-            "jobTitle": "Innovation Coach & Digital Product Builder",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Villelabs",
-              "url": "https://alvarovillena.cl"
-            },
             "sameAs": [
               "https://www.linkedin.com/in/alvarovillena/",
               "https://twitter.com/alvarovillena"
             ],
+            "jobTitle": "Innovation Coach",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Álvaro Villena Consulting"
+            },
+            "knowsAbout": [
+              "Innovation Management",
+              "Digital Product Development",
+              "Shape Up Methodology",
+              "Product Strategy",
+              "Team Leadership",
+              "Digital Transformation"
+            ],
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Santiago",
-              "addressRegion": "RM",
+              "addressRegion": "Región Metropolitana",
+              "addressCountry": "CL"
+            },
+            "telephone": "+56-9-1234-5678",
+            "email": "hola@alvarovillena.cl"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://alvarovillena.cl/#organization",
+            "name": "Álvaro Villena Consulting",
+            "url": "https://alvarovillena.cl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://alvarovillena.cl/assets/icono.png",
+              "width": 512,
+              "height": 512
+            },
+            "description": "Consultoría especializada en innovación, desarrollo de productos digitales y metodología Shape Up",
+            "foundingDate": "2020",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Santiago",
+              "addressRegion": "Región Metropolitana",
               "addressCountry": "CL"
             },
             "contactPoint": {
               "@type": "ContactPoint",
               "contactType": "customer service",
               "email": "hola@alvarovillena.cl",
-              "telephone": "+56920115198",
               "availableLanguage": ["Spanish", "English"]
             },
-            "knowsAbout": [
-              "Shape Up Methodology",
-              "Digital Product Development",
-              "Startup Coaching",
-              "Innovation Management",
-              "Landing Page Optimization",
-              "Business Strategy"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Servicios de Coaching e Innovación",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "E-book Interactivo Shape Up",
-                    "description": "Guía paso a paso para dar forma a tu idea y llevarla al mercado en menos de 6 semanas.",
-                    "price": "19",
-                    "priceCurrency": "USD"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Landing Pages de Alto Impacto",
-                    "description": "Landing page optimizada para ventas, con garantía de conversión en la primera semana.",
-                    "price": "199",
-                    "priceCurrency": "USD"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Asesoría Shape Up",
-                    "description": "Te acompaño 1:1 a implementar Shape Up en tu proyecto digital.",
-                    "price": "499",
-                    "priceCurrency": "USD"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Gerencia Fraccional de Innovación",
-                    "description": "Lidero tus proyectos de innovación sin necesidad de contratar un gerente full-time.",
-                    "price": "1200",
-                    "priceCurrency": "USD"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://alvarovillena.cl/#organization",
-            "name": "Villelabs",
-            "url": "https://alvarovillena.cl",
-            "logo": "https://alvarovillena.cl/assets/icono.png",
-            "description": "Empresa de coaching e innovación digital fundada por Álvaro Villena",
-            "foundingDate": "2020",
-            "founder": {
-              "@type": "Person",
-              "name": "Álvaro Villena"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Santiago",
-              "addressRegion": "RM",
-              "addressCountry": "CL"
-            },
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer service",
-              "email": "hola@alvarovillena.cl"
-            }
+            "sameAs": [
+              "https://www.linkedin.com/in/alvarovillena/",
+              "https://twitter.com/alvarovillena"
+            ]
           },
           {
             "@type": "WebSite",
@@ -324,9 +271,9 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
-    <!-- Google Tag Manager (noscript) - TEMPORARILY DISABLED - Facebook Pixel detected -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBTHC5VK"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <slot />
