@@ -29,7 +29,7 @@ const { title, description = "Álvaro Villena - Consultoría en Innovación y Tr
 		
 		<!-- Open Graph Meta (para compartir en redes sociales) -->
 		<meta name="author" content="Álvaro Villena">
-		<meta name="keywords" content="IA, Product Management, Innovación, Liderazgo, Transformación Digital">
+		<meta name="keywords" content="desarrollo software chile, chatbots inteligentes whatsapp, automatización procesos empresariales, micro saas desarrollo chile, aplicaciones web a medida, desarrollo software a medida chile, chatbots IA chile, automatización chile, desarrollo node.js chile, desarrollo react chile">
 		<meta property="og:title" content={title}>
 		<meta property="og:description" content={description}>
 		<meta property="og:url" content="https://alvarovillena.cl">
@@ -42,46 +42,112 @@ const { title, description = "Álvaro Villena - Consultoría en Innovación y Tr
 		<meta name="twitter:description" content={description}>
 		<meta name="twitter:image" content={icono.src}>
 
-		<!-- Schema.org Markup -->
+		<!-- Schema.org Markup - Organization -->
 		<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "Course",
-			"name": "Digital Founders - Curso de Emprendimiento Digital",
-			"description": "Aprende a lanzar tu negocio digital desde cero. 7 módulos prácticos con estrategias probadas para validar, lanzar y hacer crecer tu startup en 8 semanas.",
-			"provider": {
-				"@type": "Person",
-				"name": "Álvaro Villena",
-				"jobTitle": "Emprendedor Digital y Fundador de Fidelidapp"
-			},
-			"offers": {
-				"@type": "Offer",
-				"price": "0",
-				"priceCurrency": "CLP",
-				"availability": "https://schema.org/InStock"
-			},
-			"numberOfCredits": "7 módulos",
-			"timeRequired": "8 semanas",
-			"courseCode": "DF001",
-			"educationalLevel": "Principiante",
-			"teaches": [
-				"Validación de ideas de negocio",
-				"Modelo de negocio digital",
-				"Marketing digital",
-				"Finanzas para emprendedores",
-				"Operación de negocios digitales"
-			],
-			"learningResourceType": "Curso en línea",
-			"isAccessibleForFree": true,
-			"inLanguage": "es-CL",
-			"coursePrerequisites": "No se requieren conocimientos previos",
-			"hasCourseInstance": {
-				"@type": "CourseInstance",
-				"courseMode": "online",
-				"duration": "P8W",
-				"startDate": "2024-04-01",
-				"endDate": "2024-05-26"
-			}
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "https://villelabs.cl/#organization",
+					"name": "VilleLabs",
+					"alternateName": "Ville Labs",
+					"url": "https://villelabs.cl",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://villelabs.cl/icono.png",
+						"width": 512,
+						"height": 512
+					},
+					"description": "Desarrollo de software a medida, chatbots inteligentes con IA y automatización de procesos. Construimos soluciones que generan ingresos y reducen trabajo manual.",
+					"foundingDate": "2020",
+					"founder": {
+						"@type": "Person",
+						"name": "Álvaro Villena"
+					},
+					"address": {
+						"@type": "PostalAddress",
+						"addressLocality": "Santiago",
+						"addressRegion": "Región Metropolitana",
+						"addressCountry": "CL"
+					},
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"contactType": "customer service",
+						"email": "alvrao.villena@gmail.com",
+						"availableLanguage": ["Spanish", "English"]
+					},
+					"sameAs": [
+						"https://www.linkedin.com/in/alvarovillena/",
+						"https://alvarovillena.cl"
+					],
+					"areaServed": {
+						"@type": "Place",
+						"name": "Latinoamérica"
+					},
+					"knowsAbout": [
+						"Desarrollo de software",
+						"Chatbots con IA",
+						"Automatización de procesos",
+						"Micro-SaaS",
+						"Node.js",
+						"React",
+						"OpenAI",
+						"RAG"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://villelabs.cl/#website",
+					"url": "https://villelabs.cl",
+					"name": "VilleLabs - Desarrollo de Software y Chatbots con IA",
+					"description": "Creamos aplicaciones y chatbots con IA que automatizan y escalan tu negocio. Construimos contigo, desde la idea hasta el deploy.",
+					"publisher": {
+						"@id": "https://villelabs.cl/#organization"
+					},
+					"potentialAction": {
+						"@type": "SearchAction",
+						"target": "https://villelabs.cl/contacto",
+						"query-input": "required name=search_term_string"
+					}
+				},
+				{
+					"@type": "Service",
+					"@id": "https://villelabs.cl/#service-software",
+					"name": "Desarrollo de Software a Medida",
+					"description": "Aplicaciones web a medida, portales, backoffice y paneles de control diseñados para tu operación.",
+					"provider": {
+						"@id": "https://villelabs.cl/#organization"
+					},
+					"areaServed": "Latinoamérica",
+					"offers": {
+						"@type": "Offer",
+						"price": "2500",
+						"priceCurrency": "USD",
+						"priceSpecification": {
+							"@type": "UnitPriceSpecification",
+							"price": "2500",
+							"priceCurrency": "USD",
+							"valueAddedTaxIncluded": false
+						}
+					}
+				},
+				{
+					"@type": "Service",
+					"@id": "https://villelabs.cl/#service-chatbot",
+					"name": "Chatbots Inteligentes con IA",
+					"description": "Chatbots con tecnología RAG para ventas, soporte y operaciones en WhatsApp y web.",
+					"provider": {
+						"@id": "https://villelabs.cl/#organization"
+					},
+					"areaServed": "Latinoamérica",
+					"offers": {
+						"@type": "Offer",
+						"price": "1500",
+						"priceCurrency": "USD"
+					}
+				}
+			]
 		}
 		</script>
 
@@ -90,35 +156,40 @@ const { title, description = "Álvaro Villena - Consultoría en Innovación y Tr
 		{
 			"@context": "https://schema.org",
 			"@type": "FAQPage",
-			"mainEntity": [{
-				"@type": "Question",
-				"name": "¿Qué es Digital Founders?",
-				"acceptedAnswer": {
-					"@type": "Answer",
-					"text": "Digital Founders es un programa de acompañamiento diseñado para ayudarte a lanzar tu negocio digital desde cero, sin experiencia previa. Te guiaré en todo el proceso: desde encontrar una idea con potencial, validarla con clientes reales, diseñar un modelo de negocio rentable, hasta implementar tu solución de forma práctica."
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "¿Cuánto cuesta desarrollar una aplicación a medida?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Los proyectos de aplicaciones web a medida parten desde $2,500 USD. El precio final depende de la complejidad, integraciones necesarias y alcance del proyecto. Ofrecemos cotizaciones transparentes sin costos ocultos."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "¿Cuánto tiempo toma desarrollar un chatbot inteligente?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Un chatbot básico con IA puede estar listo en 2-3 semanas. Para chatbots más complejos con integraciones y entrenamiento personalizado, el tiempo puede extenderse a 4-6 semanas. Siempre trabajamos con entregables funcionales en cada ciclo."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "¿Los chatbots funcionan con WhatsApp?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Sí, nuestros chatbots se integran con WhatsApp Business API, además de web, aplicaciones móviles y APIs internas. Utilizamos tecnología RAG (Retrieval Augmented Generation) para que respondan con contexto real de tu negocio."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "¿Necesito tener un equipo técnico interno?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "No es necesario. Nosotros manejamos todo el desarrollo técnico desde la idea hasta el deploy. Solo necesitas enfocarte en tu negocio, nosotros en crear la solución. Incluimos capacitación y documentación para que puedas mantener el sistema."
+					}
 				}
-			}, {
-				"@type": "Question",
-				"name": "¿Cuánto dura el curso Digital Founders?",
-				"acceptedAnswer": {
-					"@type": "Answer",
-					"text": "El programa Digital Founders tiene una duración de 8 semanas, durante las cuales cubrirás 7 módulos prácticos diseñados para lanzar tu negocio digital desde cero."
-				}
-			}, {
-				"@type": "Question",
-				"name": "¿Qué aprenderé en Digital Founders?",
-				"acceptedAnswer": {
-					"@type": "Answer",
-					"text": "En Digital Founders aprenderás a validar ideas, crear modelos de negocio, implementar estrategias de marketing digital, gestionar finanzas y operar tu negocio digital. El programa incluye 7 módulos prácticos con ejercicios reales y acompañamiento personalizado."
-				}
-			}, {
-				"@type": "Question",
-				"name": "¿Necesito experiencia previa para tomar Digital Founders?",
-				"acceptedAnswer": {
-					"@type": "Answer",
-					"text": "No, Digital Founders está diseñado para emprendedores que quieren empezar desde cero. No se requieren conocimientos previos, solo ganas de aprender y emprender."
-				}
-			}]
+			]
 		}
 		</script>
 

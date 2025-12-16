@@ -110,3 +110,51 @@
   @apply bg-gray-500;
 }
 
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .btn {
+    @apply min-h-[44px] px-6 py-3;
+  }
+  
+  /* Larger touch targets */
+  a, button {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+/* Sticky CTA Bar */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: white;
+  border-top: 2px solid #2175a1;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta-bar {
+    display: block;
+  }
+  
+  /* Add padding to body when sticky CTA is visible */
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid #2175a1;
+  outline-offset: 2px;
+}
+

@@ -21,44 +21,81 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <!-- Contact Form -->
         <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <h2 class="text-2xl font-bold mb-6 text-brand-blue">Envía un mensaje</h2>
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-2 text-brand-blue">Envía un mensaje</h2>
+            <p class="text-sm text-gray-600">Responde en menos de 24 horas garantizado</p>
+          </div>
           <form id="contact-form" class="space-y-6">
-            <div>
-              <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-              <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
+                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Apellido *</label>
+                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+              </div>
             </div>
             <div>
-              <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
-              <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico *</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
             </div>
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
-              <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
-            </div>
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-              <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
-            </div>
-            <div>
-              <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
-              <input type="text" id="company" name="company" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Empresa *</label>
+                <input type="text" id="company" name="company" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+              </div>
             </div>
             <div>
               <label for="role" class="block text-sm font-medium text-gray-700 mb-1">Cargo</label>
-              <input type="text" id="role" name="role" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
+              <input type="text" id="role" name="role" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue" />
             </div>
             <div>
-              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio de interés</label>
-              <select id="service" name="services" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue">
+              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Servicio de interés *</label>
+              <select id="service" name="services" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue">
                 <option value="">Selecciona un servicio</option>
-                <option value="Servicio de Innovación">Servicio de Innovación</option>
-                <option value="Programa Golden Time">Programa Golden Time</option>
+                <option value="Aplicaciones web a la medida">Aplicaciones web a la medida</option>
+                <option value="Chatbots inteligentes">Chatbots inteligentes</option>
+                <option value="Automatización de procesos">Automatización de procesos</option>
+                <option value="Micro-SaaS para founders">Micro-SaaS para founders</option>
+                <option value="Infraestructura moderna">Infraestructura moderna</option>
+                <option value="Consultoría técnica">Consultoría técnica</option>
                 <option value="Otro">Otro</option>
               </select>
             </div>
             <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"></textarea>
+              <label for="challenge" class="block text-sm font-medium text-gray-700 mb-1">¿Cuál es tu mayor desafío o necesidad? *</label>
+              <textarea id="challenge" name="challenge" rows="3" required placeholder="Ej: Necesito automatizar el proceso de captura de leads..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"></textarea>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje adicional</label>
+              <textarea id="message" name="message" rows="4" placeholder="Cuéntanos más sobre tu proyecto..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue"></textarea>
+            </div>
+            <div>
+              <label for="source" class="block text-sm font-medium text-gray-700 mb-1">¿Cómo nos conociste?</label>
+              <select id="source" name="source" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue">
+                <option value="">Selecciona una opción</option>
+                <option value="Búsqueda en Google">Búsqueda en Google</option>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Recomendación">Recomendación</option>
+                <option value="Redes sociales">Redes sociales</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p class="text-sm font-semibold text-blue-900 mb-1">Garantía de respuesta</p>
+                  <p class="text-sm text-blue-700">Te responderemos en menos de 24 horas. Si no lo hacemos, te regalamos una consultoría de 30 minutos.</p>
+                </div>
+              </div>
             </div>
             <button type="submit" id="submit-button" class="btn btn-primary text-lg py-4 px-8 w-full flex items-center justify-center">
               <span>Enviar mensaje</span>
@@ -195,7 +232,9 @@ import Layout from '../layouts/Layout.astro';
         company: formData.get('company') || '',
         role: formData.get('role') || '',
         services: formData.get('services') || '',
-        message: formData.get('message') || ''
+        challenge: formData.get('challenge') || '',
+        message: formData.get('message') || '',
+        source: formData.get('source') || ''
       };
 
       // Send email using EmailJS

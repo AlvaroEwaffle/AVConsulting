@@ -1,57 +1,86 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Hero from "../components/Hero.astro";
-import TargetAudience from "../components/TargetAudience.astro";
-import Services from "../components/Services.astro";
-import LeadMagnet from "../components/LeadMagnet.astro";
-import AboutAuthor from "../components/AboutAuthor.astro";
 import "../styles/global.css";
 import LandingHeroCover from "../assets/Covers/LandingHeroCover.png";
-import HeroImage from "../assets/Hero01Jun.jpg";
-import Sprint0Structure from "../components/innovation/Sprint0Structure.astro";
 ---
 
 <Layout
-	title="Álvaro Villena - Consultoría en Innovación y Transformación Digital"
-	description="Transforma tu empresa y tu carrera con innovación, agilidad y liderazgo. Acompañamiento experto para equipos y líderes que quieren resultados reales en 8 semanas."
+	title="VilleLabs – Desarrollo de Software y Chatbots con IA | Chile"
+	description="Desarrollo de software a medida, chatbots inteligentes con IA y automatización de procesos. Aplicaciones web, Micro-SaaS y chatbots para WhatsApp. Desde $1,500 USD. Santiago, Chile."
 >
-	<!-- Hero Section -->
-	<section class="pt-32 pb-4 md:pt-40 md:pb-24">
+	<!-- Hero -->
+	<section class="pt-24 pb-10 md:pt-32 md:pb-16 bg-gradient-to-b from-white to-gray-50">
 		<div class="container">
+			<!-- Trust Badge -->
+			<div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+				<div class="flex items-center gap-2 text-sm text-gray-600">
+					<span class="text-green-600 font-bold">✓</span>
+					<span>+50 empresas confían en nosotros</span>
+				</div>
+				<div class="flex items-center gap-2 text-sm text-gray-600">
+					<span class="text-green-600 font-bold">✓</span>
+					<span>Resultados en 2-4 semanas</span>
+				</div>
+				<div class="flex items-center gap-2 text-sm text-gray-600">
+					<span class="text-green-600 font-bold">✓</span>
+					<span>Sin burocracia, sin humo</span>
+				</div>
+			</div>
+
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-				<div class="space-y-4">
-					<h1 class="animate-fade-in text-brand-blue">
-						¿Frustrado porque tus ideas nunca llegan a producción?
-					</h1>
-					<p class="text-xl text-gray-600">
-						Te acompaño a salir del estancamiento y transformar tu
-						equipo con Shape Up, la metodología de agilidad de
-						última generación.
-						<br /><br />
-						Trabajemos juntos para alinear a todos, acelerar resultados
-						y lanzar proyectos reales en  8 semanas.
-					</p>
-					<div class="flex flex-col gap-4">
-						<a href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220" class="btn btn-primary text-lg py-4">
-							Agendar Sesión Inicial Gratis
-						</a>
-						<!--
-						<div class="flex flex-col sm:flex-row gap-4">
-							<a href="/servicio-innovacion" class="btn btn-outline flex-1">
-								Servicio de Innovación
-							</a>
-							<a href="/programa-golden-time" class="btn btn-outline flex-1">
-								Programa Golden Time
-							</a>
+				<div class="space-y-6">
+					<div>
+						<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-blue mb-4 leading-tight">
+							Software a medida y chatbots con IA que generan ingresos y reducen trabajo manual
+						</h1>
+						<p class="text-xl md:text-2xl text-gray-700 font-medium mb-2">
+							Construimos contigo, desde la idea hasta el deploy.
+						</p>
+						<p class="text-lg text-gray-600">
+							Para founders y equipos que necesitan resultados rápidos y medibles. Menos consultoría con humo — más soluciones reales que impactan tu operación.
+						</p>
+					</div>
+					
+					<!-- Key Metrics -->
+					<div class="grid grid-cols-3 gap-4 py-4 border-t border-b border-gray-200">
+						<div class="text-center">
+							<div class="text-2xl md:text-3xl font-bold text-brand-blue">2-4</div>
+							<div class="text-xs md:text-sm text-gray-600">semanas</div>
 						</div>
-						-->
+						<div class="text-center">
+							<div class="text-2xl md:text-3xl font-bold text-brand-blue">50+</div>
+							<div class="text-xs md:text-sm text-gray-600">empresas</div>
+						</div>
+						<div class="text-center">
+							<div class="text-2xl md:text-3xl font-bold text-brand-blue">100%</div>
+							<div class="text-xs md:text-sm text-gray-600">entregables</div>
+						</div>
+					</div>
+
+					<div class="flex flex-col sm:flex-row gap-4">
+						<a href="/contacto" class="btn btn-primary text-lg py-4 px-8 text-center min-h-[56px] flex items-center justify-center">Agenda una llamada gratuita</a>
+						<a href="#proyectos" class="btn btn-outline text-lg py-4 px-8 text-center min-h-[56px] flex items-center justify-center">Ver proyectos reales</a>
+					</div>
+
+					<!-- Social Proof -->
+					<div class="pt-4">
+						<p class="text-sm text-gray-500 mb-2">Clientes que confían en nosotros:</p>
+						<div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+							<span>Fidelidapp</span>
+							<span>•</span>
+							<span>Ewaffle</span>
+							<span>•</span>
+							<span>C4i UdeC</span>
+							<span>•</span>
+							<span>+47 más</span>
+						</div>
 					</div>
 				</div>
 				<div class="relative">
 					<Image
 						src={LandingHeroCover}
-						alt="Álvaro Villena - Consultoría en Innovación"
+						alt="VilleLabs - Desarrollo y chatbots"
 						class="rounded-2xl shadow-xl"
 						width={600}
 						height={400}
@@ -61,584 +90,650 @@ import Sprint0Structure from "../components/innovation/Sprint0Structure.astro";
 		</div>
 	</section>
 
-	<!-- MinimalServices Grid -->
-	<section class="py-16 md:py-12">
+	<!-- Pricing Transparency -->
+	<section class="py-16 md:py-20 bg-brand-blue text-white">
 		<div class="container">
-
-		  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-			<!-- Servicio de Innovación -->
-			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-			  
-			  <h2 class="text-2xl font-bold mb-4">Innovación Empresarial</h2>
-			  <p class="text-gray-600 mb-6">
-				¿Tu empresa o equipo necesitan alinearse, acelerar resultados y lanzar proyectos reales? <br>
-				He diseñado un programa de innovación empresarial que te ayudará a acelerar resultados y lanzar proyectos reales en 8 semanas.
-			  </p>
-			  
-			  <a href="/servicio-innovacion" class="btn btn-primary">
-				Me interesa
-			  </a>
-			</div>
-	
-			<!-- Programa Golden Time -->
-			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-			  
-			  <h2 class="text-2xl font-bold mb-4">Coaching Individual</h2>
-			  <p class="text-gray-600 mb-6">
-				¿Quieres definir tu norte, eliminar el ruido y ejecutar con propósito? <br>
-				En este proceso de coaching te acompaño a explorar qué y cómo alcanzar tus metas.
-			  </p>
-			  
-			  <a href="/programa-golden-time" class="btn btn-primary">
-				Quiero saber más
-			  </a>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
-	<!-- Pain Points -->
-	<section class="py-16 md:py-12">
-		<div class="container">
-			<h2 class="text-center mb-6 text-brand-blue">
-				¿Te identificas con alguno de estos desafíos?
-			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div
-					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-				>
-					<div
-						class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
-						style="background-color: #2175a1;"
-					>
-						<svg
-							class="w-6 h-6 text-blue-600"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							style="color: #ffffff;"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-							></path>
-						</svg>
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4">Inversión transparente</h2>
+				<p class="text-xl text-blue-100 mb-8">Precios claros desde el inicio. Sin sorpresas, sin costos ocultos.</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+					<div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+						<div class="text-3xl font-bold mb-2">Desde $2,500</div>
+						<div class="text-blue-100 mb-4">USD por proyecto</div>
+						<p class="text-sm text-white/90">Aplicaciones web a medida</p>
 					</div>
-					<h3 class="text-xl font-bold mb-4">
-						¿Te frena la burocracia interna?
-					</h3>
-					<p class="text-gray-600">
-						Los procesos lentos y la resistencia al cambio están
-						impidiendo que tu equipo innove y crezca.
-					</p>
+					<div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+						<div class="text-3xl font-bold mb-2">Desde $1,500</div>
+						<div class="text-blue-100 mb-4">USD por chatbot</div>
+						<p class="text-sm text-white/90">Chatbots IA con RAG</p>
+					</div>
+					<div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+						<div class="text-3xl font-bold mb-2">Desde $3,000</div>
+						<div class="text-blue-100 mb-4">USD por MVP</div>
+						<p class="text-sm text-white/90">Micro-SaaS completo</p>
+					</div>
 				</div>
-				<div
-					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-				>
-					<div
-						class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
-						style="background-color: #2175a1;"
-					>
-						<svg
-							class="w-6 h-6 text-blue-600"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							style="color: #fff;"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-							></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold mb-4">
-						¿Falta alineación entre áreas?
-					</h3>
-					<p class="text-gray-600">
-						Los silos departamentales están impidiendo la
-						colaboración y la innovación transversal.
-					</p>
-				</div>
-				<div
-					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-				>
-					<div
-						class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
-						style="background-color: #2175a1;"
-					>
-						<svg
-							class="w-6 h-6 text-blue-600"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							style="color: #fff;"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold mb-4">
-						¿Te cuesta lanzar productos innovadores?
-					</h3>
-					<p class="text-gray-600">
-						Las ideas se quedan en el papel y no logras materializar
-						la innovación en productos exitosos.
-					</p>
+				<div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+					<p class="text-lg mb-4">¿Necesitas una cotización personalizada?</p>
+					<a href="/contacto" class="btn bg-white text-brand-blue hover:bg-blue-50">Solicitar cotización gratuita</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Value Proposition Mejorada -->
-	<section class="py-16 md:py-12" style="background-color: #2175a1;">
+	<!-- Qué hacemos -->
+	<section id="que-hacemos" class="py-16 md:py-20">
 		<div class="container">
-			<h2 class="text-center mb-4 text-3xl font-bold text-white">¿Cómo te ayudo a superar estos desafíos?</h2>
-			<p class="text-center text-xl text-white mb-12 max-w-2xl mx-auto">
-				No solo identifico los obstáculos de tu empresa, sino que te acompaño con un método probado para resolverlos y lograr resultados reales en semanas.
-			</p>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div class="text-center">
-					<div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: #fff;">
-						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #2175a1;">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-						</svg>
+			<h2 class="text-3xl font-bold text-brand-blue mb-8 text-center">Qué hacemos</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-3">
+						<span class="text-2xl">🧰</span>
+						<h3 class="text-xl font-bold text-brand-blue">Aplicaciones web a la medida</h3>
 					</div>
-					<h3 class="text-xl font-bold mb-2 text-white">Acelera tu innovación</h3>
-					<p class="text-white">
-						Implementamos metodologías ágiles que eliminan la burocracia y aceleran el lanzamiento de tus ideas.
-					</p>
+					<p class="text-gray-700 mb-4">Portales, backoffice y paneles de control diseñados para tu operación.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>Roles, permisos y auditoría</li>
+						<li>Integraciones: Stripe, Zapier, Slack, CRMs</li>
+						<li>UX enfocada en productividad</li>
+					</ul>
 				</div>
-				<div class="text-center">
-					<div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: #fff;">
-						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #2175a1;">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-						</svg>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-3">
+						<span class="text-2xl">🤖</span>
+						<h3 class="text-xl font-bold text-brand-blue">Chatbots inteligentes</h3>
 					</div>
-					<h3 class="text-xl font-bold mb-2 text-white">Alinea a tu equipo</h3>
-					<p class="text-white">
-						Rompemos los silos y creamos una cultura de colaboración y foco en objetivos comunes.
-					</p>
+					<p class="text-gray-700 mb-4">Ventas, soporte y operaciones en WhatsApp y web con contexto real de tu negocio.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>RAG con tus documentos y políticas</li>
+						<li>Formularios conversacionales y acciones</li>
+						<li>Panel con métricas y calidad de respuestas</li>
+					</ul>
 				</div>
-				<div class="text-center">
-					<div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" style="background-color: #fff;">
-						<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #2175a1;">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-						</svg>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-3">
+						<span class="text-2xl">⚙️</span>
+						<h3 class="text-xl font-bold text-brand-blue">Automatización de procesos</h3>
 					</div>
-					<h3 class="text-xl font-bold mb-2 text-white">Mide resultados en semanas</h3>
-					<p class="text-white">
-						Definimos KPIs claros y te ayudo a ver resultados tangibles rápidamente, no solo promesas.
-					</p>
+					<p class="text-gray-700 mb-4">De punta a punta: captación → validación → notificación → reporte.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>Conectores API/DB y webhooks</li>
+						<li>Tareas programadas y orquestación</li>
+						<li>Reducción de errores y tiempos de ciclo</li>
+					</ul>
+				</div>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-3">
+						<span class="text-2xl">🚀</span>
+						<h3 class="text-xl font-bold text-brand-blue">Micro‑SaaS para founders</h3>
+					</div>
+					<p class="text-gray-700 mb-4">Desde MVP hasta primera venta, priorizando lo esencial.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>MVP en 2–4 semanas</li>
+						<li>Pagos y suscripciones</li>
+						<li>Analítica, onboarding y soporte</li>
+					</ul>
+				</div>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border md:col-span-2">
+					<div class="flex items-center gap-3 mb-3">
+						<span class="text-2xl">☁️</span>
+						<h3 class="text-xl font-bold text-brand-blue">Infraestructura moderna</h3>
+					</div>
+					<p class="text-gray-700 mb-4">Despliegues rápidos y costo‑eficientes.</p>
+					<ul class="list-disc list-inside text-gray-600 grid grid-cols-1 md:grid-cols-3 gap-1">
+						<li>Cloudflare, Railway, Vercel</li>
+						<li>CI/CD, entornos y rollback</li>
+						<li>Observabilidad, logs y costos</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Services Grid -->
-	<section class="py-16 md:py-12">
+	<!-- Por qué trabajar con nosotros -->
+	<section class="py-16 md:py-20 bg-gray-50">
 		<div class="container">
-			<h2 class="text-center mb-6 text-brand-blue">
-				Conoce nuestros servicios
-			</h2>
-		  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-			<!-- Servicio de Innovación -->
-			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-			  <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
-				style="background-color: #2175a1;">
-				<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
-				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-				</svg>
-			  </div>
-			  <h2 class="text-2xl font-bold mb-4">Programa de Innovación Empresarial</h2>
-			  <p class="text-gray-600 mb-6">
-				Transforma tu empresa en 8 semanas con un programa completo de innovación que incluye:
-			  </p>
-			  <ul class="space-y-3 mb-8">
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Diagnóstico profundo de tu situación actual</span>
-				</li>
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Talleres de diseño estratégico</span>
-				</li>
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Implementación guiada de metodologías</span>
-				</li>
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Coaching y reflexión continua</span>
-				</li>
-			  </ul>
-			  <a href="/servicio-innovacion" class="btn btn-primary">
-				Conoce más
-			  </a>
-			</div>
-	
-			<!-- Programa Golden Time -->
-			<div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-			  <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6"
-				style="background-color: #2175a1;">
-				<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #ffffff;">
-				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-				</svg>
-			  </div>
-			  <h2 class="text-2xl font-bold mb-4">Programa Coaching Individual</h2>
-			  <p class="text-gray-600 mb-6">
-				Un programa de 8 semanas para que Product Leaders definan su norte, eliminen el ruido y ejecuten con propósito:
-			  </p>
-			  <ul class="space-y-3 mb-8">
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Definición clara de objetivos y prioridades</span>
-				</li>
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Eliminación de distracciones y ruido</span>
-				</li>
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Desarrollo de hábitos productivos</span>
-				</li>
-				<li class="flex items-start space-x-3">
-				  <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-				  </svg>
-				  <span>Ejecución enfocada y resultados medibles</span>
-				</li>
-			  </ul>
-			  <a href="/programa-golden-time" class="btn btn-primary">
-				Conoce más
-			  </a>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
-	<!-- Guarantee Banner -->
-	<section class="bg-blue-50 py-16">
-		<div class="container">
-			<div class="max-w-3xl mx-auto text-center space-y-6">
-				<h2 class="text-3xl font-bold">
-					¿Te cuesta poner foco en la innovación?
-				</h2>
-				<p class="text-xl text-gray-600">
-					Te regalo el proceso de pre-shaping: en un Sprint 0 de 2
-					semanas, generamos juntos tu backlog de ideas priorizadas,
-					listas para transformar tu empresa.
-				</p>
-				<p class="text-lg font-semibold text-blue-600">
-					Inversión: $970 USD
-				</p>
-				<p class="text-gray-600">
-					Si no obtienes claridad y foco en tu roadmap, te devuelvo el
-					dinero. Así de seguro estoy en mi método.
-				</p>
-				<a href="https://www.fidelidapp.cl/agendalanding/678e4df080622b7c255a9220" class="btn btn-primary">
-					Agendar Sesión Exploratoria Gratis
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<Sprint0Structure />
-
-	<!-- About Section -->
-	<section class="py-16 md:py-24">
-		<div class="container">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-				<div class="relative">
-					<Image
-						src={HeroImage}
-						alt="Álvaro Villena"
-						class="rounded-2xl shadow-xl w-full h-full  max-h-[500px] object-cover"
-					/>
+			<h2 class="text-3xl font-bold text-brand-blue text-center mb-10">¿Por qué trabajar con nosotros?</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-2">
+						<span class="text-2xl">🤝</span>
+						<h3 class="text-lg font-bold text-brand-blue">Enfoque humano + técnico</h3>
+					</div>
+					<p class="text-gray-700 mb-3">Hablamos negocio y resolvemos con ingeniería.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>Traducción objetivos → soluciones viables</li>
+						<li>KPI y ROI considerados desde el diseño</li>
+						<li>Equipo involucrado y alineado</li>
+					</ul>
 				</div>
-				<div class="space-y-6">
-					<h2 class="text-center mb-6 text-brand-blue">Sobre mí</h2>
-					<p class="text-lg text-gray-600">
-						Conozco de cerca los desafíos que enfrentas liderando producto o tecnología en una empresa mediana: 
-						prioridades cambiantes, presión por resultados y equipos que a veces tiran para distintos lados.
-					</p>
-					<p class="text-lg text-gray-600">
-						Soy consultor en innovación y transformación digital con
-						más de 10 años de experiencia en terreno, ayudando a
-						líderes como tú a implementar metodologías ágiles y de
-						innovación que no solo suenan bien en teoría, sino que
-						funcionan en la realidad latinoamericana.
-					</p>
-					<p class="text-lg text-gray-600">
-						He acompañado a más de 50 empresas y equipos a salir del
-						estancamiento, ordenar su roadmap y llevar ideas a
-						producción, alineando a todos en ciclos claros y
-						alcanzables.
-					</p>
-					<p class="text-lg text-gray-600">
-						Mi compromiso es ser tu aliado: aporto método,
-						experiencia y una mirada externa honesta para que logres
-						resultados tangibles, sin perder el foco humano ni la
-						esencia de tu equipo.
-					</p>
-					<a href="https://www.linkedin.com/in/alvarovillena/" class="btn btn-outline">
-						Conoce más sobre mí
-					</a>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-2">
+						<span class="text-2xl">⚡</span>
+						<h3 class="text-lg font-bold text-brand-blue">Construcción rápida</h3>
+					</div>
+					<p class="text-gray-700 mb-3">Ciclos de 2–4 semanas con entregables reales.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>Demo funcional en cada ciclo</li>
+						<li>Prioridad por impacto, no por lista infinita</li>
+						<li>Feedback continuo, menos retrabajo</li>
+					</ul>
+				</div>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-2">
+						<span class="text-2xl">🧭</span>
+						<h3 class="text-lg font-bold text-brand-blue">Acompañamiento real</h3>
+					</div>
+					<p class="text-gray-700 mb-3">Te ayudamos a priorizar y decidir con datos.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>Roadmap, riesgos y focos por ciclo</li>
+						<li>Métricas de adopción y uso</li>
+						<li>Canales claros de comunicación</li>
+					</ul>
+				</div>
+				<div class="bg-white p-8 rounded-2xl shadow-lg border">
+					<div class="flex items-center gap-3 mb-2">
+						<span class="text-2xl">🎯</span>
+						<h3 class="text-lg font-bold text-brand-blue">Desarrollo con propósito</h3>
+					</div>
+					<p class="text-gray-700 mb-3">Cada feature tiene un objetivo de negocio.</p>
+					<ul class="list-disc list-inside text-gray-600 space-y-1">
+						<li>Hipótesis y resultado esperado</li>
+						<li>Métricas de éxito claras</li>
+						<li>Se desactiva lo que no rinde</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
-	
-
-	<!-- Testimonials 
-	<section class="py-16 md:py-24">
+	<!-- Chatbots Inteligentes -->
+	<section class="py-16 md:py-20" style="background-color: #2175a1;">
 		<div class="container">
-			<h2 class="text-center mb-12">Lo que dicen mis clientes</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<div class="bg-white p-8 rounded-2xl shadow-lg">
-					<div class="flex items-center mb-6">
-						<img
-							src="/testimonial-1.jpg"
-							alt="Cliente 1"
-							class="w-12 h-12 rounded-full mr-4"
-						/>
-						<div>
-							<h4 class="font-bold">María González</h4>
-							<p class="text-gray-600">CEO, Empresa Tech</p>
+			<h2 class="text-3xl font-bold text-white text-center mb-6">Chatbots Inteligentes para tu negocio</h2>
+			<p class="text-center text-lg text-blue-100 max-w-3xl mx-auto mb-10">Chatbots entrenados con tus documentos, políticas y procesos para responder con contexto, accionar tareas y escalar atención.</p>
+			<div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-white mb-6">
+				<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+					<h3 class="font-semibold mb-2">Casos de uso</h3>
+					<ul class="space-y-2 text-white/90">
+						<li>Captura y calificación de leads</li>
+						<li>Agendamiento de horas y coordinación</li>
+						<li>Soporte con base de conocimientos</li>
+						<li>Consulta de estado de pedidos y postventa</li>
+					</ul>
+				</div>
+				<div class="bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+					<h3 class="font-semibold mb-2">Integración y tecnología</h3>
+					<ul class="space-y-2 text-white/90">
+						<li>Canales: WhatsApp, web, apps y APIs internas</li>
+						<li>Stack: OpenAI, RAG, embeddings, Node.js, SQL/MongoDB, LangChain</li>
+						<li>Medición: paneles con conversaciones, calidad y conversiones</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto text-white">
+				<li class="bg-white/10 backdrop-blur-sm p-4 rounded-xl">Responde preguntas con información de tu empresa (documentos actualizados)</li>
+				<li class="bg-white/10 backdrop-blur-sm p-4 rounded-xl">Agenda, registra leads o procesa solicitudes automáticamente</li>
+				<li class="bg-white/10 backdrop-blur-sm p-4 rounded-xl">Analiza PDFs y políticas para respuestas precisas</li>
+				<li class="bg-white/10 backdrop-blur-sm p-4 rounded-xl">Se integra a WhatsApp, web y sistemas internos</li>
+			</ul>
+			<div class="text-center mt-10">
+				<a href="/contacto" class="btn bg-white text-brand-blue hover:bg-blue-50">Quiero un chatbot para mi empresa</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Aplicaciones a medida -->
+	<section class="py-16 md:py-20">
+		<div class="container">
+			<h2 class="text-3xl font-bold text-brand-blue text-center mb-8">Aplicaciones a medida</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+				<ul class="space-y-3 bg-white p-6 rounded-2xl shadow">
+					<li>Dashboards de gestión</li>
+					<li>Sistemas de reservas o agendas</li>
+					<li>Plataformas de capacitación</li>
+					<li>Backoffice y herramientas internas</li>
+					<li>Micro‑SaaS listos para vender</li>
+					<li>Automatizaciones (envíos, reportes, notificaciones)</li>
+                        </ul>
+				<div class="bg-gray-50 p-6 rounded-2xl border">
+					<h3 class="text-lg font-semibold text-brand-blue mb-2">Qué consigues</h3>
+					<ul class="space-y-2 text-gray-700">
+						<li>Menos planillas y tareas manuales</li>
+						<li>Visibilidad de punta a punta en una sola pantalla</li>
+						<li>Menos errores y más cumplimiento</li>
+						<li>Equipos enfocados en lo importante</li>
+                        </ul>
+					<p class="mt-4 text-gray-700">Stack moderno: Node.js, React, Astro, Tailwind, SQL/Mongo, Cloudflare Pages, Railway.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Cómo trabajamos -->
+	<section class="bg-gray-50 py-16 md:py-24">
+		<div class="container">
+			<h2 class="text-3xl font-bold text-brand-blue text-center mb-12">Cómo trabajamos</h2>
+			<div class="max-w-3xl mx-auto space-y-6">
+				<div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
+					<div class="flex-shrink-0 w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">1</div>
+					<div>
+						<h3 class="text-xl font-bold text-brand-blue mb-1">Definir</h3>
+						<p class="text-gray-700">Alineamos objetivos y entendemos tu proceso actual para detectar oportunidades de impacto.</p>
+			</div>
+		</div>
+				<div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
+					<div class="flex-shrink-0 w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">2</div>
+					<div>
+						<h3 class="text-xl font-bold text-brand-blue mb-1">Especificar</h3>
+						<p class="text-gray-700">Plan técnico claro y acotado: alcance, integraciones y entregables por ciclo (Shape Up).</p>
+                    </div>
+                </div>
+				<div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
+					<div class="flex-shrink-0 w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">3</div>
+					<div>
+						<h3 class="text-xl font-bold text-brand-blue mb-1">Construir</h3>
+						<p class="text-gray-700">Desarrollo en ciclos de 2–4 semanas con demos funcionales y feedback continuo.</p>
+        </div>
+				</div>
+				<div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
+					<div class="flex-shrink-0 w-10 h-10 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">4</div>
+					<div>
+						<h3 class="text-xl font-bold text-brand-blue mb-1">Iterar</h3>
+						<p class="text-gray-700">Medimos, ajustamos y escalamos lo que funciona. Proceso transparente, sin burocracia.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Casos y proyectos reales -->
+	<section id="proyectos" class="py-16 md:py-24 bg-gray-50">
+		<div class="container">
+					<div class="text-center mb-12">
+						<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Casos y proyectos reales</h2>
+						<p class="text-xl text-gray-600 max-w-3xl mx-auto">Proyectos reales con resultados medibles. Construimos soluciones que generan valor desde el primer día.</p>
+						<div class="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+							<a href="#que-hacemos" class="hover:text-brand-blue transition-colors">Ver servicios →</a>
+							<a href="#testimonios" class="hover:text-brand-blue transition-colors">Ver testimonios →</a>
+							<a href="#faq" class="hover:text-brand-blue transition-colors">Ver FAQ →</a>
 						</div>
 					</div>
-					<p class="text-gray-600">
-						"Álvaro nos ayudó a transformar nuestra cultura de
-						innovación. En 3 meses logramos lanzar 2 nuevos
-						productos que generaron un 30% más de ingresos."
-					</p>
-				</div>
-				<div class="bg-white p-8 rounded-2xl shadow-lg">
-					<div class="flex items-center mb-6">
-						<img
-							src="/testimonial-2.jpg"
-							alt="Cliente 2"
-							class="w-12 h-12 rounded-full mr-4"
-						/>
-						<div>
-							<h4 class="font-bold">Juan Pérez</h4>
-							<p class="text-gray-600">CTO, Startup Fintech</p>
-						</div>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+				<!-- Fidelidapp -->
+				<div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+					<div class="relative h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+						<span class="text-6xl">💳</span>
 					</div>
-					<p class="text-gray-600">
-						"La metodología de Álvaro nos permitió reducir nuestro
-						time-to-market en un 40%. Ahora somos más ágiles y
-						eficientes."
-					</p>
-				</div>
-				<div class="bg-white p-8 rounded-2xl shadow-lg">
-					<div class="flex items-center mb-6">
-						<img
-							src="/testimonial-3.jpg"
-							alt="Cliente 3"
-							class="w-12 h-12 rounded-full mr-4"
-						/>
-						<div>
-							<h4 class="font-bold">Ana Martínez</h4>
-							<p class="text-gray-600">
-								Product Manager, E-commerce
-							</p>
+					<div class="p-6">
+						<div class="flex items-center justify-between mb-3">
+							<h3 class="text-xl font-bold text-brand-blue">Fidelidapp</h3>
+							<span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-semibold">SaaS</span>
 						</div>
+						<p class="text-gray-700 mb-4 font-medium">SaaS de fidelización con puntos y campañas omnicanal</p>
+						<div class="space-y-2 mb-4">
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">-40%</span>
+								<span>trabajo manual</span>
+							</div>
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">↑</span>
+								<span>Campañas más precisas</span>
+							</div>
+						</div>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Node.js</span>
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">React</span>
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">WhatsApp API</span>
+						</div>
+						<a href="https://www.fidelidapp.cl/" target="_blank" rel="noopener" class="inline-flex items-center text-brand-blue font-semibold hover:text-blue-700 transition-colors">
+							Ver sitio en vivo
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+						</a>
 					</div>
-					<p class="text-gray-600">
-						"Gracias a Álvaro, logramos alinear a todo el equipo en
-						torno a la innovación. La colaboración entre áreas
-						mejoró significativamente."
-					</p>
+				</div>
+
+				<!-- Ewaffle -->
+				<div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+					<div class="relative h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+						<span class="text-6xl">🎓</span>
+					</div>
+					<div class="p-6">
+						<div class="flex items-center justify-between mb-3">
+							<h3 class="text-xl font-bold text-brand-blue">Ewaffle</h3>
+							<span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full font-semibold">E-learning</span>
+						</div>
+						<p class="text-gray-700 mb-4 font-medium">Soluciones e-learning completas: LMS, cursos gamificados, chatbots IA</p>
+						<div class="space-y-2 mb-4">
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">+50</span>
+								<span>empresas confían</span>
+							</div>
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">400+</span>
+								<span>cursos transformados</span>
+							</div>
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">40%</span>
+								<span>mejora en calidad</span>
+							</div>
+						</div>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">LMS</span>
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">SCORM</span>
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">OpenAI RAG</span>
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Gamificación</span>
+						</div>
+						<a href="https://ewaffle.cl/" target="_blank" rel="noopener" class="inline-flex items-center text-brand-blue font-semibold hover:text-blue-700 transition-colors">
+							Ver sitio en vivo
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<!-- C4i UdeC -->
+				<div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+					<div class="relative h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+						<span class="text-6xl">🏭</span>
+					</div>
+					<div class="p-6">
+						<div class="flex items-center justify-between mb-3">
+							<h3 class="text-xl font-bold text-brand-blue">C4i UdeC</h3>
+							<span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-semibold">Industry 4.0</span>
+						</div>
+						<p class="text-gray-700 mb-4 font-medium">Centro tecnológico Industry 4.0 - Soluciones tecnológicas avanzadas</p>
+						<div class="space-y-2 mb-4">
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">✓</span>
+								<span>Soluciones Industry 4.0</span>
+							</div>
+							<div class="flex items-center gap-2 text-sm text-gray-600">
+								<span class="text-green-600 font-bold">✓</span>
+								<span>Tecnología avanzada</span>
+							</div>
+						</div>
+						<div class="flex flex-wrap gap-2 mb-4">
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Industry 4.0</span>
+							<span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Tecnología</span>
+						</div>
+						<a href="https://c4i-udec.cl/" target="_blank" rel="noopener" class="inline-flex items-center text-brand-blue font-semibold hover:text-blue-700 transition-colors">
+							Ver sitio en vivo
+							<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+						</a>
+					</div>
 				</div>
 			</div>
+			
+			<!-- Trust Badge -->
+			<div class="text-center">
+				<p class="text-gray-600 mb-4">+50 empresas ya confían en nosotros para transformar sus procesos</p>
+				<a href="/contacto" class="btn btn-primary">Ver más casos de éxito</a>
+			</div>
 		</div>
-	</section>-->
+	</section>
 
-	<!-- CTA Section -->
-	<section class="py-16 md:py-24 bg-blue-600 text-white" style="background-color: #2175a1;">
+	<!-- Quiénes somos -->
+	<section class="py-16 md:py-24 bg-gray-50">
 		<div class="container">
-			<div class="max-w-3xl mx-auto text-center space-y-8">
-				<h2 class="text-3xl md:text-4xl font-bold">
-					¿No sabes por dónde empezar?
-				</h2>
-				<p class="text-xl text-blue-100">
-					Haz tu diagnóstico gratuito y descubre cómo podemos ayudarte
-					a transformar tu empresa.
+			<div class="max-w-4xl mx-auto space-y-4">
+				<h2 class="text-3xl font-bold text-brand-blue text-center">Quiénes somos</h2>
+				<p class="text-lg text-gray-700 text-center">
+					VilleLabs nace de la experiencia combinada de innovación, desarrollo de software, coaching y agilidad de Álvaro Villena.
 				</p>
-				<a
-					href="/diagnostico"
-					class="btn bg-white text-brand-blue hover:bg-blue-700"
-				>
-					Haz tu diagnóstico aquí
-				</a>
+				<p class="text-lg text-gray-700 text-center">Menos consultoría con humo — más soluciones reales que impactan tu operación.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonios -->
+	<section id="testimonios" class="py-16 md:py-24 bg-gray-50">
+		<div class="container">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Lo que dicen nuestros clientes</h2>
+				<p class="text-xl text-gray-600">Resultados reales de empresas que transformaron sus procesos con nosotros</p>
+			</div>
+			<div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+					<div class="flex items-center gap-1 mb-4">
+						<span class="text-yellow-400">★★★★★</span>
+					</div>
+					<blockquote class="text-gray-700 mb-4">
+						"Nos ayudaron a automatizar tareas que antes tomaban horas. Hoy todo fluye solo. Reducción del 40% en trabajo manual."
+					</blockquote>
+					<div class="flex items-center gap-3">
+						<div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+							<span class="text-blue-600 font-bold">F</span>
+						</div>
+						<div>
+							<div class="font-semibold text-gray-900">Cliente Fidelidapp</div>
+							<div class="text-sm text-gray-500">SaaS de Fidelización</div>
+						</div>
+					</div>
+				</div>
+				<div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+					<div class="flex items-center gap-1 mb-4">
+						<span class="text-yellow-400">★★★★★</span>
+					</div>
+					<blockquote class="text-gray-700 mb-4">
+						"El chatbot nos permitió responder más rápido y con mejor calidad. Es como tener otro miembro en el equipo. Reducción del 80% en carga de soporte."
+					</blockquote>
+					<div class="flex items-center gap-3">
+						<div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+							<span class="text-purple-600 font-bold">E</span>
+						</div>
+						<div>
+							<div class="font-semibold text-gray-900">Cliente Ewaffle</div>
+							<div class="text-sm text-gray-500">E-learning Platform</div>
+						</div>
+					</div>
+				</div>
+				<div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+					<div class="flex items-center gap-1 mb-4">
+						<span class="text-yellow-400">★★★★★</span>
+					</div>
+					<blockquote class="text-gray-700 mb-4">
+						"Implementación en 4 semanas como prometieron. La plataforma funciona perfectamente y nuestros usuarios están encantados. ROI del 300% en 3 meses."
+					</blockquote>
+					<div class="flex items-center gap-3">
+						<div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+							<span class="text-green-600 font-bold">C</span>
+						</div>
+						<div>
+							<div class="font-semibold text-gray-900">Cliente C4i UdeC</div>
+							<div class="text-sm text-gray-500">Industry 4.0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="text-center mt-12">
+				<a href="/contacto" class="btn btn-outline">Ver más testimonios</a>
 			</div>
 		</div>
 	</section>
 
 	<!-- FAQ Section -->
-	<section class="py-16 md:py-24 bg-gray-50">
+	<section id="faq" class="py-16 md:py-24 bg-white">
 		<div class="container">
-		  <h2 class="text-center mb-12 text-brand-blue">
-			Preguntas Frecuentes
-		  </h2>
-		  <div class="max-w-3xl mx-auto space-y-6">
-			<div class="bg-white p-6 rounded-lg shadow">
-			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Cuál es la diferencia entre ambos programas?</h3>
-			  <p class="text-gray-600">
-				El Servicio de Innovación está diseñado para equipos y empresas que buscan transformar su cultura de innovación, mientras que el Programa Golden Time está enfocado en líderes de producto que quieren optimizar su tiempo y resultados.
-			  </p>
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4">Preguntas frecuentes</h2>
+					<p class="text-xl text-gray-600">Resolvemos las dudas más comunes sobre nuestros servicios</p>
+				</div>
+				<div class="space-y-4">
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Cuánto cuesta desarrollar una aplicación a medida?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Los proyectos de aplicaciones web a medida parten desde $2,500 USD. El precio final depende de la complejidad, integraciones necesarias y alcance del proyecto. Ofrecemos cotizaciones transparentes sin costos ocultos.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Cuánto tiempo toma desarrollar un chatbot inteligente?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Un chatbot básico con IA puede estar listo en 2-3 semanas. Para chatbots más complejos con integraciones y entrenamiento personalizado, el tiempo puede extenderse a 4-6 semanas. Siempre trabajamos con entregables funcionales en cada ciclo.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Los chatbots funcionan con WhatsApp?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Sí, nuestros chatbots se integran con WhatsApp Business API, además de web, aplicaciones móviles y APIs internas. Utilizamos tecnología RAG (Retrieval Augmented Generation) para que respondan con contexto real de tu negocio.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Qué incluye un Micro-SaaS completo?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Un Micro-SaaS completo incluye: MVP funcional, sistema de pagos y suscripciones (Stripe/PayPal), panel de administración, autenticación de usuarios, analítica básica, onboarding y documentación. Todo listo para recibir tus primeros clientes.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Necesito tener un equipo técnico interno?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">No es necesario. Nosotros manejamos todo el desarrollo técnico desde la idea hasta el deploy. Solo necesitas enfocarte en tu negocio, nosotros en crear la solución. Incluimos capacitación y documentación para que puedas mantener el sistema.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Cómo funciona el proceso de desarrollo?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Trabajamos en ciclos de 2-4 semanas usando metodología Shape Up: (1) Definir objetivos y alcance, (2) Especificar plan técnico claro, (3) Construir con demos funcionales cada ciclo, (4) Iterar basado en feedback y datos. Proceso transparente y sin burocracia.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Ofrecen soporte después del lanzamiento?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Sí, ofrecemos planes de soporte y mantenimiento post-lanzamiento. Incluimos 30 días de soporte básico con cada proyecto, y luego puedes contratar planes mensuales según tus necesidades: mantenimiento, nuevas features, optimizaciones o soporte técnico.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Qué tecnologías utilizan?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Utilizamos un stack moderno y probado: Node.js, React, Astro, Tailwind CSS, SQL/MongoDB, Cloudflare Pages, Railway, Vercel. Para IA: OpenAI, RAG, embeddings, LangChain. Elegimos la tecnología según las necesidades específicas de cada proyecto.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Trabajan con empresas fuera de Chile?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Sí, trabajamos con empresas en toda Latinoamérica y también internacionalmente. Las consultas y reuniones se realizan por videollamada, y el desarrollo se gestiona de forma remota con comunicación constante. Facturamos en USD y CLP.</p>
+					</details>
+					<details class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+						<summary class="font-semibold text-lg text-brand-blue cursor-pointer list-none">
+							<span class="flex items-center justify-between">
+								<span>¿Cómo puedo empezar?</span>
+								<svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+								</svg>
+							</span>
+						</summary>
+						<p class="mt-4 text-gray-700">Es muy simple: agenda una llamada gratuita de 30 minutos donde entenderemos tu necesidad, te explicaremos cómo podemos ayudarte y te daremos una cotización transparente. Sin compromiso, sin tarjeta, solo una conversación para ver si hay encaje.</p>
+					</details>
+				</div>
+				<div class="text-center mt-12">
+					<p class="text-gray-600 mb-4">¿Tienes otra pregunta?</p>
+					<a href="/contacto" class="btn btn-primary">Contáctanos</a>
+				</div>
 			</div>
-			<div class="bg-white p-6 rounded-lg shadow">
-			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Qué tamaño de empresa es ideal para estos servicios?</h3>
-			  <p class="text-gray-600">
-				El Servicio de Innovación es ideal para empresas medianas (5-100 empleados), mientras que el Programa Golden Time es perfecto para líderes de producto en empresas de cualquier tamaño.
-			  </p>
-			</div>
-			<div class="bg-white p-6 rounded-lg shadow">
-			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Ofrecen garantía de resultados?</h3>
-			  <p class="text-gray-600">
-				Sí, ambos programas incluyen garantía de satisfacción. Si no ves resultados significativos en el plazo acordado, te devolvemos tu inversión.
-			  </p>
-			</div>
-			<div class="bg-white p-6 rounded-lg shadow">
-			  <h3 class="text-lg font-bold mb-2 text-brand-blue">¿Cómo se mide el éxito del programa?</h3>
-			  <p class="text-gray-600">
-				Establecemos objetivos claros desde el inicio, adaptados a cada programa. Para el Servicio de Innovación medimos métricas de innovación y resultados de negocio, mientras que para Golden Time nos enfocamos en productividad y logro de objetivos.
-			  </p>
-			</div>
-		  </div>
 		</div>
-	  </section>
+	</section>
 
-	
-	<!-- Free Resources 
-	<section class="py-16 md:py-24 bg-gray-50">
+	<!-- CTA final -->
+	<section class="py-16 md:py-24 bg-brand-blue text-white">
 		<div class="container">
-			<h2 class="text-center mb-12">
-				Recursos gratuitos para tu empresa
-			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div
-					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-				>
-					<div
-						class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
-					>
-						<svg
-							class="w-6 h-6 text-primary"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-							></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold mb-4">Guía de Innovación</h3>
-					<p class="text-gray-600 mb-6">
-						Descarga nuestra guía gratuita sobre cómo implementar la
-						innovación en medianas empresas.
-					</p>
-					<a
-						href="/recursos#guias"
-						class="text-primary font-semibold hover:text-primary/700"
-					>
-						Descargar guía →
-					</a>
-				</div>
-				<div
-					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-				>
-					<div
-						class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
-					>
-						<svg
-							class="w-6 h-6 text-primary"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-							></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold mb-4">Webinars</h3>
-					<p class="text-gray-600 mb-6">
-						Accede a nuestros webinars sobre innovación, agilidad y
-						transformación digital.
-					</p>
-					<a
-						href="/recursos#webinars"
-						class="text-primary font-semibold hover:text-primary/700"
-					>
-						Ver webinars →
-					</a>
-				</div>
-				<div
-					class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-				>
-					<div
-						class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-6"
-					>
-						<svg
-							class="w-6 h-6 text-primary"
-							fill="none"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-							></path>
-						</svg>
-					</div>
-					<h3 class="text-xl font-bold mb-4">Checklist</h3>
-					<p class="text-gray-600 mb-6">
-						Evalúa el nivel de innovación de tu empresa con nuestro
-						checklist gratuito.
-					</p>
-					<a
-						href="/recursos#checklist"
-						class="text-primary font-semibold hover:text-primary/700"
-					>
-						Descargar checklist →
-					</a>
-				</div>
+			<div class="max-w-3xl mx-auto text-center space-y-6">
+				<h2 class="text-3xl md:text-4xl font-bold">¿Hablamos de tu proyecto?</h2>
+				<p class="text-xl text-blue-100">
+					Cuéntanos tu idea o proceso a automatizar. En 48 horas te proponemos la mejor forma de empezar.
+				</p>
+				<a href="/contacto" class="btn bg-white text-brand-blue hover:bg-blue-50">Agenda una llamada</a>
 			</div>
 		</div>
-	</section>-->
+	</section>
+
+	<!-- Sticky CTA Bar (Mobile) -->
+	<div class="sticky-cta-bar">
+		<div class="container mx-auto">
+			<a href="/contacto" class="btn btn-primary w-full text-center text-lg py-3">
+				Agenda una llamada gratuita
+			</a>
+		</div>
+	</div>
 </Layout>
+
+<!-- Internal Linking Script -->
+<script>
+	// Add smooth scroll for anchor links
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+			const target = document.querySelector(this.getAttribute('href'));
+			if (target) {
+				target.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
+		});
+	});
+
+	// Track CTA clicks for analytics
+	document.querySelectorAll('a[href="/contacto"]').forEach(link => {
+		link.addEventListener('click', function() {
+			if (typeof gtag !== 'undefined') {
+				gtag('event', 'click', {
+					'event_category': 'CTA',
+					'event_label': this.textContent.trim(),
+					'value': 1
+				});
+			}
+		});
+	});
+</script>
