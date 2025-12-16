@@ -1,0 +1,35 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import MatrixBackground from '../components/common/MatrixBackground.astro';
+import WhatsAppFloatButton from '../components/common/WhatsAppFloatButton.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  serviceName: string;
+  servicePrice: string;
+}
+
+const { title, description, serviceName, servicePrice } = Astro.props;
+const whatsappMessage = `Estoy interesado en ${serviceName}`;
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="relative z-10">
+    <slot />
+  </main>
+  
+  <!-- Footer minimalista -->
+  <footer class="bg-gray-900 text-gray-400 py-8 relative z-10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <a href="/contacto" class="hover:text-white transition-colors">Contacto</a>
+        <span>© 2024 Álvaro Villena. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- WhatsApp Floating Button -->
+  <WhatsAppFloatButton phoneNumber="56920115198" message={whatsappMessage} />
+</BaseLayout> 

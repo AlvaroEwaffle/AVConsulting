@@ -1,0 +1,212 @@
+---
+import OptimizedServiceLayout from '../../layouts/OptimizedServiceLayout.astro';
+import OptimizedHeroSection from '../../components/services/OptimizedHeroSection.astro';
+import BenefitsSection from '../../components/services/BenefitsSection.astro';
+import TestimonialsSection from '../../components/services/TestimonialsSection.astro';
+import HowItWorksSection from '../../components/services/HowItWorksSection.astro';
+import GuaranteeSection from '../../components/services/GuaranteeSection.astro';
+import OfferSection from '../../components/services/OfferSection.astro';
+import FAQSection from '../../components/services/FAQSection.astro';
+import FinalCTASection from '../../components/services/FinalCTASection.astro';
+
+const title = "Ebook Shape Up - Guía Completa para Implementar la Metodología | Álvaro Villena";
+const description = "Descarga gratis nuestro ebook completo sobre Shape Up. Aprende a implementar la metodología que usan las mejores empresas del mundo para multiplicar su productividad.";
+
+// Hero Section Data
+const heroData = {
+  title: "Ebook Shape Up Gratis",
+  subtitle: "La guía definitiva para multiplicar la productividad de tu equipo",
+  description: "Descarga gratis nuestro ebook completo de 50+ páginas donde aprenderás todo sobre Shape Up: la metodología que usan empresas como Basecamp, Shopify y GitHub para entregar productos digitales de calidad en tiempo récord.",
+  ctaText: "📥 Descargar Ebook Gratis",
+  ctaHref: "#descargar",
+  imageSrc: "/assets/ShapeUpPhoto.png",
+  socialProof: "Ya +2,000 emprendedores han descargado nuestro ebook",
+  clientLogos: ["/assets/icono.png"]
+};
+
+// Benefits Section Data
+const benefitsData = {
+  title: "¿Qué aprenderás en este ebook?",
+  subtitle: "Todo lo que necesitas saber para implementar Shape Up en tu equipo y multiplicar tu productividad",
+  benefits: [
+    {
+      icon: "📚",
+      title: "Fundamentos de Shape Up",
+      description: "Entiende los principios básicos y la filosofía detrás de esta metodología probada."
+    },
+    {
+      icon: "⚡",
+      title: "Ciclos de 6 Semanas",
+      description: "Aprende a trabajar en ciclos definidos con objetivos claros y entregables reales."
+    },
+    {
+      icon: "🎯",
+      title: "Scope y Estimaciones",
+      description: "Domina el arte de definir el alcance desde el inicio y mantenerlo durante el ciclo."
+    },
+    {
+      icon: "👥",
+      title: "Equipos Autónomos",
+      description: "Descubre cómo empoderar a tu equipo para que tome decisiones sin burocracia."
+    },
+    {
+      icon: "📊",
+      title: "Métricas y Resultados",
+      description: "Implementa KPIs claros para medir el progreso y éxito de cada ciclo."
+    }
+  ]
+};
+
+// Testimonials Data
+const testimonialsData = {
+  title: "Lo que dicen nuestros lectores",
+  testimonials: [
+    {
+      name: "María Elena",
+      company: "Product Manager",
+      text: "Este ebook cambió completamente mi perspectiva sobre gestión de proyectos. Ahora mi equipo es 3x más productivo.",
+      rating: 5
+    },
+    {
+      name: "Carlos Ruiz",
+      company: "CTO Startup",
+      text: "La implementación fue súper clara. En 2 semanas ya estábamos viendo resultados increíbles en productividad.",
+      rating: 5
+    },
+    {
+      name: "Ana Torres",
+      company: "Fundadora",
+      text: "Finalmente entiendo cómo organizar mi equipo sin caer en el caos. Este ebook es oro puro.",
+      rating: 5
+    }
+  ]
+};
+
+// How It Works Data
+const howItWorksData = {
+  title: "¿Cómo funciona?",
+  subtitle: "En solo 3 pasos tendrás acceso a todo el conocimiento de Shape Up",
+  steps: [
+    {
+      number: 1,
+      title: "Descarga Gratis",
+      description: "Completa el formulario y descarga instantáneamente tu ebook de Shape Up en PDF.",
+      icon: "📥"
+    },
+    {
+      number: 2,
+      title: "Lee y Aprende",
+      description: "Dedica tiempo a estudiar los conceptos y metodologías explicadas paso a paso.",
+      icon: "📖"
+    },
+    {
+      number: 3,
+      title: "Implementa y Transforma",
+      description: "Aplica lo aprendido en tu equipo y ve cómo se multiplica tu productividad.",
+      icon: "🚀"
+    }
+  ],
+  ctaText: "📥 Descargar Ebook Gratis",
+  ctaHref: "#descargar"
+};
+
+// Guarantee Data
+const guaranteeData = {
+  title: "Nuestra Garantía de Valor",
+  subtitle: "No solo prometemos conocimiento, garantizamos que transformará tu equipo",
+  guaranteeText: "Si no ves valor en el ebook, te damos acceso a nuestra asesoría personalizada gratis",
+  guaranteeDetails: [
+    "Garantía de valor del contenido o asesoría personalizada gratis",
+    "Ebook de 50+ páginas con contenido de alta calidad",
+    "Tu tiempo está 100% protegido sin riesgos",
+    "Transparencia total en el contenido y metodología"
+  ],
+  ctaText: "📥 Descargar Ebook Gratis",
+  ctaHref: "#descargar"
+};
+
+// Offer Data
+const offerData = {
+  title: "¿Qué incluye tu ebook de Shape Up?",
+  subtitle: "Todo el conocimiento que necesitas para transformar tu equipo",
+  price: "GRATIS",
+  features: [
+    "Ebook completo de 50+ páginas en PDF",
+    "Fundamentos y filosofía de Shape Up",
+    "Guía paso a paso de implementación",
+    "Ejemplos prácticos y casos de estudio",
+    "Plantillas y herramientas descargables",
+    "Acceso a recursos adicionales",
+    "Soporte por email para dudas",
+    "Garantía de valor o asesoría gratis"
+  ],
+  ctaText: "📥 Descargar Ebook Gratis",
+  ctaHref: "#descargar",
+  guarantee: "Valor garantizado o asesoría personalizada gratis",
+  urgency: "¡Descarga limitada a los primeros 1,000 lectores!"
+};
+
+// FAQ Data
+const faqData = {
+  title: "Preguntas frecuentes",
+  subtitle: "Resolvemos las dudas más comunes sobre nuestro ebook",
+  faqs: [
+    {
+      question: "¿Realmente es completamente gratis?",
+      answer: "Sí, absolutamente. El ebook es 100% gratis. No pedimos tarjeta de crédito ni información de pago. Solo queremos compartir este conocimiento valioso con emprendedores y equipos que quieren mejorar su productividad."
+    },
+    {
+      question: "¿Qué formato tiene el ebook?",
+      answer: "El ebook viene en formato PDF, optimizado para lectura en cualquier dispositivo: computadora, tablet o smartphone. También incluye enlaces a recursos adicionales y plantillas descargables."
+    },
+    {
+      question: "¿Necesito conocimientos previos de gestión de proyectos?",
+      answer: "No es necesario. El ebook está diseñado para ser accesible tanto para principiantes como para profesionales experimentados. Explicamos todo desde los fundamentos básicos hasta la implementación avanzada."
+    },
+    {
+      question: "¿Puedo compartir el ebook con mi equipo?",
+      answer: "¡Por supuesto! De hecho, lo recomendamos. El ebook está diseñado para ser compartido con tu equipo completo. Cuantos más miembros de tu organización entiendan Shape Up, mejor será la implementación."
+    },
+    {
+      question: "¿Qué pasa si tengo dudas después de leerlo?",
+      answer: "Incluimos soporte por email para resolver dudas sobre el contenido. Si necesitas ayuda más personalizada, también ofrecemos asesoría personalizada a precios accesibles."
+    }
+  ]
+};
+
+// Final CTA Data
+const finalCTAData = {
+  title: "¿Listo para transformar tu equipo?",
+  subtitle: "No más proyectos que nunca terminan o equipos abrumados. Descarga tu ebook gratis y descubre cómo Shape Up puede multiplicar la productividad de tu equipo.",
+  ctaText: "📥 Descargar Ebook AHORA - GRATIS",
+  ctaHref: "#descargar",
+  urgency: "¡Descarga limitada a los primeros 1,000 lectores!",
+  socialProof: "Ya +2,000 emprendedores han transformado su productividad. ¿Serás el próximo?"
+};
+---
+
+<OptimizedServiceLayout title={title} description={description} serviceName="Ebook Shape Up" servicePrice="GRATIS">
+  <!-- 1. Hero Section (Above the fold) -->
+  <OptimizedHeroSection {...heroData} />
+  
+  <!-- 2. Bloque de beneficios clave -->
+  <BenefitsSection {...benefitsData} />
+  
+  <!-- 3. Prueba social -->
+  <TestimonialsSection {...testimonialsData} />
+  
+  <!-- 4. Sección "Cómo funciona" / Demostración -->
+  <HowItWorksSection {...howItWorksData} />
+  
+  <!-- 5. NUEVA SECCIÓN: Banner de Garantía -->
+  <GuaranteeSection {...guaranteeData} />
+  
+  <!-- 6. Oferta / Incentivo -->
+  <OfferSection {...offerData} />
+  
+  <!-- 7. FAQs (Preguntas frecuentes) -->
+  <FAQSection {...faqData} />
+  
+  <!-- 8. CTA final -->
+  <FinalCTASection {...finalCTAData} />
+</OptimizedServiceLayout> 

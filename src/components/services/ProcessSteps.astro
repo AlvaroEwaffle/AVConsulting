@@ -1,0 +1,75 @@
+---
+interface Props {
+  steps: Array<{
+    number: number;
+    title: string;
+    description: string;
+    icon: string;
+  }>;
+}
+
+const { steps } = Astro.props;
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        Proceso Simple y Efectivo
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Te guío paso a paso para lograr resultados reales en tiempo récord
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {steps.map((step, index) => (
+        <div class="relative group">
+          <!-- Step Number -->
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-yellow-400 text-black rounded-full flex items-center justify-center font-bold text-xl z-10">
+            {step.number}
+          </div>
+          
+          <!-- Card -->
+          <div class="bg-white rounded-2xl p-8 pt-12 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <!-- Icon -->
+            <div class="text-4xl mb-4 text-center">
+              {step.icon}
+            </div>
+            
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">
+              {step.title}
+            </h3>
+            
+            <!-- Description -->
+            <p class="text-gray-600 text-center leading-relaxed">
+              {step.description}
+            </p>
+            
+            <!-- Progress Line -->
+            {index < steps.length - 1 && (
+              <div class="hidden md:block absolute top-8 left-full w-8 h-0.5 bg-gradient-to-r from-yellow-400 to-blue-400 transform -translate-y-1/2 z-0"></div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Bottom CTA -->
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-6">
+        ¿No estás seguro si es para ti?
+      </p>
+      <a 
+        href="https://calendly.com/alvarovillena/llamada-exploracion"
+        class="inline-flex items-center justify-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+      >
+        Agenda un brief gratuito
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section> 

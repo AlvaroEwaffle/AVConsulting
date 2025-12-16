@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Mi Método - Álvaro Villena";
+const description = "Los 6 pasos para recuperar foco en entornos de alta demanda. Conoce mi método Shape Up para emprendedores y empresas.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div class="container mx-auto px-4 py-16 max-w-4xl">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Mi Método</h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Los 6 pasos para recuperar foco en entornos de alta demanda usando Shape Up
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Paso 1 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-blue-600">1</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Definir el Problema</h3>
+          </div>
+          <p class="text-gray-600">
+            Identificamos claramente qué problema estamos resolviendo y por qué es importante.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-blue-600">2</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Establecer Límites</h3>
+          </div>
+          <p class="text-gray-600">
+            Definimos el tiempo y recursos disponibles para no caer en la trampa del perfeccionismo.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-blue-600">3</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Crear el Plan</h3>
+          </div>
+          <p class="text-gray-600">
+            Desarrollamos un plan ejecutable que se ajuste a los límites establecidos.
+          </p>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-blue-600">4</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Ejecutar con Foco</h3>
+          </div>
+          <p class="text-gray-600">
+            Nos enfocamos en la ejecución sin distracciones, siguiendo el plan establecido.
+          </p>
+        </div>
+
+        <!-- Paso 5 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-blue-600">5</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Validar Resultados</h3>
+          </div>
+          <p class="text-gray-600">
+            Evaluamos los resultados y aprendemos de la experiencia para mejorar.
+          </p>
+        </div>
+
+        <!-- Paso 6 -->
+        <div class="bg-white p-6 rounded-2xl shadow-lg">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-2xl font-bold text-blue-600">6</span>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900">Iterar y Mejorar</h3>
+          </div>
+          <p class="text-gray-600">
+            Aplicamos los aprendizajes en el siguiente ciclo para continuar mejorando.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="https://calendly.com/alvarovillena/llamada-exploracion"
+          class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+        >
+          Agenda una llamada para conocer más
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout> 

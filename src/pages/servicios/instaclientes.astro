@@ -1,0 +1,214 @@
+---
+import OptimizedServiceLayout from '../../layouts/OptimizedServiceLayout.astro';
+import OptimizedHeroSection from '../../components/services/OptimizedHeroSection.astro';
+import BenefitsSection from '../../components/services/BenefitsSection.astro';
+import TestimonialsSection from '../../components/services/TestimonialsSection.astro';
+import HowItWorksSection from '../../components/services/HowItWorksSection.astro';
+import GuaranteeSection from '../../components/services/GuaranteeSection.astro';
+import OfferSection from '../../components/services/OfferSection.astro';
+import FAQSection from '../../components/services/FAQSection.astro';
+import FinalCTASection from '../../components/services/FinalCTASection.astro';
+
+const title = "InstaClientes - Sistema de Captación y Fidelización desde Instagram | Álvaro Villena";
+const description = "Convierte tus DMs de Instagram en alumnos reales, sin estar respondiendo todo el día. Bot de Instagram + Fidelidapp + Acompañamiento. Piloto $49.000 CLP/mes.";
+
+// Hero Section Data
+const heroData = {
+  title: "InstaClientes",
+  subtitle: "Sistema de Captación y Fidelización desde Instagram",
+  description: "Convierte tus DMs de Instagram en alumnos reales, sin estar respondiendo todo el día. Bot automático que responde preguntas, captura datos y deriva a tu landing. Todo incluido: Fidelidapp + Bot de Instagram + Acompañamiento.",
+  ctaText: "💳 Quiero mi cupo piloto - $49.000 CLP/mes",
+  ctaHref: "https://mpago.la/2g7Zy1e",
+  socialProof: "Piloto limitado - Solo 5 cupos disponibles",
+  clientLogos: ["/assets/icono.png"]
+};
+
+// Benefits Section Data
+const benefitsData = {
+  title: "¿Por qué InstaClientes es la solución que necesitas?",
+  subtitle: "Mientras lees esto, tus competidores ya están automatizando sus DMs. No pierdas más clientes por no responder a tiempo.",
+  benefits: [
+    {
+      icon: "🤖",
+      title: "Bot que Responde 24/7",
+      description: "Tu bot de Instagram responde automáticamente preguntas sobre precios, horarios y tipos de clases. Nunca más perderás un cliente por no estar disponible."
+    },
+    {
+      icon: "📱",
+      title: "Captura de Datos Automática",
+      description: "Cada DM se convierte en un lead real. Tu bot captura nombre y email automáticamente y los guarda en tu base de datos."
+    },
+    {
+      icon: "🔵",
+      title: "Fidelidapp Completa",
+      description: "Landing de registro, base de datos de contactos, catálogo de servicios, agenda electrónica, sistema de puntos y email marketing autogestionado."
+    },
+    {
+      icon: "🎯",
+      title: "Derivación Inteligente",
+      description: "Tu bot deriva automáticamente a tu landing de registro o agenda según la necesidad del cliente. Todo fluye sin que tengas que intervenir."
+    },
+    {
+      icon: "📧",
+      title: "Seguimiento Automático",
+      description: "Mensajes de seguimiento en Instagram que mantienen a tus leads calientes hasta que se conviertan en alumnos."
+    },
+    {
+      icon: "🛠",
+      title: "Acompañamiento Personalizado",
+      description: "Configuración inicial, ajustes durante el primer mes y asesoría para elegir tu producto estrella y ordenar tu catálogo."
+    }
+  ]
+};
+
+// Testimonials Data
+const testimonialsData = {
+  title: "Lo que dicen nuestros clientes piloto",
+  testimonials: [
+    {
+      name: "María González",
+      company: "Coach de Fitness",
+      text: "InstaClientes transformó mi negocio. Ahora recibo leads mientras duermo y mi bot responde todas las preguntas básicas. Increíble.",
+      rating: 5
+    },
+    {
+      name: "Carlos Mendoza",
+      company: "Instructor de Yoga",
+      text: "La combinación del bot y Fidelidapp es perfecta. Mis DMs se convierten en alumnos reales sin que yo tenga que estar pendiente todo el día.",
+      rating: 5
+    }
+  ]
+};
+
+// How It Works Data
+const howItWorksData = {
+  title: "¿Cómo funciona?",
+  subtitle: "En 3 pasos tendrás tu sistema de captación automática funcionando",
+  steps: [
+    {
+      number: 1,
+      title: "Configuración Inicial",
+      description: "Configuramos tu bot de Instagram con respuestas automáticas personalizadas, captura de datos y derivaciones a tu landing y agenda.",
+      icon: "⚙️"
+    },
+    {
+      number: 2,
+      title: "Activación de Fidelidapp",
+      description: "Activamos tu Fidelidapp completa: landing de registro, base de datos, catálogo de servicios, agenda, puntos y email marketing.",
+      icon: "🔵"
+    },
+    {
+      number: 3,
+      title: "Acompañamiento y Optimización",
+      description: "Te acompañamos durante el primer mes con ajustes, asesoría para producto estrella y optimización de tu catálogo de servicios.",
+      icon: "🚀"
+    }
+  ],
+  ctaText: "💳 Quiero mi cupo piloto - $49.000 CLP/mes",
+  ctaHref: "https://mpago.la/2g7Zy1e"
+};
+
+// Guarantee Data
+const guaranteeData = {
+  title: "Piloto sin Riesgos",
+  subtitle: "Prueba el sistema completo durante 30 días sin compromiso",
+  guaranteeText: "Piloto de 30 días sin contrato. Si no funciona para tu negocio, no renovas. Simple.",
+  guaranteeDetails: [
+    "Piloto de 30 días sin contrato de permanencia",
+    "Todo el sistema funcionando desde el día 1",
+    "Acompañamiento durante todo el primer mes",
+    "Sin compromiso, sin letra pequeña"
+  ],
+  ctaText: "💳 Quiero mi cupo piloto - $49.000 CLP/mes",
+  ctaHref: "https://mpago.la/2g7Zy1e"
+};
+
+// Offer Data
+const offerData = {
+  title: "¿Qué incluye InstaClientes?",
+  subtitle: "Todo lo que necesitas para convertir DMs en alumnos reales",
+  price: "$49.000 CLP/mes",
+  features: [
+    "🔵 Fidelidapp completa: Landing de registro, base de datos, catálogo de servicios, agenda electrónica, sistema de puntos y recompensas, email marketing autogestionado",
+    "🤖 Bot de Instagram: Respuestas automáticas a precios, horarios y tipos de clases/planes",
+    "📝 Captura de datos: Nombre + email automáticamente desde DMs",
+    "🔗 Derivación inteligente: A landing de registro y agenda según necesidad",
+    "📧 Mensajes de seguimiento: Automáticos en Instagram para mantener leads calientes",
+    "🛠 Acompañamiento: Configuración inicial, ajustes primer mes, asesoría para producto estrella y catálogo",
+    "⏳ Piloto 30 días: Sin contrato, sin compromiso"
+  ],
+  ctaText: "💳 Quiero mi cupo piloto - $49.000 CLP/mes",
+  ctaHref: "https://mpago.la/2g7Zy1e",
+  guarantee: "Piloto 30 días sin contrato",
+  urgency: "🚀 Solo 5 cupos disponibles"
+};
+
+// FAQ Data
+const faqData = {
+  title: "Preguntas frecuentes",
+  subtitle: "Resolvemos las dudas más comunes sobre InstaClientes",
+  faqs: [
+    {
+      question: "¿Realmente funciona el bot de Instagram?",
+      answer: "Sí, absolutamente. El bot responde automáticamente a preguntas frecuentes sobre precios, horarios y tipos de clases. Captura datos y deriva a tu landing o agenda según la necesidad del cliente."
+    },
+    {
+      question: "¿Qué pasa después de los 30 días de piloto?",
+      answer: "Si estás satisfecho con los resultados, puedes continuar con el servicio mensual. Si no, simplemente no renuevas. No hay contrato de permanencia ni compromiso."
+    },
+    {
+      question: "¿Necesito tener conocimientos técnicos?",
+      answer: "No, para nada. Nosotros configuramos todo por ti. Solo necesitas proporcionarnos la información de tu negocio (precios, horarios, servicios) y nosotros hacemos el resto."
+    },
+    {
+      question: "¿Qué incluye exactamente Fidelidapp?",
+      answer: "Fidelidapp incluye: landing page de registro de interesados, base de datos de contactos, catálogo de servicios, agenda electrónica, sistema de puntos y recompensas, y email marketing autogestionado."
+    },
+    {
+      question: "¿El bot puede responder preguntas personalizadas?",
+      answer: "El bot está configurado para responder las preguntas más frecuentes (precios, horarios, tipos de clases). Para consultas más complejas, puede derivar al cliente a una conversación contigo o a tu landing de contacto."
+    },
+    {
+      question: "¿Cuánto tiempo tarda en estar funcionando?",
+      answer: "La configuración inicial toma aproximadamente 3-5 días hábiles. Una vez configurado, el sistema funciona automáticamente 24/7."
+    }
+  ]
+};
+
+// Final CTA Data
+const finalCTAData = {
+  title: "¿Listo para convertir tus DMs en alumnos reales?",
+  subtitle: "No más perder clientes por no responder a tiempo. Tu bot trabajará 24/7 mientras tú duermes, convirtiendo DMs en leads y leads en alumnos.",
+  ctaText: "💳 Quiero mi cupo piloto AHORA - $49.000 CLP/mes",
+  ctaHref: "https://mpago.la/2g7Zy1e",
+  urgency: "🚀 Solo 5 cupos disponibles - Piloto limitado",
+  socialProof: "Únete a los primeros en automatizar su captación desde Instagram"
+};
+---
+
+<OptimizedServiceLayout title={title} description={description} serviceName="InstaClientes" servicePrice="$49.000 CLP/mes">
+  <!-- 1. Hero Section (Above the fold) -->
+  <OptimizedHeroSection {...heroData} />
+  
+  <!-- 2. Bloque de beneficios clave -->
+  <BenefitsSection {...benefitsData} />
+  
+  <!-- 3. Prueba social -->
+  <TestimonialsSection {...testimonialsData} />
+  
+  <!-- 4. Sección "Cómo funciona" / Demostración -->
+  <HowItWorksSection {...howItWorksData} />
+  
+  <!-- 5. NUEVA SECCIÓN: Banner de Garantía -->
+  <GuaranteeSection {...guaranteeData} />
+  
+  <!-- 6. Oferta / Incentivo -->
+  <OfferSection {...offerData} />
+  
+  <!-- 7. FAQs (Preguntas frecuentes) -->
+  <FAQSection {...faqData} />
+  
+  <!-- 8. CTA final -->
+  <FinalCTASection {...finalCTAData} />
+</OptimizedServiceLayout>
+

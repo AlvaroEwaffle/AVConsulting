@@ -1,0 +1,214 @@
+---
+import OptimizedServiceLayout from '../../layouts/OptimizedServiceLayout.astro';
+import OptimizedHeroSection from '../../components/services/OptimizedHeroSection.astro';
+import BenefitsSection from '../../components/services/BenefitsSection.astro';
+import TestimonialsSection from '../../components/services/TestimonialsSection.astro';
+import HowItWorksSection from '../../components/services/HowItWorksSection.astro';
+import GuaranteeSection from '../../components/services/GuaranteeSection.astro';
+import OfferSection from '../../components/services/OfferSection.astro';
+import FAQSection from '../../components/services/FAQSection.astro';
+import FinalCTASection from '../../components/services/FinalCTASection.astro';
+
+const title = "Asesoría Shape Up - Organiza tu Negocio como los Mejores Equipos | Álvaro Villena";
+const description = "Te acompaño 1:1 a implementar Shape Up en tu proyecto digital, logrando foco, claridad y avances reales en ciclos de 6 semanas.";
+
+// Hero Section Data
+const heroData = {
+  title: "Asesoría Shape Up Personalizada",
+  subtitle: "Metodología probada + acompañamiento 1:1 = resultados garantizados",
+  description: "¿Tienes una idea de lanzar tu negocio pero no sabes por dónde empezar? ¿Tu equipo está abrumado con tareas y deadlines imposibles? Shape Up es la metodología que usan empresas como Basecamp, Shopify y GitHub para entregar productos digitales de calidad en tiempo récord.",
+  ctaText: "💳 Agendar Asesoría - $497 USD",
+  ctaHref: "https://mpago.la/1ZpiebL",
+  imageSrc: "/assets/ShapeUpPhoto.png",
+  socialProof: "Ya +20 equipos han transformado su productividad con Shape Up",
+  clientLogos: ["/assets/icono.png"]
+};
+
+// Benefits Section Data
+const benefitsData = {
+  title: "¿Por qué Shape Up transforma equipos?",
+  subtitle: "La metodología que elimina el caos y multiplica la productividad de tu equipo",
+  benefits: [
+    {
+      icon: "⏰",
+      title: "Ciclos de 6 Semanas",
+      description: "Trabaja en ciclos definidos con objetivos claros. No más proyectos que nunca terminan."
+    },
+    {
+      icon: "🎯",
+      title: "Scope Definido",
+      description: "El alcance se define desde el inicio y no cambia durante el ciclo. Foco total en lo importante."
+    },
+    {
+      icon: "🚀",
+      title: "Equipos Autónomos",
+      description: "Tu equipo toma decisiones sin burocracia. Empoderamiento real y responsabilidad clara."
+    },
+    {
+      icon: "📊",
+      title: "Resultados Medibles",
+      description: "Entregables reales y métricas claras. Sabes exactamente qué se logró en cada ciclo."
+    },
+    {
+      icon: "💡",
+      title: "Innovación Constante",
+      description: "Cada ciclo incluye tiempo para experimentar y probar nuevas ideas sin comprometer el proyecto."
+    }
+  ]
+};
+
+// Testimonials Data
+const testimonialsData = {
+  title: "Lo que dicen nuestros clientes",
+  testimonials: [
+    {
+      name: "Fernanda Castro",
+      company: "CTO de StartupChile",
+      text: "Álvaro transformó completamente nuestra forma de trabajar. En 6 semanas pasamos del caos total a tener un proceso claro y medible.",
+      rating: 5
+    },
+    {
+      name: "Diego Morales",
+      company: "Product Manager",
+      text: "La asesoría personalizada fue clave. Álvaro entendió nuestras necesidades específicas y adaptó Shape Up perfectamente a nuestro contexto.",
+      rating: 5
+    },
+    {
+      name: "Carolina Vega",
+      company: "Fundadora de TechVentures",
+      text: "ROI increíble. La inversión en asesoría nos ahorró meses de experimentación y nos dio resultados inmediatos.",
+      rating: 5
+    }
+  ]
+};
+
+// How It Works Data
+const howItWorksData = {
+  title: "¿Cómo funciona la asesoría?",
+  subtitle: "En solo 6 semanas transformarás completamente cómo trabaja tu equipo",
+  steps: [
+    {
+      number: 1,
+      title: "Semanas 1-2: Diagnóstico",
+      description: "Diagnóstico de tu negocio actual: procesos, ventas y fidelización. Mapeamos a tu cliente ideal y armamos un backlog priorizado de ideas y oportunidades reales.",
+      icon: "🔍"
+    },
+    {
+      number: 2,
+      title: "Semanas 3-4: Construcción",
+      description: "Construimos tu primera Landing Page, creamos un Plan de acción, definimos el 'servicio estrella' a potenciar y diseñamos una estrategia de marketing lista para testear.",
+      icon: "🛠️"
+    },
+    {
+      number: 3,
+      title: "Semanas 5-6: Implementación",
+      description: "Implementamos Shape Up en tu equipo, establecemos métricas de éxito y te damos las herramientas para continuar el proceso de forma autónoma.",
+      icon: "🚀"
+    }
+  ],
+  ctaText: "💳 Agendar Asesoría - $497 USD",
+  ctaHref: "https://mpago.la/1ZpiebL"
+};
+
+// Guarantee Data
+const guaranteeData = {
+  title: "Nuestra Garantía de Transformación",
+  subtitle: "No solo prometemos cambios, los garantizamos con tu dinero de vuelta",
+  guaranteeText: "Si no ves transformación en tu equipo en 6 semanas, te devolvemos tu dinero completo",
+  guaranteeDetails: [
+    "Garantía de transformación del equipo en 6 semanas o devolución completa",
+    "Proceso Shape Up completamente implementado y funcional",
+    "Tu inversión está 100% protegida sin riesgos",
+    "Transparencia total en el proceso de implementación"
+  ],
+  ctaText: "💳 Agendar Asesoría - $497 USD",
+  ctaHref: "https://mpago.la/1ZpiebL"
+};
+
+// Offer Data
+const offerData = {
+  title: "¿Qué incluye tu asesoría Shape Up?",
+  subtitle: "Todo lo que necesitas para transformar tu equipo en 6 semanas",
+  price: "$497 USD",
+  features: [
+    "Diagnóstico completo de tu negocio actual",
+    "Mapeo de tu cliente ideal y oportunidades",
+    "Backlog priorizado de ideas y proyectos",
+    "Primera landing page optimizada para conversiones",
+    "Plan de acción detallado para implementar Shape Up",
+    "Estrategia de marketing lista para testear",
+    "Implementación completa de Shape Up en tu equipo",
+    "Métricas y herramientas para continuar el proceso",
+    "Soporte por 30 días después de la implementación",
+    "Garantía de transformación en 6 semanas"
+  ],
+  ctaText: "💳 Agendar Asesoría - $497 USD",
+  ctaHref: "https://mpago.la/1ZpiebL",
+  guarantee: "Transformación garantizada en 6 semanas o devolvemos tu dinero",
+  urgency: "¡Solo 5 cupos disponibles este mes!"
+};
+
+// FAQ Data
+const faqData = {
+  title: "Preguntas frecuentes",
+  subtitle: "Resolvemos las dudas más comunes sobre la asesoría Shape Up",
+  faqs: [
+    {
+      question: "¿Realmente puedo transformar mi equipo en 6 semanas?",
+      answer: "Sí, absolutamente. Shape Up es una metodología probada que ha transformado equipos en empresas como Basecamp, Shopify y GitHub. Nuestro proceso está optimizado para lograr cambios reales y medibles en ese tiempo."
+    },
+    {
+      question: "¿Qué pasa si mi equipo es muy pequeño o muy grande?",
+      answer: "Shape Up funciona para equipos de cualquier tamaño. Lo adaptamos a tu contexto específico, desde startups de 2 personas hasta empresas con equipos de 50+ desarrolladores."
+    },
+    {
+      question: "¿Necesito conocimientos técnicos previos?",
+      answer: "No es necesario. Te guío paso a paso en todo el proceso. Shape Up es una metodología de gestión, no de programación, aunque se aplica principalmente a proyectos digitales."
+    },
+    {
+      question: "¿Qué incluye exactamente la 'implementación completa'?",
+      answer: "No solo te doy consejos, sino que trabajo directamente con tu equipo para implementar Shape Up. Esto incluye facilitar las primeras sesiones, establecer procesos y asegurar que todo funcione correctamente."
+    },
+    {
+      question: "¿Puedo aplicar esto a proyectos no digitales?",
+      answer: "Shape Up fue diseñado para productos digitales, pero sus principios se pueden adaptar a otros tipos de proyectos. Durante la asesoría evaluamos si es la metodología adecuada para tu caso específico."
+    }
+  ]
+};
+
+// Final CTA Data
+const finalCTAData = {
+  title: "¿Listo para transformar tu equipo?",
+  subtitle: "No más proyectos que nunca terminan o equipos abrumados. Dale a tu equipo el foco, la claridad y la productividad que se merece con Shape Up.",
+  ctaText: "💳 Agendar Asesoría AHORA - $497 USD",
+  ctaHref: "https://mpago.la/1ZpiebL",
+  urgency: "¡Solo 5 cupos disponibles este mes!",
+  socialProof: "Ya +20 equipos han transformado su productividad. ¿Será el tuyo el próximo?"
+};
+---
+
+<OptimizedServiceLayout title={title} description={description} serviceName="Asesoría Shape Up" servicePrice="$497 USD">
+  <!-- 1. Hero Section (Above the fold) -->
+  <OptimizedHeroSection {...heroData} />
+  
+  <!-- 2. Bloque de beneficios clave -->
+  <BenefitsSection {...benefitsData} />
+  
+  <!-- 3. Prueba social -->
+  <TestimonialsSection {...testimonialsData} />
+  
+  <!-- 4. Sección "Cómo funciona" / Demostración -->
+  <HowItWorksSection {...howItWorksData} />
+  
+  <!-- 5. NUEVA SECCIÓN: Banner de Garantía -->
+  <GuaranteeSection {...guaranteeData} />
+  
+  <!-- 6. Oferta / Incentivo -->
+  <OfferSection {...offerData} />
+  
+  <!-- 7. FAQs (Preguntas frecuentes) -->
+  <FAQSection {...faqData} />
+  
+  <!-- 8. CTA final -->
+  <FinalCTASection {...finalCTAData} />
+</OptimizedServiceLayout> 

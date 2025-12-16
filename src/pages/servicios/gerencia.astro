@@ -1,0 +1,212 @@
+---
+import OptimizedServiceLayout from '../../layouts/OptimizedServiceLayout.astro';
+import OptimizedHeroSection from '../../components/services/OptimizedHeroSection.astro';
+import BenefitsSection from '../../components/services/BenefitsSection.astro';
+import TestimonialsSection from '../../components/services/TestimonialsSection.astro';
+import HowItWorksSection from '../../components/services/HowItWorksSection.astro';
+import GuaranteeSection from '../../components/services/GuaranteeSection.astro';
+import OfferSection from '../../components/services/OfferSection.astro';
+import FAQSection from '../../components/services/FAQSection.astro';
+import FinalCTASection from '../../components/services/FinalCTASection.astro';
+
+const title = "Gerencia Fraccional de Innovación - Dirección de Innovación a tu Medida | Álvaro Villena";
+const description = "Lidero tus proyectos de innovación sin necesidad de contratar un gerente full-time. Flexible, ágil y orientado a resultados.";
+
+// Hero Section Data
+const heroData = {
+  title: "Gerencia Fraccional de Innovación",
+  subtitle: "Experiencia ejecutiva + flexibilidad total = resultados garantizados",
+  description: "¿Necesitas liderazgo experto en innovación pero no quieres contratar un gerente full-time? La gerencia fraccional te da acceso a experiencia de alto nivel, flexibilidad total y resultados medibles, todo por una fracción del costo de un ejecutivo tradicional.",
+  ctaText: "💳 Explorar Opciones - Desde $1,700 USD/mes",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion",
+  imageSrc: "/assets/GerentePhoto.png",
+  socialProof: "Ya +50 empresas confían en nuestro modelo de gerencia fraccional",
+  clientLogos: ["/assets/icono.png"]
+};
+
+// Benefits Section Data
+const benefitsData = {
+  title: "¿Por qué elegir la Gerencia Fraccional?",
+  subtitle: "El modelo que revoluciona cómo las empresas acceden al liderazgo ejecutivo",
+  benefits: [
+    {
+      icon: "💰",
+      title: "Ahorro de 60-80% en Costos",
+      description: "Accede a experiencia ejecutiva por una fracción del costo de un gerente full-time, sin comprometer calidad."
+    },
+    {
+      icon: "⚡",
+      title: "Flexibilidad Total",
+      description: "Escala el tiempo de dedicación según tus necesidades. De 10 horas a 30 horas por semana."
+    },
+    {
+      icon: "🎯",
+      title: "Resultados Medibles",
+      description: "Enfoque en entregables específicos y KPIs claros. Sabes exactamente qué obtienes por tu inversión."
+    },
+    {
+      icon: "🚀",
+      title: "Implementación Rápida",
+      description: "Empieza en días, no en meses. Sin procesos de reclutamiento ni tiempo de onboarding."
+    },
+    {
+      icon: "🔧",
+      title: "Experiencia Especializada",
+      description: "Acceso a ejecutivos con 10+ años de experiencia en innovación y transformación digital."
+    }
+  ]
+};
+
+// Testimonials Data
+const testimonialsData = {
+  title: "Lo que dicen nuestros clientes",
+  testimonials: [
+    {
+      name: "Santiago Herrera",
+      company: "CEO de InnovateCorp",
+      text: "Álvaro como gerente fraccional transformó nuestra capacidad de innovación. En 6 meses lanzamos 3 productos nuevos.",
+      rating: 5
+    },
+    {
+      name: "Valentina Rojas",
+      company: "Directora de Producto",
+      text: "La flexibilidad del modelo fraccional nos permitió acceder a talento de alto nivel sin comprometer nuestro presupuesto.",
+      rating: 5
+    },
+    {
+      name: "Andrés Silva",
+      company: "Fundador de TechStart",
+      text: "Álvaro no solo lideró nuestros proyectos, sino que capacitó a nuestro equipo para ser más autónomo.",
+      rating: 5
+    }
+  ]
+};
+
+// How It Works Data
+const howItWorksData = {
+  title: "¿Cómo funciona?",
+  subtitle: "En solo 3 pasos tendrás acceso a liderazgo ejecutivo de alto nivel",
+  steps: [
+    {
+      number: 1,
+      title: "Evaluación y Estrategia",
+      description: "Analizamos tu situación actual, definimos objetivos de innovación y creamos una hoja de ruta clara.",
+      icon: "🎯"
+    },
+    {
+      number: 2,
+      title: "Implementación y Liderazgo",
+      description: "Lidero la ejecución de proyectos clave, coordino equipos y aseguro la entrega de resultados.",
+      icon: "🚀"
+    },
+    {
+      number: 3,
+      title: "Escalado y Optimización",
+      description: "Refinamos procesos, establecemos métricas de éxito y preparamos tu organización para el crecimiento.",
+      icon: "📈"
+    }
+  ],
+  ctaText: "💳 Explorar Opciones - Desde $1,700 USD/mes",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion"
+};
+
+// Guarantee Data
+const guaranteeData = {
+  title: "Nuestra Garantía de Resultados",
+  subtitle: "No solo prometemos resultados, los garantizamos con tu dinero de vuelta",
+  guaranteeText: "Si no tienes un backlog de innovación alineado y aprobado en 4 semanas, te devolvemos tu dinero",
+  guaranteeDetails: [
+    "Garantía de backlog de innovación en las primeras 4 semanas o devolución completa",
+    "Backlog completamente alineado y aprobado por el cliente",
+    "Tu inversión está 100% protegida sin riesgos",
+    "Transparencia total en el proceso y entregables"
+  ],
+  ctaText: "💳 Explorar Opciones - Desde $1,700 USD/mes",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion"
+};
+
+// Offer Data
+const offerData = {
+  title: "¿Qué incluye tu plan de gerencia fraccional?",
+  subtitle: "Todo lo que necesitas para transformar tu capacidad de innovación",
+  price: "Desde $1,700 USD/mes",
+  features: [
+    "Liderazgo ejecutivo en innovación y transformación digital",
+    "Estrategia de innovación personalizada para tu empresa",
+    "Coordinación y gestión de proyectos clave",
+    "Métricas y KPIs de innovación",
+    "Capacitación y desarrollo de tu equipo interno",
+    "Acceso directo a experiencia ejecutiva",
+    "Flexibilidad en tiempo de dedicación",
+    "Sin costos de reclutamiento ni beneficios"
+  ],
+  ctaText: "💳 Explorar Opciones - Desde $1,700 USD/mes",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion",
+  guarantee: "Resultados garantizados en 3 meses",
+  urgency: "¡Solo 3 cupos disponibles este trimestre!"
+};
+
+// FAQ Data
+const faqData = {
+  title: "Preguntas frecuentes",
+  subtitle: "Resolvemos las dudas más comunes sobre la gerencia fraccional",
+  faqs: [
+    {
+      question: "¿Qué diferencia hay con un consultor tradicional?",
+      answer: "La gerencia fraccional va más allá de la consultoría. No solo te doy consejos, sino que lidero la implementación, coordino equipos y me responsabilizo de los resultados."
+    },
+    {
+      question: "¿Puedo cambiar el tiempo de dedicación mensualmente?",
+      answer: "Sí, la flexibilidad es una de las ventajas clave. Puedes ajustar de 10 a 30 horas por semana según tus necesidades del momento."
+    },
+    {
+      question: "¿Qué pasa si no estoy satisfecho con los resultados?",
+      answer: "Ofrecemos garantía de satisfacción. Si no ves resultados en 3 meses, hacemos ajustes o puedes cancelar sin compromisos."
+    },
+    {
+      question: "¿Necesito un equipo interno para trabajar contigo?",
+      answer: "No es necesario. Puedo trabajar con tu equipo existente o ayudarte a construir uno desde cero. Me adapto a tu situación actual."
+    },
+    {
+      question: "¿Cuánto tiempo tarda en ver resultados?",
+      answer: "Los primeros resultados se ven en 4-6 semanas. La transformación completa típicamente toma 3-6 meses dependiendo de la complejidad."
+    }
+  ]
+};
+
+// Final CTA Data
+const finalCTAData = {
+  title: "¿Listo para transformar tu capacidad de innovación?",
+  subtitle: "No más proyectos que no avanzan o equipos sin dirección clara. Accede a liderazgo ejecutivo de alto nivel con la flexibilidad que tu empresa necesita.",
+  ctaText: "💳 Explorar Opciones AHORA - Desde $1,700 USD/mes",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion",
+  urgency: "¡Solo 3 cupos disponibles este trimestre!",
+  socialProof: "Ya +50 clientes confían en nosotros. ¿Serás el próximo?"
+};
+---
+
+<OptimizedServiceLayout title={title} description={description} serviceName="Gerencia Fraccional de Innovación" servicePrice="Desde $1,700 USD/mes">
+  <!-- 1. Hero Section (Above the fold) -->
+  <OptimizedHeroSection {...heroData} />
+  
+  <!-- 2. Bloque de beneficios clave -->
+  <BenefitsSection {...benefitsData} />
+  
+  <!-- 3. Prueba social -->
+  <TestimonialsSection {...testimonialsData} />
+  
+  <!-- 4. Sección "Cómo funciona" / Demostración -->
+  <HowItWorksSection {...howItWorksData} />
+  
+  <!-- 5. NUEVA SECCIÓN: Banner de Garantía -->
+  <GuaranteeSection {...guaranteeData} />
+  
+  <!-- 6. Oferta / Incentivo -->
+  <OfferSection {...offerData} />
+  
+  <!-- 7. FAQs (Preguntas frecuentes) -->
+  <FAQSection {...faqData} />
+  
+  <!-- 8. CTA final -->
+  <FinalCTASection {...finalCTAData} />
+</OptimizedServiceLayout> 

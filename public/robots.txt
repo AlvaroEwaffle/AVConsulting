@@ -1,3 +1,33 @@
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://alvarovillena.cl/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any exist in the future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow important directories
+Allow: /assets/
+Allow: /servicios/
+Allow: /contacto/
+Allow: /testimonios/
+Allow: /mi-metodo/
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

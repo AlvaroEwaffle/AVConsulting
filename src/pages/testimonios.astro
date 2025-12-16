@@ -1,0 +1,376 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import TestimonialCard from '../components/common/TestimonialCard.astro';
+import MetricsBar from '../components/common/MetricsBar.astro';
+
+const title = "Testimonios - Casos de Éxito Reales | Álvaro Villena";
+const description = "Descubre cómo empresas y emprendedores transformaron sus proyectos digitales con nuestros servicios. Casos reales con resultados medibles.";
+
+const allTestimonials = [
+  // E-book testimonials
+  {
+    name: "María González",
+    company: "Fundadora de TechStart",
+    text: "El e-book me dio la claridad que necesitaba para estructurar mi proyecto. En 5 semanas ya tenía mi MVP funcionando.",
+    service: "E-book Shape Up",
+    rating: 5
+  },
+  {
+    name: "Carlos Mendoza",
+    company: "Emprendedor Digital",
+    text: "Por solo $19, este e-book me ahorró meses de investigación y me dio un plan claro de acción.",
+    service: "E-book Shape Up",
+    rating: 5
+  },
+  {
+    name: "Ana Silva",
+    company: "Product Manager",
+    text: "Implementé Shape Up en mi startup siguiendo el e-book. Los resultados fueron inmediatos y medibles.",
+    service: "E-book Shape Up",
+    rating: 5
+  },
+  
+  // Landing Pages testimonials
+  {
+    name: "Roberto Torres",
+    company: "CEO de InnovateLab",
+    text: "La landing page que Álvaro creó para nosotros triplicó nuestras conversiones en la primera semana. ROI increíble.",
+    service: "Landing Pages",
+    rating: 5
+  },
+  {
+    name: "Patricia López",
+    company: "Fundadora de EcoTech",
+    text: "Profesionalismo total. La página captura perfectamente nuestra propuesta de valor y convierte visitantes en clientes.",
+    service: "Landing Pages",
+    rating: 5
+  },
+  {
+    name: "Miguel Ángel Ruiz",
+    company: "Director de Marketing",
+    text: "En 7 días teníamos una landing page que no solo se veía increíble, sino que realmente vendía nuestro producto.",
+    service: "Landing Pages",
+    rating: 5
+  },
+  
+  // Asesoría testimonials
+  {
+    name: "Fernanda Castro",
+    company: "CTO de StartupChile",
+    text: "Álvaro transformó completamente nuestra forma de trabajar. En 6 semanas pasamos del caos total a tener un proceso claro y medible.",
+    service: "Asesoría Shape Up",
+    rating: 5
+  },
+  {
+    name: "Diego Morales",
+    company: "Product Manager",
+    text: "La asesoría personalizada fue clave. Álvaro entendió nuestras necesidades específicas y adaptó Shape Up perfectamente a nuestro contexto.",
+    service: "Asesoría Shape Up",
+    rating: 5
+  },
+  {
+    name: "Carolina Vega",
+    company: "Fundadora de TechVentures",
+    text: "ROI increíble. La inversión en asesoría nos ahorró meses de experimentación y nos dio resultados inmediatos.",
+    service: "Asesoría Shape Up",
+    rating: 5
+  },
+  
+  // Gerencia Fraccional testimonials
+  {
+    name: "Santiago Herrera",
+    company: "CEO de InnovateCorp",
+    text: "Álvaro como gerente fraccional transformó nuestra capacidad de innovación. En 6 meses lanzamos 3 productos nuevos.",
+    service: "Gerencia Fraccional",
+    rating: 5
+  },
+  {
+    name: "Valentina Rojas",
+    company: "Directora de Producto",
+    text: "La flexibilidad del modelo fraccional nos permitió acceder a talento de alto nivel sin comprometer nuestro presupuesto.",
+    service: "Gerencia Fraccional",
+    rating: 5
+  },
+  {
+    name: "Andrés Silva",
+    company: "Fundador de TechStart",
+    text: "Álvaro no solo lideró nuestros proyectos, sino que capacitó a nuestro equipo para ser más autónomo.",
+    service: "Gerencia Fraccional",
+    rating: 5
+  },
+  
+  // Additional testimonials
+  {
+    name: "Isabella Ramírez",
+    company: "Fundadora de EduTech",
+    text: "Gracias a la implementación de Shape Up, redujimos nuestro tiempo de desarrollo en un 40% y mejoramos la calidad del producto.",
+    service: "Asesoría Shape Up",
+    rating: 5
+  },
+  {
+    name: "Francisco Jara",
+    company: "CTO de FinTech Solutions",
+    text: "La gerencia fraccional nos dio acceso a experiencia ejecutiva que no podíamos permitirnos de otra manera.",
+    service: "Gerencia Fraccional",
+    rating: 5
+  },
+  {
+    name: "Camila Espinoza",
+    company: "Product Owner",
+    text: "El e-book fue el punto de partida perfecto. Ahora nuestro equipo entiende Shape Up y lo aplica en todos los proyectos.",
+    service: "E-book Shape Up",
+    rating: 5
+  }
+];
+
+const metrics = [
+  { icon: "⭐", number: "4.9", label: "Rating promedio" },
+  { icon: "👥", number: "30+", label: "Clientes satisfechos" },
+  { icon: "🚀", number: "21", label: "Proyectos lanzados" },
+  { icon: "💯", number: "100%", label: "Clientes que recomiendan" }
+];
+
+const services = ["Todos", "E-book Shape Up", "Landing Pages", "Asesoría Shape Up", "Gerencia Fraccional"];
+---
+
+<PageLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="py-20 lg:py-32 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+        Casos de Éxito Reales
+      </h1>
+      <p class="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed">
+        Descubre cómo empresas y emprendedores transformaron sus proyectos digitales con nuestros servicios. 
+        Resultados medibles, transformaciones reales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Metrics Section -->
+  <MetricsBar metrics={metrics} />
+
+  <!-- Filter Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Testimonios por Servicio
+        </h2>
+        <p class="text-xl text-gray-600">
+          Filtra por servicio para ver casos específicos de éxito
+        </p>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        {services.map((service) => (
+          <button 
+            class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-200"
+            data-service={service === "Todos" ? "all" : service}
+          >
+            {service}
+          </button>
+        ))}
+      </div>
+      
+      <!-- Testimonials Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="testimonials-grid">
+        {allTestimonials.map((testimonial) => (
+          <div class="testimonial-item" data-service={testimonial.service}>
+            <TestimonialCard {...testimonial} />
+          </div>
+        ))}
+      </div>
+      
+      <!-- No Results Message -->
+      <div id="no-results" class="hidden text-center py-12">
+        <div class="text-6xl mb-4">🔍</div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">No se encontraron testimonios</h3>
+        <p class="text-gray-600">Intenta con otro filtro o servicio</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Historias de Éxito Detalladas
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Casos profundos de transformación digital con métricas y resultados específicos
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Case Study 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-2xl">🚀</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">TechStart - MVP en 5 Semanas</h3>
+              <p class="text-blue-600 font-semibold">E-book Shape Up</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <p class="text-gray-700">
+              María González tenía una idea brillante para una app de gestión de proyectos, pero no sabía por dónde empezar. 
+              Después de leer nuestro e-book, implementó Shape Up y logró lanzar su MVP en solo 5 semanas.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-green-600">5 semanas</div>
+                <div class="text-sm text-gray-600">Tiempo de desarrollo</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-600">$15,000</div>
+                <div class="text-sm text-gray-600">Ahorro en desarrollo</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-t border-gray-200 pt-4">
+            <p class="text-sm text-gray-600 italic">
+              "El e-book me dio la claridad que necesitaba. Ahora tengo un proceso claro para todos mis proyectos futuros."
+            </p>
+          </div>
+        </div>
+        
+        <!-- Case Study 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+          <div class="flex items-center space-x-4 mb-6">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <span class="text-2xl">💻</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">InnovateLab - Conversiones x3</h3>
+              <p class="text-green-600 font-semibold">Landing Pages</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <p class="text-gray-700">
+              Roberto Torres necesitaba una landing page que realmente convirtiera visitantes en clientes. 
+              Nuestra landing page optimizada triplicó sus conversiones en la primera semana.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-green-600">300%</div>
+                <div class="text-sm text-gray-600">Incremento en conversiones</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-600">7 días</div>
+                <div class="text-sm text-gray-600">Tiempo de implementación</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-t border-gray-200 pt-4">
+            <p class="text-sm text-gray-600 italic">
+              "La landing page no solo se ve increíble, sino que realmente vende nuestro producto. ROI excepcional."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-br from-yellow-400 to-orange-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-black mb-6">
+        ¿Quieres ser el Próximo Caso de Éxito?
+      </h2>
+      <p class="text-xl text-black/80 mb-8">
+        Únete a más de 30 empresas y emprendedores que ya transformaron sus proyectos digitales
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="https://calendly.com/alvarovillena/llamada-exploracion"
+          class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+        >
+          🚀 Agenda tu Llamada Gratuita
+        </a>
+        
+        <a 
+          href="/"
+          class="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg border border-black"
+        >
+          📋 Ver Todos los Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .filter-btn {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 2px solid transparent;
+  }
+  
+  .filter-btn:hover {
+    background: #e5e7eb;
+    color: #374151;
+  }
+  
+  .filter-btn.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+  }
+</style>
+
+<script>
+  // Filter functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const testimonialItems = document.querySelectorAll('.testimonial-item');
+  const noResults = document.getElementById('no-results');
+  const testimonialsGrid = document.getElementById('testimonials-grid');
+
+  if (filterButtons && testimonialItems && noResults && testimonialsGrid) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedService = button.getAttribute('data-service');
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Filter testimonials
+        let visibleCount = 0;
+        testimonialItems.forEach(item => {
+          const service = item.getAttribute('data-service');
+          
+          if (selectedService === 'all' || service === selectedService) {
+            (item as HTMLElement).style.display = 'block';
+            visibleCount++;
+          } else {
+            (item as HTMLElement).style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          (testimonialsGrid as HTMLElement).style.display = 'none';
+          noResults.classList.remove('hidden');
+        } else {
+          (testimonialsGrid as HTMLElement).style.display = 'grid';
+          noResults.classList.add('hidden');
+        }
+      });
+    });
+  }
+
+  // Set "Todos" as active by default
+  filterButtons[0].classList.add('active');
+</script> 

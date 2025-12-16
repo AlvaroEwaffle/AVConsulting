@@ -1,0 +1,38 @@
+---
+interface Props {
+  text: string;
+  href: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  fullWidth?: boolean;
+  icon?: string;
+}
+
+const { 
+  text, 
+  href, 
+  variant = 'primary', 
+  size = 'md', 
+  fullWidth = false,
+  icon 
+} = Astro.props;
+
+const baseClasses = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2";
+const sizeClasses = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-6 py-3 text-base",
+  lg: "px-8 py-4 text-lg"
+};
+const variantClasses = {
+  primary: "bg-yellow-400 hover:bg-yellow-500 text-black focus:ring-yellow-400",
+  secondary: "bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-600",
+  outline: "bg-transparent border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black focus:ring-yellow-400"
+};
+const widthClasses = fullWidth ? "w-full" : "";
+const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${widthClasses}`;
+---
+
+<a href={href} class={classes}>
+  {icon && <span class="mr-2">{icon}</span>}
+  {text}
+</a> 

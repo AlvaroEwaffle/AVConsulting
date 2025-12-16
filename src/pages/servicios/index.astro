@@ -1,0 +1,212 @@
+---
+import OptimizedServiceLayout from '../../layouts/OptimizedServiceLayout.astro';
+import OptimizedHeroSection from '../../components/services/OptimizedHeroSection.astro';
+import BenefitsSection from '../../components/services/BenefitsSection.astro';
+import TestimonialsSection from '../../components/services/TestimonialsSection.astro';
+import HowItWorksSection from '../../components/services/HowItWorksSection.astro';
+import GuaranteeSection from '../../components/services/GuaranteeSection.astro';
+import OfferSection from '../../components/services/OfferSection.astro';
+import FAQSection from '../../components/services/FAQSection.astro';
+import FinalCTASection from '../../components/services/FinalCTASection.astro';
+
+const title = "Servicios - Innovation Coach & Digital Product Builder | Álvaro Villena";
+const description = "Descubre todos nuestros servicios para transformar ideas digitales en productos listos para vender. Desde e-books hasta gerencia fraccional.";
+
+// Hero Section Data
+const heroData = {
+  title: "Servicios que Transforman Ideas en Realidad",
+  subtitle: "Elige el nivel de apoyo que necesitas para llevar tu proyecto al siguiente nivel",
+  description: "Desde recursos educativos hasta acompañamiento ejecutivo completo. Cada servicio está diseñado para darte resultados medibles y transformaciones reales en tu proyecto digital.",
+  ctaText: "💳 Agenda tu Exploración Gratuita",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion",
+  imageSrc: "/assets/Covers/LandingHeroCover.png",
+  socialProof: "Ya +500 emprendedores han transformado sus proyectos con nosotros",
+  clientLogos: ["/assets/icono.png"]
+};
+
+// Benefits Section Data
+const benefitsData = {
+  title: "¿Por qué elegir nuestros servicios?",
+  subtitle: "Cada servicio está diseñado para un momento específico de tu viaje emprendedor",
+  benefits: [
+    {
+      icon: "🎯",
+      title: "Resultados Garantizados",
+      description: "Cada servicio incluye garantías específicas. Si no ves resultados, te devolvemos tu dinero."
+    },
+    {
+      icon: "⚡",
+      title: "Implementación Rápida",
+      description: "Verás resultados desde la primera semana. No más proyectos que tardan meses en completarse."
+    },
+    {
+      icon: "💰",
+      title: "ROI Inmediato",
+      description: "Diseñados para generar retorno de inversión rápido. Tu negocio crece mientras aprendes."
+    },
+    {
+      icon: "🔧",
+      title: "Soporte Continuo",
+      description: "No estás solo. Cada servicio incluye soporte y acompañamiento para maximizar resultados."
+    },
+    {
+      icon: "📱",
+      title: "Mobile-First",
+      description: "Todos nuestros servicios están optimizados para el mundo móvil donde ocurren las conversiones."
+    }
+  ]
+};
+
+// Testimonials Data
+const testimonialsData = {
+  title: "Lo que dicen nuestros clientes",
+  testimonials: [
+    {
+      name: "María González",
+      company: "Fundadora de TechStart",
+      text: "Álvaro transformó completamente mi proyecto. En 6 semanas pasé de una idea a un producto que realmente vende.",
+      rating: 5
+    },
+    {
+      name: "Carlos Mendoza",
+      company: "CEO de InnovateLab",
+      text: "La combinación de servicios nos permitió escalar de 0 a 100 clientes en solo 3 meses. ROI increíble.",
+      rating: 5
+    },
+    {
+      name: "Ana Silva",
+      company: "Product Manager",
+      text: "Cada servicio está diseñado para complementar al anterior. Es como tener un plan maestro para el éxito.",
+      rating: 5
+    }
+  ]
+};
+
+// How It Works Data
+const howItWorksData = {
+  title: "¿Cómo funciona?",
+  subtitle: "En solo 3 pasos transformarás tu idea en un negocio digital exitoso",
+  steps: [
+    {
+      number: 1,
+      title: "Evalúa y Elige",
+      description: "Identifica dónde estás en tu viaje emprendedor y elige el servicio que mejor se adapte a tus necesidades actuales.",
+      icon: "🔍"
+    },
+    {
+      number: 2,
+      title: "Implementa y Ejecuta",
+      description: "Trabaja con nosotros para implementar el servicio elegido y ver resultados rápidos y medibles.",
+      icon: "🚀"
+    },
+    {
+      number: 3,
+      title: "Escala y Optimiza",
+      description: "Una vez que veas resultados, escala tu éxito y optimiza para maximizar el ROI de tu inversión.",
+      icon: "📈"
+    }
+  ],
+  ctaText: "💳 Agenda tu Exploración Gratuita",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion"
+};
+
+// Guarantee Data
+const guaranteeData = {
+  title: "Nuestra Garantía de Resultados",
+  subtitle: "No solo prometemos transformaciones, las garantizamos con tu dinero de vuelta",
+  guaranteeText: "Cada servicio incluye garantías específicas. Si no ves resultados, te devolvemos tu dinero",
+  guaranteeDetails: [
+    "Garantías específicas para cada servicio que ofrecemos",
+    "Resultados medibles y transformaciones reales garantizadas",
+    "Tu inversión está 100% protegida sin riesgos",
+    "Transparencia total en el proceso y entregables"
+  ],
+  ctaText: "💳 Agenda tu Exploración Gratuita",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion"
+};
+
+// Offer Data
+const offerData = {
+  title: "¿Qué servicios tenemos para ti?",
+  subtitle: "Desde recursos educativos hasta acompañamiento ejecutivo completo",
+  price: "Desde GRATIS",
+  features: [
+    "Ebook Shape Up gratis con metodología completa",
+    "Catálogo digital personalizado en 48 horas",
+    "Landing pages optimizadas para conversión",
+    "Asesoría Shape Up personalizada 1:1",
+    "Gerencia fraccional de innovación",
+    "Soporte técnico y acompañamiento continuo",
+    "Garantías específicas para cada servicio",
+    "Resultados medibles desde la primera semana"
+  ],
+  ctaText: "💳 Agenda tu Exploración Gratuita",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion",
+  guarantee: "Resultados garantizados o devolvemos tu dinero",
+  urgency: "¡Exploración gratuita por tiempo limitado!"
+};
+
+// FAQ Data
+const faqData = {
+  title: "Preguntas frecuentes",
+  subtitle: "Resolvemos las dudas más comunes sobre nuestros servicios",
+  faqs: [
+    {
+      question: "¿Cuál es el mejor servicio para empezar?",
+      answer: "Depende de dónde estés en tu viaje emprendedor. Si estás empezando, te recomiendo el ebook gratis. Si ya tienes un negocio, el catálogo digital. Si quieres transformar tu equipo, la asesoría Shape Up. Agenda una exploración gratuita para que te ayude a elegir."
+    },
+    {
+      question: "¿Todos los servicios incluyen garantías?",
+      answer: "Sí, cada servicio incluye garantías específicas. El ebook tiene garantía de valor, el catálogo garantía de entrega en 48 horas, la asesoría garantía de transformación en 6 semanas, y la gerencia fraccional garantía de backlog en 4 semanas."
+    },
+    {
+      question: "¿Puedo combinar varios servicios?",
+      answer: "¡Absolutamente! De hecho, muchos clientes empiezan con un servicio y luego agregan otros. Cada servicio está diseñado para complementar a los demás, creando un plan maestro para el éxito de tu proyecto."
+    },
+    {
+      question: "¿Qué pasa si no estoy satisfecho con un servicio?",
+      answer: "Cada servicio tiene garantías específicas. Si no ves los resultados prometidos, te devolvemos tu dinero o te damos alternativas. Tu satisfacción es nuestra prioridad número uno."
+    },
+    {
+      question: "¿Ofrecen servicios personalizados?",
+      answer: "Sí, especialmente en la asesoría Shape Up y gerencia fraccional. Adaptamos cada servicio a tus necesidades específicas. Agenda una exploración gratuita para discutir opciones personalizadas."
+    }
+  ]
+};
+
+// Final CTA Data
+const finalCTAData = {
+  title: "¿Listo para transformar tu proyecto?",
+  subtitle: "No más ideas que se quedan en el papel o proyectos que no avanzan. Elige el servicio que mejor se adapte a tus necesidades y comienza tu transformación hoy mismo.",
+  ctaText: "💳 Agenda tu Exploración AHORA - GRATIS",
+  ctaHref: "https://calendly.com/alvarovillena/llamada-exploracion",
+  urgency: "¡Exploración gratuita por tiempo limitado!",
+  socialProof: "Ya +500 emprendedores han transformado sus proyectos. ¿Serás el próximo?"
+};
+---
+
+<OptimizedServiceLayout title={title} description={description} serviceName="Servicios de Innovación" servicePrice="Desde GRATIS">
+  <!-- 1. Hero Section (Above the fold) -->
+  <OptimizedHeroSection {...heroData} />
+  
+  <!-- 2. Bloque de beneficios clave -->
+  <BenefitsSection {...benefitsData} />
+  
+  <!-- 3. Prueba social -->
+  <TestimonialsSection {...testimonialsData} />
+  
+  <!-- 4. Sección "Cómo funciona" / Demostración -->
+  <HowItWorksSection {...howItWorksData} />
+  
+  <!-- 5. NUEVA SECCIÓN: Banner de Garantía -->
+  <GuaranteeSection {...guaranteeData} />
+  
+  <!-- 6. Oferta / Incentivo -->
+  <OfferSection {...offerData} />
+  
+  <!-- 7. FAQs (Preguntas frecuentes) -->
+  <FAQSection {...faqData} />
+  
+  <!-- 8. CTA final -->
+  <FinalCTASection {...finalCTAData} />
+</OptimizedServiceLayout> 

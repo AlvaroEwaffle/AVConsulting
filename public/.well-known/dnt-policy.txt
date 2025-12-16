@@ -1,0 +1,8 @@
+# Do Not Track Policy
+# This file indicates that this website respects Do Not Track signals
+
+# We respect Do Not Track signals and do not track users who have enabled this setting
+# For more information, visit: https://alvarovillena.cl/privacy-policy
+
+# Contact: hola@alvarovillena.cl
+# Last updated: 2024-12-19 
