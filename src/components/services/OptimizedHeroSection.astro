@@ -43,9 +43,9 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
   
   <!-- Content -->
   <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class={imageSrc ? "grid lg:grid-cols-2 gap-12 items-center" : "max-w-4xl mx-auto"}>
       <!-- Text Content -->
-      <div class="text-left">
+      <div class={imageSrc ? "text-left" : "text-center"}>
         <!-- Badge de confianza -->
         <div class="inline-flex items-center px-4 py-2 bg-yellow-400 text-black rounded-full text-sm font-semibold mb-6">
           ⚡ Resultados en 48 horas garantizados
@@ -78,7 +78,7 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
         
         <!-- Prueba social inmediata -->
         {socialProof && (
-          <div class="text-center lg:text-left">
+          <div class={imageSrc ? "text-center lg:text-left" : "text-center"}>
             <p class="text-white/80 text-lg mb-4">
               {socialProof}
             </p>
@@ -87,7 +87,7 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
         
         <!-- Logos de clientes -->
         {clientLogos && clientLogos.length > 0 && (
-          <div class="flex items-center justify-center lg:justify-start space-x-6 opacity-60">
+          <div class={`flex items-center space-x-6 opacity-60 ${imageSrc ? "justify-center lg:justify-start" : "justify-center"}`}>
             {clientLogos.map((logo) => (
               <img src={logo} alt="Cliente" class="h-8 w-auto" />
             ))}

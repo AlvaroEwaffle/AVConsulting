@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import MatrixBackground from '../components/common/MatrixBackground.astro';
+import WhatsAppFloatButton from '../components/common/WhatsAppFloatButton.astro';
 
 interface Props {
   title: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { title, description, serviceName, servicePrice } = Astro.props;
+const whatsappMessage = `Estoy interesado en ${serviceName}`;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -27,4 +29,7 @@ const { title, description, serviceName, servicePrice } = Astro.props;
       </div>
     </div>
   </footer>
+  
+  <!-- WhatsApp Floating Button -->
+  <WhatsAppFloatButton phoneNumber="56920115198" message={whatsappMessage} />
 </BaseLayout> 
