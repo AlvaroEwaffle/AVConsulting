@@ -1,0 +1,129 @@
+---
+interface Props {
+  serviceName: string;
+  phoneNumber?: string;
+  buttonText?: string;
+}
+
+const { 
+  serviceName, 
+  phoneNumber = "56996706983",
+  buttonText = "Enviar y continuar con WhatsApp"
+} = Astro.props;
+---
+
+<div class="lead-qualification-form">
+  <form 
+    id="leadForm" 
+    class="space-y-4"
+    data-service-name={serviceName}
+    data-phone-number={phoneNumber}
+  >
+    <!-- Nombre -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-white mb-2">
+        Tu nombre
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+        placeholder="Ej: Juan Pérez"
+      />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-white mb-2">
+        Tu email
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+        placeholder="Ej: juan@ejemplo.com"
+      />
+    </div>
+
+    <!-- Nombre del negocio -->
+    <div>
+      <label for="businessName" class="block text-sm font-medium text-white mb-2">
+        Nombre de tu negocio
+      </label>
+      <input
+        type="text"
+        id="businessName"
+        name="businessName"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+        placeholder="Ej: Mi Negocio SPA"
+      />
+    </div>
+
+    <!-- Pregunta de calificación sobre el negocio -->
+    <div>
+      <label for="businessType" class="block text-sm font-medium text-white mb-2">
+        Cuéntame sobre tu negocio
+      </label>
+      <textarea
+        id="businessType"
+        name="businessType"
+        required
+        rows="3"
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent resize-none"
+        placeholder="Ej: Soy coach de fitness, tengo 50 alumnos y quiero automatizar mis DMs de Instagram para captar más clientes..."
+      ></textarea>
+      <p class="text-xs text-white/70 mt-1">
+        Esto nos ayuda a entender mejor cómo podemos ayudarte
+      </p>
+    </div>
+
+    <!-- Botón de envío -->
+    <button
+      type="submit"
+      class="w-full bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+    >
+      {buttonText}
+    </button>
+  </form>
+</div>
+
+<script define:vars={{ serviceName, phoneNumber }}>
+  const form = document.getElementById('leadForm');
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const businessName = formData.get('businessName');
+      const businessType = formData.get('businessType');
+
+      // Crear mensaje para WhatsApp
+      const message = `Hola, mi nombre es ${name}, mi email es ${email}, mi negocio es ${businessName} y estoy interesado en ${serviceName}.\n\nSobre mi negocio: ${businessType}`;
+      
+      // Codificar el mensaje para URL
+      const encodedMessage = encodeURIComponent(message);
+      
+      // Crear link de WhatsApp
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      // Abrir WhatsApp
+      window.open(whatsappUrl, '_blank');
+    });
+  }
+</script>
+
+<style>
+  .lead-qualification-form input::placeholder,
+  .lead-qualification-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+</style>
+

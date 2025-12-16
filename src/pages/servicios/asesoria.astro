@@ -1,6 +1,7 @@
 ---
 import OptimizedServiceLayout from '../../layouts/OptimizedServiceLayout.astro';
 import OptimizedHeroSection from '../../components/services/OptimizedHeroSection.astro';
+import LeadQualificationSection from '../../components/services/LeadQualificationSection.astro';
 import BenefitsSection from '../../components/services/BenefitsSection.astro';
 import TestimonialsSection from '../../components/services/TestimonialsSection.astro';
 import HowItWorksSection from '../../components/services/HowItWorksSection.astro';
@@ -17,8 +18,8 @@ const heroData = {
   title: "Asesoría Shape Up Personalizada",
   subtitle: "Metodología probada + acompañamiento 1:1 = resultados garantizados",
   description: "¿Tienes una idea de lanzar tu negocio pero no sabes por dónde empezar? ¿Tu equipo está abrumado con tareas y deadlines imposibles? Shape Up es la metodología que usan empresas como Basecamp, Shopify y GitHub para entregar productos digitales de calidad en tiempo récord.",
-  ctaText: "💳 Agendar Asesoría - $497 USD",
-  ctaHref: "https://mpago.la/1ZpiebL",
+  ctaText: "Ver más detalles",
+  ctaHref: "#lead-form",
   imageSrc: "/assets/ShapeUpPhoto.png",
   socialProof: "Ya +20 equipos han transformado su productividad con Shape Up",
   clientLogos: ["/assets/icono.png"]
@@ -84,30 +85,30 @@ const testimonialsData = {
 
 // How It Works Data
 const howItWorksData = {
-  title: "¿Cómo funciona la asesoría?",
-  subtitle: "En solo 6 semanas transformarás completamente cómo trabaja tu equipo",
+  title: "¿Cómo funciona?",
+  subtitle: "Un proceso simple y transparente para transformar tu negocio",
   steps: [
     {
       number: 1,
-      title: "Semanas 1-2: Diagnóstico",
-      description: "Diagnóstico de tu negocio actual: procesos, ventas y fidelización. Mapeamos a tu cliente ideal y armamos un backlog priorizado de ideas y oportunidades reales.",
-      icon: "🔍"
+      title: "Entendemos tu negocio",
+      description: "Nos tomamos el tiempo para conocer tu modelo de negocio, tus clientes y tus objetivos. Escuchamos tus necesidades reales.",
+      icon: "💬"
     },
     {
       number: 2,
-      title: "Semanas 3-4: Construcción",
-      description: "Construimos tu primera Landing Page, creamos un Plan de acción, definimos el 'servicio estrella' a potenciar y diseñamos una estrategia de marketing lista para testear.",
+      title: "Seteamos las herramientas",
+      description: "Configuramos y activamos todas las herramientas necesarias para que tu negocio funcione de forma automática y eficiente.",
       icon: "🛠️"
     },
     {
       number: 3,
-      title: "Semanas 5-6: Implementación",
-      description: "Implementamos Shape Up en tu equipo, establecemos métricas de éxito y te damos las herramientas para continuar el proceso de forma autónoma.",
-      icon: "🚀"
+      title: "Monitoreamos en conjunto",
+      description: "Trabajamos juntos para revisar resultados, hacer ajustes y optimizar continuamente. Tu éxito es nuestro éxito.",
+      icon: "📊"
     }
   ],
-  ctaText: "💳 Agendar Asesoría - $497 USD",
-  ctaHref: "https://mpago.la/1ZpiebL"
+  ctaText: "Completar formulario",
+  ctaHref: "#lead-form"
 };
 
 // Guarantee Data
@@ -121,8 +122,8 @@ const guaranteeData = {
     "Tu inversión está 100% protegida sin riesgos",
     "Transparencia total en el proceso de implementación"
   ],
-  ctaText: "💳 Agendar Asesoría - $497 USD",
-  ctaHref: "https://mpago.la/1ZpiebL"
+  ctaText: "Completar formulario",
+  ctaHref: "#lead-form"
 };
 
 // Offer Data
@@ -142,8 +143,8 @@ const offerData = {
     "Soporte por 30 días después de la implementación",
     "Garantía de transformación en 6 semanas"
   ],
-  ctaText: "💳 Agendar Asesoría - $497 USD",
-  ctaHref: "https://mpago.la/1ZpiebL",
+  ctaText: "Completar formulario",
+  ctaHref: "#lead-form",
   guarantee: "Transformación garantizada en 6 semanas o devolvemos tu dinero",
   urgency: "¡Solo 5 cupos disponibles este mes!"
 };
@@ -180,8 +181,8 @@ const faqData = {
 const finalCTAData = {
   title: "¿Listo para transformar tu equipo?",
   subtitle: "No más proyectos que nunca terminan o equipos abrumados. Dale a tu equipo el foco, la claridad y la productividad que se merece con Shape Up.",
-  ctaText: "💳 Agendar Asesoría AHORA - $497 USD",
-  ctaHref: "https://mpago.la/1ZpiebL",
+  ctaText: "Completar formulario",
+  ctaHref: "#lead-form",
   urgency: "¡Solo 5 cupos disponibles este mes!",
   socialProof: "Ya +20 equipos han transformado su productividad. ¿Será el tuyo el próximo?"
 };
@@ -191,22 +192,27 @@ const finalCTAData = {
   <!-- 1. Hero Section (Above the fold) -->
   <OptimizedHeroSection {...heroData} />
   
-  <!-- 2. Bloque de beneficios clave -->
-  <BenefitsSection {...benefitsData} />
-  
-  <!-- 3. Prueba social -->
-  <TestimonialsSection {...testimonialsData} />
-  
-  <!-- 4. Sección "Cómo funciona" / Demostración -->
+  <!-- 2. Sección "Cómo funciona" / Demostración -->
   <HowItWorksSection {...howItWorksData} />
   
-  <!-- 5. NUEVA SECCIÓN: Banner de Garantía -->
+  <!-- 3. Lead Qualification Form Section -->
+  <div id="lead-form">
+    <LeadQualificationSection serviceName="Asesoría Shape Up" />
+  </div>
+  
+  <!-- 4. Bloque de beneficios clave -->
+  <BenefitsSection {...benefitsData} />
+  
+  <!-- 5. Prueba social -->
+  <TestimonialsSection {...testimonialsData} />
+  
+  <!-- 6. NUEVA SECCIÓN: Banner de Garantía -->
   <GuaranteeSection {...guaranteeData} />
   
-  <!-- 6. Oferta / Incentivo -->
+  <!-- 7. Oferta / Incentivo -->
   <OfferSection {...offerData} />
   
-  <!-- 7. FAQs (Preguntas frecuentes) -->
+  <!-- 8. FAQs (Preguntas frecuentes) -->
   <FAQSection {...faqData} />
   
   <!-- 8. CTA final -->
