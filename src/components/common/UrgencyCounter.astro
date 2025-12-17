@@ -32,8 +32,15 @@ const { spotsLeft = 3, showTimer = true } = Astro.props;
 
 <script define:vars={{ showTimer }}>
   if (typeof window !== 'undefined') {
-    // Set timer to 48 hours from now
-    let endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
+    // Calculate midnight (end of today)
+    function getMidnight() {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0); // Set to midnight (00:00:00 of next day)
+      return midnight.getTime();
+    }
+    
+    let endTime = getMidnight();
     
     function updateTimer() {
       if (!showTimer) return;
@@ -42,14 +49,15 @@ const { spotsLeft = 3, showTimer = true } = Astro.props;
       if (!timerEl) return;
       
       const now = new Date().getTime();
-      const distance = endTime - now;
+      let distance = endTime - now;
       
+      // If midnight has passed, set to next midnight
       if (distance < 0) {
-        // Timer expired, reset to another 48 hours
-        endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
-        return;
+        endTime = getMidnight();
+        distance = endTime - now;
       }
       
+      // Calculate hours, minutes, seconds
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
