@@ -1,0 +1,43 @@
+---
+import LeadQualificationForm from '../common/LeadQualificationForm.astro';
+
+interface Props {
+  serviceName: string;
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  serviceName,
+  title = "¿Listo para automatizar tu captación?",
+  subtitle = "Completa el formulario y te contactamos por WhatsApp para configurar tu sistema"
+} = Astro.props;
+---
+
+<section class="py-16 bg-gradient-to-br from-blue-800 via-blue-900 to-indigo-900 relative overflow-hidden">
+  <!-- Animated background dots -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-10 left-20 w-2 h-2 bg-white/20 rounded-full animate-pulse"></div>
+    <div class="absolute top-32 right-16 w-3 h-3 bg-white/30 rounded-full animate-ping"></div>
+    <div class="absolute top-64 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-bounce"></div>
+    <div class="absolute bottom-20 right-1/4 w-2 h-2 bg-white/25 rounded-full animate-pulse"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Title and Subtitle -->
+    <div class="text-center mb-8">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+        {title}
+      </h2>
+      <p class="text-lg text-white/80">
+        {subtitle}
+      </p>
+    </div>
+    
+    <!-- Form Container -->
+    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl">
+      <LeadQualificationForm serviceName={serviceName} />
+    </div>
+  </div>
+</section>
+

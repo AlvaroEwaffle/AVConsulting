@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import MatrixBackground from '../components/common/MatrixBackground.astro';
 import WhatsAppFloatButton from '../components/common/WhatsAppFloatButton.astro';
+import StickyLeadForm from '../components/common/StickyLeadForm.astro';
 
 interface Props {
   title: string;
@@ -31,5 +32,8 @@ const whatsappMessage = `Estoy interesado en ${serviceName}`;
   </footer>
   
   <!-- WhatsApp Floating Button -->
-  <WhatsAppFloatButton phoneNumber="56920115198" message={whatsappMessage} />
+  <WhatsAppFloatButton phoneNumber="56996706983" message={whatsappMessage} />
+  
+  <!-- Sticky Lead Form (Desktop only) -->
+  <StickyLeadForm serviceName={serviceName} phoneNumber="56996706983" />
 </BaseLayout> 

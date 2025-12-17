@@ -18,8 +18,11 @@ const { name, company, text, avatar, rating = 5, service } = Astro.props;
       {avatar ? (
         <img 
           src={avatar} 
-          alt={name}
+          alt={`Foto de perfil de ${name} de ${company}`}
           class="w-12 h-12 rounded-full object-cover border-2 border-gray-200"
+          loading="lazy"
+          width="48"
+          height="48"
         />
       ) : (
         <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-lg">

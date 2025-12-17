@@ -18,8 +18,9 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
   <div class="absolute inset-0 -z-10">
     <img 
       src="/assets/AnimatedBackgroundPattern.gif" 
-      alt="Animated Background Pattern" 
+      alt="Patrón de fondo animado con diseño moderno" 
       class="w-full h-full object-cover opacity-10"
+      loading="lazy"
     />
   </div>
   
@@ -48,7 +49,7 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
       <div class={imageSrc ? "text-left" : "text-center"}>
         <!-- Badge de confianza -->
         <div class="inline-flex items-center px-4 py-2 bg-yellow-400 text-black rounded-full text-sm font-semibold mb-6">
-          ⚡ Resultados en 48 horas garantizados
+          ⚡ Tu sistema funcionando en menos de 24 horas, garantizado
         </div>
         
         <!-- Título principal (H1) -->
@@ -89,7 +90,7 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
         {clientLogos && clientLogos.length > 0 && (
           <div class={`flex items-center space-x-6 opacity-60 ${imageSrc ? "justify-center lg:justify-start" : "justify-center"}`}>
             {clientLogos.map((logo) => (
-              <img src={logo} alt="Cliente" class="h-8 w-auto" />
+              <img src={logo} alt={`Logo de cliente que confía en ${title}`} class="h-8 w-auto" loading="lazy" />
             ))}
           </div>
         )}
@@ -100,8 +101,11 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
         <div class="relative">
           <img 
             src={imageSrc} 
-            alt="Servicio destacado" 
+            alt={`${title} - ${subtitle}`}
             class="w-full h-auto rounded-2xl shadow-2xl"
+            loading="eager"
+            width="800"
+            height="600"
           />
           <!-- Overlay de confianza -->
           <div class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg">
@@ -118,5 +122,30 @@ const { title, subtitle, description, ctaText, ctaHref, imageSrc, socialProof, c
         </div>
       )}
     </div>
+  </div>
+  
+  <!-- Animated Scroll Down Arrow -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <a 
+      href="#como-funciona" 
+      class="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 group"
+      aria-label="Scroll down"
+    >
+      <span class="text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Ver más</span>
+      <svg 
+        class="w-8 h-8 animate-bounce" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="2" 
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+        ></path>
+      </svg>
+    </a>
   </div>
 </section> 

@@ -6,10 +6,42 @@ interface Props {
     company: string;
     text: string;
     rating?: number;
+    metric?: string;
   }>;
 }
 
 const { title, testimonials } = Astro.props;
+
+// Generate Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": testimonials.length.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": testimonials.map(testimonial => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": testimonial.name,
+      "worksFor": {
+        "@type": "Organization",
+        "name": testimonial.company
+      }
+    },
+    "reviewBody": testimonial.text,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": testimonial.rating?.toString() || "5",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }))
+};
 ---
 
 <section class="py-20 bg-gradient-to-br from-accent to-background relative overflow-hidden">
@@ -52,6 +84,16 @@ const { title, testimonials } = Astro.props;
             "{testimonial.text}"
           </blockquote>
           
+          <!-- Metric badge -->
+          {testimonial.metric && (
+            <div class="mb-4 inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              {testimonial.metric}
+            </div>
+          )}
+          
           <!-- Author info -->
           <div class="text-center">
             <div class="font-semibold text-text-dark group-hover:text-secondary transition-colors duration-300">{testimonial.name}</div>
@@ -74,4 +116,7 @@ const { title, testimonials } = Astro.props;
       </div>
     </div>
   </div>
+  
+  <!-- Review Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
 </section> 
