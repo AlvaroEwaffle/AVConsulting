@@ -64,10 +64,90 @@ const {
       />
     </div>
 
+    <!-- Tipo de negocio -->
+    <div>
+      <label for="businessCategory" class="block text-sm font-medium text-white mb-2">
+        Tipo de negocio
+      </label>
+      <select
+        id="businessCategory"
+        name="businessCategory"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+      >
+        <option value="" class="text-gray-800">Selecciona una opción</option>
+        <option value="coach-fitness" class="text-gray-800">Coach de Fitness</option>
+        <option value="instructor-yoga" class="text-gray-800">Instructor de Yoga</option>
+        <option value="entrenador-personal" class="text-gray-800">Entrenador Personal</option>
+        <option value="instructor-pilates" class="text-gray-800">Instructor de Pilates</option>
+        <option value="coach-nutricion" class="text-gray-800">Coach de Nutrición</option>
+        <option value="instructor-crossfit" class="text-gray-800">Instructor de CrossFit</option>
+        <option value="spa-belleza" class="text-gray-800">SPA / Belleza</option>
+        <option value="otro" class="text-gray-800">Otro</option>
+      </select>
+    </div>
+
+    <!-- Número de clientes actuales -->
+    <div>
+      <label for="currentClients" class="block text-sm font-medium text-white mb-2">
+        ¿Cuántos clientes tienes actualmente?
+      </label>
+      <select
+        id="currentClients"
+        name="currentClients"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+      >
+        <option value="" class="text-gray-800">Selecciona una opción</option>
+        <option value="menos-20" class="text-gray-800">Menos de 20</option>
+        <option value="20-50" class="text-gray-800">20 - 50</option>
+        <option value="50-100" class="text-gray-800">50 - 100</option>
+        <option value="mas-100" class="text-gray-800">Más de 100</option>
+      </select>
+    </div>
+
+    <!-- Presupuesto mensual -->
+    <div>
+      <label for="budget" class="block text-sm font-medium text-white mb-2">
+        Presupuesto mensual disponible
+      </label>
+      <select
+        id="budget"
+        name="budget"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+      >
+        <option value="" class="text-gray-800">Selecciona una opción</option>
+        <option value="menos-30k" class="text-gray-800">Menos de $30.000 CLP</option>
+        <option value="30k-50k" class="text-gray-800">$30.000 - $50.000 CLP</option>
+        <option value="50k-100k" class="text-gray-800">$50.000 - $100.000 CLP</option>
+        <option value="mas-100k" class="text-gray-800">Más de $100.000 CLP</option>
+      </select>
+    </div>
+
+    <!-- Urgencia -->
+    <div>
+      <label for="urgency" class="block text-sm font-medium text-white mb-2">
+        ¿Cuándo quieres empezar?
+      </label>
+      <select
+        id="urgency"
+        name="urgency"
+        required
+        class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+      >
+        <option value="" class="text-gray-800">Selecciona una opción</option>
+        <option value="inmediato" class="text-gray-800">Inmediato (esta semana)</option>
+        <option value="este-mes" class="text-gray-800">Este mes</option>
+        <option value="proximo-mes" class="text-gray-800">Próximo mes</option>
+        <option value="explorando" class="text-gray-800">Solo explorando opciones</option>
+      </select>
+    </div>
+
     <!-- Pregunta de calificación sobre el negocio -->
     <div>
       <label for="businessType" class="block text-sm font-medium text-white mb-2">
-        Cuéntame sobre tu negocio
+        Cuéntame más sobre tu negocio y objetivos
       </label>
       <textarea
         id="businessType"
@@ -75,7 +155,7 @@ const {
         required
         rows="3"
         class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent resize-none"
-        placeholder="Ej: Soy coach de fitness, tengo 50 alumnos y quiero automatizar mis DMs de Instagram para captar más clientes..."
+        placeholder="Ej: ¿Cuántas horas a la semana dedicas a responder DMs? ¿Qué es lo que más te frustra de tu proceso actual?"
       ></textarea>
       <p class="text-xs text-white/70 mt-1">
         Esto nos ayuda a entender mejor cómo podemos ayudarte
@@ -103,10 +183,63 @@ const {
       const name = formData.get('name');
       const email = formData.get('email');
       const businessName = formData.get('businessName');
+      const businessCategory = formData.get('businessCategory');
+      const currentClients = formData.get('currentClients');
+      const budget = formData.get('budget');
+      const urgency = formData.get('urgency');
       const businessType = formData.get('businessType');
 
-      // Crear mensaje para WhatsApp
-      const message = `Hola, mi nombre es ${name}, mi email es ${email}, mi negocio es ${businessName} y estoy interesado en ${serviceName}.\n\nSobre mi negocio: ${businessType}`;
+      // Mapear valores legibles
+      const categoryMap = {
+        'coach-fitness': 'Coach de Fitness',
+        'instructor-yoga': 'Instructor de Yoga',
+        'entrenador-personal': 'Entrenador Personal',
+        'instructor-pilates': 'Instructor de Pilates',
+        'coach-nutricion': 'Coach de Nutrición',
+        'instructor-crossfit': 'Instructor de CrossFit',
+        'spa-belleza': 'SPA / Belleza',
+        'otro': 'Otro'
+      };
+      
+      const clientsMap = {
+        'menos-20': 'Menos de 20',
+        '20-50': '20 - 50',
+        '50-100': '50 - 100',
+        'mas-100': 'Más de 100'
+      };
+      
+      const budgetMap = {
+        'menos-30k': 'Menos de $30.000 CLP',
+        '30k-50k': '$30.000 - $50.000 CLP',
+        '50k-100k': '$50.000 - $100.000 CLP',
+        'mas-100k': 'Más de $100.000 CLP'
+      };
+      
+      const urgencyMap = {
+        'inmediato': 'Inmediato (esta semana)',
+        'este-mes': 'Este mes',
+        'proximo-mes': 'Próximo mes',
+        'explorando': 'Solo explorando opciones'
+      };
+
+      // Crear mensaje para WhatsApp con toda la información calificada
+      const message = `Hola, estoy interesado en ${serviceName}
+
+📋 INFORMACIÓN PERSONAL:
+• Nombre: ${name}
+• Email: ${email}
+
+🏢 INFORMACIÓN DEL NEGOCIO:
+• Nombre del negocio: ${businessName}
+• Tipo de negocio: ${categoryMap[businessCategory] || businessCategory}
+• Clientes actuales: ${clientsMap[currentClients] || currentClients}
+
+💰 CALIFICACIÓN:
+• Presupuesto mensual: ${budgetMap[budget] || budget}
+• Urgencia: ${urgencyMap[urgency] || urgency}
+
+📝 MÁS DETALLES:
+${businessType}`;
       
       // Codificar el mensaje para URL
       const encodedMessage = encodeURIComponent(message);

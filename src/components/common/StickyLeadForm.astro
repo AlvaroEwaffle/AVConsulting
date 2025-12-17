@@ -1,0 +1,328 @@
+---
+import LeadQualificationForm from './LeadQualificationForm.astro';
+
+interface Props {
+  serviceName: string;
+  phoneNumber?: string;
+}
+
+const { serviceName, phoneNumber = "56996706983" } = Astro.props;
+---
+
+<!-- Sticky Form Container - Hidden on mobile, shown on desktop after scroll -->
+<div 
+  id="sticky-lead-form" 
+  class="fixed bottom-0 right-0 z-50 hidden lg:block transform translate-y-full transition-transform duration-500 ease-in-out"
+>
+  <div class="bg-gradient-to-br from-blue-800 via-blue-900 to-indigo-900 rounded-t-2xl shadow-2xl border-t-2 border-l-2 border-white/20 max-w-md w-full">
+    <!-- Header with close button -->
+    <div class="flex items-center justify-between p-4 border-b border-white/20">
+      <div>
+        <h3 class="text-white font-bold text-lg">¿Listo para automatizar?</h3>
+        <p class="text-white/80 text-xs">Completa el formulario y te contactamos</p>
+      </div>
+      <button 
+        id="close-sticky-form"
+        class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+        aria-label="Cerrar formulario"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Form Content -->
+    <div class="p-4 max-h-[70vh] overflow-y-auto">
+      <form 
+        id="stickyLeadForm" 
+        class="space-y-4"
+        data-service-name={serviceName}
+        data-phone-number={phoneNumber}
+      >
+        <!-- Nombre -->
+        <div>
+          <label for="sticky-name" class="block text-sm font-medium text-white mb-2">
+            Tu nombre
+          </label>
+          <input
+            type="text"
+            id="sticky-name"
+            name="name"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+            placeholder="Ej: Juan Pérez"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="sticky-email" class="block text-sm font-medium text-white mb-2">
+            Tu email
+          </label>
+          <input
+            type="email"
+            id="sticky-email"
+            name="email"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+            placeholder="Ej: juan@ejemplo.com"
+          />
+        </div>
+
+        <!-- Nombre del negocio -->
+        <div>
+          <label for="sticky-businessName" class="block text-sm font-medium text-white mb-2">
+            Nombre de tu negocio
+          </label>
+          <input
+            type="text"
+            id="sticky-businessName"
+            name="businessName"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+            placeholder="Ej: Mi Negocio SPA"
+          />
+        </div>
+
+        <!-- Tipo de negocio -->
+        <div>
+          <label for="sticky-businessCategory" class="block text-sm font-medium text-white mb-2">
+            Tipo de negocio
+          </label>
+          <select
+            id="sticky-businessCategory"
+            name="businessCategory"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+          >
+            <option value="" class="text-gray-800">Selecciona una opción</option>
+            <option value="coach-fitness" class="text-gray-800">Coach de Fitness</option>
+            <option value="instructor-yoga" class="text-gray-800">Instructor de Yoga</option>
+            <option value="entrenador-personal" class="text-gray-800">Entrenador Personal</option>
+            <option value="instructor-pilates" class="text-gray-800">Instructor de Pilates</option>
+            <option value="coach-nutricion" class="text-gray-800">Coach de Nutrición</option>
+            <option value="instructor-crossfit" class="text-gray-800">Instructor de CrossFit</option>
+            <option value="spa-belleza" class="text-gray-800">SPA / Belleza</option>
+            <option value="otro" class="text-gray-800">Otro</option>
+          </select>
+        </div>
+
+        <!-- Número de clientes actuales -->
+        <div>
+          <label for="sticky-currentClients" class="block text-sm font-medium text-white mb-2">
+            ¿Cuántos clientes tienes actualmente?
+          </label>
+          <select
+            id="sticky-currentClients"
+            name="currentClients"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+          >
+            <option value="" class="text-gray-800">Selecciona una opción</option>
+            <option value="menos-20" class="text-gray-800">Menos de 20</option>
+            <option value="20-50" class="text-gray-800">20 - 50</option>
+            <option value="50-100" class="text-gray-800">50 - 100</option>
+            <option value="mas-100" class="text-gray-800">Más de 100</option>
+          </select>
+        </div>
+
+        <!-- Presupuesto mensual -->
+        <div>
+          <label for="sticky-budget" class="block text-sm font-medium text-white mb-2">
+            Presupuesto mensual disponible
+          </label>
+          <select
+            id="sticky-budget"
+            name="budget"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+          >
+            <option value="" class="text-gray-800">Selecciona una opción</option>
+            <option value="menos-30k" class="text-gray-800">Menos de $30.000 CLP</option>
+            <option value="30k-50k" class="text-gray-800">$30.000 - $50.000 CLP</option>
+            <option value="50k-100k" class="text-gray-800">$50.000 - $100.000 CLP</option>
+            <option value="mas-100k" class="text-gray-800">Más de $100.000 CLP</option>
+          </select>
+        </div>
+
+        <!-- Urgencia -->
+        <div>
+          <label for="sticky-urgency" class="block text-sm font-medium text-white mb-2">
+            ¿Cuándo quieres empezar?
+          </label>
+          <select
+            id="sticky-urgency"
+            name="urgency"
+            required
+            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+          >
+            <option value="" class="text-gray-800">Selecciona una opción</option>
+            <option value="inmediato" class="text-gray-800">Inmediato (esta semana)</option>
+            <option value="este-mes" class="text-gray-800">Este mes</option>
+            <option value="proximo-mes" class="text-gray-800">Próximo mes</option>
+            <option value="explorando" class="text-gray-800">Solo explorando opciones</option>
+          </select>
+        </div>
+
+        <!-- Botón de envío -->
+        <button
+          type="submit"
+          class="w-full bg-yellow-400 hover:bg-yellow-500 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 transform hover:scale-105 hover:shadow-2xl shadow-lg"
+        >
+          Enviar y continuar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ serviceName, phoneNumber }}>
+  // Show sticky form after scrolling 30% of the page
+  let hasShown = false;
+  
+  function checkScroll() {
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    const stickyForm = document.getElementById('sticky-lead-form');
+    
+    if (!stickyForm) return;
+    
+    // Show form after 30% scroll and hide main form from view
+    if (scrollPercent > 30 && !hasShown) {
+      stickyForm.classList.remove('translate-y-full');
+      stickyForm.classList.add('translate-y-0');
+      hasShown = true;
+    }
+    
+    // Hide if user scrolls back to top
+    if (scrollPercent < 10) {
+      stickyForm.classList.add('translate-y-full');
+      stickyForm.classList.remove('translate-y-0');
+      hasShown = false;
+    }
+  }
+  
+  // Close button functionality
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', checkScroll);
+    
+    const closeButton = document.getElementById('close-sticky-form');
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        const stickyForm = document.getElementById('sticky-lead-form');
+        if (stickyForm) {
+          stickyForm.classList.add('translate-y-full');
+          stickyForm.classList.remove('translate-y-0');
+          hasShown = true; // Prevent auto-show again
+        }
+      });
+    }
+    
+    // Handle sticky form submission
+    const stickyForm = document.getElementById('stickyLeadForm');
+    if (stickyForm) {
+      stickyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(stickyForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const businessName = formData.get('businessName');
+        const businessCategory = formData.get('businessCategory');
+        const currentClients = formData.get('currentClients');
+        const budget = formData.get('budget');
+        const urgency = formData.get('urgency');
+
+        // Mapear valores legibles
+        const categoryMap = {
+          'coach-fitness': 'Coach de Fitness',
+          'instructor-yoga': 'Instructor de Yoga',
+          'entrenador-personal': 'Entrenador Personal',
+          'instructor-pilates': 'Instructor de Pilates',
+          'coach-nutricion': 'Coach de Nutrición',
+          'instructor-crossfit': 'Instructor de CrossFit',
+          'spa-belleza': 'SPA / Belleza',
+          'otro': 'Otro'
+        };
+        
+        const clientsMap = {
+          'menos-20': 'Menos de 20',
+          '20-50': '20 - 50',
+          '50-100': '50 - 100',
+          'mas-100': 'Más de 100'
+        };
+        
+        const budgetMap = {
+          'menos-30k': 'Menos de $30.000 CLP',
+          '30k-50k': '$30.000 - $50.000 CLP',
+          '50k-100k': '$50.000 - $100.000 CLP',
+          'mas-100k': 'Más de $100.000 CLP'
+        };
+        
+        const urgencyMap = {
+          'inmediato': 'Inmediato (esta semana)',
+          'este-mes': 'Este mes',
+          'proximo-mes': 'Próximo mes',
+          'explorando': 'Solo explorando opciones'
+        };
+
+        // Crear mensaje para WhatsApp
+        const message = `Hola, estoy interesado en ${serviceName}
+
+📋 INFORMACIÓN PERSONAL:
+• Nombre: ${name}
+• Email: ${email}
+
+🏢 INFORMACIÓN DEL NEGOCIO:
+• Nombre del negocio: ${businessName}
+• Tipo de negocio: ${categoryMap[businessCategory] || businessCategory}
+• Clientes actuales: ${clientsMap[currentClients] || currentClients}
+
+💰 CALIFICACIÓN:
+• Presupuesto mensual: ${budgetMap[budget] || budget}
+• Urgencia: ${urgencyMap[urgency] || urgency}`;
+        
+        // Codificar el mensaje para URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Crear link de WhatsApp
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        
+        // Abrir WhatsApp
+        window.open(whatsappUrl, '_blank');
+        
+        // Cerrar el formulario sticky después de enviar
+        const stickyFormContainer = document.getElementById('sticky-lead-form');
+        if (stickyFormContainer) {
+          stickyFormContainer.classList.add('translate-y-full');
+          stickyFormContainer.classList.remove('translate-y-0');
+        }
+      });
+    }
+  }
+</script>
+
+<style>
+  #sticky-lead-form {
+    max-height: 90vh;
+  }
+  
+  #sticky-lead-form::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #sticky-lead-form::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  #sticky-lead-form::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  
+  #sticky-lead-form::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+</style>
+

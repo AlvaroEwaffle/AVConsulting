@@ -1,0 +1,66 @@
+---
+interface Props {
+  spotsLeft?: number;
+  showTimer?: boolean;
+}
+
+const { spotsLeft = 3, showTimer = true } = Astro.props;
+---
+
+<div class="urgency-counter">
+  <!-- Spots Left Counter -->
+  <div class="inline-flex items-center px-4 py-2 bg-red-500 text-white rounded-full text-sm font-bold mb-4 animate-pulse">
+    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+    </svg>
+    Solo quedan {spotsLeft} cupos este mes
+  </div>
+  
+  {showTimer && (
+    <div id="urgency-timer" class="text-center">
+      <p class="text-sm text-white/90 mb-2">Oferta especial termina en:</p>
+      <div class="flex items-center justify-center space-x-2 text-lg font-bold text-white">
+        <span id="timer-hours" class="bg-white/20 px-3 py-1 rounded">00</span>
+        <span>:</span>
+        <span id="timer-minutes" class="bg-white/20 px-3 py-1 rounded">00</span>
+        <span>:</span>
+        <span id="timer-seconds" class="bg-white/20 px-3 py-1 rounded">00</span>
+      </div>
+    </div>
+  )}
+</div>
+
+<script>
+  if (typeof window !== 'undefined' && showTimer) {
+    // Set timer to 48 hours from now
+    const endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
+    
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = endTime - now;
+      
+      if (distance < 0) {
+        // Timer expired, reset to another 48 hours
+        endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
+        return;
+      }
+      
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      const hoursEl = document.getElementById('timer-hours');
+      const minutesEl = document.getElementById('timer-minutes');
+      const secondsEl = document.getElementById('timer-seconds');
+      
+      if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+      if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+      if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+    
+    // Update every second
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+  }
+</script>
+

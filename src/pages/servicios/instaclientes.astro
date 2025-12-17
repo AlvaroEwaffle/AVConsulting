@@ -9,6 +9,9 @@ import GuaranteeSection from '../../components/services/GuaranteeSection.astro';
 import OfferSection from '../../components/services/OfferSection.astro';
 import FAQSection from '../../components/services/FAQSection.astro';
 import FinalCTASection from '../../components/services/FinalCTASection.astro';
+import DemoSection from '../../components/services/DemoSection.astro';
+import BeforeAfterSection from '../../components/services/BeforeAfterSection.astro';
+import UrgencyCounter from '../../components/common/UrgencyCounter.astro';
 
 const title = "InstaClientes - Sistema de Captación y Fidelización desde Instagram | Álvaro Villena";
 const description = "Convierte tus DMs de Instagram en alumnos reales con InstaClientes. Bot de Instagram automático 24/7, Fidelidapp completa (landing, base de datos, catálogo, agenda, puntos, email marketing), sistema de monitoreo y acompañamiento personalizado. Gratis hasta 50 clientes inscritos. Automatiza tu captación desde Instagram en Chile.";
@@ -76,10 +79,11 @@ const heroData = {
   title: "InstaClientes",
   subtitle: "Sistema de Captación y Fidelización desde Instagram",
   description: "Convierte tus DMs de Instagram en alumnos reales, sin estar respondiendo todo el día. Bot automático que responde preguntas, captura datos y deriva a tu landing. Todo incluido: Fidelidapp + Bot de Instagram + Acompañamiento.",
-  ctaText: "Descubre cómo funciona",
+  ctaText: "Quiero automatizar mi captación ahora",
   ctaHref: "#como-funciona",
   socialProof: "Únete a los emprendedores que ya están automatizando su captación",
-  clientLogos: ["/assets/icono.png"]
+  clientLogos: ["/assets/icono.png"],
+  showUrgency: true
 };
 
 // Benefits Section Data
@@ -118,37 +122,43 @@ const testimonialsData = {
       name: "María González",
       company: "Coach de Fitness",
       text: "InstaClientes transformó mi negocio. Ahora recibo leads mientras duermo y mi bot responde todas las preguntas básicas. Increíble.",
-      rating: 5
+      rating: 5,
+      metric: "+340% más leads en 2 meses"
     },
     {
       name: "Carlos Mendoza",
       company: "Instructor de Yoga",
       text: "La combinación del bot y Fidelidapp es perfecta. Mis DMs se convierten en alumnos reales sin que yo tenga que estar pendiente todo el día.",
-      rating: 5
+      rating: 5,
+      metric: "Ahorra 15 horas/semana"
     },
     {
       name: "Ana Martínez",
       company: "Entrenadora Personal",
       text: "El sistema de puntos y recompensas de Fidelidapp ha aumentado la fidelización de mis clientes. Y el bot me ahorra horas de trabajo diario.",
-      rating: 5
+      rating: 5,
+      metric: "85% de retención de clientes"
     },
     {
       name: "Roberto Silva",
       company: "Instructor de Pilates",
       text: "Desde que tengo InstaClientes, mis DMs se responden solos y tengo una base de datos organizada de todos mis leads. Es como tener un asistente 24/7.",
-      rating: 5
+      rating: 5,
+      metric: "200+ leads capturados automáticamente"
     },
     {
       name: "Laura Fernández",
       company: "Coach de Nutrición",
       text: "La agenda electrónica integrada es un cambio total. Mis clientes agendan solos y yo solo confirmo. El email marketing también funciona genial.",
-      rating: 5
+      rating: 5,
+      metric: "90% de agendamientos automáticos"
     },
     {
       name: "Diego Ramírez",
       company: "Instructor de CrossFit",
       text: "Lo mejor es que todo está conectado. El bot captura los datos, los guarda en Fidelidapp y yo puedo hacer seguimiento desde un solo lugar.",
-      rating: 5
+      rating: 5,
+      metric: "3x más conversiones que antes"
     }
   ]
 };
@@ -177,7 +187,7 @@ const howItWorksData = {
       icon: "📊"
     }
   ],
-  ctaText: "Quiero automatizar mi captación",
+  ctaText: "Quiero mi sistema ahora",
   ctaHref: "#lead-form"
 };
 
@@ -193,7 +203,7 @@ const guaranteeData = {
     "Acompañamiento durante todo el proceso",
     "Sin compromiso, sin letra pequeña"
   ],
-  ctaText: "Quiero empezar gratis",
+  ctaText: "Quiero empezar gratis ahora",
   ctaHref: "#lead-form"
 };
 
@@ -253,7 +263,7 @@ const faqData = {
 const finalCTAData = {
   title: "¿Listo para convertir tus DMs en alumnos reales?",
   subtitle: "No más perder clientes por no responder a tiempo. Tu bot trabajará 24/7 mientras tú duermes, convirtiendo DMs en leads y leads en alumnos.",
-  ctaText: "Sí, quiero automatizar mi negocio",
+  ctaText: "Sí, quiero automatizar mi negocio ahora",
   ctaHref: "#lead-form",
   urgency: "🚀 Comienza a automatizar tu captación hoy",
   socialProof: "Únete a los primeros en automatizar su captación desde Instagram"
@@ -264,30 +274,43 @@ const finalCTAData = {
   <!-- 1. Hero Section (Above the fold) -->
   <OptimizedHeroSection {...heroData} />
   
+  <!-- Urgency Counter (after hero) -->
+  <section class="py-8 bg-gradient-to-br from-red-600 to-red-700 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <UrgencyCounter spotsLeft={3} showTimer={true} />
+    </div>
+  </section>
+  
   <!-- 2. Sección "Cómo funciona" / Demostración -->
   <HowItWorksSection {...howItWorksData} />
   
-  <!-- 3. Bloque de herramientas y beneficios -->
+  <!-- 3. Sección Antes vs Después -->
+  <BeforeAfterSection />
+  
+  <!-- 4. Bloque de herramientas y beneficios -->
   <BenefitsSection {...benefitsData} />
   
-  <!-- 4. Lead Qualification Form Section -->
+  <!-- 5. Demostración Visual -->
+  <DemoSection />
+  
+  <!-- 6. Lead Qualification Form Section -->
   <div id="lead-form">
     <LeadQualificationSection serviceName="InstaClientes" />
   </div>
   
-  <!-- 6. Prueba social -->
+  <!-- 7. Prueba social -->
   <TestimonialsSection {...testimonialsData} />
   
-  <!-- 7. NUEVA SECCIÓN: Banner de Garantía -->
+  <!-- 8. Banner de Garantía -->
   <GuaranteeSection {...guaranteeData} />
   
-  <!-- 8. Oferta / Incentivo -->
+  <!-- 9. Oferta / Incentivo -->
   <OfferSection {...offerData} />
   
-  <!-- 9. FAQs (Preguntas frecuentes) -->
+  <!-- 10. FAQs (Preguntas frecuentes) -->
   <FAQSection {...faqData} />
   
-  <!-- 10. CTA final -->
+  <!-- 11. CTA final -->
   <FinalCTASection {...finalCTAData} />
 </OptimizedServiceLayout>
 
