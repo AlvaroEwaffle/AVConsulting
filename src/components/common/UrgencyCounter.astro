@@ -33,7 +33,7 @@ const { spotsLeft = 3, showTimer = true } = Astro.props;
 <script>
   if (typeof window !== 'undefined' && showTimer) {
     // Set timer to 48 hours from now
-    const endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
+    let endTime = new Date().getTime() + (48 * 60 * 60 * 1000);
     
     function updateTimer() {
       const now = new Date().getTime();
