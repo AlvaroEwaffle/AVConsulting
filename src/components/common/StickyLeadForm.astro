@@ -178,24 +178,31 @@ const { serviceName, phoneNumber = "56996706983" } = Astro.props;
 </div>
 
 <script define:vars={{ serviceName, phoneNumber }}>
-  // Show sticky form after scrolling 30% of the page
+  // Show sticky form when user scrolls past the hero section
   let hasShown = false;
   
   function checkScroll() {
-    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     const stickyForm = document.getElementById('sticky-lead-form');
-    
     if (!stickyForm) return;
     
-    // Show form after 30% scroll and hide main form from view
-    if (scrollPercent > 30 && !hasShown) {
+    // Find the hero section - it should be the first section with min-h-screen
+    const heroSection = document.querySelector('section.relative.min-h-screen');
+    if (!heroSection) return;
+    
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const scrollPosition = window.scrollY + window.innerHeight;
+    
+    // Show form when user scrolls past the hero (with a small offset for smooth transition)
+    const triggerPoint = heroBottom - 100; // 100px before the end of hero
+    
+    if (window.scrollY > triggerPoint && !hasShown) {
       stickyForm.classList.remove('translate-y-full');
       stickyForm.classList.add('translate-y-0');
       hasShown = true;
     }
     
-    // Hide if user scrolls back to top
-    if (scrollPercent < 10) {
+    // Hide if user scrolls back to top of hero
+    if (window.scrollY < heroSection.offsetTop + 50) {
       stickyForm.classList.add('translate-y-full');
       stickyForm.classList.remove('translate-y-0');
       hasShown = false;
