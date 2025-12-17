@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwindcss from '@tailwindcss/vite';
+import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://villelabs.cl',
   integrations: [
+    tailwind(),
     sitemap({
       changefreq: 'monthly',
       priority: 0.7,
@@ -16,9 +17,6 @@ export default defineConfig({
       }
     })
   ],
-  vite: {
-    plugins: [tailwindcss()],
-  },
   output: "static",
   build: {
     outDir: "dist"
