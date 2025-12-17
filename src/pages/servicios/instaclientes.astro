@@ -271,15 +271,15 @@ const finalCTAData = {
 ---
 
 <OptimizedServiceLayout title={title} description={description} serviceName="InstaClientes" servicePrice="$49.000 CLP/mes">
-  <!-- 1. Hero Section (Above the fold) -->
-  <OptimizedHeroSection {...heroData} />
-  
-  <!-- Urgency Counter (after hero) -->
-  <section class="py-8 bg-gradient-to-br from-red-600 to-red-700 text-center">
+  <!-- Urgency Banner at the top -->
+  <section class="py-4 bg-gradient-to-br from-red-600 to-red-700 text-center sticky top-0 z-50 shadow-lg">
     <div class="max-w-4xl mx-auto px-4">
       <UrgencyCounter spotsLeft={3} showTimer={true} />
     </div>
   </section>
+  
+  <!-- 1. Hero Section (Above the fold) -->
+  <OptimizedHeroSection {...heroData} />
   
   <!-- 2. Sección "Cómo funciona" / Demostración -->
   <HowItWorksSection {...howItWorksData} />
