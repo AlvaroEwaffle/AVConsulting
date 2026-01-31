@@ -69,15 +69,15 @@ const itemVariants = {
 export default function Scene6Filter() {
   const [lineFilled, setLineFilled] = useState(false);
   const notFor = [
-    'presupuestos bajo $500',
-    'necesito algo para ayer',
+    'quienes buscan lo más barato',
+    'proyectos sin visión clara',
     'plantillas genéricas',
   ];
 
   const yesFor = [
-    'marcas que invierten en su imagen',
-    'negocios que buscan resultados reales',
-    'quienes valoran un proceso profesional',
+    'marcas que buscan autoridad',
+    'negocios de alto ticket',
+    'quienes valoran el diseño boutique',
   ];
 
   return (
@@ -100,7 +100,7 @@ export default function Scene6Filter() {
 
       <div className="container max-w-6xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-8 md:py-12">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white text-center mb-8 md:mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white text-center mb-16 md:mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,47 +109,57 @@ export default function Scene6Filter() {
           Esto no es para todos.
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+        <div className="grid md:grid-cols-2 gap-16 md:gap-32 w-full max-w-5xl">
           {/* NO ES para */}
-          <motion.div variants={leftVariants}>
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-light text-white/40 mb-8 md:mb-12"
-              variants={itemVariants}
-            >
-              NO ES para
-            </motion.h3>
-            <div className="space-y-6 md:space-y-8">
+          <motion.div variants={leftVariants} className="space-y-10 md:space-y-14">
+            <div className="relative">
+              <motion.h3
+                className="text-xs md:text-sm uppercase tracking-[0.3em] text-white/20 mb-10 md:mb-14 font-bold"
+                variants={itemVariants}
+              >
+                NO ES para
+              </motion.h3>
+              <div className="absolute -left-6 top-0 bottom-0 w-px bg-white/5 hidden md:block" />
+            </div>
+            <div className="space-y-8 md:space-y-12">
               {notFor.map((item, index) => (
-                <motion.p
+                <motion.div
                   key={item}
-                  className="text-xl sm:text-2xl md:text-3xl font-light text-white/60"
+                  className="flex items-center gap-4"
                   variants={itemVariants}
-                  transition={{ delay: index * 0.2 }}
                 >
-                  {item}
-                </motion.p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/10" />
+                  <p className="text-xl sm:text-2xl md:text-3xl font-light text-white/40">
+                    {item}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* SÍ ES para */}
-          <motion.div variants={rightVariants}>
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-light text-accent mb-8 md:mb-12"
-              variants={itemVariants}
-            >
-              SÍ ES para
-            </motion.h3>
-            <div className="space-y-6 md:space-y-8">
+          <motion.div variants={rightVariants} className="space-y-10 md:space-y-14">
+            <div className="relative">
+              <motion.h3
+                className="text-xs md:text-sm uppercase tracking-[0.3em] text-accent mb-10 md:mb-14 font-bold"
+                variants={itemVariants}
+              >
+                SÍ ES para
+              </motion.h3>
+              <div className="absolute -left-6 top-0 bottom-0 w-px bg-accent/20 hidden md:block" />
+            </div>
+            <div className="space-y-8 md:space-y-12">
               {yesFor.map((item, index) => (
-                <motion.p
+                <motion.div
                   key={item}
-                  className="text-xl sm:text-2xl md:text-3xl font-light text-white"
+                  className="flex items-center gap-4"
                   variants={itemVariants}
-                  transition={{ delay: index * 0.2 }}
                 >
-                  {item}
-                </motion.p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent/50 shadow-[0_0_10px_rgba(33,117,161,0.5)]" />
+                  <p className="text-xl sm:text-2xl md:text-3xl font-light text-white">
+                    {item}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </motion.div>

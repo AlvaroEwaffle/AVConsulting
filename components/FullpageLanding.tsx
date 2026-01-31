@@ -18,6 +18,7 @@ import Scene3Insight from './sections/Scene3Insight';
 import Scene4Focus from './sections/Scene4Focus';
 import Scene6Filter from './sections/Scene6Filter';
 import Scene7Authority from './sections/Scene7Authority';
+import Scene75Portfolio from './sections/Scene75Portfolio';
 import Scene8Invitation from './sections/Scene8Invitation';
 
 export default function FullpageLanding() {
@@ -25,7 +26,7 @@ export default function FullpageLanding() {
     <main className="relative w-full">
       {/* 
         Landing Premium — "La página que se detiene"
-        7 escenas con ritmo cinematográfico
+        8 escenas con ritmo cinematográfico
         
         Cada sección tiene:
         - min-h-screen: Ocupa al menos 100vh
@@ -41,6 +42,7 @@ export default function FullpageLanding() {
       <Scene4Focus />
       <Scene6Filter />
       <Scene7Authority />
+      {/* <Scene75Portfolio /> */}
       <Scene8Invitation />
     </main>
   );

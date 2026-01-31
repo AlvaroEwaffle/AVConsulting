@@ -89,8 +89,8 @@ export default function Scene1Hero() {
           }}
           transition={{ duration: 1.5, ease: [0.6, -0.05, 0.01, 0.99] as const }}
         >
-          Una página web es más que una tarjeta de presentación <br className="hidden md:block" />
-          <span className="italic text-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl block mt-4">Es una declaración de tus valores y calidad.</span>
+          Transformo tu marca en una autoridad digital <br className="hidden md:block" />
+          <span className="italic text-accent text-3xl sm:text-4xl md:text-5xl lg:text-6xl block mt-4">que atrae clientes de alto ticket.</span>
         </motion.h1>
 
         {/* SUBTÍTULO - aparece después del título */}
@@ -112,8 +112,8 @@ export default function Scene1Hero() {
             }}
             transition={{ duration: 1 }}
           >
-            ¿Buscas que tu página destaque, refleje tu identidad <br className="hidden md:block" />
-            y logre mejores conversiones?
+            Diseño boutique de alto impacto implementado en 2 semanas. <br className="hidden md:block" />
+            No solo una web, sino un sistema de conversión que proyecta tu valor real.
           </motion.p>
         </motion.div>
 

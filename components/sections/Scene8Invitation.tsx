@@ -58,11 +58,11 @@ export default function Scene8Invitation() {
           className="bg-slate-900/80 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl p-6 md:p-8 max-w-xl mx-auto"
         >
           <p className="text-base sm:text-lg text-white/60 font-light mb-5 text-left leading-relaxed">
-            Si te hace sentido, agendemos una reunión de exploración de 30 minutos para evaluar si este proyecto es para ti.
+            Si estás listo para dejar de ser uno más y empezar a proyectar el valor real de tu trabajo, agendemos una sesión estratégica de 30 minutos. Sin compromisos, solo claridad.
           </p>
           <LeadQualificationForm
             serviceName="Sistema Digital de Alto Impacto"
-            buttonText="Agendar conversación"
+            buttonText="Quiero mi sistema de alto impacto"
           />
         </motion.div>
 
