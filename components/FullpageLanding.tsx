@@ -3,14 +3,11 @@
 /**
  * FullpageLanding - Componente principal de la landing
  * 
- * Este componente estructura todas las secciones en un contenedor con scroll snap.
- * Cada sección ocupa 100vh y se encaja al hacer scroll (scroll snap).
- * 
- * Configuración de scroll snap:
- * - Contenedor: `h-screen overflow-y-scroll snap-y snap-mandatory` (aplicado en globals.css al html)
- * - Cada sección: `min-h-screen snap-start` para que se encaje al llegar
+ * Fondo animado del hero fijo en toda la página; secciones con overlay semi-transparente.
+ * Scroll snap en cada sección.
  */
 
+import HeroBackground from './HeroBackground';
 import Scene1Hero from './sections/Scene1Hero';
 import SceneOffers from './sections/SceneOffers';
 import SceneBenefits from './sections/SceneBenefits';
@@ -27,8 +24,9 @@ import Scene8Invitation from './sections/Scene8Invitation';
 export default function FullpageLanding() {
   return (
     <main className="relative w-full" id="inicio" aria-label="Contenido principal">
-      {/* Hero → Ofertas → Portfolio → Beneficios → Prueba social → ... */}
-      <Scene1Hero />
+      <HeroBackground />
+      <div className="relative z-10">
+        <Scene1Hero />
       <section id="ofertas" aria-label="Ofertas">
         <SceneOffers />
       </section>
@@ -54,6 +52,7 @@ export default function FullpageLanding() {
         />
       </section>
       <Scene8Invitation />
+      </div>
     </main>
   );
 }

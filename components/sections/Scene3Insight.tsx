@@ -29,7 +29,6 @@ const cards = [
 ];
 
 export default function Scene3Insight() {
-  const [lineFilled, setLineFilled] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [initialY, setInitialY] = useState(1000);
   const [finalY, setFinalY] = useState(0);
@@ -61,22 +60,9 @@ export default function Scene3Insight() {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       onViewportEnter={() => {
-        setLineFilled(true);
-        // Iniciar animación con un pequeño delay después de entrar en viewport
-        setTimeout(() => {
-          setHasStarted(true);
-        }, 500);
+        setTimeout(() => setHasStarted(true), 500);
       }}
     >
-      {/* Línea azul continua desde la sección anterior */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 transform -translate-x-1/2 z-0" />
-      <motion.div
-        className="absolute left-1/2 top-0 w-px bg-accent transform -translate-x-1/2 origin-top z-0"
-        initial={{ height: 0 }}
-        animate={{ height: lineFilled ? '100%' : 0 }}
-        transition={{ duration: 2, ease: [0.6, -0.05, 0.01, 0.99] as const }}
-      />
-
       <div className="container max-w-5xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-8 md:py-12">
         {/* Título */}
         <motion.div

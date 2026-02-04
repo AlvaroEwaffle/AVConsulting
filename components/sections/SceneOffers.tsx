@@ -6,7 +6,6 @@
  */
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { Zap, Globe, Cpu } from 'lucide-react';
 import SoftCTA from '@/components/SoftCTA';
 
@@ -60,25 +59,14 @@ const cardVariants = {
 };
 
 export default function SceneOffers() {
-  const [lineFilled, setLineFilled] = useState(false);
-
   return (
     <motion.section
       className="min-h-screen snap-start flex items-center justify-center relative px-4 md:px-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      onViewportEnter={() => setLineFilled(true)}
       variants={containerVariants}
     >
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 transform -translate-x-1/2 z-0" />
-      <motion.div
-        className="absolute left-1/2 top-0 w-px bg-accent transform -translate-x-1/2 origin-top z-0"
-        initial={{ height: 0 }}
-        animate={{ height: lineFilled ? '100%' : 0 }}
-        transition={{ duration: 2, ease: [0.6, -0.05, 0.01, 0.99] as const }}
-      />
-
       <div className="container max-w-6xl mx-auto relative z-10 w-full py-16 md:py-20">
         <motion.h2
           className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-10 md:mb-14"

@@ -29,7 +29,6 @@ export default function Scene1Testimonial() {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showClientInfo, setShowClientInfo] = useState(false);
-  const [lineFilled, setLineFilled] = useState(false);
 
   useEffect(() => {
     // Iniciar typewriter cuando el componente entra en viewport
@@ -53,20 +52,8 @@ export default function Scene1Testimonial() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      onViewportEnter={() => {
-        setLineFilled(true);
-        setIsTyping(true);
-      }}
+      onViewportEnter={() => setIsTyping(true)}
     >
-      {/* Línea azul continua desde la sección anterior */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 transform -translate-x-1/2 z-0" />
-      <motion.div
-        className="absolute left-1/2 top-0 w-px bg-accent transform -translate-x-1/2 origin-top z-0"
-        initial={{ height: 0 }}
-        animate={{ height: lineFilled ? '100%' : 0 }}
-        transition={{ duration: 2, ease: [0.6, -0.05, 0.01, 0.99] as const }}
-      />
-
       <div className="container max-w-4xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-8 md:py-12">
         {/* Prueba social: línea corta */}
         <motion.p

@@ -34,6 +34,32 @@
     padding-top: calc(env(safe-area-inset-top) + 4rem);
     padding-bottom: env(safe-area-inset-bottom);
   }
+
+  /* Portfolio: ocultar scrollbar en móvil (strip horizontal), mostrar en desktop */
+  .portfolio-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .portfolio-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .portfolio-scroll {
+      scrollbar-width: thin;
+    }
+    .portfolio-scroll::-webkit-scrollbar {
+      display: block;
+      width: 6px;
+    }
+    .portfolio-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+    }
+    .portfolio-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+    }
+  }
 }
 
 :root {

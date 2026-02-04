@@ -164,7 +164,6 @@ export default function Scene2Truth() {
   const [sceneIndex, setSceneIndex] = useState(-1);
   const [isTextDone, setIsTextDone] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [lineFilled, setLineFilled] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
 
   const startSequence = () => {
@@ -231,24 +230,9 @@ export default function Scene2Truth() {
       className="h-screen-fixed-top snap-start flex items-center justify-center relative px-4 md:px-6"
       viewport={{ once: true, amount: 0.3 }}
       onViewportEnter={() => {
-        setLineFilled(true);
-        // Iniciar secuencia automáticamente al entrar en viewport
-        if (!hasStarted) {
-          setTimeout(() => {
-            startSequence();
-          }, 500); // Pequeño delay para que la animación de entrada termine
-        }
+        if (!hasStarted) setTimeout(() => startSequence(), 500);
       }}
     >
-      {/* Línea azul continua desde la sección anterior */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 transform -translate-x-1/2 z-0" />
-      <motion.div
-        className="absolute left-1/2 top-0 w-px bg-accent transform -translate-x-1/2 origin-top z-0"
-        initial={{ height: 0 }}
-        animate={{ height: lineFilled ? '100%' : 0 }}
-        transition={{ duration: 2, ease: [0.6, -0.05, 0.01, 0.99] as const }}
-      />
-
       <div className="container max-w-5xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-8 md:py-12">
         {/* Mockup móvil interactivo */}
         <motion.div
