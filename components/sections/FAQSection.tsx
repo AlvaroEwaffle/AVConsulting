@@ -9,6 +9,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import SoftCTA from '@/components/SoftCTA';
 
 interface FAQ {
   question: string;
@@ -45,6 +46,30 @@ const defaultFAQs: FAQ[] = [
   {
     question: '¿Hay algún costo mensual después de la implementación?',
     answer: 'Depende del plan que elijas. Tenemos opciones que incluyen mantenimiento y actualizaciones, y otras que son de pago único. Durante la conversación te explicamos todas las opciones.',
+  },
+];
+
+/** FAQs para la landing de diseño web boutique / diagnóstico digital */
+export const productFAQs: FAQ[] = [
+  {
+    question: '¿Qué es el diagnóstico digital?',
+    answer: 'Es una sesión estratégica de 30 minutos donde revisamos tu negocio, tu web actual (si tienes) y tus objetivos. Definimos qué tiene sentido construir (Landing, Web o Plataforma) y qué no. Sin compromiso. Si no ves valor, no seguimos.',
+  },
+  {
+    question: '¿Tienen precios cerrados para Landing y Web?',
+    answer: 'Sí. La Landing de Conversión y la Web Estratégica tienen entregables claros y precio cerrado. La Plataforma o App a medida se cotiza después del diagnóstico, porque cada proyecto es distinto.',
+  },
+  {
+    question: '¿En cuánto tiempo tengo mi sitio listo?',
+    answer: 'Para Landing y Web estratégica trabajamos en plazos definidos (por ejemplo, dos semanas para lanzamiento base). Los plazos se confirman en el diagnóstico según tu alcance.',
+  },
+  {
+    question: '¿Para qué tipo de negocios es?',
+    answer: 'Para empresas en crecimiento que quieren claridad: founders, servicios premium, e-commerce boutique, consultoras, coaches, marcas D2C. No es para quien busca lo más barato o plantillas genéricas.',
+  },
+  {
+    question: '¿Qué pasa si ya tengo una web?',
+    answer: 'Podemos mejorarla con estructura de conversión y copy estratégico, o reemplazarla si ya no te representa. En el diagnóstico vemos qué opción tiene más sentido.',
   },
 ];
 
@@ -159,12 +184,21 @@ export default function FAQSection({
                   </svg>
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 pb-6 pb-6">
+                  <div className="px-6 pb-6">
                     <p className="text-white/80 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </motion.div>
             ))}
+          </motion.div>
+          <motion.div
+            className="flex justify-center mt-12 md:mt-14"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <SoftCTA />
           </motion.div>
         </div>
       </motion.section>

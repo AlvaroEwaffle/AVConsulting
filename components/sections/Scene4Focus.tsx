@@ -2,10 +2,8 @@
 
 /**
  * ESCENA 4 — Tu enfoque (Timeline Boutique)
- * 
  * Objetivo: explicar el proceso ágil y de alto nivel.
- * Visual: Timeline vertical con estética técnica y minimalista.
- * Animación: Crecimiento de línea y aparición secuencial de pasos.
+ * CTA secundario después del último paso.
  */
 
 import { motion } from 'framer-motion';
@@ -144,6 +142,23 @@ export default function Scene4Focus() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* CTA secundario después del paso final */}
+          <motion.div
+            className="mt-12 md:mt-16 flex justify-center"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            <button
+              type="button"
+              onClick={() => document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-accent/40 bg-accent/10 text-white font-medium text-sm hover:bg-accent/20 hover:border-accent/60 transition-colors duration-300"
+            >
+              Quiero agendar mi diagnóstico
+            </button>
           </motion.div>
         </motion.div>
       </div>

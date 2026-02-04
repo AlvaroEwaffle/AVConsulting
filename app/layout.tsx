@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import SEOHead from "@/components/SEOHead";
+import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +15,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://alvarovillena.cl";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f172a",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://alvarovillena.cl'),
-  title: "Diseño Web Boutique de Alto Impacto | Villelabs | Álvaro Villena",
-  description: "Transformamos tu identidad en un sistema digital premium que destaca y convierte. Diseño boutique de alto impacto implementado en 2 semanas para escalar tu autoridad y facturación.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Diseño Web Boutique de Alto Impacto | Villelabs | Álvaro Villena",
+    template: "%s | Villelabs",
+  },
+  description:
+    "Transformamos tu identidad en un sistema digital premium que destaca y convierte. Diseño boutique de alto impacto implementado en 2 semanas para escalar tu autoridad y facturación.",
   keywords: [
     "diseño web boutique",
     "sistema digital de alto impacto",
@@ -28,9 +41,11 @@ export const metadata: Metadata = {
     "Villelabs",
     "Álvaro Villena",
     "diseño web de lujo",
-    "estrategia digital boutique"
+    "estrategia digital boutique",
+    "diagnóstico digital",
+    "web estratégica",
   ],
-  authors: [{ name: "Álvaro Villena" }],
+  authors: [{ name: "Álvaro Villena", url: siteUrl }],
   creator: "Álvaro Villena",
   publisher: "Álvaro Villena",
   robots: {
@@ -39,18 +54,19 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://alvarovillena.cl",
+    url: siteUrl,
     siteName: "Villelabs - Diseño Web Boutique",
     title: "Diseño Web Boutique de Alto Impacto | Villelabs",
-    description: "Transformamos tu identidad en un sistema digital premium que destaca y convierte. Tu marca merece una experiencia única.",
+    description:
+      "Transformamos tu identidad en un sistema digital premium que destaca y convierte. Tu marca merece una experiencia única.",
     images: [
       {
         url: "/og-image.jpg",
@@ -58,17 +74,19 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Villelabs - Diseño Web Boutique de Alto Impacto",
       },
+      { url: "/icono.png", width: 512, height: 512, alt: "Villelabs" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Diseño Web Boutique de Alto Impacto | Villelabs",
-    description: "Sistema digital premium diseñado para escalar tu autoridad y facturación en 2 semanas.",
+    description:
+      "Sistema digital premium diseñado para escalar tu autoridad y facturación en 2 semanas.",
     creator: "@alvarovillena",
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://alvarovillena.cl",
+    canonical: siteUrl,
   },
   icons: {
     icon: [
@@ -76,13 +94,10 @@ export const metadata: Metadata = {
       { url: "/icono.png", type: "image/png", sizes: "32x32" },
       { url: "/icono.png", type: "image/png", sizes: "16x16" },
     ],
-    apple: [
-      { url: "/icono.png", type: "image/png", sizes: "180x180" },
-    ],
+    apple: [{ url: "/icono.png", type: "image/png", sizes: "180x180" }],
     shortcut: "/icono.png",
   },
   other: {
-    "theme-color": "#0f172a",
     "msapplication-TileColor": "#0f172a",
     "msapplication-TileImage": "/icono.png",
     "apple-mobile-web-app-capable": "yes",
@@ -128,6 +143,7 @@ export default function RootLayout({
         <LenisProvider>
           {children}
         </LenisProvider>
+        <WhatsAppFloatButton />
       </body>
     </html>
   );

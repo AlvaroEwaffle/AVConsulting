@@ -1,0 +1,111 @@
+'use client';
+
+/**
+ * Trabajaremos de manera ágil — mismo diseño que "Lo que obtienes"
+ * 3 pasos: Briefing, Construcción, Lanzamiento.
+ */
+
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { MessageSquare, Zap, Rocket } from 'lucide-react';
+import SoftCTA from '@/components/SoftCTA';
+
+const STEPS = [
+  {
+    icon: MessageSquare,
+    title: 'Briefing de Identidad',
+    text: 'Sesión estratégica para entender tu visión y ADN de marca.',
+  },
+  {
+    icon: Zap,
+    title: 'Construcción Express',
+    text: 'Desarrollo intensivo con diseño de alto nivel y estética boutique.',
+  },
+  {
+    icon: Rocket,
+    title: 'Lanzamiento Estratégico',
+    text: 'Tu sitio al aire en dos semanas. Listo para captar clientes de alto ticket.',
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.6, -0.05, 0.01, 0.99] as const },
+  },
+};
+
+export default function SceneBenefits() {
+  const [lineFilled, setLineFilled] = useState(false);
+
+  return (
+    <motion.section
+      className="min-h-screen snap-start flex items-center justify-center relative px-4 md:px-6"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      onViewportEnter={() => setLineFilled(true)}
+      variants={containerVariants}
+    >
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 transform -translate-x-1/2 z-0" />
+      <motion.div
+        className="absolute left-1/2 top-0 w-px bg-accent transform -translate-x-1/2 origin-top z-0"
+        initial={{ height: 0 }}
+        animate={{ height: lineFilled ? '100%' : 0 }}
+        transition={{ duration: 2, ease: [0.6, -0.05, 0.01, 0.99] as const }}
+      />
+
+      <div className="container max-w-4xl mx-auto relative z-10 w-full py-16 md:py-20">
+        <motion.h2
+          className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-12 md:mb-16"
+          variants={itemVariants}
+        >
+          Trabajaremos de manera ágil
+        </motion.h2>
+
+        <ul className="space-y-6 md:space-y-8">
+          {STEPS.map((step) => {
+            const Icon = step.icon;
+            return (
+              <motion.li
+                key={step.title}
+                className="flex items-start gap-4 md:gap-6"
+                variants={itemVariants}
+              >
+                <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/15 border border-accent/25 flex-shrink-0 mt-0.5">
+                  <Icon className="w-5 h-5 text-accent" />
+                </span>
+                <div className="pt-1.5">
+                  <h3 className="text-base sm:text-lg font-medium text-white mb-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-white/80 font-light leading-relaxed">
+                    {step.text}
+                  </p>
+                </div>
+              </motion.li>
+            );
+          })}
+        </ul>
+        <motion.div
+          className="flex justify-center mt-12 md:mt-14"
+          variants={itemVariants}
+        >
+          <SoftCTA />
+        </motion.div>
+      </div>
+    </motion.section>
+  );
+}

@@ -11,6 +11,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import BrandLogo from '@/components/BrandLogo';
+import SoftCTA from '@/components/SoftCTA';
 
 const containerVariants = {
   hidden: {},
@@ -44,6 +45,8 @@ export default function Scene7Authority() {
     { name: 'Servicios Innovadores', type: 'que necesiten un mensaje claro y atractivo' },
     { name: 'E-commerce Boutique', type: 'que busquen una experiencia de compra premium' },
     { name: 'Consultoras Premium', type: 'que necesiten proyectar autoridad y confianza' },
+    { name: 'Coaches y Mentores', type: 'que quieran una presencia digital que refleje su valor' },
+    { name: 'Marcas D2C', type: 'que busquen venta directa con identidad propia' },
   ];
 
   return (
@@ -75,14 +78,17 @@ export default function Scene7Authority() {
         </motion.div>
 
         {/* Cards abstractas de proyectos */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.name}
-              className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-5 md:p-6 lg:p-8"
+              className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-5 md:p-6 lg:p-8 transition-shadow duration-300"
               variants={itemVariants}
-              whileHover={{ borderColor: 'rgba(33, 117, 161, 0.4)' }}
-              transition={{ duration: 0.3 }}
+              whileHover={{
+                borderColor: 'rgba(33, 117, 161, 0.35)',
+                boxShadow: '0 0 24px rgba(33, 117, 161, 0.06)',
+              }}
+              transition={{ duration: 0.35 }}
             >
               <h3 className="text-xl sm:text-2xl font-light text-white mb-2">
                 {project.name}
@@ -100,6 +106,12 @@ export default function Scene7Authority() {
           variants={itemVariants}
         >
           <BrandLogo size="sm" className="opacity-30" />
+        </motion.div>
+        <motion.div
+          className="flex justify-center mt-8 md:mt-10"
+          variants={itemVariants}
+        >
+          <SoftCTA />
         </motion.div>
       </div>
     </motion.section>

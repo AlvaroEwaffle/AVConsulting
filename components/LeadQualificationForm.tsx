@@ -166,14 +166,14 @@ export default function LeadQualificationForm({
         )}
         <form 
           id="leadForm" 
-          className="w-full flex flex-col gap-3.5" 
+          className="w-full flex flex-col gap-2 md:gap-4" 
           onSubmit={handleSubmit}
         >
           {/* Nombre */}
           <div className="w-full">
             <label 
               htmlFor="name" 
-              className="block text-xs font-medium text-white mb-1.5 text-left uppercase tracking-wider opacity-70"
+              className="block text-[10px] md:text-[11px] font-medium text-white/60 mb-1 text-left uppercase tracking-[0.2em]"
             >
               Tu nombre
             </label>
@@ -182,7 +182,7 @@ export default function LeadQualificationForm({
               id="name"
               name="name"
               required
-              className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent text-sm transition-all"
+              className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl bg-slate-800/40 border border-white/12 text-white placeholder-white/25 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/30 text-sm transition-all"
               placeholder="Ej: Juan Pérez"
             />
           </div>
@@ -191,7 +191,7 @@ export default function LeadQualificationForm({
           <div className="w-full">
             <label 
               htmlFor="email" 
-              className="block text-xs font-medium text-white mb-1.5 text-left uppercase tracking-wider opacity-70"
+              className="block text-[10px] md:text-[11px] font-medium text-white/60 mb-1 text-left uppercase tracking-[0.2em]"
             >
               Tu Email
             </label>
@@ -200,7 +200,7 @@ export default function LeadQualificationForm({
               id="email"
               name="email"
               required
-              className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent text-sm transition-all"
+              className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl bg-slate-800/40 border border-white/12 text-white placeholder-white/25 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/30 text-sm transition-all"
               placeholder="Ej: juan@ejemplo.com"
             />
           </div>
@@ -209,7 +209,7 @@ export default function LeadQualificationForm({
           <div className="w-full">
             <label 
               htmlFor="phone" 
-              className="block text-xs font-medium text-white mb-1.5 text-left uppercase tracking-wider opacity-70"
+              className="block text-[10px] md:text-[11px] font-medium text-white/60 mb-1 text-left uppercase tracking-[0.2em]"
             >
               Tu WhatsApp
             </label>
@@ -218,7 +218,7 @@ export default function LeadQualificationForm({
               id="phone"
               name="phone"
               required
-              className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent text-sm transition-all"
+              className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl bg-slate-800/40 border border-white/12 text-white placeholder-white/25 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/30 text-sm transition-all"
               placeholder="Ej: +56912345678"
             />
           </div>
@@ -227,7 +227,7 @@ export default function LeadQualificationForm({
           <div className="w-full">
             <label 
               htmlFor="business" 
-              className="block text-xs font-medium text-white mb-1.5 text-left uppercase tracking-wider opacity-70"
+              className="block text-[10px] md:text-[11px] font-medium text-white/60 mb-1 text-left uppercase tracking-[0.2em]"
             >
               Tu negocio <span className="text-white/40 text-[10px] normal-case">(3-5 palabras)</span>
             </label>
@@ -237,13 +237,13 @@ export default function LeadQualificationForm({
               name="business"
               required
               maxLength={50}
-              className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent text-sm transition-all"
+              className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-xl bg-slate-800/40 border border-white/12 text-white placeholder-white/25 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/30 text-sm transition-all"
               placeholder="Ej: Gimnasio de crossfit en Santiago"
             />
           </div>
 
-          {/* reCAPTCHA v2 */}
-          <div className="flex justify-start my-3 scale-90 origin-left">
+          {/* reCAPTCHA v2 — en móvil más pequeño para que quepa todo en una pantalla */}
+          <div className="flex justify-start my-2 md:my-3 scale-[0.85] md:scale-90 origin-left">
             <div
               className="g-recaptcha"
               data-sitekey="6LcizUksAAAAADl6SpTv1SRFKRD3-jCjrzHZqPU8"
@@ -255,7 +255,7 @@ export default function LeadQualificationForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-accent hover:bg-accent/90 text-white px-6 py-3.5 rounded-lg font-bold text-base transition-all duration-200 transform hover:scale-[1.01] hover:shadow-accent shadow-lg disabled:opacity-50 disabled:cursor-not-allowed mt-1 relative"
+            className="w-full bg-accent hover:bg-accent/90 text-white px-6 py-3 md:py-4 rounded-xl font-semibold text-sm md:text-base transition-all duration-200 border border-accent/30 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(33,117,161,0.25)] disabled:opacity-50 disabled:cursor-not-allowed mt-2 relative"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center gap-3">
@@ -282,7 +282,7 @@ export default function LeadQualificationForm({
                 <span>Enviando...</span>
               </span>
             ) : (
-              'Continuar conversación'
+              buttonText
             )}
           </button>
         </form>

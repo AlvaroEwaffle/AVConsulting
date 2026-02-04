@@ -10,13 +10,14 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { 
-  Zap, 
-  MessageSquare, 
-  Mail, 
-  Calendar, 
-  Activity
+import {
+  Zap,
+  MessageSquare,
+  Mail,
+  Calendar,
+  Activity,
 } from 'lucide-react';
+import SoftCTA from '@/components/SoftCTA';
 
 // --- Configuración de Escenas ---
 const SCENES = [
@@ -306,6 +307,15 @@ export default function Scene2Truth() {
               ))}
             </motion.div>
           )}
+        </motion.div>
+        <motion.div
+          className="flex justify-center mt-8 md:mt-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+        >
+          <SoftCTA />
         </motion.div>
       </div>
     </motion.section>

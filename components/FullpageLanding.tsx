@@ -12,37 +12,47 @@
  */
 
 import Scene1Hero from './sections/Scene1Hero';
+import SceneOffers from './sections/SceneOffers';
+import SceneBenefits from './sections/SceneBenefits';
 import Scene1Testimonial from './sections/Scene1Testimonial';
 import Scene2Truth from './sections/Scene2Truth';
 import Scene3Insight from './sections/Scene3Insight';
-import Scene4Focus from './sections/Scene4Focus';
 import Scene6Filter from './sections/Scene6Filter';
 import Scene7Authority from './sections/Scene7Authority';
 import Scene75Portfolio from './sections/Scene75Portfolio';
+import SceneGuarantee from './sections/SceneGuarantee';
+import FAQSection, { productFAQs } from './sections/FAQSection';
 import Scene8Invitation from './sections/Scene8Invitation';
 
 export default function FullpageLanding() {
   return (
-    <main className="relative w-full">
-      {/* 
-        Landing Premium — "La página que se detiene"
-        8 escenas con ritmo cinematográfico
-        
-        Cada sección tiene:
-        - min-h-screen: Ocupa al menos 100vh
-        - snap-start: Se encaja al llegar (scroll snap)
-        - flex items-center justify-center: Centrado vertical y horizontal
-        - Safe areas para iOS con padding-top y padding-bottom
-        - Animaciones lentas, respiradas, sin loops rápidos
-      */}
+    <main className="relative w-full" id="inicio" aria-label="Contenido principal">
+      {/* Hero → Ofertas → Portfolio → Beneficios → Prueba social → ... */}
       <Scene1Hero />
-      <Scene1Testimonial />
-      <Scene2Truth />
+      <section id="ofertas" aria-label="Ofertas">
+        <SceneOffers />
+      </section>
+      <section id="portafolio" aria-label="Portafolio">
+        <Scene75Portfolio />
+      </section>
+      <section id="beneficios" aria-label="Cómo trabajamos">
+        <SceneBenefits />
+      </section>
+      <section id="testimonial" aria-label="Testimonial">
+        <Scene1Testimonial />
+      </section>
       <Scene3Insight />
-      <Scene4Focus />
+      <Scene2Truth />
       <Scene6Filter />
       <Scene7Authority />
-      {/* <Scene75Portfolio /> */}
+      <SceneGuarantee />
+      <section id="faq" aria-label="Preguntas frecuentes">
+        <FAQSection
+          title="Preguntas frecuentes"
+          subtitle="Resolvemos las dudas más comunes sobre el diagnóstico y las ofertas"
+          faqs={productFAQs}
+        />
+      </section>
       <Scene8Invitation />
     </main>
   );

@@ -10,6 +10,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import SoftCTA from '@/components/SoftCTA';
 
 const CARD_WIDTH = 360;
 const CARD_HEIGHT = 160;
@@ -155,6 +156,15 @@ export default function Scene3Insight() {
             </motion.div>
           )}
         </div>
+        <motion.div
+          className="flex justify-center mt-10 md:mt-12"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <SoftCTA />
+        </motion.div>
       </div>
     </motion.section>
   );
