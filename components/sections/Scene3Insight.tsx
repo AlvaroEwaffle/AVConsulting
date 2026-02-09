@@ -55,6 +55,7 @@ export default function Scene3Insight() {
 
   return (
     <motion.section
+      id="insight"
       className="h-screen-fixed snap-start flex items-center justify-center relative px-4 md:px-6 overflow-hidden"
       initial="hidden"
       whileInView="visible"
@@ -64,7 +65,6 @@ export default function Scene3Insight() {
       }}
     >
       <div className="container max-w-5xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-8 md:py-12">
-        {/* Título */}
         <motion.div
           className="text-center mb-4 md:mb-6 flex-shrink-0"
           initial={{ opacity: 0 }}
@@ -72,6 +72,9 @@ export default function Scene3Insight() {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 1.2 }}
         >
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-4 md:mb-5">
+            En un mar de ruido, tu web puede ser el lugar donde se detienen.
+          </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 md:mb-6">
             En un mundo de scroll infinito, tu marca debe diferenciarse con una experiencia única.
           </h2>
@@ -149,7 +152,7 @@ export default function Scene3Insight() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <SoftCTA />
+          <SoftCTA scrollTo="filter">Ver si es para ti</SoftCTA>
         </motion.div>
       </div>
     </motion.section>

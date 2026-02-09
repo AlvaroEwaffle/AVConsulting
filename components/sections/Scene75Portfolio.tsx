@@ -9,6 +9,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { useState } from 'react';
+import SoftCTA from '@/components/SoftCTA';
 
 const projects = [
   {
@@ -58,13 +59,7 @@ const projects = [
     category: 'Repositorio de Empresas Industriales',
     image: 'https://conexionindustrial.cl/bgphotos/home.png',
     link: 'https://conexionindustrial.cl/',
-  },
-  {
-    title: 'Moca Instagram Bot',
-    category: 'Automatización de Respuestas de Instagram',
-    image: 'https://moca.pages.dev/logoprimario.png',
-    link: 'https://moca.pages.dev/',
-  },
+  }
 ];
 
 const STAGGER_DELAY = 0.06;
@@ -102,13 +97,7 @@ function PortfolioCard({
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex-shrink-0 overflow-hidden rounded-xl border border-white/10 bg-slate-900 touch-manipulation select-none"
-      // Mobile: card ancha con snap; desktop: aspect ratio del grid
-      style={{
-        // Scroll snap para móvil (el contenedor padre define snap)
-        scrollSnapAlign: 'center',
-        scrollSnapStop: 'always',
-      }}
+      className="group relative overflow-hidden rounded-xl border border-white/10 bg-slate-900 touch-manipulation select-none w-full md:flex-shrink-0"
       variants={itemVariants}
       whileTap={{ scale: reducedMotion ? 1 : 0.96 }}
       whileHover={reducedMotion ? undefined : { y: -6 }}
@@ -118,8 +107,8 @@ function PortfolioCard({
         damping: 28,
       }}
     >
-      {/* Aspect ratio: en móvil más alto (cuadrado-ish), en desktop 16/10 */}
-      <div className="aspect-[4/3] md:aspect-[16/10] w-[78vw] md:w-full min-w-0 h-full">
+      {/* Móvil: una card por fila (full width). Desktop: aspect 16/10 en grid */}
+      <div className="aspect-[4/3] md:aspect-[16/10] w-full min-w-0 h-full">
         <img
           src={project.image}
           alt={project.title}
@@ -164,6 +153,9 @@ export default function Scene75Portfolio() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: EASE_SMOOTH }}
         >
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-3 md:mb-4">
+            Resultados reales, no promesas.
+          </p>
           <h2 className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-accent font-bold mb-3 md:mb-4">
             Portafolio Seleccionado
           </h2>
@@ -171,19 +163,13 @@ export default function Scene75Portfolio() {
             Proyectos que definen un nuevo estándar.
           </h3>
           <p className="mt-3 md:mt-4 text-xs md:text-sm text-white/50 max-w-md mx-auto">
-            Desliza para ver más — toca un proyecto para visitarlo.
+            Scroll para ver más — toca un proyecto para visitarlo.
           </p>
         </motion.div>
 
-        {/* Móvil: scroll horizontal con snap */}
+        {/* Móvil: una card por fila (grid 1 col). Desktop: grid 2/4 cols con scroll */}
         <div
-          className="w-full flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 overflow-x-auto overflow-y-hidden py-2 px-4 md:px-0 md:max-h-[55vh] md:overflow-y-auto md:overflow-x-visible portfolio-scroll scroll-smooth
-            [scroll-snap-type:x_mandatory] md:[scroll-snap-type:none]
-            [mask-image:linear-gradient(to_right,transparent_0,black_12px,black_calc(100%-12px),transparent_100%)] md:[mask-image:none]
-          "
-          style={{
-            WebkitOverflowScrolling: 'touch',
-          }}
+          className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 py-2 px-4 md:px-0 md:max-h-[55vh] md:overflow-y-auto md:overflow-x-visible portfolio-scroll"
         >
           {projects.map((project, index) => (
             <PortfolioCard
@@ -193,6 +179,9 @@ export default function Scene75Portfolio() {
               reducedMotion={!!reducedMotion}
             />
           ))}
+        </div>
+        <div className="mt-8 md:mt-10 flex justify-center">
+          <SoftCTA scrollTo="beneficios">Ver cómo trabajamos</SoftCTA>
         </div>
       </div>
     </motion.section>

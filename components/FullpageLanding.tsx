@@ -40,7 +40,8 @@ export default function FullpageLanding() {
         <Scene1Testimonial />
       </section>
       <Scene3Insight />
-      <Scene2Truth />
+      {/* Scene2Truth (mockup móvil) oculto por ahora */}
+      {/* <Scene2Truth /> */}
       <Scene6Filter />
       <Scene7Authority />
       <SceneGuarantee />

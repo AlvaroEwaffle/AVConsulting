@@ -68,6 +68,14 @@ export default function SceneOffers() {
       variants={containerVariants}
     >
       <div className="container max-w-6xl mx-auto relative z-10 w-full py-16 md:py-20">
+        <motion.p
+          className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium text-center mb-4 md:mb-5"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          No es solo una web. Es el sistema que la hace trabajar.
+        </motion.p>
         <motion.h2
           className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-10 md:mb-14"
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +126,7 @@ export default function SceneOffers() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <SoftCTA />
+          <SoftCTA scrollTo="portafolio">Ver el portafolio</SoftCTA>
         </motion.div>
       </div>
     </motion.section>

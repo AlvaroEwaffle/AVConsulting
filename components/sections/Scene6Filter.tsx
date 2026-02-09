@@ -74,6 +74,7 @@ export default function Scene6Filter() {
 
   return (
     <motion.section
+      id="filter"
       className="h-screen-fixed snap-start flex items-center justify-center relative px-4 md:px-6"
       initial="hidden"
       whileInView="visible"
@@ -81,6 +82,12 @@ export default function Scene6Filter() {
       variants={containerVariants}
     >
       <div className="container max-w-6xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-10 md:py-16">
+        <motion.p
+          className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium text-center mb-4 md:mb-5"
+          variants={titleVariants}
+        >
+          ¿Te suena?
+        </motion.p>
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-white text-center mb-14 md:mb-20"
           variants={titleVariants}
@@ -160,7 +167,7 @@ export default function Scene6Filter() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <SoftCTA />
+          <SoftCTA scrollTo="authority">Ver con quién trabajo</SoftCTA>
         </motion.div>
       </div>
     </motion.section>

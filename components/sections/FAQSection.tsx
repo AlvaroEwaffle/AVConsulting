@@ -139,6 +139,12 @@ export default function FAQSection({
       >
         <div className="container max-w-4xl mx-auto">
           <motion.div className="text-center mb-12 md:mb-16" variants={containerVariants}>
+            <motion.p
+              className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-4 md:mb-5"
+              variants={itemVariants}
+            >
+              Por si aún tienes dudas.
+            </motion.p>
             <motion.h2
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6"
               variants={itemVariants}
@@ -198,7 +204,7 @@ export default function FAQSection({
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <SoftCTA />
+            <SoftCTA scrollTo="cta-section">Ver si califico para diagnóstico</SoftCTA>
           </motion.div>
         </div>
       </motion.section>

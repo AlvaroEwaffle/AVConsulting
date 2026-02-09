@@ -18,8 +18,8 @@ export default function Scene1Hero() {
   const opacity = useTransform(scrollY, [0, 320], [1, 0]);
   const scale = useTransform(scrollY, [0, 320], [1, 0.96]);
 
-  const scrollToCTA = () => {
-    document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToNext = () => {
+    document.getElementById('ofertas')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -47,9 +47,9 @@ export default function Scene1Hero() {
       </div>
 
       <div className="container max-w-6xl mx-auto relative z-10 w-full py-12 md:py-16 flex flex-col items-center">
-        {/* H1 — directo y apelativo */}
+        {/* 1. Qué haces */}
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white text-center mb-4 md:mb-5 max-w-4xl"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white text-center mb-8 md:mb-10 max-w-3xl"
           initial={{ opacity: 0, y: 16 }}
           animate={{
             opacity: animationPhase !== 'title' ? 1 : 0,
@@ -57,12 +57,12 @@ export default function Scene1Hero() {
           }}
           transition={{ duration: 0.9, ease: [0.6, -0.05, 0.01, 0.99] as const }}
         >
-          No necesitas otra página bonita. <span className="text-accent font-medium">Necesitas una que convierta.</span>
+          Landings, webs estratégicas y plataformas que <span className="text-accent font-medium">convierten</span>.
         </motion.h1>
 
-        {/* Refuerzo — reframe */}
+        {/* 2. Qué problema resuelves */}
         <motion.p
-          className="text-xl sm:text-2xl md:text-3xl font-light text-white/80 text-center max-w-2xl mx-auto mb-10 md:mb-12"
+          className="text-lg sm:text-xl md:text-2xl font-light text-white/90 text-center max-w-2xl mx-auto mb-8 md:mb-10"
           initial={{ opacity: 0, y: 12 }}
           animate={{
             opacity: animationPhase === 'subtitle' || animationPhase === 'cta' ? 1 : 0,
@@ -70,10 +70,12 @@ export default function Scene1Hero() {
           }}
           transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] as const }}
         >
-          No solo diseños atractivos: un sistema integrado a tu flujo de ventas que convierte.
+          He trabajado con +50 empresas, founders, marcas premium y negocios que quieren dejar de parecer uno más del montón.
+
         </motion.p>
 
-        {/* CTA principal */}
+
+        {/* CTA + prueba social */}
         <motion.div
           className="flex flex-col items-center gap-3"
           initial={{ opacity: 0, y: 12 }}
@@ -85,14 +87,13 @@ export default function Scene1Hero() {
         >
           <button
             type="button"
-            onClick={scrollToCTA}
+            onClick={scrollToNext}
             className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-accent hover:bg-accent/90 text-white font-semibold text-sm md:text-base border border-accent/30 hover:shadow-[0_0_24px_rgba(33,117,161,0.3)] transition-all duration-300"
           >
-            Agendar diagnóstico digital
+            Sigue para ver las tres formas de crecer
           </button>
-          {/* Prueba social: +50 proyectos */}
+            
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 text-sm md:text-base text-white/50 font-light mt-8">
-            <span className="hidden sm:inline text-white/30">·</span>
             <span className="flex items-center gap-1.5">
               <Layout className="w-4 h-4 md:w-5 md:h-5 text-accent/70 flex-shrink-0" />
               <span>Landing Pages</span>
@@ -103,7 +104,7 @@ export default function Scene1Hero() {
             </span>
             <span className="flex items-center gap-1.5">
               <Cpu className="w-4 h-4 md:w-5 md:h-5 text-accent/70 flex-shrink-0" />
-              <span>Plataformas Desarrolladas</span>
+              <span>Plataformas</span>
             </span>
           </div>
         </motion.div>

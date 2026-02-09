@@ -10,7 +10,6 @@
  */
 
 import { useState, FormEvent } from 'react';
-import Script from 'next/script';
 
 interface LeadQualificationFormProps {
   serviceName: string;
@@ -18,82 +17,21 @@ interface LeadQualificationFormProps {
   buttonText?: string;
 }
 
-declare global {
-  interface Window {
-    grecaptcha: {
-      getResponse: () => string;
-      reset: () => void;
-    };
-  }
-}
-
 export default function LeadQualificationForm({
   serviceName,
   phoneNumber = '56920115198',
-  buttonText = 'Enviar y continuar con WhatsApp',
+  buttonText = 'Ver si califico para diagnóstico',
 }: LeadQualificationFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
 
-  const sendLeadToFidelidapp = async (name: string, email: string, phone: string, business: string) => {
-    try {
-      const requestBody = {
-        slug: 'alvaro-villena',
-        clientData: {
-          name: name,
-          email: email || '',
-          phoneNumber: phone || '',
-          notes: `Negocio: ${business}`,
-        },
-      };
-
-      const requestConfig = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-MCP-API-Key': '1000782937f7872abdc0e4fadc467bbcea6b353420aed09c29f036f3b0fa2056',
-        },
-        body: JSON.stringify(requestBody),
-      };
-
-      // Usar Promise.race con timeout para evitar que bloquee el proceso
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Timeout')), 5000)
-      );
-
-      const fetchPromise = fetch(
-        'https://api.fidelidapp.cl/api/mcp/clients/add',
-        requestConfig
-      );
-
-      const response = await Promise.race([fetchPromise, timeoutPromise]) as Response;
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ message: response.statusText }));
-        console.error('❌ [Fidelidapp] Error al enviar lead:', errorData);
-      } else {
-        const result = await response.json();
-        console.log('✅ [Fidelidapp] Lead enviado exitosamente:', result);
-      }
-    } catch (error) {
-      // Silenciosamente continuar - no bloquear el proceso
-      console.warn('⚠️ [Fidelidapp] No se pudo enviar el lead, continuando con el proceso:', error);
-    }
+  const buildWhatsAppUrl = (phoneE164: string, message: string) => {
+    const base = `https://wa.me/${phoneE164.replace(/\D/g, '')}`;
+    const text = encodeURIComponent(message);
+    return `${base}?text=${text}`;
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    if (!recaptchaLoaded || typeof window.grecaptcha === 'undefined') {
-      alert('reCAPTCHA no está cargado. Por favor, recarga la página.');
-      return;
-    }
-
-    const recaptchaResponse = window.grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-      alert('Por favor, completa la verificación reCAPTCHA.');
-      return;
-    }
 
     setIsSubmitting(true);
 
@@ -103,39 +41,28 @@ export default function LeadQualificationForm({
     const phone = formData.get('phone') as string;
     const business = formData.get('business') as string;
 
-    // Enviar lead a Fidelidapp (no bloquear - fire and forget con timeout)
-    // No usar await para que el proceso continúe incluso si falla
-    sendLeadToFidelidapp(name, email, phone, business).catch(() => {
-      // Error ya manejado en sendLeadToFidelidapp, solo continuar
-    });
-
     // Pequeño delay para mostrar el estado de carga antes de redirigir
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise(resolve => setTimeout(resolve, 900));
 
-    // Resetear reCAPTCHA y formulario de forma segura
-    try {
-      if (window.grecaptcha && typeof window.grecaptcha.reset === 'function') {
-        window.grecaptcha.reset();
-      }
-      if (e.currentTarget) {
-        e.currentTarget.reset();
-      }
-    } catch (resetError) {
-      console.warn('⚠️ Error al resetear formulario:', resetError);
+    if (e.currentTarget) {
+      e.currentTarget.reset();
     }
 
-    // Redirigir a Google Calendar (siempre, incluso si Fidelidapp falló)
-    window.location.href = 'https://calendar.app.google/bUooAJyEjxW4aQCT6';
+    const messageLines = [
+      'Hola Álvaro, quiero un diagnóstico digital gratuito.',
+      `Servicio: ${serviceName}`,
+      `Nombre: ${name}`,
+      email ? `Email: ${email}` : 'Email: (no indicado)',
+      `WhatsApp: ${phone}`,
+      `Negocio: ${business}`,
+    ];
+
+    const whatsappUrl = buildWhatsAppUrl(phoneNumber, messageLines.join('\n'));
+    window.location.href = whatsappUrl;
   };
 
   return (
     <>
-      <Script
-        src="https://www.google.com/recaptcha/api.js"
-        async
-        defer
-        onLoad={() => setRecaptchaLoaded(true)}
-      />
       <div className="w-full relative">
         {isSubmitting && (
           <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm rounded-xl z-50 flex items-center justify-center">

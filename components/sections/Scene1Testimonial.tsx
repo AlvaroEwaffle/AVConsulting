@@ -55,9 +55,16 @@ export default function Scene1Testimonial() {
       onViewportEnter={() => setIsTyping(true)}
     >
       <div className="container max-w-4xl mx-auto relative z-10 w-full h-full flex flex-col items-center justify-center py-8 md:py-12">
-        {/* Prueba social: línea corta */}
         <motion.p
-          className="text-xs uppercase tracking-[0.2em] text-white/40 font-light mb-6 md:mb-8"
+          className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-3 md:mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          No lo digo yo. Lo dicen ellos.
+        </motion.p>
+        <motion.p
+          className="text-xs uppercase tracking-[0.2em] text-white/50 font-light mb-6 md:mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -133,7 +140,7 @@ export default function Scene1Testimonial() {
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          <SoftCTA />
+          <SoftCTA scrollTo="insight">Sigue leyendo</SoftCTA>
         </motion.div>
       </div>
     </motion.section>

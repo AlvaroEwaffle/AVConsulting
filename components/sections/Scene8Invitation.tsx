@@ -47,18 +47,21 @@ export default function Scene8Invitation() {
           <div className="grid md:grid-cols-[1fr,1.1fr] min-h-0 md:min-h-[420px]">
             {/* Copy — en móvil más compacto */}
             <div className="flex flex-col justify-center p-4 md:p-8 lg:p-10 border-b md:border-b-0 md:border-r border-white/10">
+              <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-3 md:mb-4">
+                Ya viste el qué, el cómo y para quién. Ahora falta una cosa.
+              </p>
               <p className="text-sm md:text-lg text-white/70 font-light leading-relaxed">
-                Agenda tu <strong className="text-white font-medium">diagnóstico digital gratis</strong>: 30 min para ver qué tiene sentido construir y qué no.
+                <strong className="text-white font-medium">Diagnóstico digital gratis</strong>: 30 min, sin costo, sin compromiso, solo si calificas. Para ver qué tiene sentido construir y qué no.
               </p>
               <p className="mt-2 md:mt-4 text-xs md:text-sm text-white/50 font-light">
-                Sin compromiso. No pedimos tarjeta. Si no ves valor, no seguimos.
+                Sin tarjeta. Plazas limitadas este mes.
               </p>
             </div>
             {/* Form — en móvil padding y espaciado reducido para que quepa todo (incl. reCAPTCHA y botón) */}
             <div className="flex flex-col justify-center p-4 md:p-8 lg:p-10 bg-white/[0.02]">
               <LeadQualificationForm
                 serviceName="Sistema Digital de Alto Impacto"
-                buttonText="Agendar diagnóstico digital"
+                buttonText="Ver si califico para diagnóstico"
               />
             </div>
           </div>

@@ -56,6 +56,12 @@ export default function SceneBenefits() {
       variants={containerVariants}
     >
       <div className="container max-w-4xl mx-auto relative z-10 w-full py-16 md:py-20">
+        <motion.p
+          className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium text-center mb-4 md:mb-5"
+          variants={itemVariants}
+        >
+          De la idea al lanzamiento en dos semanas.
+        </motion.p>
         <motion.h2
           className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-12 md:mb-16"
           variants={itemVariants}
@@ -91,7 +97,7 @@ export default function SceneBenefits() {
           className="flex justify-center mt-12 md:mt-14"
           variants={itemVariants}
         >
-          <SoftCTA />
+          <SoftCTA scrollTo="testimonial">Ver qué dicen los clientes</SoftCTA>
         </motion.div>
       </div>
     </motion.section>

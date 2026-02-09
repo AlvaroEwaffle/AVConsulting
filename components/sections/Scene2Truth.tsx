@@ -21,12 +21,12 @@ import SoftCTA from '@/components/SoftCTA';
 
 // --- Configuración de Escenas ---
 const SCENES = [
-  { id: 0, text: "", type: 'intro' },
-  { id: 1, text: "", type: 'hero1' },
-  { id: 2, text: "", type: 'action_conversion' },
-  { id: 3, text: "", type: 'hero2' },
-  { id: 4, text: "", type: 'action_machine' },
-  { id: 5, text: "", type: 'hero3' },
+  { id: 0, text: "La mayoría recorre sin ver.", type: 'intro' },
+  { id: 1, text: "¿Y si tu web hiciera que se detuvieran?", type: 'hero1' },
+  { id: 2, text: "No es otra página bonita. Es una que convierte.", type: 'action_conversion' },
+  { id: 3, text: "Impacto directo en ventas y autoridad.", type: 'hero2' },
+  { id: 4, text: "El diseño que trabaja por ti.", type: 'action_machine' },
+  { id: 5, text: "Eso es lo que construimos.", type: 'hero3' },
 ];
 
 // --- Componentes de Pantalla Interna ---

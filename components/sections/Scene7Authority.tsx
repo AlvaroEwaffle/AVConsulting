@@ -49,6 +49,7 @@ export default function Scene7Authority() {
 
   return (
     <motion.section
+      id="authority"
       className="h-screen-fixed snap-start flex items-center justify-center relative px-4 md:px-6"
       initial="hidden"
       whileInView="visible"
@@ -60,6 +61,9 @@ export default function Scene7Authority() {
           className="text-center mb-6 md:mb-8"
           variants={itemVariants}
         >
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-4 md:mb-5">
+            Para marcas como la tuya.
+          </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4">
             Trabajo con marcas que buscan elevar su estándar digital.
           </h2>
@@ -99,7 +103,7 @@ export default function Scene7Authority() {
           className="flex justify-center mt-8 md:mt-10"
           variants={itemVariants}
         >
-          <SoftCTA />
+          <SoftCTA scrollTo="garantia">Ver la garantía</SoftCTA>
         </motion.div>
       </div>
     </motion.section>
