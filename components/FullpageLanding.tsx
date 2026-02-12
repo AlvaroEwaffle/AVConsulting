@@ -7,9 +7,12 @@
  * Scroll snap en cada sección.
  */
 
+import { useState } from 'react';
 import HeroBackground from './HeroBackground';
+import DiagnosticoPresenciaDigital from './DiagnosticoPresenciaDigital';
 import Scene1Hero from './sections/Scene1Hero';
 import SceneOffers from './sections/SceneOffers';
+import SceneDiagnosticoCta from './sections/SceneDiagnosticoCta';
 import SceneBenefits from './sections/SceneBenefits';
 import Scene1Testimonial from './sections/Scene1Testimonial';
 import Scene2Truth from './sections/Scene2Truth';
@@ -22,6 +25,8 @@ import FAQSection, { productFAQs } from './sections/FAQSection';
 import Scene8Invitation from './sections/Scene8Invitation';
 
 export default function FullpageLanding() {
+  const [diagnosticoOpen, setDiagnosticoOpen] = useState(false);
+
   return (
     <main className="relative w-full" id="inicio" aria-label="Contenido principal">
       <HeroBackground />
@@ -30,6 +35,7 @@ export default function FullpageLanding() {
       <section id="ofertas" aria-label="Ofertas">
         <SceneOffers />
       </section>
+      <SceneDiagnosticoCta onOpenDiagnostico={() => setDiagnosticoOpen(true)} />
       <section id="portafolio" aria-label="Portafolio">
         <Scene75Portfolio />
       </section>
@@ -54,6 +60,10 @@ export default function FullpageLanding() {
       </section>
       <Scene8Invitation />
       </div>
+      <DiagnosticoPresenciaDigital
+        open={diagnosticoOpen}
+        onClose={() => setDiagnosticoOpen(false)}
+      />
     </main>
   );
 }
