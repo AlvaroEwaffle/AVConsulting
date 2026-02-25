@@ -69,6 +69,23 @@ export default function Scene7Authority() {
           </h2>
         </motion.div>
 
+        {/* Imagen personal para humanizar la marca */}
+        <motion.div
+          className="mb-10 md:mb-12 relative group"
+          variants={itemVariants}
+        >
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-accent/30 shadow-[0_0_24px_rgba(33,117,161,0.2)]">
+            <img
+              src="/gallery/StandingLookingAtCamera.JPG"
+              alt="Alvaro Villena"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale contrast-125"
+            />
+          </div>
+          <div className="absolute -bottom-2 -right-2 bg-accent p-1.5 rounded-lg">
+            <BrandLogo size="sm" />
+          </div>
+        </motion.div>
+
         {/* Cards abstractas de proyectos */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
           {projects.map((project, index) => (

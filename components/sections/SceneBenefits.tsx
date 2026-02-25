@@ -63,11 +63,24 @@ export default function SceneBenefits() {
           De la idea al lanzamiento en dos semanas.
         </motion.p>
         <motion.h2
-          className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-12 md:mb-16"
+          className="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-10"
           variants={itemVariants}
         >
           Trabajaremos de manera ágil
         </motion.h2>
+
+        <motion.div
+          className="mb-12 flex justify-center"
+          variants={itemVariants}
+        >
+          <div className="w-full max-w-2xl aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 grayscale contrast-110 brightness-90">
+            <img
+              src="/gallery/SittingLookingRight.JPG"
+              alt="Estrategia"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
 
         <ul className="space-y-6 md:space-y-8">
           {STEPS.map((step) => {

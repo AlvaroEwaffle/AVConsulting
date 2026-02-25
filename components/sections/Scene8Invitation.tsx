@@ -50,6 +50,20 @@ export default function Scene8Invitation() {
               <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/40 font-medium mb-3 md:mb-4">
                 Ya viste el qué, el cómo y para quién. Ahora falta una cosa.
               </p>
+
+              <div className="mb-6 rounded-xl overflow-hidden grayscale contrast-110 border border-white/10 aspect-video relative group/shirt">
+                <img
+                  src="/gallery/StandingWatchingPhone.JPG"
+                  alt="Invitación"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                  <span className="text-[10px] md:text-sm font-bold text-white/20 uppercase tracking-[0.3em] rotate-[-2deg] select-none block text-center leading-tight">
+                    Resultados<br />que escalan
+                  </span>
+                </div>
+              </div>
+
               <p className="text-sm md:text-lg text-white/70 font-light leading-relaxed">
                 <strong className="text-white font-medium">Diagnóstico digital gratis</strong>: 30 min, sin costo, sin compromiso, solo si calificas. Para ver qué tiene sentido construir y qué no.
               </p>
