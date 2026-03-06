@@ -1,5 +1,5 @@
-import FullpageLanding from '@/components/FullpageLanding';
+import SalesLetter from '@/components/SalesLetter';
 
 export default function Home() {
-  return <FullpageLanding />;
+  return <SalesLetter />;
 }

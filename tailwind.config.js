@@ -3,32 +3,43 @@ module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}", // por si usas pages también
   ],
   theme: {
     extend: {
       colors: {
-        // Colores premium del proyecto
-        main: "#0f172a", // dark blue (slate-900)
-        accent: "#2175a1", // azul destacado del hero
+        background: "#0f172a",
         foreground: "#ededed",
+        accent: "#2175a1",
+        "accent-hover": "#1a6088",
+        muted: "rgba(255, 255, 255, 0.5)",
+        "muted-light": "rgba(255, 255, 255, 0.35)",
+        border: "rgba(255, 255, 255, 0.12)",
       },
-      borderRadius: {
-        hero: "2rem",
-        premium: "1.5rem",
+      fontFamily: {
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
       },
-      boxShadow: {
-        hero: "0 40px 120px rgba(15, 23, 42, 0.8)",
-        premium: "0 20px 60px rgba(0, 0, 0, 0.3)",
-        soft: "0 4px 20px rgba(0, 0, 0, 0.1)",
-        accent: "0 0 30px rgba(33, 117, 161, 0.3)",
-        'accent-lg': "0 10px 40px rgba(33, 117, 161, 0.3)",
+      fontSize: {
+        body: ["18px", { lineHeight: "1.7" }],
+        "body-mobile": ["16px", { lineHeight: "1.7" }],
+        headline: ["40px", { lineHeight: "1.2", fontWeight: "700" }],
+        "headline-mobile": ["28px", { lineHeight: "1.2", fontWeight: "700" }],
+        subheadline: ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+      },
+      maxWidth: {
+        letter: "680px",
       },
       spacing: {
-        'safe-top': 'env(safe-area-inset-top)',
-        'safe-bottom': 'env(safe-area-inset-bottom)',
+        section: "60px",
+        "section-mobile": "40px",
       },
     },
   },
   plugins: [],
-}
+};

@@ -6,5 +6,19 @@ User-Agent: Googlebot
 Allow: /
 Disallow: /api/
 
-Host: https://alvarovillena.cl
+User-Agent: GPTBot
+Disallow: /
+
+User-Agent: ChatGPT-User
+Disallow: /
+
+User-Agent: CCBot
+Disallow: /
+
+User-Agent: anthropic-ai
+Disallow: /
+
+User-Agent: Bytespider
+Disallow: /
+
 Sitemap: https://alvarovillena.cl/sitemap.xml
