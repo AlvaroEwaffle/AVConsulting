@@ -83,11 +83,10 @@ export default function ExitIntentPopup() {
               Antes de irte...
             </h3>
             <p className="text-white/50 text-center mb-6 text-sm leading-relaxed">
-              Descarga los 27 puntos que reviso cuando una web no convierte.
-              Gratis. Sin compromiso.
+              ¿Quieres ideas prácticas de IA y PM para tu negocio? Una táctica por semana, gratis.
             </p>
 
-            <EmailCaptureForm id="exit-intent" ctaText="Quiero los 27 puntos" />
+            <EmailCaptureForm id="exit-intent-popup" ctaText="Suscribirme al newsletter" />
           </motion.div>
         </motion.div>
       )}

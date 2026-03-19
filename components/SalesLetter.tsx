@@ -28,10 +28,10 @@ const stagger: Variants = {
 
 /* ─── Typewriter Headline ─── */
 const HEADLINE_SEGMENTS = [
-  { text: 'Tu web está ahí.', lineBreak: true },
-  { text: 'Bonita. Moderna.', lineBreak: true },
-  { text: 'Y no vende ' },
-  { text: 'nada', accent: true },
+  { text: 'Soy Álvaro Villena.', lineBreak: true },
+  { text: 'PM, emprendedor,', lineBreak: true },
+  { text: 'y te ayudo a operar tu negocio con ' },
+  { text: 'IA', accent: true },
   { text: '.' },
 ];
 
@@ -51,7 +51,7 @@ const HEADLINE_CHARS = (() => {
   return result;
 })();
 
-const HEADLINE_FULL_TEXT = 'Tu web está ahí. Bonita. Moderna. Y no vende nada.';
+const HEADLINE_FULL_TEXT = 'Soy Álvaro Villena. PM, emprendedor, y te ayudo a operar tu negocio con IA.';
 
 function TypewriterHeadline({ onComplete }: { onComplete: () => void }) {
   const reducedMotion = useReducedMotion();
@@ -179,10 +179,13 @@ export default function SalesLetter() {
           <p
             className={`text-white/60 text-lg sm:text-xl leading-relaxed transition-opacity duration-500 ease-out ${typewriterDone ? 'opacity-100' : 'opacity-0'}`}
           >
-            Publicas. Inviertes. Se ve bien.
+            Llevo más de 10 años en gestión de producto.
             <br />
-            Pero si te pregunto cuánto te cuesta traer un cliente... hay
-            silencio.
+            Tengo 4 negocios corriendo al mismo tiempo.
+            <br />
+            Y lo que encontré: las empresas no necesitan más tecnología,
+            <br />
+            necesitan mejores sistemas para usarla.
           </p>
 
           <div className={`transition-opacity duration-500 ease-out ${typewriterDone ? 'opacity-100' : 'opacity-0'}`}>
@@ -209,117 +212,30 @@ export default function SalesLetter() {
             className="text-subheadline text-white"
             variants={fadeUp}
           >
-            El problema no es tu web. Es lo que falta detrás.
+            Cómo llegué acá
           </motion.h2>
 
           <motion.p className="text-white/80" variants={fadeUp}>
-            Instagram no es tu negocio. Es una vitrina prestada. El algoritmo
-            cambia. Tu cuenta puede desaparecer. Y con ella, todos tus
-            &ldquo;seguidores.&rdquo;
+            Estudié ingeniería industrial en la U de Chile. Empecé en empresas grandes: PepsiCo, LATAM Airlines. Ahí aprendí que los sistemas que funcionan no son los más sofisticados, son los más claros.
+          </motion.p>
+
+          <motion.p className="text-white/80" variants={fadeUp}>
+            En 2019 empecé a trabajar con Toptal. Acceso a proyectos con empresas de todo el mundo. Caché algo que no esperaba: los problemas de producto en Silicon Valley son casi idénticos a los de una startup chilena que quiere crecer.
+          </motion.p>
+
+          <motion.p className="text-white/80" variants={fadeUp}>
+            Mientras tanto, construí mis propios negocios. Hoy tengo cuatro: trabajo como PM senior para clientes globales vía Toptal, tengo Ewaffle (e-learning B2B), Fidelidapp (SaaS de fidelización), y VilleLab (consultoría de IA y PM).
           </motion.p>
 
           <motion.p className="font-semibold text-white" variants={fadeUp}>
-            No tienes un activo. Tienes dependencia.
+            Lo que aprendí corriendo 4 negocios al mismo tiempo: el problema no es la falta de ideas. Es la falta de sistemas para ejecutarlas.
           </motion.p>
 
           <motion.p className="text-white/80" variants={fadeUp}>
-            Piensa en esto: tienes una cuenta con miles de seguidores. Publicas
-            contenido, inviertes en ads, generas engagement. Pero un día el
-            algoritmo cambia. O peor: te hackean la cuenta. ¿Qué te queda?
+            Y la IA, bien usada, es el mejor sistema que existe hoy para hacer más con menos.
           </motion.p>
 
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Nada. Porque todo estaba construido sobre terreno alquilado.
-          </motion.p>
-
-          {/* Industry-specific scenarios */}
-          <motion.p className="text-white/80" variants={fadeUp}>
-            El restaurant con 8.000 seguidores y mesas vacías un martes. La
-            clínica dental con una web tipo catálogo que no ha generado una sola
-            cita en meses. La tienda de ropa que vive de stories pero no sabe
-            cuántas ventas le produce su sitio web.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Todos tienen lo mismo: presencia digital sin estructura digital.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            ¿Cuánto te cuesta traer un cliente? ¿Cuál canal convierte mejor?
-            ¿Cuál es tu tasa de cierre? Si hay silencio, hay un problema.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Más tráfico no arregla una mala estructura. Si tu web no convierte,
-            solo pagas por visitas que se van. Más seguidores no arreglan un
-            embudo roto. La gente llega, mira y se va. Sin dejar nombre, sin
-            dejar email, sin agendar nada.
-          </motion.p>
-
-          <motion.p className="font-semibold text-lg text-white" variants={fadeUp}>
-            Tu página no es decoración. Es un sistema de ventas. O debería
-            serlo.
-          </motion.p>
-        </motion.section>
-
-        {/* ═══════════════════════════════════════════
-            BLOCK 3 — THE AUTHORITY BRIDGE
-        ═══════════════════════════════════════════ */}
-        <motion.section
-          className="mb-section-mobile sm:mb-section space-y-6"
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-        >
-          <motion.h2
-            className="text-subheadline text-white"
-            variants={fadeUp}
-          >
-            La llamada que cambió todo
-          </motion.h2>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            En 2019, un cliente me llamó frustrado. Le habíamos entregado una
-            web espectacular. Diseño impecable. Animaciones suaves. La competencia
-            la envidiaba. Pero llevaba 4 meses sin generar un solo lead desde la web.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            En esa llamada entendí algo que cambió todo lo que hago: una web
-            bonita y una web que vende son dos cosas completamente distintas.
-            Y yo llevaba años construyendo la primera.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Desde ese día, desarmé mi forma de trabajar. Dejé de preguntar
-            &ldquo;¿cómo quieres que se vea?&rdquo; y empecé a preguntar
-            &ldquo;¿qué tiene que lograr esta web?&rdquo; Esa pregunta lo
-            cambia todo. Porque cuando diseñas para un objetivo, cada elemento
-            tiene un propósito.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Hoy llevo más de 50 proyectos aplicando esa lección. Y la diferencia
-            en resultados es brutal.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Cervecería Puchacay. Una web espectacular. Diseño impecable. Fotos
-            profesionales. Cero ventas online. Desarmé todo y lo reconstruí como
-            un sistema: flujo de conversión claro, embudo de captación,
-            seguimiento automatizado. En 3 meses, sus ventas online se
-            duplicaron.
-          </motion.p>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Fidelidapp tenía el problema inverso: un producto increíble y un
-            sitio web que no lo comunicaba. Reestructuramos la propuesta de
-            valor y el flujo de onboarding. Resultado: 80% menos tickets de
-            soporte y el doble de activaciones.
-          </motion.p>
-
-          {/* Photo + credentials + inline Toptal link */}
+          {/* Photo + credentials */}
           <motion.div
             className="flex flex-col items-center gap-4 my-8"
             variants={fadeUp}
@@ -327,7 +243,7 @@ export default function SalesLetter() {
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden border-4 border-accent/30">
               <Image
                 src="/gallery/StandingLookingAtCamera.JPG"
-                alt="Álvaro Villena — Consultor de arquitectura digital, Top 3% Toptal"
+                alt="Álvaro Villena — PM Top 3% Toptal · Fundador VilleLab"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 192px, 224px"
@@ -335,7 +251,7 @@ export default function SalesLetter() {
               />
             </div>
             <p className="text-white/50 text-sm text-center">
-              Álvaro Villena · +50 proyectos
+              Álvaro Villena · PM Top 3% Toptal · Fundador VilleLab
             </p>
             <a
               href="https://www.toptal.com/project-managers/resume/alvaro-villena#B3Zxo1"
@@ -349,62 +265,10 @@ export default function SalesLetter() {
               Top 3% Talent — Toptal
             </a>
           </motion.div>
-
-          <motion.p className="font-semibold text-lg text-white" variants={fadeUp}>
-            No es diseño. Es ingeniería aplicada a tu negocio.
-          </motion.p>
-
-          {/* Fascination bullets with page references */}
-          <motion.div className="space-y-4 pl-1" variants={fadeUp}>
-            <div className="flex items-start gap-3">
-              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
-                &rarr;
-              </span>
-              <p className="text-white/80">
-                El cambio en tu página de inicio que puede duplicar tus
-                conversiones sin tocar el diseño{' '}
-                <span className="text-white/40">(página 4)</span>
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
-                &rarr;
-              </span>
-              <p className="text-white/80">
-                Por qué tu formulario de contacto espanta clientes en vez de
-                atraerlos — y cómo arreglarlo en 10 minutos{' '}
-                <span className="text-white/40">(página 7)</span>
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
-                &rarr;
-              </span>
-              <p className="text-white/80">
-                El test de 30 segundos para saber si tu web es un flyer digital
-                o un sistema de ventas{' '}
-                <span className="text-white/40">(página 3)</span>
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
-                &rarr;
-              </span>
-              <p className="text-white/80">
-                Los 5 puntos de medición que el 90% de las webs no tiene — y
-                sin ellos estás invirtiendo a ciegas{' '}
-                <span className="text-white/40">(página 11)</span>
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.p className="text-white/80" variants={fadeUp}>
-            Todo esto lo pongo en una guía. Gratis. Sin rodeos. Sin letra chica.
-          </motion.p>
         </motion.section>
 
         {/* ═══════════════════════════════════════════
-            BLOCK 4 — THE OFFER
+            BLOCK 3 — THE PERSPECTIVE
         ═══════════════════════════════════════════ */}
         <motion.section
           className="mb-section-mobile sm:mb-section space-y-6"
@@ -417,52 +281,95 @@ export default function SalesLetter() {
             className="text-subheadline text-white"
             variants={fadeUp}
           >
-            27 puntos para que tu web deje de decorar y empiece a vender.
+            Algunas cosas que probablemente no te han dicho
           </motion.h2>
 
           <motion.p className="text-white/80" variants={fadeUp}>
-            No es un PDF genérico de &ldquo;tips para tu web.&rdquo; Son los
-            puntos exactos que reviso cuando un cliente me dice que su web no
-            convierte.
+            Llevo años viendo los mismos patrones. En empresas grandes y en startups. En Chile y en el extranjero. Algunas cosas que la mayoría no dice en voz alta:
           </motion.p>
+
+          <motion.div className="space-y-4 pl-1" variants={fadeUp}>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
+                &rarr;
+              </span>
+              <p className="text-white/80">
+                Por qué los proyectos de IA más caros suelen fracasar antes que los más simples — y cómo evitar ese error desde el primer día
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
+                &rarr;
+              </span>
+              <p className="text-white/80">
+                El error que comete el 80% de los equipos cuando implementan herramientas nuevas: compran tecnología antes de tener claridad en el proceso
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
+                &rarr;
+              </span>
+              <p className="text-white/80">
+                Qué tienen en común las empresas de LATAM que escalan rápido — no es el presupuesto, ni el equipo, ni la tecnología
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold text-xl mt-0.5 shrink-0">
+                &rarr;
+              </span>
+              <p className="text-white/80">
+                Por qué contratar más personas muchas veces hace tu operación más lenta, no más rápida — y qué hacer en cambio
+              </p>
+            </div>
+          </motion.div>
 
           <motion.p className="text-white/80" variants={fadeUp}>
-            Son 6 categorías: Estructura, Conversión, Confianza, Técnica,
-            Medición y Sistema. Cada punto con una pregunta que puedes responder
-            sí o no. Al final sabrás exactamente dónde está parada tu web — y
-            qué arreglar primero.
-          </motion.p>
-
-          <motion.ul className="space-y-3 pl-1" variants={fadeUp}>
-            <li className="flex items-start gap-3">
-              <span className="text-accent font-bold shrink-0">&#10003;</span>
-              <span className="text-white/80">
-                Los 27 puntos que separan un flyer digital de un sistema
-                que factura
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-accent font-bold shrink-0">&#10003;</span>
-              <span className="text-white/80">
-                Los 3 errores que están matando tu web (con solución
-                inmediata)
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-accent font-bold shrink-0">&#10003;</span>
-              <span className="text-white/80">
-                Plantilla de diagnóstico: estructura real o solo presencia
-              </span>
-            </li>
-          </motion.ul>
-
-          <motion.p className="font-semibold text-white" variants={fadeUp}>
-            Es gratis. Sin trampas. Sin tarjeta.
+            Estas son las conversaciones que tengo cada semana con clientes, emprendedores y equipos de producto en toda la región.
           </motion.p>
         </motion.section>
 
         {/* ═══════════════════════════════════════════
-            BLOCK 5 — EMAIL CAPTURE (primary)
+            BLOCK 4 — THE CASES
+        ═══════════════════════════════════════════ */}
+        <motion.section
+          className="mb-section-mobile sm:mb-section space-y-6"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+        >
+          <motion.h2
+            className="text-subheadline text-white"
+            variants={fadeUp}
+          >
+            Proyectos reales. En primera persona.
+          </motion.h2>
+
+          <motion.p className="text-white/80" variants={fadeUp}>
+            No te voy a contar casos en tercera persona como si fueran de otra empresa. Estos son proyectos donde estuve adentro:
+          </motion.p>
+
+          <motion.div className="border-l-4 border-accent pl-5 py-2 space-y-2 mb-6" variants={fadeUp}>
+            <h3 className="text-white font-semibold">Cervecería Puchacay</h3>
+            <p className="text-white/80 text-sm">Llegaron con una web espectacular y cero ventas online. Cuatro meses, ni un solo lead desde el sitio. Lo primero que hice fue ignorar el diseño y mirar los números: el embudo estaba roto desde el inicio. Reestructuramos el flujo completo — propuesta de valor en los primeros 5 segundos, CTA visible, seguimiento automatizado. En 3 meses, sus ventas online se duplicaron.</p>
+            <p className="text-accent text-sm font-medium">+120% ventas online en 3 meses</p>
+          </motion.div>
+
+          <motion.div className="border-l-4 border-accent pl-5 py-2 space-y-2 mb-6" variants={fadeUp}>
+            <h3 className="text-white font-semibold">Fidelidapp</h3>
+            <p className="text-white/80 text-sm">Con Fidelidapp fue el problema inverso: tenían un producto increíble y el 60% de los usuarios nuevos nunca llegaba al &ldquo;momento aha&rdquo;. El onboarding era un desastre. Rediseñamos el flujo de activación aplicando ciclos cortos y feedback rápido. Resultado: 80% menos tickets de soporte, el doble de activaciones en el primer mes.</p>
+            <p className="text-accent text-sm font-medium">-80% soporte manual · 2x activaciones</p>
+          </motion.div>
+
+          <motion.div className="border-l-4 border-accent pl-5 py-2 space-y-2 mb-6" variants={fadeUp}>
+            <h3 className="text-white font-semibold">Cliente Toptal — equipo de producto</h3>
+            <p className="text-white/80 text-sm">Un equipo que llegó con 40 features en el backlog, ingeniería quemada y sin tracción visible. Aplicamos el mismo método: diagnosticar primero, construir en ciclos de 2-4 semanas, medir todo. En 12 semanas entregamos las 5 features que importaban de verdad. El resto quedó para después. O para nunca.</p>
+            <p className="text-accent text-sm font-medium">12 semanas · de parálisis a tracción real</p>
+          </motion.div>
+        </motion.section>
+
+        {/* ═══════════════════════════════════════════
+            BLOCK 5 — DOUBLE CTA
         ═══════════════════════════════════════════ */}
         <motion.section
           className="mb-section-mobile sm:mb-section"
@@ -473,10 +380,33 @@ export default function SalesLetter() {
           variants={fadeUp}
         >
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-6 sm:p-10">
-            <h3 className="text-xl sm:text-2xl font-semibold text-white text-center mb-6">
-              Descarga la guía gratis
+            <h3 className="text-xl sm:text-2xl font-semibold text-white text-center mb-2">
+              Trabajemos juntos
             </h3>
-            <EmailCaptureForm id="email-capture" ctaText="Quiero saber por qué mi web no vende" />
+            <p className="text-white/50 text-center text-sm mb-8">
+              Elige cómo prefieres conectar.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-8">
+              {/* Left: Email capture */}
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-accent font-semibold mb-3">Newsletter semanal</p>
+                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                  Una táctica práctica de IA o PM cada semana. Sin spam. Para emprendedores y equipos que quieren operar mejor.
+                </p>
+                <EmailCaptureForm id="email-capture" ctaText="Suscribirme gratis" />
+              </div>
+              {/* Right: Calendly */}
+              <div className="sm:border-l sm:border-white/10 sm:pl-8">
+                <p className="text-xs uppercase tracking-[0.15em] text-accent font-semibold mb-3">Conversación directa</p>
+                <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                  30 minutos. Conversamos sobre tu negocio, tus operaciones y vemos si hay algo concreto donde puedo ayudarte.
+                </p>
+                <CalendlyButton text="Agendar conversación con Álvaro" />
+                <p className="text-sm text-white/40 mt-3 text-center">
+                  Sin compromiso. Sin letra chica.
+                </p>
+              </div>
+            </div>
           </div>
         </motion.section>
 
@@ -494,7 +424,7 @@ export default function SalesLetter() {
             className="text-subheadline text-white"
             variants={fadeUp}
           >
-            Lo que dicen quienes ya pasaron por esto
+            Lo que dicen quienes ya trabajaron conmigo
           </motion.h2>
 
           {/* Testimonials */}
@@ -547,6 +477,10 @@ export default function SalesLetter() {
           <motion.div className="flex justify-center" variants={fadeUp}>
             <ToptalBadge />
           </motion.div>
+
+          <motion.p className="text-center text-white/40 text-sm mt-4" variants={fadeUp}>
+            Top 3% Toptal · SAFe Certified · PSM I · 10+ años en gestión de producto
+          </motion.p>
         </motion.section>
 
         {/* ═══════════════════════════════════════════
@@ -561,12 +495,12 @@ export default function SalesLetter() {
         >
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-6 sm:p-10">
             <h3 className="text-xl sm:text-2xl font-semibold text-white text-center mb-2">
-              ¿Listo para dejar de adivinar?
+              ¿Quieres seguir la conversación?
             </h3>
             <p className="text-white/50 text-center mb-6">
-              Descarga los 27 puntos y revisa tu web hoy.
+              Newsletter semanal. Una táctica práctica de IA o PM. Sin spam.
             </p>
-            <EmailCaptureForm id="email-capture-2" ctaText="Enviarme los 27 puntos" />
+            <EmailCaptureForm id="email-capture-2" ctaText="Suscribirme al newsletter" />
           </div>
         </motion.section>
 
@@ -584,15 +518,24 @@ export default function SalesLetter() {
             PD: Si prefieres ir directo al grano...
           </motion.h2>
           <motion.p className="text-white/80" variants={fadeUp}>
-            Solo hago 4 diagnósticos por semana. Son 30 minutos donde revisamos
-            tu web en vivo, identificamos los puntos críticos y te doy un plan
-            concreto. Sin compromiso. Sin letra chica. Agenda aquí.
+            Hago calls de descubrimiento para entender tu contexto y ver si hay algo concreto donde puedo ayudarte. Solo trabajo con proyectos donde sé que puedo crear valor real. Si eso te describe, agenda acá.
           </motion.p>
           <motion.div variants={fadeUp}>
             <CalendlyButton />
           </motion.div>
           <motion.p className="text-white/40 text-sm" variants={fadeUp}>
-            Sin compromiso. 30 minutos. Solo 4 por semana.
+            Sin compromiso. 30 minutos.
+          </motion.p>
+          <motion.p className="text-white/40 text-sm mt-2" variants={fadeUp}>
+            Mi firma:{' '}
+            <a
+              href="https://villelab.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent/60 hover:text-accent transition-colors"
+            >
+              villelab.com
+            </a>
           </motion.p>
         </motion.section>
 
@@ -609,6 +552,14 @@ export default function SalesLetter() {
               className="hover:text-white/60 transition-colors"
             >
               @chokovillena
+            </a>
+            <a
+              href="https://villelab.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white/60 transition-colors"
+            >
+              villelab.com
             </a>
             <Link
               href="/privacidad"

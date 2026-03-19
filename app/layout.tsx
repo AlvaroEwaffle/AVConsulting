@@ -25,22 +25,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Álvaro Villena | Webs que venden",
+    default: "Álvaro Villena | PM & IA para LATAM",
     template: "%s | Álvaro Villena",
   },
   description:
-    "Instagram no es tu negocio. Es una vitrina prestada. Descarga la guía gratuita con los 27 puntos para transformar tu web de decoración a sistema de ventas.",
+    "PM Top 3% en Toptal. Fundador de 4 negocios. Ayudo a empresas y emprendedores de LATAM a implementar IA y mejorar su gestión de producto.",
   keywords: [
-    "arquitectura digital",
-    "sistema de ventas web",
-    "conversión web Chile",
-    "diagnóstico digital",
-    "web que vende",
+    "PM LATAM",
+    "gestión de producto Chile",
+    "consultoría IA LATAM",
+    "implementar IA empresa",
+    "Agile PM Chile",
+    "Toptal PM LATAM",
+    "VilleLab",
     "Álvaro Villena",
-    "dejar de depender de Instagram",
-    "guía diagnóstico digital",
-    "estructura digital negocio",
-    "ingeniería web",
+    "product management Santiago",
+    "IA para emprendedores LATAM",
+    "operaciones con IA",
   ],
   authors: [{ name: "Álvaro Villena", url: siteUrl }],
   creator: "Álvaro Villena",
@@ -61,9 +62,9 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: siteUrl,
     siteName: "Álvaro Villena",
-    title: "Álvaro Villena | Webs que venden",
+    title: "Álvaro Villena | PM & IA para LATAM",
     description:
-      "Instagram no es tu negocio. Es una vitrina prestada. Descarga la guía con los 27 puntos para transformar tu web en un sistema de ventas.",
+      "PM Top 3% en Toptal. Fundador de 4 negocios. Ayudo a empresas y emprendedores de LATAM a implementar IA y mejorar su gestión de producto.",
     images: [
       {
         url: "/og-image.jpg",
@@ -76,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Álvaro Villena | Webs que venden",
+    title: "Álvaro Villena | PM & IA para LATAM",
     description:
-      "Instagram no es tu negocio. Descarga la guía con los 27 puntos para transformar tu web en un sistema de ventas real.",
+      "PM Top 3% Toptal. Emprendedor. Te ayudo a operar tu negocio con IA.",
     creator: "@chokovillena",
     images: ["/og-image.jpg"],
   },
@@ -114,9 +115,9 @@ const structuredData = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Álvaro Villena | Webs que venden",
+      name: "Álvaro Villena | PM & IA para LATAM",
       description:
-        "Instagram no es tu negocio. Es una vitrina prestada. Descarga la guía gratuita con los 27 puntos para transformar tu web de decoración a sistema de ventas.",
+        "PM Top 3% en Toptal. Fundador de 4 negocios. Ayudo a empresas y emprendedores de LATAM a implementar IA y mejorar su gestión de producto.",
       inLanguage: "es",
       publisher: { "@id": `${siteUrl}/#person` },
     },
@@ -124,9 +125,9 @@ const structuredData = {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
       url: siteUrl,
-      name: "Álvaro Villena | Webs que venden",
+      name: "Álvaro Villena | PM & IA para LATAM",
       description:
-        "Instagram no es tu negocio. Es una vitrina prestada. Descarga la guía gratuita con los 27 puntos para transformar tu web de decoración a sistema de ventas.",
+        "PM Top 3% en Toptal. Fundador de 4 negocios. Ayudo a empresas y emprendedores de LATAM a implementar IA y mejorar su gestión de producto.",
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
       inLanguage: "es",
@@ -138,15 +139,18 @@ const structuredData = {
       name: "Álvaro Villena",
       url: siteUrl,
       image: `${siteUrl}/gallery/StandingLookingAtCamera.JPG`,
-      jobTitle: "Consultor de Arquitectura Digital",
+      jobTitle: "Agile PM & AI Consultant | Top 3% Toptal",
       description:
-        "Consultor web especializado en transformar sitios decorativos en sistemas de ventas. +50 proyectos. Top 3% en Toptal.",
+        "PM senior Top 3% en Toptal. Fundador de 4 negocios en LATAM. Especialista en gestión de producto, implementación de IA y sistemas operacionales para empresas y emprendedores.",
       knowsAbout: [
-        "Arquitectura digital",
-        "Conversión web",
-        "Diseño web orientado a ventas",
-        "Automatización con IA",
-        "Consultoría Agile",
+        "Agile Project Management",
+        "Product Management",
+        "AI Implementation",
+        "Digital Operations",
+        "LATAM Business Strategy",
+        "Shape Up Methodology",
+        "SaaS Platforms",
+        "Process Automation with AI",
       ],
       worksFor: { "@id": `${siteUrl}/#organization` },
       sameAs: [
@@ -185,9 +189,9 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${siteUrl}/#service`,
-      name: "Diagnóstico Digital y Arquitectura Web",
+      name: "PM & AI Consulting para LATAM",
       description:
-        "Diagnóstico de 27 puntos y rediseño de sitios web orientado a conversión. Transformamos webs decorativas en sistemas de ventas.",
+        "Ayudo a empresas y emprendedores de LATAM a implementar IA y mejorar su gestión de producto. Newsletter semanal + sesiones de consultoría.",
       provider: { "@id": `${siteUrl}/#person` },
       serviceType: "Web Consulting & Development",
       areaServed: {

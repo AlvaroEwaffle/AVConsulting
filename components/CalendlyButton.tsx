@@ -2,7 +2,7 @@
 
 import { trackEvent } from './EmailCaptureForm';
 
-const CALENDLY_URL = 'https://calendar.app.google/Mqc1Gz3jqp4ZNwPD8';
+const CALENDLY_URL = 'https://capu.villelab.com/schedule/reunion-descubrimiento-con-alvaro';
 
 interface CalendlyButtonProps {
   text?: string;
@@ -10,7 +10,7 @@ interface CalendlyButtonProps {
 }
 
 export default function CalendlyButton({
-  text = 'Agendar diagnóstico gratuito',
+  text = 'Agendar conversación con Álvaro',
   className,
 }: CalendlyButtonProps) {
   return (

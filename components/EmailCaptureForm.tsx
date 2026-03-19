@@ -16,10 +16,6 @@ export function trackEvent(event: string, data?: Record<string, unknown>) {
   }
 }
 
-/* ─── Fidelidapp MCP API ─── */
-const FIDELIDAPP_API_URL = process.env.NEXT_PUBLIC_FIDELIDAPP_API_URL ?? '';
-const FIDELIDAPP_API_KEY = process.env.NEXT_PUBLIC_FIDELIDAPP_API_KEY ?? '';
-
 function getUtmParams(): Record<string, string> {
   if (typeof window === 'undefined') return {};
   const params = new URLSearchParams(window.location.search);
@@ -31,27 +27,26 @@ function getUtmParams(): Record<string, string> {
   return utm;
 }
 
-async function sendLeadToFidelidapp(
-  name: string,
-  email: string,
-  utmParams: Record<string, string>,
-) {
-  if (!FIDELIDAPP_API_URL || !FIDELIDAPP_API_KEY) return;
+/* ─── Fidelidapp API ─── */
+const FIDELIDAPP_URL = process.env.NEXT_PUBLIC_FIDELIDAPP_URL ?? '';
+const FIDELIDAPP_ACCOUNT_ID = process.env.NEXT_PUBLIC_FIDELIDAPP_ACCOUNT_ID ?? '';
+
+async function sendLeadToFidelidapp(email: string, name: string, sourceTag: string) {
+  if (!FIDELIDAPP_URL || !FIDELIDAPP_ACCOUNT_ID) return;
   try {
-    await fetch(`${FIDELIDAPP_API_URL}/api/mcp/clients/add`, {
+    await fetch(`${FIDELIDAPP_URL}/api/landing/register`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-MCP-API-Key': FIDELIDAPP_API_KEY,
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        slug: 'alvaro-villena',
-        clientData: { name, email, ...utmParams },
-        sourceTag: 'alvarovillena.cl',
+        name,
+        email,
+        phone: '',
+        accountId: FIDELIDAPP_ACCOUNT_ID,
+        tags: sourceTag,
       }),
     });
   } catch {
-    // Fire-and-forget
+    // Non-blocking, ignore errors
   }
 }
 
@@ -63,7 +58,7 @@ interface EmailCaptureFormProps {
 
 export default function EmailCaptureForm({
   id,
-  ctaText = 'Quiero la guía gratis',
+  ctaText = 'Suscribirme gratis',
 }: EmailCaptureFormProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -82,7 +77,9 @@ export default function EmailCaptureForm({
 
     trackEvent('lead_capture', { form_id: id ?? 'email-capture' });
 
-    await sendLeadToFidelidapp(name.trim(), email.trim(), utmRef.current);
+    await Promise.allSettled([
+      sendLeadToFidelidapp(email.trim(), name.trim(), id ?? 'email-capture'),
+    ]);
     sessionStorage.setItem('av_lead_captured', '1');
     router.push('/gracias');
   };
@@ -117,8 +114,7 @@ export default function EmailCaptureForm({
         {loading ? 'Enviando...' : ctaText}
       </button>
       <p className="text-sm text-white/40 text-center leading-relaxed">
-        Cero spam. Solo contenido que vale la pena. Te puedes dar de baja cuando
-        quieras.
+        Cero spam. Una táctica práctica por semana. Te das de baja cuando quieras.
       </p>
     </form>
   );

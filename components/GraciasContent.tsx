@@ -4,122 +4,56 @@ import Link from 'next/link';
 import CalendlyButton from './CalendlyButton';
 import { trackEvent } from './EmailCaptureForm';
 
-const CHECKLIST = [
-  { category: 'Estructura', items: [
-    'Se entiende qué haces en los primeros 5 segundos',
-    'Hay un titular claro que habla del problema del cliente',
-    'El llamado a la acción principal está visible sin hacer scroll',
-    'Solo hay un objetivo por página (no 5 botones distintos)',
-    'La navegación no distrae del objetivo principal',
-  ]},
-  { category: 'Conversión', items: [
-    'Hay un formulario o botón de contacto visible',
-    'El CTA usa un verbo de acción, no "Enviar"',
-    'Hay prueba social (testimonios, logos, números)',
-    'Existe una oferta clara: qué obtiene el visitante',
-    'Hay urgencia o escasez real (no inventada)',
-  ]},
-  { category: 'Confianza', items: [
-    'Tu foto o la del equipo está visible',
-    'Hay testimonios con nombre y empresa',
-    'Se mencionan resultados concretos (números, %)',
-    'Hay garantía o frase que reduce el riesgo',
-    'Las páginas legales existen (privacidad, términos)',
-  ]},
-  { category: 'Técnica', items: [
-    'La web carga en menos de 3 segundos',
-    'Se ve bien en celular (no solo en desktop)',
-    'Los textos son legibles (tamaño, contraste, espaciado)',
-    'No hay links rotos ni páginas de error',
-    'Tiene certificado SSL (el candado verde)',
-  ]},
-  { category: 'Medición', items: [
-    'Google Analytics está instalado y funcionando',
-    'Tienes conversiones configuradas (no solo visitas)',
-    'Sabes de dónde viene tu tráfico',
-    'Mides cuántos visitantes se convierten en leads',
-    'Revisas los datos al menos una vez por semana',
-  ]},
-  { category: 'Sistema', items: [
-    'Capturas emails o datos de contacto',
-    'Tienes un seguimiento post-contacto (email, WhatsApp)',
-  ]},
-];
-
 export default function GraciasContent() {
   return (
     <main className="w-full px-5 sm:px-6 min-h-screen">
       <div className="max-w-letter mx-auto py-12 sm:py-20 w-full">
+
         {/* Confirmation */}
         <section className="mb-10 sm:mb-14">
           <h1 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
-            Listo. Acá está tu checklist.
+            ¡Listo! Ya estás suscrito.
           </h1>
           <p className="text-white/60 leading-relaxed">
-            Los 27 puntos que reviso cuando un cliente me dice que su web no
-            convierte. Revísalos uno por uno con tu web abierta al lado.
+            Cada semana te llega una táctica práctica de IA o gestión de producto.
+            Sin relleno. Directo al punto.
           </p>
         </section>
 
-        {/* PDF download */}
-        <section className="mb-10 sm:mb-14">
-          <a
-            href="/guia-diagnostico-digital.pdf"
-            download
-            onClick={() => trackEvent('pdf_download')}
-            className="inline-flex items-center gap-3 w-full sm:w-auto text-center py-4 px-8 bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 text-white font-semibold text-lg rounded-lg transition-colors"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Descargar guía en PDF
-          </a>
-        </section>
-
-        {/* Calendly CTA — top */}
-        <section className="mb-10 sm:mb-14">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-6 sm:p-10">
-            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-3">
-              ¿Quieres que lo revisemos juntos?
-            </h2>
-            <p className="text-white/50 mb-6 leading-relaxed">
-              30 minutos. Sin compromiso. Revisamos tu web en vivo y te doy
-              un plan concreto.
-            </p>
-            <CalendlyButton />
-            <p className="text-sm text-white/40 mt-3">
-              Solo 4 por semana.
-            </p>
+        {/* What comes next */}
+        <section className="mb-10 sm:mb-14 space-y-4">
+          <h2 className="text-lg font-semibold text-white">¿Qué sigue?</h2>
+          <div className="space-y-3 pl-1">
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold shrink-0">1.</span>
+              <p className="text-white/70">Revisa tu bandeja de entrada — te llega un email de confirmación.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold shrink-0">2.</span>
+              <p className="text-white/70">El próximo martes llega la primera táctica de la semana.</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-accent font-bold shrink-0">3.</span>
+              <p className="text-white/70">Si quieres ir más rápido, agenda una conversación directa conmigo acá abajo.</p>
+            </div>
           </div>
         </section>
 
-        {/* 27-point checklist */}
-        <section className="mb-10 sm:mb-14 space-y-8">
-          {CHECKLIST.map((group) => (
-            <div key={group.category}>
-              <h3 className="text-sm uppercase tracking-[0.15em] text-accent font-semibold mb-4">
-                {group.category}
-              </h3>
-              <div className="space-y-3">
-                {group.items.map((item) => (
-                  <label
-                    key={item}
-                    className="flex items-start gap-3 cursor-pointer group"
-                  >
-                    <input
-                      type="checkbox"
-                      className="mt-1 w-4 h-4 shrink-0 rounded border-white/20 bg-white/[0.05] accent-accent cursor-pointer"
-                    />
-                    <span className="text-white/70 text-sm leading-relaxed group-hover:text-white/90 transition-colors">
-                      {item}
-                    </span>
-                  </label>
-                ))}
-              </div>
-            </div>
-          ))}
+        {/* Calendly CTA */}
+        <section className="mb-10 sm:mb-14">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-6 sm:p-10">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-3">
+              ¿Quieres conversarlo en vivo?
+            </h2>
+            <p className="text-white/50 mb-6 leading-relaxed">
+              30 minutos. Conversamos sobre tu negocio y vemos cómo puedo ayudarte
+              de forma concreta.
+            </p>
+            <CalendlyButton />
+            <p className="text-sm text-white/40 mt-3">
+              Sin compromiso. Sin letra chica.
+            </p>
+          </div>
         </section>
 
         {/* Minimal footer */}
